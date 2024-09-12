@@ -29,7 +29,7 @@
         <!-- Header Logo -->
         <div class="bringer-header-lp">
             <a href="./" class="bringer-logo">
-                <img src="img/logo.png" alt="bringer." width="176" height="48">
+                <img src="{{ asset('img/logo.png')}}" alt="bringer." width="176" height="48">
             </a>
         </div>
         <!-- Main Menu -->
@@ -140,7 +140,7 @@
     <!-- Mobile Header -->
     <div class="bringer-mobile-header-inner">
         <a href="./" class="bringer-logo">
-            <img src="img/logo.png" alt="bringer." width="88" height="24">
+            <img src="{{ asset('img/logo.png')}}" alt="bringer." width="88" height="24">
         </a>
         <a href="#" class="bringer-mobile-menu-toggler">
             <i class="bringer-menu-toggler-icon">
@@ -168,9 +168,9 @@
                         <!-- Social Proof -->
                         <div class="bringer-hero-social-proof">
                             <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
-                                <img src="img/home/social-proof01.jpg" alt="Client 01">
-                                <img src="img/home/social-proof02.jpg" alt="Client 02">
-                                <img src="img/home/social-proof03.jpg" alt="Client 03">
+                                <img src="{{ asset('img/home/social-proof01.jpg')}}" alt="Client 01">
+                                <img src="{{ asset('img/home/social-proof02.jpg')}}" alt="Client 02">
+                                <img src="{{ asset('img/home/social-proof03.jpg')}}" alt="Client 03">
                                 <a href="testimonials.html">12K+</a>
                             </div>
                             <p data-appear="fade-up" data-unload="fade-up" data-delay="200">Более 12K+ положительных отзывов</p>
@@ -183,7 +183,7 @@
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
                         <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Цифровизируйте Ваш бизнес<br/>Мы предоставим web-технологии и <br>наш опыт</h5>
-                        <img src="img/home/home01-hero.png" alt="Unleash Your Creativity">
+                        <img src="{{ asset('img/home/home01-hero.png')}}" alt="Unleash Your Creativity">
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
@@ -217,7 +217,7 @@
         <!-- Section: Steps -->
         <section class="backlight-top" id="page01">
             <video autoplay loop muted style=" position: absolute; width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-30%">
-                <source src="./video/main_video_01.mp4" type="video/mp4">
+                <source src="{{ asset('./video/main_video_01.mp4')}}" type="video/mp4">
             </video>
             <div class="stg-bottom-gap-l">
                 <h2 data-appear="fade-up" data-unload="fade-up">С чего начнем?</h2>
@@ -226,7 +226,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
                     <div >
-                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/step01.svg" alt="Step 01" width="960" height="960">
+                        <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/home/step01.svg')}}" alt="Step 01" width="960" height="960">
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
@@ -240,7 +240,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
                 <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
                     <div >
-                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/step02.svg" alt="Step 02" width="960" height="960">
+                        <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/home/step02.svg')}}" alt="Step 02" width="960" height="960">
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6" data-appear="fade-left" data-delay="100">
@@ -255,7 +255,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
                     <div>
-                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/step03.svg" alt="Step 03" width="960" height="960">
+                        <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/home/step03.svg')}}" alt="Step 03" width="960" height="960">
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
@@ -280,7 +280,7 @@
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap" data-unload="fade-right" data-appear="fade-left">
                     <div class="bringer-parallax-media">
-                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/about03.jpg" alt="About Us" width="960" height="960">
+                        <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/home/about03.jpg')}}" alt="About Us" width="960" height="960">
                     </div>
                 </div>
             </div><!-- .stg-row -->
@@ -303,7 +303,7 @@
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/portfolio/portfolio01.jpg')}}" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -318,7 +318,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/portfolio/portfolio02.jpg')}}" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -333,7 +333,7 @@
                     <!-- Card Item 03 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio03.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/portfolio/portfolio03.jpg')}}" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -348,7 +348,7 @@
                     <!-- Card Item 04 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/portfolio/portfolio04.jpg')}}" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -363,7 +363,7 @@
                     <!-- Card Item 05 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio05.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/portfolio/portfolio05.jpg')}}" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -378,7 +378,7 @@
                     <!-- Card Item 06 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio06.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/portfolio/portfolio06.jpg')}}" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -393,7 +393,7 @@
                     <!-- Card Item 07 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio07.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="{{ asset('img/null.png')}}" data-src="{{ asset('img/portfolio/portfolio07.jpg')}}" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -528,7 +528,7 @@
                     <div class="stg-col-5 stg-tp-col-12 stg-tp-bottom-gap-l">
                         <div class="bringer-info-widget">
                             <a href="./" class="bringer-logo footer-logo">
-                                <img src="img/logo.png" alt="bringer." width="176" height="48">
+                                <img src="{{ asset('img/logo.png')}}" alt="bringer." width="176" height="48">
                             </a>
                             <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.</div>
                             <span class="bringer-label">Follow us:</span>
@@ -628,11 +628,11 @@
 <div class="bringer-backlight"></div>
 
 <!-- JS Scripts -->
-<script src="js/lib/jquery.min.js"></script>
-<script src="js/lib/libs.js"></script>
-<script src="js/contact_form.js"></script>
-<script src="js/st-core.js"></script>
-<script src="js/classes.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ asset('js/lib/jquery.min.js')}}"></script>
+<script src="{{ asset('js/lib/libs.js)}}"></script>
+<script src="{{ asset('js/contact_form.js)}}"></script>
+<script src="{{ asset('js/st-core.js)}}"></script>
+<script src="{{ asset('js/classes.js)}}"></script>
+<script src="{{ asset('js/main.js)}}"></script>
 </body>
 </html>
