@@ -10,16 +10,16 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
     <!-- Config -->
-    <link type="text/css" rel="stylesheet" href="css/config.css">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/config.css')}}">
     <!-- Libraries -->
-    <link type="text/css" rel="stylesheet" href="css/libs.css">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/libs.css')}}">
     <!-- Template Styles -->
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css')}}">
     <!-- Responsive -->
-    <link type="text/css" rel="stylesheet" href="css/responsive.css">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/responsive.css')}}">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.png" sizes="32x32">
+    <link rel="icon" href="{{ asset('img/favicon.png')}}" sizes="32x32">
 </head>
 <body>
 <!-- Header -->
@@ -629,10 +629,10 @@
 
 <!-- JS Scripts -->
 <script src="{{ asset('js/lib/jquery.min.js')}}"></script>
-<script src="{{ asset('js/lib/libs.js)}}"></script>
-<script src="{{ asset('js/contact_form.js)}}"></script>
-<script src="{{ asset('js/st-core.js)}}"></script>
-<script src="{{ asset('js/classes.js)}}"></script>
-<script src="{{ asset('js/main.js)}}"></script>
+<script src="{{ asset('js/lib/libs.js')}}"></script>
+<script src="{{ asset('js/contact_form.js')}}"></script>
+<script src="{{ asset('js/st-core.js')}}"></script>
+<script src="{{ asset('js/classes.js')}}"></script>
+<script src="{{ asset('js/main.js')}}"></script>
 </body>
 </html>
