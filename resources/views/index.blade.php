@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Setupweb | Креативное агентство по созданию сайтов</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+    <!-- Config -->
+    <link type="text/css" rel="stylesheet" href="css/config.css">
+    <!-- Libraries -->
+    <link type="text/css" rel="stylesheet" href="css/libs.css">
+    <!-- Template Styles -->
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <!-- Responsive -->
+    <link type="text/css" rel="stylesheet" href="css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png" sizes="32x32">
+</head>
+<body>
+<!-- Header -->
+<header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
+    <!-- Desktop Header -->
+    <div class="bringer-header-inner">
+        <!-- Header Logo -->
+        <div class="bringer-header-lp">
+            <a href="./" class="bringer-logo">
+                <img src="img/logo.png" alt="bringer." width="176" height="48">
+            </a>
+        </div>
+        <!-- Main Menu -->
+        <div class="bringer-header-mp">
+            <nav class="bringer-nav">
+                <ul class="main-menu" data-stagger-appear="fade-down" data-stagger-delay="75">
+                    <li class="current-menu-parent">
+                        <a href="#">Home</a>
+                        <ul class="sub-menu">
+                            <li class="current-menu-item">
+                                <a href="index.html">Home 01</a>
+                            </li>
+                            <li>
+                                <a href="home02.html">Home 02</a>
+                            </li>
+                            <li>
+                                <a href="home03.html">Home 03</a>
+                            </li>
+                            <li>
+                                <a href="home04.html">Home 04</a>
+                            </li>
+                            <li>
+                                <a href="home05.html">Home 05</a>
+                            </li>
+                            <li>
+                                <a href="home06.html">Home 06</a>
+                            </li>
+                            <li>
+                                <a href="home07.html">Home 07</a>
+                            </li>
+                            <li>
+                                <a href="home08.html">Home 08</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="about-us.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="about-me.html">About Me</a>
+                            </li>
+                            <li>
+                                <a href="team-member.html">Team Member</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Pages</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="services.html">Our Services</a>
+                            </li>
+                            <li>
+                                <a href="service-details.html">Service Details</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">F.A.Q.</a>
+                            </li>
+                            <li>
+                                <a href="testimonials.html">Testimonials</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="portfolio-infinite-list.html">Infinite List</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-slider.html">Slider</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-column.html">Column Cards</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-grid.html">Classic Grid</a>
+                            </li>
+                            <li class="bringer-menu-divider"></li>
+                            <li>
+                                <a href="portfolio-post01.html">Portfolio Details 01</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-post02.html">Portfolio Details 02</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-post03.html">Portfolio Details 03</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Header Button -->
+        <div class="bringer-header-rp">
+            <a href="contacts.html" class="bringer-button">Get a FREE Quote</a>
+        </div>
+    </div>
+    <!-- Mobile Header -->
+    <div class="bringer-mobile-header-inner">
+        <a href="./" class="bringer-logo">
+            <img src="img/logo.png" alt="bringer." width="88" height="24">
+        </a>
+        <a href="#" class="bringer-mobile-menu-toggler">
+            <i class="bringer-menu-toggler-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </i>
+        </a>
+    </div>
+</header>
+
+<!-- Page Main -->
+<main id="bringer-main">
+    <div class="stg-container">
+        <!-- Hero Section -->
+        <section>
+            <div class="bringer-hero-block bringer-hero-type01">
+                <!-- Main Line -->
+                <div class="stg-row stg-bottom-gap-l stg-m-bottom-gap-l">
+                    <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
+                        <!-- Title -->
+                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">Покоряйте новые горизонты</h1>
+                    </div>
+                    <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
+                        <!-- Social Proof -->
+                        <div class="bringer-hero-social-proof">
+                            <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
+                                <img src="img/home/social-proof01.jpg" alt="Client 01">
+                                <img src="img/home/social-proof02.jpg" alt="Client 02">
+                                <img src="img/home/social-proof03.jpg" alt="Client 03">
+                                <a href="testimonials.html">12K+</a>
+                            </div>
+                            <p data-appear="fade-up" data-unload="fade-up" data-delay="200">Более 12K+ положительных отзывов</p>
+                        </div>
+                    </div>
+                </div><!-- .stg-row -->
+
+                <!-- Masked Media Container -->
+                <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
+                    <!-- Masked Media -->
+                    <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
+                        <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Цифровизируйте Ваш бизнес<br/>Мы предоставим web-технологии и <br>наш опыт</h5>
+                        <img src="img/home/home01-hero.png" alt="Unleash Your Creativity">
+                    </div>
+                    <!-- Content -->
+                    <div class="bringer-masked-content at-bottom-right">
+                        <a href="#page01" class="bringer-square-button" data-appear="fade-left">
+                            <span class="bringer-icon bringer-icon-arrow-down"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Information Line -->
+                <div class="stg-row stg-valign-bottom">
+                    <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
+                        <div class="bringer-counter bringer-small-counter" data-delay="3000">
+                            <div class="bringer-counter-number" data-suffix="+">170</div>
+                            <div class="bringer-counter-label">Успешно выполненных проектов</div>
+                        </div><!-- .bringer-counter -->
+                    </div>
+                    <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
+                        <div class="bringer-counter bringer-small-counter" data-delay="3000">
+                            <div class="bringer-counter-number" data-suffix="+">12</div>
+                            <div class="bringer-counter-label">Лет безупречного опыта</div>
+                        </div><!-- .bringer-counter -->
+                    </div>
+                    <div class="stg-col-6 stg-tp-col-6 stg-m-col-12 stg-m-top-gap" data-appear="fade-up" data-delay="400" data-unload="fade-up">
+                        <p class="bringer-large-text">Мы действительно любим свое дело!<br>Наше ремесло это создавать для Вас современные и качественные сайты.</p>
+                    </div>
+                </div><!-- .stg-row -->
+            </div><!-- .bringer-hero-block -->
+        </section>
+
+        <!-- Section: Steps -->
+        <section class="backlight-top" id="page01">
+            <video autoplay loop muted style=" position: absolute; width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-30%">
+                <source src="./video/main_video_01.mp4" type="video/mp4">
+            </video>
+            <div class="stg-bottom-gap-l">
+                <h2 data-appear="fade-up" data-unload="fade-up">С чего начнем?</h2>
+            </div>
+            <!-- Step 01 Row -->
+            <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
+                <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
+                    <div >
+                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/step01.svg" alt="Step 01" width="960" height="960">
+                    </div>
+                </div>
+                <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                    <span class="bringer-label">Шаг 1</span>
+                    <h4>Дизайн-концепт</h4>
+                    <p><span class="bringer-highlight">Вы:</span> присылаете примеры работ (ссылки,скриншоты), которые Вас вдохновили.</p>
+                    <p><span class="bringer-highlight">Мы:</span> Мы прорабатываем дизайн-концепт.</p>
+                </div>
+            </div>
+            <!-- Step 02 Row -->
+            <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
+                <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                    <div >
+                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/step02.svg" alt="Step 02" width="960" height="960">
+                    </div>
+                </div>
+                <div class="stg-col-6 stg-tp-col-6" data-appear="fade-left" data-delay="100">
+                    <span class="bringer-label">Шаг 2</span>
+                    <h4>План работ</h4>
+                    <p><span class="bringer-highlight">Вы:</span> Сообщаете желаемые даты запуска проекта.</p>
+                    <p><span class="bringer-highlight">Мы:</span> Готовим Вам подробный план работ с чёткими датами.</p>
+                </div>
+                <div class="stg-col-3"><!-- Empty Column --></div>
+            </div>
+            <!-- Step 03 Row -->
+            <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
+                <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
+                    <div>
+                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/step03.svg" alt="Step 03" width="960" height="960">
+                    </div>
+                </div>
+                <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                    <span class="bringer-label">Шаг 3</span>
+                    <h4>Реализация</h4>
+                    <p><span class="bringer-highlight">Вы:</span> подтверждаете план работ.</p>
+                    <p><span class="bringer-highlight">Мы:</span> приступаем к работе!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: About Us -->
+        <section class="backlight-bottom divider-top">
+            <div class="stg-row stg-large-gap stg-valign-middle stg-tp-column-reverse">
+                <div class="stg-col-6" data-appear="fade-right" data-unload="fade-left">
+                    <h3>Мы - увлеченная команда дизайнеров и разработчиков</h3>
+                    <p class="bringer-large-text">Команда, которая верит в силу творчества. </p>
+                    <p>Мы специализируемся на оказании помощи предприятиям любого размера в достижении их целей. Мы верим, что креативность - это ключ к успеху, и стремимся помочь нашим клиентам полностью раскрыть свой потенциал.</p>
+                    <div class="align-right">
+                        <a href="about-us.html" class="bringer-arrow-link">Learn More About Us</a>
+                    </div>
+                </div>
+                <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap" data-unload="fade-right" data-appear="fade-left">
+                    <div class="bringer-parallax-media">
+                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/about03.jpg" alt="About Us" width="960" height="960">
+                    </div>
+                </div>
+            </div><!-- .stg-row -->
+        </section>
+
+        <!-- Section: Portfolio Carousel -->
+        <section class="is-fullwidth is-stretched">
+            <!-- Section Title -->
+            <div class="stg-row bringer-section-title is-boxed">
+                <div class="stg-col-8 stg-offset-2">
+                    <div class="align-center">
+                        <h2 data-appear="fade-up" data-unload="fade-up">Наши работы</h2>
+                        <p class="bringer-large-text" data-appear="fade-up" data-unload="fade-up" data-delay="100">Мы гордимся своими проектами и всегда готовы решать новые задачи. Взгляните на некоторые из наших последних работ:</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Portfolio Carousel -->
+            <div class="swiper bringer-carousel stg-bottom-gap-l" data-appear="fade-up" data-unload="fade-up" data-delay="200" data-count="4" data-m-count="1.5">
+                <div class="swiper-wrapper">
+                    <!-- Card Item 01 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">E-com</span>
+                                <h6>Art of Tea</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post01.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+
+                    <!-- Card Item 02 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Advertising</span>
+                                <h6>Cookie Dough</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post02.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+
+                    <!-- Card Item 03 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio03.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Marketing</span>
+                                <h6>Gaming Power</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post03.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+
+                    <!-- Card Item 04 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Advertising</span>
+                                <h6>Riot Energy</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post04.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+
+                    <!-- Card Item 05 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio05.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Marketing</span>
+                                <h6>Smoothie</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post05.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+
+                    <!-- Card Item 06 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio06.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Branding</span>
+                                <h6>Positive Beverage</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post06.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+
+                    <!-- Card Item 07 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio07.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Branding</span>
+                                <h6>Fashion Makeup</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post07.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination bringer-dots"></div>
+            </div><!-- .bringer-portfolio-carousel -->
+            <div class="align-center" data-appear="fade-up" data-unload="fade-up" data-delay="100">
+                <a href="portfolio-slider.html" class="bringer-button">Discover Full Portfolio</a>
+            </div>
+        </section>
+
+        <!-- Section: Our Services -->
+        <section class="backlight-top">
+            <!-- Section Title -->
+            <div class="stg-row bringer-section-title">
+                <div class="stg-col-8 stg-offset-2">
+                    <div class="align-center">
+                        <h2 data-appear="fade-up" data-unload="fade-up">Our Services</h2>
+                        <p class="bringer-large-text" data-appear="fade-up" data-unload="fade-up" data-delay="100">We offer a wide range of creative services to help businesses of all sizes achieve their goals. Our services include:</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Services List -->
+            <div class="bringer-detailed-list-wrap" data-appear="fade-up" data-unload="fade-up" data-delay="200">
+                <ul class="bringer-detailed-list">
+                    <li>
+                        <div class="bringer-detailed-list-title">
+                            <h4>Branding<span class="bringer-accent">.</span></h4>
+                        </div>
+                        <div class="bringer-detailed-list-description">
+                            <p>We weave visual stories and craft strategic messaging that resonate at heartstrings, build unwavering trust, and turn customers into fervent brand champions. Imagine seeing your logo come alive, not just a symbol but a rallying cry, an unwavering beacon in a sea of sameness. That's the power of branding we unleash.</p>
+                        </div>
+                        <div class="bringer-detailed-list-button">
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="service-details.html"></a>
+                    </li>
+                    <li>
+                        <div class="bringer-detailed-list-title">
+                            <h4>Marketing<span class="bringer-accent">.</span></h4>
+                        </div>
+                        <div class="bringer-detailed-list-description">
+                            <p>We design data-driven campaigns that crackle with energy, ignite engagement like wildfire, and turn clicks into conversions. Picture social media abuzz with your brand, blog posts sparking curiosity, and targeted ads finding their perfect match. We're the storm that propels your brand to ever-higher heights.</p>
+                        </div>
+                        <div class="bringer-detailed-list-button">
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="service-details.html"></a>
+                    </li>
+                    <li>
+                        <div class="bringer-detailed-list-title">
+                            <h4>Graphic Design<span class="bringer-accent">.</span></h4>
+                        </div>
+                        <div class="bringer-detailed-list-description">
+                            <p>We craft visual masterpieces that sing your brand's story in vibrant colors and captivating shapes. From logos that lodge in minds to infographics that make complex ideas sing, we inject emotional punch and crystal-clear clarity into every pixel. Let your visuals become the unforgettable face of your brand.</p>
+                        </div>
+                        <div class="bringer-detailed-list-button">
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="service-details.html"></a>
+                    </li>
+                    <li>
+                        <div class="bringer-detailed-list-title">
+                            <h4>Web Design<span class="bringer-accent">.</span></h4>
+                        </div>
+                        <div class="bringer-detailed-list-description">
+                            <p>We sculpt user-friendly websites that convert visitors into loyal devotees, seamlessly blending stunning aesthetics with intuitive navigation and flawless experiences for every screen. Imagine your website as a warm, inviting space where potential customers linger, explore, and ultimately succumb to its charms. We craft that digital haven.</p>
+                        </div>
+                        <div class="bringer-detailed-list-button">
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="service-details.html"></a>
+                    </li>
+                    <li>
+                        <div class="bringer-detailed-list-title">
+                            <h4>Content Creation<span class="bringer-accent">.</span></h4>
+                        </div>
+                        <div class="bringer-detailed-list-description">
+                            <p>We weave compelling narratives into blog posts, website copy, and social media content that resonate with your audience like a well-loved symphony. Picture search engines whispering your brand's name, and customers sharing your story with eager ears. We craft the voice that makes your brand sing.</p>
+                        </div>
+                        <div class="bringer-detailed-list-button">
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="service-details.html"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="align-center stg-top-gap" data-appear="fade-up" data-unload="zoom-out" data-delay="100">
+                <a href="services.html" class="bringer-button">Explore All Services</a>
+            </div>
+        </section>
+
+        <!-- Section: CTA -->
+        <section data-padding="bottom">
+            <div class="bringer-masked-cta bringer-masked-block" data-unload="fade-down">
+                <form action="mail-short.php" method="post" data-fill-error="Пожалуйста заполните форму" class="bringer-contact-form is-short bringer-masked-media" data-appear="fade-up">
+                    <div class="bringer-form-content bringer-cta-form">
+                        <div class="bringer-cta-form-content" data-appear="fade-up" data-delay="100">
+                            <div class="bringer-cta-title">Пишите свою почту. Далее работать будем мы!</div>
+                            <input type="email" id="subscribe_email" name="subscribe_email" placeholder="email@example.com" required>
+                        </div>
+                        <div class="bringer-cta-form-button" data-appear="fade-up" data-delay="200">
+                            <button type="submit">
+                                <span class="bringer-icon bringer-icon-arrow-submit"></span>
+                            </button>
+                        </div>
+                        <div class="bringer-contact-form__response"></div>
+                    </div>
+                    <span class="bringer-form-spinner"></span>
+                </form>
+                <div class="bringer-masked-cta-content bringer-masked-content at-top-right">
+                    <p class="bringer-large-text" data-appear="fade-down">Давайте создадим для Вас цифровую резиденцию ✨</p>
+                </div>
+            </div>
+        </section>
+    </div><!-- .stg-container -->
+
+    <!-- Footer -->
+    <footer id="bringer-footer" data-appear="fade-up" data-unload="fade-down">
+        <!-- Footer Widgets Area -->
+        <div class="bringer-footer-widgets">
+            <div class="stg-container">
+                <div class="stg-row" data-stagger-appear="fade-left" data-stagger-delay="100">
+                    <div class="stg-col-5 stg-tp-col-12 stg-tp-bottom-gap-l">
+                        <div class="bringer-info-widget">
+                            <a href="./" class="bringer-logo footer-logo">
+                                <img src="img/logo.png" alt="bringer." width="176" height="48">
+                            </a>
+                            <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.</div>
+                            <span class="bringer-label">Follow us:</span>
+                            <ul class="bringer-socials-list" data-stagger-appear="fade-up" data-stagger-delay="75">
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank" class="bringer-socials-facebook">
+                                        <i></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="bringer-socials-instagram">
+                                        <i></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="bringer-socials-x">
+                                        <i></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="bringer-socials-tiktok">
+                                        <i></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="bringer-socials-patreon">
+                                        <i></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="stg-col-2 stg-offset-1 stg-tp-col-4 stg-m-col-4">
+                        <div class="bringer-widget">
+                            <h6>Services</h6>
+                            <div class="bringer-menu-widget">
+                                <ul>
+                                    <li><a href="service-details.html">Branding</a></li>
+                                    <li><a href="service-details.html">Marketing</a></li>
+                                    <li><a href="service-details.html">Graphic Design</a></li>
+                                    <li><a href="service-details.html">Web Design</a></li>
+                                    <li><a href="service-details.html">Content Creation</a></li>
+                                </ul>
+                            </div>
+                        </div><!-- .bringer-widget -->
+                    </div>
+                    <div class="stg-col-2 stg-tp-col-4 stg-m-col-4">
+                        <div class="bringer-widget">
+                            <h6>About Us</h6>
+                            <div class="bringer-menu-widget">
+                                <ul>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="about-me.html">About Me</a></li>
+                                    <li><a href="team-member.html">Our Team</a></li>
+                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                    <li><a href="contacts.html">Get in Touch</a></li>
+                                </ul>
+                            </div>
+                        </div><!-- .bringer-widget -->
+                    </div>
+                    <div class="stg-col-2 stg-tp-col-4 stg-m-col-4">
+                        <div class="bringer-widget">
+                            <h6>Resources</h6>
+                            <div class="bringer-menu-widget">
+                                <ul>
+                                    <li><a href="pricing.html">Pricing</a></li>
+                                    <li><a href="faq.html">Help Center</a></li>
+                                    <li><a href="services.html">Our Services</a></li>
+                                    <li><a href="#">Terms of Use</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div><!-- .bringer-widget -->
+                    </div>
+                </div><!-- .stg-row -->
+            </div><!-- .stg-container -->
+        </div><!-- .bringer-footer-widgets -->
+
+        <!-- Footer Copyright Line -->
+        <div class="bringer-footer-line stg-container">
+            <div class="align-center">
+                Copyright &copy; 2024. All Rights Reserved.
+            </div>
+        </div><!-- bringer-footer-line -->
+    </footer>
+</main>
+
+<!-- Right Click Protection Block -->
+<div class="bringer-rcp-wrap">
+    <div class="bringer-rcp-overlay"></div>
+    <div class="bringer-rcp-container">
+        <h2>The context menu is not allowed on this page.</h2>
+    </div>
+</div>
+
+<!-- Dynamic Backlight -->
+<div class="bringer-backlight"></div>
+
+<!-- JS Scripts -->
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/libs.js"></script>
+<script src="js/contact_form.js"></script>
+<script src="js/st-core.js"></script>
+<script src="js/classes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
