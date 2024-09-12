@@ -19,7 +19,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/responsive.css')}}">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('img/favicon.png')}}" sizes="32x32">
+    <link rel="icon" href="{{asset('img/favicon.png')}}" sizes="32x32">
 </head>
 <body>
 <!-- Header -->
