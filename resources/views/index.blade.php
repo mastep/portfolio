@@ -140,7 +140,7 @@
                 <div class="stg-row stg-bottom-gap-l stg-m-bottom-gap-l">
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
-                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">Покоряйте новые горизонты</h1>
+                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">Цифровизируйте Ваш бизнес</h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
@@ -160,7 +160,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Цифровизируйте Ваш бизнес<br/>Мы предоставим web-технологии и <br>наш опыт</h5>
+                        <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Покоряйте новые горизонты<br/>Мы предоставим web-технологии и <br>наш опыт</h5>
                         <img src="img/home/home01-hero.png" alt="Unleash Your Creativity">
                     </div>
                     <!-- Content -->
