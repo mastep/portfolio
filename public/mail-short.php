@@ -7,21 +7,21 @@
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     # Replace this email with your email address
-    $mail_to = "yourmail@example.com";
+    $mail_to = "igorchurikov@ya.ru";
 
     # Message: You can modify that string with your text.
     $message = "";
 
     # Subject: You can modify that string with your message.
-    $subject = "Your Website Response";
+    $subject = "Сообщение с сайта";
 
-	# Collect Data
+    # Collect Data
     $email = filter_var(trim($_POST["subscribe_email"]), FILTER_SANITIZE_EMAIL);
 
     if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
         # Set a 400 (bad request) response code and exit.
         http_response_code(400);
-        echo "Please complete the form and try again.";
+        echo "Пожалуйста, заполните форму";
         exit;
     }
 
@@ -31,21 +31,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     # email headers.
     $headers = 	"From: " . $email . "\r\n" .
-				"MIME-Version: 1.0" . "\r\n" .
-				"Content-type: text/html; charset=utf-8" . "\r\n";
+        "MIME-Version: 1.0" . "\r\n" .
+        "Content-type: text/html; charset=utf-8" . "\r\n";
 
     # Send the email.
     if (mail($mail_to, $subject, $content, $headers)) {
         # Set a 200 (okay) response code.
         http_response_code(200);
-        echo "Thank You! Your message has been sent.";
+        echo "Спасибо! В самое ближайшее время ответим Вам.";
     } else {
         # Set a 500 (internal server error) response code.
         http_response_code(500);
-        echo "Oops! Something went wrong, we couldn't send your message.";
+        echo "Ой. Ошибка. Попробуйте отправить повторно...";
     }
 } else {
-	# Not a POST request, set a 403 (forbidden) response code.
-	http_response_code(403);
-	echo "There was a problem with your submission, please try again.";
+    # Not a POST request, set a 403 (forbidden) response code.
+    http_response_code(403);
+    echo "Ой. Ошибка. Попробуйте отправить повторно...";
 }
