@@ -10,34 +10,6 @@
                             <img src="img/logo.png" alt="bringer." width="176" height="48">
                         </a>
                         <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.</div>
-                        <span class="bringer-label">Follow us:</span>
-                        <ul class="bringer-socials-list" data-stagger-appear="fade-up" data-stagger-delay="75">
-                            <li>
-                                <a href="https://www.facebook.com/" target="_blank" class="bringer-socials-facebook">
-                                    <i></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank" class="bringer-socials-instagram">
-                                    <i></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank" class="bringer-socials-x">
-                                    <i></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank" class="bringer-socials-tiktok">
-                                    <i></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank" class="bringer-socials-patreon">
-                                    <i></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
                 @include('footer-menu')
@@ -48,7 +20,7 @@
     <!-- Footer Copyright Line -->
     <div class="bringer-footer-line stg-container">
         <div class="align-center">
-            Copyright &copy; 2024. All Rights Reserved.
+            &copy; 2024. Все права защищены
         </div>
     </div><!-- bringer-footer-line -->
 </footer>

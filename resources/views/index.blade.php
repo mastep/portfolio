@@ -4,12 +4,7 @@
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
     <!-- Desktop Header -->
     <div class="bringer-header-inner">
-        <!-- Header Logo -->
-        <div class="bringer-header-lp">
-            <a href="./" class="bringer-logo">
-                <img src="img/logo.png" alt="bringer." width="176" height="48">
-            </a>
-        </div>
+        @include('header-logo')
         @include('menu')
         @include('header-button')
     </div>
@@ -35,9 +30,9 @@
                                 <img src="img/home/social-proof01.jpg" alt="Client 01">
                                 <img src="img/home/social-proof02.jpg" alt="Client 02">
                                 <img src="img/home/social-proof03.jpg" alt="Client 03">
-                                <a href="testimonials.html">12K+</a>
+                                <a href="#">100+</a>
                             </div>
-                            <p data-appear="fade-up" data-unload="fade-up" data-delay="200">Более 12K+ положительных отзывов</p>
+                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100">Более 100+ проектов</p>
                         </div>
                     </div>
                 </div><!-- .stg-row -->
@@ -61,7 +56,7 @@
                 <div class="stg-row stg-valign-bottom">
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div class="bringer-counter-number" data-suffix="+">170</div>
+                            <div class="bringer-counter-number" data-suffix="+">100</div>
                             <div class="bringer-counter-label">Успешно выполненных проектов</div>
                         </div><!-- .bringer-counter -->
                     </div>
@@ -138,9 +133,6 @@
                     <h3>Мы - увлеченная команда дизайнеров и разработчиков</h3>
                     <p class="bringer-large-text">Команда, которая верит в силу творчества. </p>
                     <p>Мы специализируемся на оказании помощи предприятиям любого размера в достижении их целей. Мы верим, что креативность - это ключ к успеху, и стремимся помочь полностью раскрыть потенциал проекта.</p>
-                    <div class="align-right">
-                        <a href="about-us.html" class="bringer-arrow-link">Learn More About Us</a>
-                    </div>
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap" data-unload="fade-right" data-appear="fade-left">
                     <div class="bringer-parallax-media">
@@ -176,7 +168,7 @@
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post01.html"></a>
+                        <a href="project1"></a>
                     </div><!-- .bringer-portfolio-card -->
 
                     <!-- Card Item 02 -->
@@ -186,95 +178,92 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Advertising</span>
-                                <h6>Cookie Dough</h6>
+                                <span class="bringer-meta">Very</span>
+                                <h6>Soon</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
                         <a href="portfolio-post02.html"></a>
                     </div><!-- .bringer-portfolio-card -->
 
-                    <!-- Card Item 03 -->
+                    <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio03.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Marketing</span>
-                                <h6>Gaming Power</h6>
+                                <span class="bringer-meta">Very</span>
+                                <h6>Soon</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post03.html"></a>
+                        <a href="portfolio-post02.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+                    <!-- Card Item 02 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Very</span>
+                                <h6>Soon</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post02.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+                    <!-- Card Item 02 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Very</span>
+                                <h6>Soon</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post02.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+                    <!-- Card Item 02 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Very</span>
+                                <h6>Soon</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post02.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+                    <!-- Card Item 02 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Very</span>
+                                <h6>Soon</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post02.html"></a>
                     </div><!-- .bringer-portfolio-card -->
 
-                    <!-- Card Item 04 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200">
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Advertising</span>
-                                <h6>Riot Energy</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="portfolio-post04.html"></a>
-                    </div><!-- .bringer-portfolio-card -->
 
-                    <!-- Card Item 05 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio05.jpg" alt="" width="1200" height="1200">
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Marketing</span>
-                                <h6>Smoothie</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="portfolio-post05.html"></a>
-                    </div><!-- .bringer-portfolio-card -->
 
-                    <!-- Card Item 06 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio06.jpg" alt="" width="1200" height="1200">
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Branding</span>
-                                <h6>Positive Beverage</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="portfolio-post06.html"></a>
-                    </div><!-- .bringer-portfolio-card -->
 
-                    <!-- Card Item 07 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio07.jpg" alt="" width="1200" height="1200">
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Branding</span>
-                                <h6>Fashion Makeup</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="portfolio-post07.html"></a>
-                    </div><!-- .bringer-portfolio-card -->
                 </div>
                 <!-- Pagination -->
                 <div class="swiper-pagination bringer-dots"></div>
             </div><!-- .bringer-portfolio-carousel -->
-            <div class="align-center" data-appear="fade-up" data-unload="fade-up" data-delay="100">
-                <a href="portfolio-slider.html" class="bringer-button">Discover Full Portfolio</a>
-            </div>
         </section>
 
         <section data-padding="bottom">
