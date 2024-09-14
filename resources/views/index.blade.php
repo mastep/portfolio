@@ -41,7 +41,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Покоряйте новые горизонты<br/>Мы предоставим web-технологии и <br>наш опыт</h5>
+                        <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Покоряйте новые горизонты<br/>Мы предоставим технологии<br>и наш опыт</h5>
                         <img src="img/home/home01-hero.png" alt="Unleash Your Creativity">
                     </div>
                     <!-- Content -->
@@ -75,7 +75,7 @@
 
         <!-- Section: Steps -->
         <section class="backlight-top" id="page01">
-            <video autoplay loop muted style=" position: absolute; width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-30%">
+            <video id="StepsVideo" autoplay loop muted>
                 <source src="./video/main_video_01.mp4" type="video/mp4">
             </video>
             <div class="stg-bottom-gap-l">

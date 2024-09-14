@@ -3,7 +3,7 @@
  * Author URL: https://shadow-themes.com
  */
 
-/* TABLET: Landscape 
+/* TABLET: Landscape
    ================= */
 @media only screen and (max-width: 1200px) {
     /* === PSWP === */
@@ -12,7 +12,7 @@
         width: 48px;
         height: 48px;
     }
-    
+
     /* === Grid === */
     .stg-row > div[class*='bringer-t-grid'],
     [class*='bringer-t-grid'] {
@@ -72,7 +72,7 @@
     section[data-tp-padding="small"] {
         padding: calc(0.5 * var(--bringer-section-gap)) 0;
     }
-    
+
     /* === CTA BLOCKS === */
     .bringer-masked-cta .bringer-masked-content {
         max-width: 30%;
@@ -120,6 +120,11 @@
         right: var(--stg-small-gap);
         top: var(--stg-small-gap);
         position: absolute;
+    }
+
+    #StepsVideo{
+        position: absolute;
+        width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-20%
     }
 }
 
@@ -194,7 +199,7 @@
         top: calc(50% + 5px);
         transform: scale(0.667, 1);
     }
-        
+
     /* Menu Toggler close state */
     .show-menu .bringer-mobile-menu-toggler {
         background: transparent;
@@ -229,7 +234,7 @@
     }
     .bringer-mobile-nav::-webkit-scrollbar {
         width: 0;
-    }    
+    }
     .bringer-mobile-nav::before {
         content: '';
         position: absolute;
@@ -416,11 +421,11 @@
         grid-area: 1 / 1 / 3 / 3;
     }
     .bringer-bento-grid .is-medium:nth-child(2) {
-        grid-area: 3 / 1 / 4 / 3; 
+        grid-area: 3 / 1 / 4 / 3;
     }
     /* Type 02 */
     .bringer-bento-grid .is-medium:last-child {
-        grid-area: 4 / 1 / 5 / 3; 
+        grid-area: 4 / 1 / 5 / 3;
     }
     /* Type 03 */
     .bringer-bento-grid .is-medium:first-child {
@@ -445,7 +450,7 @@
         letter-spacing: var(--bringer-t-content-ls);
         font-weight: var(--bringer-t-content-fw);
     }
-    
+
     /* Fullwidth Sections */
     section.tp-is-fullwidth {
         max-width: 100svw;
@@ -610,7 +615,7 @@
     .bringer-hero-type07 .bringer-hero-social-proof {
         margin-top: calc(var(--stg-gap) + var(--stg-xs-gap));
     }
-    .bringer-hero-type07 .bringer-hero-social-proof a, 
+    .bringer-hero-type07 .bringer-hero-social-proof a,
     .bringer-hero-type07 .bringer-hero-social-proof img {
         width: 64px;
         height: 64px;
@@ -867,7 +872,7 @@
     .bringer-grid-4cols,
     .bringer-grid-5cols,
     .bringer-grid-6cols {
-        grid-template-columns: repeat(1, 1fr);   
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .stg-row > div[class*='bringer-m-grid'],
@@ -913,7 +918,7 @@
         padding-left: var(--bringer-fw-spacing);
         padding-right: var(--bringer-fw-spacing);
     }
-    
+
     /* Sections Spacing */
     section[data-tp-padding="none"] {
         padding-top: 0;
@@ -1083,7 +1088,7 @@
         height: 64px;
     }
 
-    .bringer-tp-stretch-last-item.bringer-tp-grid-2cols > div:nth-child(odd):last-child.stg-aspect-square, 
+    .bringer-tp-stretch-last-item.bringer-tp-grid-2cols > div:nth-child(odd):last-child.stg-aspect-square,
     .bringer-tp-stretch-last-item.bringer-tp-grid-2cols > div:nth-child(odd):last-child .stg-aspect-square {
         aspect-ratio: 1/1;
     }
@@ -1308,5 +1313,8 @@
     }
     .bringer-menu-widget {
         font-size: 12px;
+    }
+    #StepsVideo{
+        display: none;
     }
 }
