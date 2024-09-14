@@ -30,12 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $content .= "Message:<br>$message<br>";
 
     # email headers.
-    $headers = 	"From: " . $email . "\r\n" .
+    $headers = 	"From: info@burton.team\r\n" .
         "MIME-Version: 1.0" . "\r\n" .
         "Content-type: text/html; charset=utf-8" . "\r\n";
 
     # Send the email.
-    if (mail($mail_to, $subject, $content)) {
+    if (mail($mail_to, $subject, $content, $headers)) {
         # Set a 200 (okay) response code.
         http_response_code(200);
         echo "Спасибо! В самое ближайшее время ответим Вам.";
