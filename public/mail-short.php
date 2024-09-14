@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $content .= "Message:<br>$message<br>";
 
     # email headers.
-    $headers = 	"From: root@653ac32bb42c\r\n" .
+    $headers = 	"From: " . $email . "\r\n" .
         "MIME-Version: 1.0" . "\r\n" .
         "Content-type: text/html; charset=utf-8" . "\r\n";
 
