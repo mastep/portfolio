@@ -35,12 +35,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         "Content-type: text/html; charset=utf-8" . "\r\n";
 
     # Send the email.
-    if (mail($mail_to, $subject, $content, $headers)) {
+    if (mail($mail_to, $subject, $content)) {
         # Set a 200 (okay) response code.
         http_response_code(200);
         echo "Спасибо! В самое ближайшее время ответим Вам.";
     } else {
         # Set a 500 (internal server error) response code.
+        echo print_r(error_get_last());
         http_response_code(500);
         echo "Ой. Ошибка. Попробуйте отправить повторно...";
     }
