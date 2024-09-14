@@ -1,7 +1,7 @@
 <!-- Mobile Header -->
 <div class="bringer-mobile-header-inner">
     <a href="./" class="bringer-logo">
-        <img src="img/logo.png" alt="bringer." width="200">
+        <img src="img/logo.png" alt="bringer." width="250">
     </a>
     <a href="#" class="bringer-mobile-menu-toggler">
         <i class="bringer-menu-toggler-icon">
