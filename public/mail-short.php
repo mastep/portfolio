@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         "Content-type: text/html; charset=utf-8" . "\r\n";
 
     # Send the email.
-    if (mail($mail_to, $subject, $content, $headers)) {
+    if (mail($mail_to, $subject, $content)) {
         # Set a 200 (okay) response code.
         http_response_code(200);
         echo "Спасибо! В самое ближайшее время ответим Вам.";
