@@ -6,7 +6,7 @@
             <div class="swiper-slide">
                 <div class="bringer-hero-media bringer-masked-media" data-appear="fade-right" data-unload="fade-left" data-delay="150" data-threshold="0">
                     <h1 data-appear="fade-up" data-unload="fade-up" data-delay="100" class="bringer-page-title" style="position: absolute; margin:20% 5%">Проектируем<br>самые сложные интерфейсы</h1>
-                    <video src="video/home03.mp4" poster="img/home/home03-hero2.jpg" playsinline muted loop autoplay></video>
+                    <video src="video/maproad.mp4" poster="img/home/home03-hero2.jpg" playsinline muted loop autoplay></video>
                 </div>
             </div>
         </div>
