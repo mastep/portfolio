@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require '../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable("/var/www/html/");
+$dotenv = Dotenv\Dotenv::createImmutable("..".__DIR__);
 $dotenv->load();
 
 //Create an instance; passing `true` enables exceptions
