@@ -296,6 +296,7 @@
     @include("footer")
 </main>
 @include('protect')
+@include('show-message')
 @include('backlight')
 @include('scripts')
 </body>

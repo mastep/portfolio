@@ -26,9 +26,9 @@ const bringer_config = {
         '.bringer-noanim-link'
     ]
 }
-
+var ModalMessage;
 /// ----------------
-/// Template Scripts 
+/// Template Scripts
 /// ----------------
 jQuery(function ($) {
     // Define Template Core
@@ -50,32 +50,37 @@ jQuery(function ($) {
 
     // --- CUSTOM FUNCTION --- //
     function CustomFunction() {
-        // Put your custom JS code here
     }
+    ModalMessage=function(selector, e){
+        RightClickProtection(selector, e);
+    };
 
     // --- RIGHT CLICK PROTECTION //
-    function RightClickProtection( selector ) {
+    function RightClickProtection (selector, e) {
         if ( jQuery(selector).length ) {
             let $this = jQuery(selector);
-            let rcp_message = $this.children().length ? true : false;
+            let rcp_message = true;
             let rcp_timer = null;
-            jQuery(document).on('contextmenu', function(e) {
+            //jQuery(document).on('contextmenu', function(e) {
                 if ( rcp_timer !== null ) {
                     clearInterval(rcp_timer);
                 }
                 e.preventDefault();
                 if ( rcp_message ) {
                     document.body.classList.add('rcp-show');
+                    $this.addClass('rcp-show');
                     rcp_timer = setInterval(function() {
                         document.body.classList.remove('rcp-show');
+                        $this.removeClass('rcp-show');
                         clearInterval(rcp_timer);
                     }, 2000);
                 }
-            });
+            //});
             if ( rcp_message ) {
                 $this.on('click', function(e) {
                     e.preventDefault();
                     document.body.classList.remove('rcp-show');
+                    $this.removeClass('rcp-show');
                 });
             }
 
@@ -473,7 +478,7 @@ jQuery(function ($) {
                     // CAROUSEL
                     if ( $this.hasClass('bringer-carousel') ) {
                         // Center if low slides count
-                        options.centerInsufficientSlides = true; 
+                        options.centerInsufficientSlides = true;
                         // Active slide is at the center
                         options.centeredSlides = true;
                         // Spacing
@@ -502,7 +507,7 @@ jQuery(function ($) {
                             }
                         };
                     }
-                    
+
                     // SLIDER
                     if ( $this.hasClass('bringer-slider') ) {
                         options.slidesPerView = 1;
@@ -541,18 +546,18 @@ jQuery(function ($) {
                                             br = parseInt($slide.css('--masked-border-radius'), 10),
                                             ibr = parseInt($slide.css('--masked-inner-radius'), 10),
                                             path = `
-                                            M0,0 
-                                            L${tw},0 
-                                            L${tw},${th} 
-                                            L${(cpr + br)},${th} 
-                                            a${br},${br} 0 0 1 -${br},-${br} 
-                                            L${cpr},${ctp + ibr} 
-                                            a${ibr},${ibr} 0 0 0 -${ibr},${-ibr} 
-                                            L${cpl+ibr},${ctp} 
-                                            a${ibr},${ibr} 0 0 0 -${ibr},${ibr} 
-                                            L${cpl}, ${(th - br)} 
-                                            a${br},${br} 0 0 1 -${br},${br} 
-                                            L0,${th} 
+                                            M0,0
+                                            L${tw},0
+                                            L${tw},${th}
+                                            L${(cpr + br)},${th}
+                                            a${br},${br} 0 0 1 -${br},-${br}
+                                            L${cpr},${ctp + ibr}
+                                            a${ibr},${ibr} 0 0 0 -${ibr},${-ibr}
+                                            L${cpl+ibr},${ctp}
+                                            a${ibr},${ibr} 0 0 0 -${ibr},${ibr}
+                                            L${cpl}, ${(th - br)}
+                                            a${br},${br} 0 0 1 -${br},${br}
+                                            L0,${th}
                                             Z
                                             `;
                                             $slide_content.css('left', cpl);
@@ -610,27 +615,27 @@ jQuery(function ($) {
                                     br = parseInt($this_nav.css('--masked-border-radius'), 10),
                                     ibr = parseInt($this_nav.css('--masked-inner-radius'), 10),
                                     path = `
-                                    M0,${br} 
-                                    a${br},${br} 0 0 1 ${br},-${br} 
-                                    L${(tw - br)},0 
-                                    a${br},${br} 0 0 1 ${br},${br} 
-                                    L${tw},${(ny_t - br)} 
+                                    M0,${br}
+                                    a${br},${br} 0 0 1 ${br},-${br}
+                                    L${(tw - br)},0
+                                    a${br},${br} 0 0 1 ${br},${br}
+                                    L${tw},${(ny_t - br)}
 
-                                    a${br},${br} 0 0 1 -${br},${br} 
-                                    a${ibr},${ibr} 0 0 0 -${ibr},${ibr} 
-                                    a${ibr},${ibr} 0 0 0 ${ibr},${ibr} 
-                                    a${br},${br} 0 0 1 ${br},${br} 
+                                    a${br},${br} 0 0 1 -${br},${br}
+                                    a${ibr},${ibr} 0 0 0 -${ibr},${ibr}
+                                    a${ibr},${ibr} 0 0 0 ${ibr},${ibr}
+                                    a${br},${br} 0 0 1 ${br},${br}
 
-                                    L${tw},${(th - br)} 
-                                    a${br},${br} 0 0 1 -${br},${br} 
-                                    L${br},${th} 
-                                    a${br},${br} 0 0 1 -${br},-${br} 
+                                    L${tw},${(th - br)}
+                                    a${br},${br} 0 0 1 -${br},${br}
+                                    L${br},${th}
+                                    a${br},${br} 0 0 1 -${br},-${br}
 
-                                    L0,${(ny_t + ny_h + br)} 
-                                    a${br},${br} 0 0 1 ${br},-${br} 
-                                    a${ibr},${ibr} 0 0 0 ${ibr},-${ibr} 
-                                    a${ibr},${ibr} 0 0 0 -${ibr},-${ibr} 
-                                    a${br},${br} 0 0 1 -${br},-${br} 
+                                    L0,${(ny_t + ny_h + br)}
+                                    a${br},${br} 0 0 1 ${br},-${br}
+                                    a${ibr},${ibr} 0 0 0 ${ibr},-${ibr}
+                                    a${ibr},${ibr} 0 0 0 -${ibr},-${ibr}
+                                    a${br},${br} 0 0 1 -${br},-${br}
                                     Z
                                     `;
                                 return path;
@@ -697,7 +702,7 @@ jQuery(function ($) {
                 </svg>
                 `);
             });
-        }    
+        }
     }
 
     // --- LINKS EVENTS --- //
@@ -722,7 +727,7 @@ jQuery(function ($) {
             })
         }
     }
-    
+
     // --- COUNTERS --- //
     function Counters() {
         if ( jQuery('.bringer-counter:not(.is-init)').length ) {
@@ -773,7 +778,7 @@ jQuery(function ($) {
             });
         }
     }
-    
+
     // --- TOGGLES --- //
     function Toggles() {
         if ( jQuery('.bringer-toggles-item:not(.is-init)').length ) {
@@ -817,12 +822,12 @@ jQuery(function ($) {
                         // Related to the screen: top, center, bottom; header; px; %
                         position: ( $this.attr('data-sticky-position') !== undefined ? $this.attr('data-sticky-position') : 'center'),
                         // where start calculation in %. If not specified (or is null), will depend on position: top/header/px/% - 0%, center: 50%, bottom - 100%
-                        origin: ( $this.attr('data-sticky-origin') !== undefined ? $this.attr('data-sticky-origin') : null), 
+                        origin: ( $this.attr('data-sticky-origin') !== undefined ? $this.attr('data-sticky-origin') : null),
                     });
                 }
             });
         }
-        
+
         // Speed Control
         if ( jQuery('[data-speed]:not(.is-init)').length ) {
             jQuery('[data-speed]:not(.is-init)').each(function() {
@@ -851,7 +856,7 @@ jQuery(function ($) {
                         // Related to the screen: top, center, bottom; header; px; %
                         position: ( $this.attr('data-sticky-position') !== undefined ? $this.attr('data-sticky-position') : 'center'),
                         // where start calculation in %. If not specified (or is null), will depend on position: top/header/px/% - 0%, center: 50%, bottom - 100%
-                        origin: ( $this.attr('data-sticky-origin') !== undefined ? $this.attr('data-sticky-origin') : null), 
+                        origin: ( $this.attr('data-sticky-origin') !== undefined ? $this.attr('data-sticky-origin') : null),
                     });
                 }
             });
@@ -952,13 +957,13 @@ jQuery(function ($) {
                     threshold = $parent.attr('data-threshold') !== undefined ? parseFloat( $parent.attr('data-threshold') ) : 0.5,
                     anim_type = $parent.attr('data-stagger-appear'),
                     unload_type = $parent.attr('data-stagger-unload') !== undefined ? $parent.attr('data-stagger-unload') : 'none';
-                
+
                 // Calculate Staggered Items
                 const calculate_items = function() {
                     let line = 0,
                         prev_line = 0,
                         prev_delay = $parent.attr('data-delay') !== undefined ? parseInt($parent.attr('data-delay'), 10) : 0;
-                    
+
                     $parent.children(':not(.in-view)').each(function(i) {
                         this.classList.add('setting-up');
                         if ( $parent.attr('data-duration') !== undefined ) {
@@ -1028,7 +1033,7 @@ jQuery(function ($) {
                 setTimeout(function() {
                     _self.classList.add('is-done');
                 }, (c_delay + delay + duration), _self);
-                
+
                 window.addEventListener('resize', () => {
                     text.split();
                     jQuery(_self).find('.' + split_by).addClass('in-view');
@@ -1039,7 +1044,7 @@ jQuery(function ($) {
         }
 
         // Single Appear Animation
-        setTimeout(function() {    
+        setTimeout(function() {
             if ( jQuery('[data-appear]').length ) {
                 jQuery('[data-appear]').each(function() {
                     const _self = this;
@@ -1234,7 +1239,7 @@ jQuery(function ($) {
             core.$dom.main.addClass('is-fullscreen');
         } else {
             let minHeight = core.sizes.win;
-            
+
             core.$dom.main.removeClass('bringer-min-content');
             core.$dom.footer.removeClass('is-sticky');
 
@@ -1254,7 +1259,8 @@ jQuery(function ($) {
     // Init Template
     $(document).ready(function() {
         // General UI
-        RightClickProtection( '.bringer-rcp-wrap' );
+
+        $(document).on('contextmenu', function (e){RightClickProtection( '.protect', e);});
         MainMenuInit();
         CircleLinks();
 
@@ -1283,7 +1289,7 @@ jQuery(function ($) {
 
         // Contact Form
         ContactForm();
-        
+
         // Custom Features
         CustomFunction();
 

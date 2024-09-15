@@ -3806,7 +3806,7 @@ body:has(.bringer-infinite-list) .bringer-backlight {
     pointer-events: none;
     opacity: 0;
 }
-.rcp-show .bringer-rcp-wrap {
+.rcp-show  > .bringer-rcp-wrap.rcp-show {
     pointer-events: all;
     opacity: 1;
 }
@@ -3827,7 +3827,7 @@ body:has(.bringer-infinite-list) .bringer-backlight {
     transform: translateY(0%);
     pointer-events: none;
 }
-.rcp-show .bringer-rcp-container {
+.rcp-show > .rcp-show > .bringer-rcp-container {
     transform: translateY(-50%);
 }
 

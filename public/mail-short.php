@@ -64,12 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $mail->send();
         http_response_code(200);
-        echo ' Спасибо! Мы получили Ваш email.';
     } catch (Exception $e) {
-        echo "Ой. Ошибка. Попробуйте отправить повторно...";
     }
 } else {
     # Not a POST request, set a 403 (forbidden) response code.
     http_response_code(403);
-    echo "Ой. Ошибка. Попробуйте отправить повторно...";
 }

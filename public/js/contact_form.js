@@ -26,12 +26,13 @@ function Bringer_Contact_Form() {
                 formData;
 
             $response.slideUp(1);
-            
+
             $form.addClass('is-init');
-            
+
             $form.on('submit', function(e) {
+                var e=e;
                 e.preventDefault();
-                
+
                 $form.addClass('is-busy');
                 $response.slideUp(200);
 
@@ -45,22 +46,14 @@ function Bringer_Contact_Form() {
                 .done(function(response) {
                     $form.removeClass('is-busy');
                     $response.empty().removeClass('bringer-alert-danger').addClass('bringer-alert-success').slideDown(200);
-                    $response.html('<span>' + response + '</span>');
                     $form.find('input:not([type="submit"]), textarea').val('');
-                    setTimeout(function() {
-                        $response.slideUp(200, function() {
-                            jQuery(this).empty();
-                        });
-                    }, 5000, $response);
+                    ModalMessage('.contact-mail-true', e); //resources/views/show-message.blade.php
                 })
                 .fail(function(data) {
                     $form.removeClass('is-busy');
                     $response.empty().removeClass('bringer-alert-success').addClass('bringer-alert-danger').slideDown(200);
-                    $response.html('<span>' + data.responseText + '</span>');
                     $form.addClass('is-error');
-                    setTimeout(function() {
-                        $form.removeClass('is-error');
-                    }, 500, $form);
+                    ModalMessage('.contact-mail-false', e);
                 });
 
             });
