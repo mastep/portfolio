@@ -7,7 +7,7 @@
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     # Replace this email with your email address
-    $mail_to = "igorchurikov@ya.ru";
+    $mail_to = "churikovu@gmail.com";
 
     # Message: You can modify that string with your text.
     $message = "";
