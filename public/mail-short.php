@@ -1,4 +1,19 @@
 <?php
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require '../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable("/var/www/html/");
+$dotenv->load();
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
 /**
  * Author: Shadow Themes
  * Author URL: http://shadow-themes.com
@@ -25,23 +40,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    # Mail Content
-    $content = "Email: $email<br>";
-    $content .= "Message:<br>$message<br>";
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = env('SMTP_HOST'); ;                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = env('SMTP_USERNAME');                     //SMTP username
+        $mail->Password   = env('SMTP_PASSWORD');                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = env('SMTP_PORT');                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    # email headers.
-    $headers = 	"From: " . $email . "\r\n" .
-        "MIME-Version: 1.0" . "\r\n" .
-        "Content-type: text/html; charset=utf-8" . "\r\n";
+        //Recipients
+        $mail->setFrom($email);
+        $mail->addAddress('churikovu@gmail.com');     //Add a recipient
 
-    # Send the email.
-    if (mail($mail_to, $subject, $content, $headers)) {
-        # Set a 200 (okay) response code.
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'Burton.team';
+        $mail->Body    = 'Send <a href="mailto:'.$email.'">'.$email.'</a>';
+        $mail->AltBody = $email;
+
+        $mail->send();
         http_response_code(200);
-        echo "Спасибо! В самое ближайшее время ответим Вам.";
-    } else {
-        # Set a 500 (internal server error) response code.
-        http_response_code(500);
+        echo ' Спасибо! Мы получили Ваш email.';
+    } catch (Exception $e) {
         echo "Ой. Ошибка. Попробуйте отправить повторно...";
     }
 } else {
