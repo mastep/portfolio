@@ -32,7 +32,7 @@
                                 <img src="img/home/social-proof03.jpg" alt="Client 03">
                                 <a href="#">100+</a>
                             </div>
-                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100">Более 100+ проектов</p>
+                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100">Более 100+ успешно выполенных проектов</p>
                         </div>
                     </div>
                 </div><!-- .stg-row -->
