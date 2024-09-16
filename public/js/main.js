@@ -53,7 +53,7 @@ jQuery(function ($) {
         var ph1="+7 999 113 75 00";
         var ph2=ph1.replace(" ",'');
         $(".ptr_link").append(
-            "<h6><a href='tel:"+ph2+"'>"+ph1+"</a></h6>"
+            "<a href='tel:"+ph2+"'>"+ph1+"</a>"
         );
 
         $("#footer-text").append(

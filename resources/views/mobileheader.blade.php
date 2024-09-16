@@ -3,7 +3,7 @@
     <a href="./" class="bringer-logo">
         <img src="img/logo.png" alt="bringer." width="250">
     </a>
-    <span class="ptr_link"></span>
+    <h8 class="ptr_link"></h8>
     <!--<a href="#" class="bringer-mobile-menu-toggler">
         <i class="bringer-menu-toggler-icon">
             <span></span>
