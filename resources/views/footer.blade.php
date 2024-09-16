@@ -20,9 +20,10 @@
     <!-- Footer Copyright Line -->
     <div class="bringer-footer-line stg-container">
         <div id="footer-text" class="stg-row">
-            <div class="bringer-toggles-item--title stg-col-3">
-                <div class="bringer-label align-center">&copy; 2012 - @php echo date('Y');@endphp<span class="bringer-accent">.</span></div>
-                <div class="align-center"><img width="20" src="/img/logo-min-white.png"></div></div>
+            <div class="bringer-toggles-item--title stg-col-5 stg-m-col-6">
+                <div class="bringer-label">&copy; 2012 - @php echo date('Y');@endphp<span class="bringer-accent">.</span></div>
+                <div class="stg-m-bottom-gap"><img width="20" src="/img/logo-min-white.png"></div>
+            </div>
         </div>
     </div><!-- bringer-footer-line -->
 </footer>

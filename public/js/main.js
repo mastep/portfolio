@@ -57,9 +57,9 @@ jQuery(function ($) {
         );
 
         $("#footer-text").append(
-            "<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Телефон<span class=\"bringer-accent\">.</span></span><h9><a href='tel:"+ph2+"'>"+ph1+"</a></h9></div>"
-            +"<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Email<span class=\"bringer-accent\">.</span></span><h9><a href='mailto:info@burton.team'>info@burton.team</a></h9></div>"
-            +"<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9><a href='https://t.me/burtonTeam'>@burtonTeam</a></h9></div>"
+            "<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Телефон<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'><a href='tel:"+ph2+"'>"+ph1+"</a></h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Email<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'><a href='mailto:info@burton.team'>info@burton.team</a></h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'><a href='https://t.me/burtonTeam'>@burtonTeam</a></h9></div>"
         );
     }
     ModalMessage=function(selector, e){
