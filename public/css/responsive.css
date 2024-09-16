@@ -1317,4 +1317,11 @@
     #StepsVideo{
         display: none;
     }
+    .footer-logo{
+        display: none;
+    }
+    img.data-poster{
+        max-width: 130%;
+        margin-left:-20%;
+    }
 }

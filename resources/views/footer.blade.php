@@ -7,7 +7,7 @@
                 <div class="stg-col-5 stg-tp-col-12 stg-tp-bottom-gap-l">
                     <div class="bringer-info-widget">
                         <a href="./" class="bringer-logo footer-logo">
-                            <img src="img/logo.png" alt="bringer." width="176" height="48">
+                            <img class="footer-logo" src="img/logo.png" alt="bringer." width="176" height="48">
                         </a>
                         <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.</div>
                     </div>

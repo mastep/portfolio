@@ -42,7 +42,7 @@
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
                         <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Покоряйте новые горизонты<br/>Мы предоставим технологии<br>и наш опыт</h5>
-                        <img src="img/home/home01-hero.png" alt="Unleash Your Creativity">
+                        <img class="data-poster" src="img/home/home01-hero.png" alt="Burton.Team">
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
@@ -57,7 +57,7 @@
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
                             <div class="bringer-counter-number" data-suffix="+">100</div>
-                            <div class="bringer-counter-label">Успешно выполненных проектов</div>
+                            <div class="bringer-counter-label">Успешно выполнено проектов</div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
