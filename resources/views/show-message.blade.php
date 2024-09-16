@@ -2,7 +2,7 @@
 <div class="bringer-rcp-wrap contact-mail-true">
     <div class="bringer-rcp-overlay"></div>
     <div class="bringer-rcp-container">
-        <h2 class="message_up">Спасибо! Мы получили Ваш email.</h2>
+        <h2 class="message_up">Спасибо!<br/>Мы получили Ваш email.</h2>
     </div>
 </div>
 <div class="bringer-rcp-wrap contact-mail-false">
