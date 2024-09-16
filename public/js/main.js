@@ -57,7 +57,7 @@ jQuery(function ($) {
         );
 
         $("#footer-text").append(
-            "<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Phone<span class=\"bringer-accent\">.</span></span><h9><a href='tel:"+ph2+"'>"+ph1+"</a></h9></div>"
+            "<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Телефон<span class=\"bringer-accent\">.</span></span><h9><a href='tel:"+ph2+"'>"+ph1+"</a></h9></div>"
             +"<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Email<span class=\"bringer-accent\">.</span></span><h9><a href='mailto:info@burton.team'>info@burton.team</a></h9></div>"
             +"<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9><a href='https://t.me/burtonTeam'>@burtonTeam</a></h9></div>"
         );
