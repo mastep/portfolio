@@ -21,7 +21,7 @@
                 <div class="stg-row stg-bottom-gap-l stg-m-bottom-gap-l">
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
-                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">Цифровизируйте Ваш бизнес</h1>
+                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">Цифровизируйте Ваш бизнес с нами</h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
@@ -56,8 +56,8 @@
                 <div class="stg-row stg-valign-bottom">
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div class="bringer-counter-number" data-suffix="+">100</div>
-                            <div class="bringer-counter-label">Успешно выполнено проектов</div>
+                            <div class="bringer-counter-number" data-suffix="K+">1000000</div>
+                            <div class="bringer-counter-label">Строк написанного кода</div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
