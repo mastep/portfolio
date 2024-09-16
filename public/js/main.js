@@ -50,6 +50,17 @@ jQuery(function ($) {
 
     // --- CUSTOM FUNCTION --- //
     function CustomFunction() {
+        var ph1="+7 999 113 75 00";
+        var ph2=ph1.replace(" ",'');
+        $(".ptr_link").append(
+            "<h6><a href='tel:"+ph2+"'>"+ph1+"</a></h6>"
+        );
+
+        $("#footer-text").append(
+            "<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Phone<span class=\"bringer-accent\">.</span></span><h9><a href='tel:"+ph2+"'>"+ph1+"</a></h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Email<span class=\"bringer-accent\">.</span></span><h9><a href='maito:info@burton.team'>info@burton.team</a></h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-3\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9><a href='https://t.me/burtonTeam'>@burtonTeam</a></h9></div>"
+        );
     }
     ModalMessage=function(selector, e){
         RightClickProtection(selector, e);
