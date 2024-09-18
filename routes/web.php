@@ -11,3 +11,6 @@ Route::get('project1', function () {
 Route::get('landing', function () {
     return view('service-1');
 });
+Route::get('form', function () {
+    return view('form');
+});
