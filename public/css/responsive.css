@@ -126,6 +126,9 @@
         position: absolute;
         width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-20%
     }
+    .logo-mobile-xs{
+        display: none;
+    }
 }
 
 /* MOBILE MENU
@@ -1323,5 +1326,16 @@
     img.data-poster{
         max-width: 130%;
         margin-left:-20%;
+    }
+}
+
+/* XS PHONES
+   ============= */
+@media only screen and (max-width: 550px) {
+    .logo-mobile-xs{
+        display: block;
+    }
+    .logo-mobile{
+        display: none;
     }
 }
