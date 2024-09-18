@@ -21,8 +21,8 @@
     <div class="bringer-footer-line stg-container">
         <div id="footer-text" class="stg-row">
             <div class="bringer-toggles-item--title stg-col-5 stg-m-col-6">
-                <div class="bringer-label">&copy; 2012 - @php echo date('Y');@endphp<span class="bringer-accent">.</span></div>
-                <div class="stg-m-bottom-gap"><img width="20" src="/img/logo-min-white.png"></div>
+                <div class="bringer-label">&copy; BURTON<span class="bringer-accent">.</span></div>
+                <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="15" src="/img/logo-min-white.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
             </div>
         </div>
     </div><!-- bringer-footer-line -->
