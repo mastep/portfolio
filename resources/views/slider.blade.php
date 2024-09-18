@@ -1,14 +1,26 @@
 <!-- Media Slider -->
 <div class="bringer-hero-media-wrap bringer-masked-block stg-bottom-gap stg-m-bottom-gap-s" data-appear="zoom-out">
-    <div class="swiper bringer-slider bringer-masked-media" data-autoplay="6000" data-duration="1000" data-effect="coverflow">
+    <div class="swiper bringer-slider bringer-masked-media" data-autoplay="6000" data-duration="1000" data-effect="">
         <div class="swiper-wrapper">
             <!-- Slider Item -->
             <div class="swiper-slide">
                 <div class="bringer-hero-media bringer-masked-media" data-appear="fade-right" data-unload="fade-left" data-delay="150" data-threshold="0">
-                    <h3 data-appear="fade-up" data-unload="fade-up" data-delay="100" class="bringer-page-title" style="position: absolute; margin:20% 5%">Проектируем<br>самые сложные интерфейсы</h3>
+                    <h1 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title">Проектируем<br>самые сложные интерфейсы</h1>
                     <video src="video/maproad.mp4" poster="img/preview_1.jpg" playsinline muted loop autoplay></video>
                 </div>
             </div>
+            <!-- Slider Item -->
+            <div class="swiper-slide">
+                <div class="bringer-hero-media bringer-masked-media" data-appear="fade-right" data-unload="fade-left" data-delay="150" data-threshold="0">
+                    <h1 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title">Создаем самые вкусные сайты</h1>
+                    <video src="video/blackberry.mp4"  playsinline muted loop autoplay></video>
+                </div>
+            </div>
+            <style>
+                .swiper-slide .bringer-page-title{
+                    position: absolute; padding:20% 5%; z-index: 10;
+                }
+            </style>
         </div>
     </div><!-- .bringer-slider -->
     <!-- Masked Navigation -->
