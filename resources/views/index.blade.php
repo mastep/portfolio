@@ -79,49 +79,54 @@
                 <source src="./video/main_video_01.mp4" type="video/mp4">
             </video>
             <div class="stg-bottom-gap-l">
-                <h2 data-appear="fade-up" data-unload="fade-up">С чего начнем?</h2>
+                <h2 data-appear="fade-up" data-unload="fade-up">Что мы делаем?</h2>
             </div>
             <!-- Step 01 Row -->
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
-                <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
+                <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-col-6" data-appear="fade-right">
                     <div >
-                        <img class="bringer-lazy" src="img/null.png" data-src="img/home/step01.svg" alt="Step 01" width="960" height="960">
+                        <video width="960" height="960" autoplay loop muted>
+                            <source src="./video/service01.mp4?v1" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
-                    <span class="bringer-label">Шаг 1</span>
-                    <h4>Дизайн-концепт</h4>
-                    <p><span class="bringer-highlight">Вы:</span> присылаете примеры работ (ссылки,скриншоты), которые Вас вдохновили.</p>
-                    <p><span class="bringer-highlight">Мы:</span> Мы прорабатываем дизайн-концепт.</p>
+                <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-right" data-delay="100">
+                    <span class="bringer-label">e-commerce priority</span>
+                    <h4>Интернет магазины</h4>
+                    <p><span class="bringer-highlight">Мы</span> запускаем современные интернет магазины под ключ.</p>
+                    <p>А это значит прорабатываем дизайн, навигацию, архитектуру, эквайринг, базы данных, сервер, торговый каталог, админку, личный кабинет - в общем закрываем абсолютно все технические вопросы.</p>
+                        <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку.</p>
                 </div>
             </div>
             <!-- Step 02 Row -->
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
-                <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-left">
                     <div >
                         <img class="bringer-lazy" src="img/null.png" data-src="img/home/step02.svg" alt="Step 02" width="960" height="960">
                     </div>
                 </div>
-                <div class="stg-col-6 stg-tp-col-6" data-appear="fade-left" data-delay="100">
-                    <span class="bringer-label">Шаг 2</span>
-                    <h4>План работ</h4>
-                    <p><span class="bringer-highlight">Вы:</span> Сообщаете желаемые даты запуска проекта.</p>
-                    <p><span class="bringer-highlight">Мы:</span> Готовим Вам подробный план работ с чёткими датами.</p>
+                <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-left" data-delay="100">
+                    <span class="bringer-label">Corporate Portal / CRM</span>
+                    <h4>Корпоративные порталы / ЦРМ</h4>
+                    <p><span class="bringer-highlight">Мы</span> внедряем корпоративные порталы и CRM от компании 1С-Битрикс.</p>
+                    <p>Определяем количество пользователей для работы проекта, облачное размещение проекта или нет, количество необходимых модулей.</p>
+                    <p><span class="bringer-highlight">Вы</span> получаете эффективный инструмент повышающий показатели компании.</p>
                 </div>
                 <div class="stg-col-3"><!-- Empty Column --></div>
             </div>
             <!-- Step 03 Row -->
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
-                <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
+                <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-right">
                     <div>
                         <img class="bringer-lazy" src="img/null.png" data-src="img/home/step03.svg" alt="Step 03" width="960" height="960">
                     </div>
                 </div>
-                <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
-                    <span class="bringer-label">Шаг 3</span>
-                    <h4>Реализация</h4>
-                    <p><span class="bringer-highlight">Вы:</span> подтверждаете план работ.</p>
-                    <p><span class="bringer-highlight">Мы:</span> приступаем к работе!</p>
+                <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-right" data-delay="100">
+                    <span class="bringer-label">Landing Page</span>
+                    <h4>Сайты визитки</h4>
+                    <p><span class="bringer-highlight">Мы</span> создаем сайты визитки.</p>
+                    <p>Подбираем готовые шаблоны, наполняем контентом, загружаем на сервер.</p>
+                    <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing">Подробнее</a></p>
                 </div>
             </div>
         </section>
@@ -189,7 +194,21 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio03.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Very</span>
+                                <h6>Soon</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="portfolio-post02.html"></a>
+                    </div><!-- .bringer-portfolio-card -->
+                    <!-- Card Item 02 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -217,7 +236,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio03.jpg" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -231,21 +250,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Very</span>
-                                <h6>Soon</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="portfolio-post02.html"></a>
-                    </div><!-- .bringer-portfolio-card -->
-                    <!-- Card Item 02 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
