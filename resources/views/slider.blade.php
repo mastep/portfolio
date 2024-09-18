@@ -5,14 +5,14 @@
             <!-- Slider Item -->
             <div class="swiper-slide">
                 <div class="bringer-hero-media bringer-masked-media" data-appear="fade-right" data-unload="fade-left" data-delay="150" data-threshold="0">
-                    <h1 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title">Проектируем<br>самые сложные интерфейсы</h1>
+                    <h3 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title">Проектируем<br>самые сложные интерфейсы</h3>
                     <video src="video/maproad.mp4" poster="img/preview_1.jpg" playsinline muted loop autoplay></video>
                 </div>
             </div>
             <!-- Slider Item -->
             <div class="swiper-slide">
                 <div class="bringer-hero-media bringer-masked-media" data-appear="fade-right" data-unload="fade-left" data-delay="150" data-threshold="0">
-                    <h1 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title">Создаем самые вкусные сайты</h1>
+                    <h3 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title">Создаем самые вкусные сайты</h3>
                     <video src="video/blackberry.mp4"  playsinline muted loop autoplay></video>
                 </div>
             </div>
