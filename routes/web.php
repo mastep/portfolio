@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('project1', function () {
+Route::get('project-art-of-tea', function () {
     return view('project');
 });
 Route::get('landing-page', function () {

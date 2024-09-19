@@ -177,7 +177,7 @@
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="project1"></a>
+                        <a href="/project-art-of-tea"></a>
                     </div><!-- .bringer-portfolio-card -->
 
                     <!-- Card Item 02 -->
