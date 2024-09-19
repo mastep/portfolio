@@ -9,6 +9,9 @@
         @include('header-button')
     </div>
     @include('mobileheader')
+    <style>
+        .link-form{display: none !important;}
+    </style>
 </header>
 
 <!-- Page Main -->

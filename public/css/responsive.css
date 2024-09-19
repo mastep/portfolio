@@ -1338,4 +1338,7 @@
     .logo-mobile{
         display: none;
     }
+    .footer-logo{
+        display: block;
+    }
 }
