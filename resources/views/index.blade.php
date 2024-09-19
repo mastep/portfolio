@@ -85,7 +85,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-col-6" data-appear="fade-right">
                     <div >
-                        <video width="960" height="960" muted onmouseover="this.play();" currentTime="30">
+                        <video width="960" height="960" muted autoplay onmouseover="this.play();" >
                             <source src="./video/service01.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -95,14 +95,14 @@
                     <h4>Интернет магазины</h4>
                     <p><span class="bringer-highlight">Мы</span> запускаем современные интернет магазины под ключ.</p>
                     <p>А это значит прорабатываем дизайн, навигацию, архитектуру, эквайринг, базы данных, сервер, торговый каталог, админку, личный кабинет - в общем закрываем абсолютно все технические вопросы.</p>
-                        <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку.</p>
+                        <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку. <a href="/e-commerce">Подробнее</a></p>
                 </div>
             </div>
             <!-- Step 02 Row -->
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
                 <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-left">
                     <div >
-                        <video width="960" height="960" muted onmouseover="this.play();" currentTime="30">
+                        <video width="960" height="960" muted onmouseover="this.play();">
                             <source src="./video/service02.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -120,7 +120,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-right">
                     <div>
-                        <video width="960" height="960" muted onmouseover="this.play();" currentTime="30">
+                        <video width="960" height="960" muted onmouseover="this.play();">
                             <source src="./video/service05.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -130,7 +130,7 @@
                     <h4>Сайты визитки</h4>
                     <p><span class="bringer-highlight">Мы</span> создаем сайты визитки.</p>
                     <p>Подбираем готовые шаблоны, наполняем контентом, загружаем на сервер.</p>
-                    <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing">Подробнее</a></p>
+                    <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing-page">Подробнее</a></p>
                 </div>
             </div>
         </section>
