@@ -56,7 +56,7 @@
                 <div class="stg-row stg-valign-bottom">
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div class="bringer-counter-number" data-suffix="K+">1000000</div>
+                            <div class="bringer-counter-number" data-suffix="K+">10000</div>
                             <div class="bringer-counter-label">Строк написанного кода</div>
                         </div><!-- .bringer-counter -->
                     </div>
