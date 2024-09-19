@@ -95,7 +95,8 @@
                     <h4>Интернет магазины</h4>
                     <p><span class="bringer-highlight">Мы</span> запускаем современные интернет магазины под ключ.</p>
                     <p>А это значит прорабатываем дизайн, навигацию, архитектуру, эквайринг, базы данных, сервер, торговый каталог, админку, личный кабинет - в общем закрываем абсолютно все технические вопросы.</p>
-                        <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку. <a href="/e-commerce">Подробнее</a></p>
+                        <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку.
+                        <a href="/e-commerce" class="bringer-arrow-link">Подробнее здесь</a></p>
                 </div>
             </div>
             <!-- Step 02 Row -->
@@ -130,7 +131,8 @@
                     <h4>Сайты визитки</h4>
                     <p><span class="bringer-highlight">Мы</span> создаем сайты визитки.</p>
                     <p>Подбираем готовые шаблоны, наполняем контентом, загружаем на сервер.</p>
-                    <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing-page">Подробнее</a></p>
+                    <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing-page" class="bringer-arrow-link">Подробнее здесь</a>
+                    </p>
                 </div>
             </div>
         </section>
