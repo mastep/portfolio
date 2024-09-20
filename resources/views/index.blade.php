@@ -41,8 +41,9 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <h5 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 5%">Покоряйте новые горизонты<br/>Мы предоставим технологии<br>и наш опыт</h5>
-                        <img class="data-poster" src="img/home/home01-hero.png" alt="Burton.Team">
+                        <video class="data-poster" autoplay loop muted>
+                            <source src="./video/intro.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
