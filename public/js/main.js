@@ -52,14 +52,23 @@ jQuery(function ($) {
     function CustomFunction() {
         var ph1="+7 999 113 75 00";
         var ph2=ph1.replace(/ /g, "");
-        $(".ptr_link").append(
-            "<a href='tel:"+ph2+"'>"+ph1+"</a>"
-        );
+        var pm="info@burton.team";
+        var pt="burtonTeam";
+
+
+        var phb="<a href='tel:"+ph2+"'>"+ph1+"</a>";
+        var pmb="<a href='mailto:"+pm+"'>"+pm+"</a>";
+        var ptb="<a href='https://t.me/"+pt+"'>@"+pt+"</a>";
+
+
+        $(".phb_link").append(phb);
+        $(".pmb_link").append(pmb);
+        $(".ptb_link").append(ptb);
 
         $("#footer-text").append(
-            "<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Телефон<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'><a href='tel:"+ph2+"'>"+ph1+"</a></h9></div>"
-            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Email<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'><a href='mailto:info@burton.team'>info@burton.team</a></h9></div>"
-            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'><a href='https://t.me/burtonTeam'>@burtonTeam</a></h9></div>"
+            "<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Телефон<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+phb+"</h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Email<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+pmb+"</h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+ptb+"</h9></div>"
         );
     }
     ModalMessage=function(selector, e){
