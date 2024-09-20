@@ -18,3 +18,6 @@ Route::get('form', function () {
 Route::get('e-commerce', function () {
     return view('service-2');
 });
+Route::get('corporate-portal', function () {
+    return view('service-3');
+});

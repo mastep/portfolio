@@ -20,7 +20,7 @@
                 </ul>
             </li>
             <li>
-                <a href="/#ourPortfolio">Портфолио</a>
+                <a href="/#ourPortfolio" onclick="document.getElementsByClassName('bringer-mobile-menu-toggler')[0].click();">Портфолио</a>
             </li>
 
             <li>
