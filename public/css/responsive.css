@@ -1341,4 +1341,8 @@
     .footer-logo{
         display: block;
     }
+    .afterloadhide{
+        margin:5%;
+        font-size:1.3em
+    }
 }

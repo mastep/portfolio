@@ -41,7 +41,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <h3 class="bringer-page-title afterloadhide" data-split-appear="fade-out" data-split-unload="fade-up" style="position:absolute; z-index: 1; margin:10% 0; padding:5%;">Покоряйте новые горизонты<br/>Мы предоставим технологии<br>и наш опыт</h3>
+                        <h3 class="bringer-page-title afterloadhide">Покоряйте новые горизонты<br/>Мы предоставим технологии<br>и наш опыт</h3>
                         <video id="main_video" class="data-poster" autoplay loop muted poster="/img/home/home01-hero.jpg">
                             <source src="./video/intro.mp4" type="video/mp4">
                         </video>

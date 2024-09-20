@@ -4394,3 +4394,7 @@ button.pswp__button.bringer-pswp-next::after {
     position: absolute;
     width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-30%
 }
+
+.afterloadhide{
+    position:absolute; z-index: 1; margin:10% 0; padding:5%;
+}
