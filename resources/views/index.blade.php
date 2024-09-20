@@ -41,7 +41,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <video class="data-poster" autoplay loop muted poster="img/preview_0.jpg">
+                        <video class="data-poster" autoplay loop muted poster="/img/home/home01-hero.png">
                             <source src="./video/intro.mp4" type="video/mp4">
                         </video>
                     </div>
