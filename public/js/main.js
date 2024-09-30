@@ -71,7 +71,7 @@ jQuery(function ($) {
             +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+ptb+"</h9></div>"
         );
 
-        $(".main_video").ready(function(){$(".afterloadhide").fadeOut(10300);});
+        $(".main_video").ready(function(){$(".afterloadhide").fadeOut(20300);});
     }
     ModalMessage=function(selector, e){
         RightClickProtection(selector, e);
