@@ -72,6 +72,12 @@ jQuery(function ($) {
         );
 
         $(".main_video").ready(function(){$(".afterloadhide").fadeOut(10300);});
+        $('video[data-video-src]').each( function(index, element) {
+                $(this).html('<source src="'+$(this).attr('data-video-src')+'" type="video/mp4">');
+            }
+        );
+
+
     }
     ModalMessage=function(selector, e){
         RightClickProtection(selector, e);
