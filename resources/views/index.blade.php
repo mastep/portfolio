@@ -77,7 +77,7 @@
 
         <!-- Section: Steps -->
         <section class="backlight-top" id="page01">
-            <video data-video-src="./video/main_video_01.mp4" autoplay loop muted></video>
+            <video id="StepsVideo" data-video-src="./video/main_video_01.mp4" autoplay loop muted></video>
             <div class="stg-bottom-gap-l">
                 <h2 data-appear="fade-up" data-unload="fade-up">Что мы делаем?</h2>
             </div>
