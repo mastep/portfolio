@@ -73,7 +73,6 @@ jQuery(function ($) {
 
         setInterval(function(){
             $(".afterloadhide").hide();
-            $("#main_video")[0].play();
             }, 3000);
 
         $('video[data-video-src]').each( function(index, element) {
