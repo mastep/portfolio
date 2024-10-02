@@ -4398,3 +4398,35 @@ button.pswp__button.bringer-pswp-next::after {
 .afterloadhide{
     position:absolute; z-index: 1; margin:10% 0; padding:5%;
 }
+
+#cookies-info {
+    position: sticky;
+    width: 30%;
+    bottom:0%;
+    background-color: #393838;
+    opacity: 0.5;
+    z-index: 200;
+    padding: 4px;
+}
+#cookies-info:hover{
+    opacity: 1;
+}
+
+#cookies-info .cookies-info-container{
+    position: relative;
+}
+
+.cookies-info-container-close {
+    position: absolute;
+    top:-3px;
+    right:15px;
+    opacity: 0.3;
+}
+.cookies-info-container-close:hover {
+    opacity: 1;
+}
+.cookies-info-container-close:before{
+    position: absolute;
+    content: '✖';
+    background-color: #333;
+}

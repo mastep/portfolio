@@ -405,6 +405,9 @@
         pointer-events: all;
         opacity: 0.5;
     }
+    #cookies-info{
+        display: none;
+    }
 }
 
 /* MOBILE GRID
