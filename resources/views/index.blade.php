@@ -189,12 +189,12 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Very</span>
-                                <h6>Soon</h6>
+                                <span class="bringer-meta">Corporate portal</span>
+                                <h6>Корпоративный портал</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post02.html"></a>
+                        <a href="/project-corportal"></a>
                     </div><!-- .bringer-portfolio-card -->
 
                     <!-- Card Item 02 -->

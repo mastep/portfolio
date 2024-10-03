@@ -8,6 +8,10 @@ Route::get('/', function () {
 Route::get('project-art-of-tea', function () {
     return view('project');
 });
+Route::get('project-corportal', function () {
+    return view('project2');
+});
+
 Route::get('landing-page', function () {
     return view('service-1');
 });
@@ -21,3 +25,5 @@ Route::get('e-commerce', function () {
 Route::get('corporate-portal', function () {
     return view('service-3');
 });
+
+
