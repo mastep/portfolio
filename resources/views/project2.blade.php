@@ -25,6 +25,22 @@
                 </div>
             </div>
 
+            <div class="tp-align-right stg-bottom-gap">
+                <a target="_blank" href="https://www.figma.com/proto/lgKys6u1oXUe8Mht7yPOFG/Scrolling-Animation-(Community)?node-id=1-161&starting-point-node-id=1%3A161&t=tBiRh2UrZ0ucJiS3-1" class="bringer-icon-link">
+                    <div class="bringer-icon-wrap">
+                        <i class="bringer-icon bringer-icon-explore"></i>
+                    </div>
+                    <div class="bringer-icon-link-content">
+                        <h6>
+                            Пощёлкайте
+                            <br>
+                            прототип
+                        </h6>
+                        <span class="bringer-label">на Figma.com</span>
+                    </div>
+                </a><!-- .bringer-icon-link -->
+            </div>
+
             <!-- Slider -->
             <div class="bringer-slider-wrapper stg-bottom-gap" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                 <div class="swiper bringer-slider" data-autoplay="2000" data-duration="800" data-effect="slide">
