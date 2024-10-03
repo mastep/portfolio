@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="tp-align-right">
-                        <a href="/project-art-of-tea" class="bringer-icon-link">
+                        <a href="/project-corportal" class="bringer-icon-link">
                             <div class="bringer-icon-wrap">
                                 <i class="bringer-icon bringer-icon-explore"></i>
                             </div>
@@ -36,9 +36,9 @@
                                 <h6>
                                     Посмотрите
                                     <br>
-                                    наш e-com
+                                    наш корп. портал
                                 </h6>
-                                <span class="bringer-label">для Art of Tea</span>
+                                <span class="bringer-label">для ChimElements Group</span>
                             </div>
                         </a><!-- .bringer-icon-link -->
                     </div>
