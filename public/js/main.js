@@ -49,7 +49,24 @@ jQuery(function ($) {
     };
 
     // --- CUSTOM FUNCTION --- //
+    function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
     function CustomFunction() {
+
+        $(".cookies-info-container-close").on('click', function () {
+            $("#cookies-info").hide();
+            //$.cookie('cookies-info', 1, { expires:365, path: '/'});
+            setCookie('cookies-info',1,365, "/");
+        });
+
         var ph1="+7 999 113 75 00";
         var ph2=ph1.replace(/ /g, "");
         var pm="info@burton.team";
