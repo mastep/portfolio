@@ -27,6 +27,21 @@
                             <div class="bringer-price">₽450 000</div>
                         </div>
                     </div>
+                    <div class="tp-align-right">
+                        <a href="/project-art-of-tea" class="bringer-icon-link">
+                            <div class="bringer-icon-wrap">
+                                <i class="bringer-icon bringer-icon-explore"></i>
+                            </div>
+                            <div class="bringer-icon-link-content">
+                                <h6>
+                                    Посмотрите
+                                    <br>
+                                    наш e-com
+                                </h6>
+                                <span class="bringer-label">для Art of Tea</span>
+                            </div>
+                        </a><!-- .bringer-icon-link -->
+                    </div>
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l" data-appear="fade-left" data-unload="fade-right">
                     <img class="bringer-lazy" src="img/null.png" data-src="img/inner-pages/service-details3.jpg" alt="Brainding" width="800" height="1200">
