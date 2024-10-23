@@ -57,13 +57,13 @@
             <!-- Meta -->
             <div class="bringer-hero-info-line" data-stagger-appear="fade-up" data-delay="200" data-stager-delay="100" data-unload="fade-up">
                 <div class="bringer-meta">
-                    Мы <span> очень чувствуем цвета, оттенки...</span>
+                    Вдохновляемся <span>окружающими вещами...</span>
                 </div>
                 <div class="bringer-meta">
-                    Мы <span>чётко контролируем сроки</span>
+                    Контролируем<span> сроки</span>
                 </div>
                 <div class="bringer-meta">
-                    Мы <span>применяем новые технологии</span>
+                    Применяем <span>новые web-технологии</span>
                 </div>
             </div><!-- .bringer-hero-info-line -->
         </section>
