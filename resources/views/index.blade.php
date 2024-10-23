@@ -209,7 +209,7 @@
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post02.html"></a>
+                        <a href="#"></a>
                     </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
@@ -223,7 +223,7 @@
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post02.html"></a>
+                        <a href="#"></a>
                     </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
@@ -237,7 +237,7 @@
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post02.html"></a>
+                        <a href="#"></a>
                     </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
@@ -251,7 +251,7 @@
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post02.html"></a>
+                        <a href="#"></a>
                     </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
