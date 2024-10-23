@@ -4427,6 +4427,7 @@ button.pswp__button.bringer-pswp-next::after {
 }
 .cookies-info-container-close:before{
     position: absolute;
-    content: '✖';
+    content: '✔';
     background-color: #333;
+    cursor: pointer;
 }
