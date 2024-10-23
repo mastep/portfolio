@@ -11,6 +11,9 @@ Route::get('project-art-of-tea', function () {
 Route::get('project-corportal', function () {
     return view('project2');
 });
+Route::get('project-landing-page', function () {
+    return view('project3');
+});
 
 Route::get('landing-page', function () {
     return view('service-1');

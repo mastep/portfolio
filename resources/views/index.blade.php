@@ -214,7 +214,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02__.jpg" alt="" width="1200" height="1200">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -260,12 +260,12 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Very</span>
-                                <h6>Soon</h6>
+                                <span class="bringer-meta">Landing page</span>
+                                <h6>Burton.team</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="portfolio-post02.html"></a>
+                        <a href="/project-landing-page"></a>
                     </div><!-- .bringer-portfolio-card -->
 
 
