@@ -2,6 +2,7 @@
 @section('title', 'Заявка на разработку веб-сайта')
 @section('meta-description', 'Расчет проекта. Заполните форму, чтобы узнать сроки и стоимость реализации Вашего проекта')
 @section('meta-keywords', 'веб-форма, узнать стоимость')
+@section('content')
 <body>
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
@@ -46,3 +47,4 @@
 @include('scripts')
 </body>
 </html>
+@endsection

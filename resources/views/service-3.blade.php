@@ -2,6 +2,7 @@
 @section('title', 'Разработка корпоративного портала')
 @section('meta-description', 'Разработка корпоративного портала на платформе 1С-Битрикс')
 @section('meta-keywords', 'корпоративный портал, crm')
+@section('content')
 <body>
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
@@ -140,3 +141,4 @@
 @include('scripts')
 </body>
 </html>
+@endsection

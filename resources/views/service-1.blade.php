@@ -2,6 +2,7 @@
 @section('title', 'Создать сайт визитку')
 @section('meta-description', 'Создать сайт визитку. Что такое landing-page')
 @section('meta-keywords', 'Создать сайт-визитку, landing-page, мини сайт, портфолио')
+@section('content')
 <body>
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
@@ -145,3 +146,4 @@
 @include('scripts')
 </body>
 </html>
+@endsection
