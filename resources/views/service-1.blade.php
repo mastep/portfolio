@@ -1,4 +1,7 @@
-@include('head')
+@extends('head')
+@section('title', 'Создать сайт визитку')
+@section('meta-description', 'Создать сайт визитку. Что такое landing-page')
+@section('meta-keywords', 'Создать сайт-визитку, landing-page, мини сайт, портфолио')
 <body>
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">

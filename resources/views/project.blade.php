@@ -1,4 +1,7 @@
-@include('head')
+@extends('head')
+@section('title', 'Интернет-магазин для Art of Tea')
+@section('meta-description', 'Рассказываем о интернет-магазине для Art of Tea')
+@section('meta-keywords', 'интернет-магазин, разработка интернет-магазина')
 <body>
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">

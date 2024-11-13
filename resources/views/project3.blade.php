@@ -1,4 +1,7 @@
-@include('head')
+@extends('head')
+@section('title', 'Сайт визитка для Burton.team')
+@section('meta-description', 'Рассказываем о cайте визитке для Burton.team')
+@section('meta-keywords', 'сайт визитка, разработка сайт визитки')
 <body>
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">

@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page Title -->
-    <title>Burton.team | Креативное агентство по созданию сайтов</title>
+    <title>Burton.team | @yield('title', 'Креативное агентство по созданию сайтов')</title>
+    <meta name="description" content="Креативное агентство по созданию сайтов. @yield('meta-description')">
+    <meta name="keywords" content="@yield('meta-keywords'), разработка сайтов, веб-разработка, программирование, создание сайтов, интернет-проекты, создать сайт, создать корпоративный портал 1С-Битрикс, создать сайт визитку">
+    <meta name="author" content="Burton.team">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
