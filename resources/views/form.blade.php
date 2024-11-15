@@ -34,6 +34,18 @@
                     </svg> </a>, чтобы мы более подробно смогли понять, что Вам необходимо реализовать.</p>
                     <script src="https://forms.yandex.ru/_static/embed.js"></script><iframe name="frame-form" id="frame-form" src="https://forms.yandex.ru/u/66eb0c44068ff0525407e602/?iframe=1" frameborder="0" name="ya-form-66eb0c44068ff0525407e602" style="width:100%"></iframe>
 
+            <script>
+                setTimeout(function () {
+                    var frm = frames['frame-form'].document;
+                    var otherhead = frm.getElementsByTagName("head")[0];
+                    var css = '<style type="text/css">' +
+                        '.Footer,.Footer_iframe{display:none;} ' +
+                        '</style>';
+                    otherhead.appendChild(css);
+                }, 3000);
+
+            </script>
+
         </section>
 
         <section>
