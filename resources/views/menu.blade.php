@@ -17,6 +17,9 @@
                     <li>
                         <a href="/landing-page">Сайты-визитки</a>
                     </li>
+                    <li>
+                        <a href="/it-sharing">IT - шеринг</a>
+                    </li>
                 </ul>
             </li>
             <li>

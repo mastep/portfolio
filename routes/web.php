@@ -28,5 +28,8 @@ Route::get('e-commerce', function () {
 Route::get('corporate-portal', function () {
     return view('service-3');
 });
+Route::get('it-sharing', function () {
+    return view('service-4');
+});
 
 
