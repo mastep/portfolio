@@ -204,12 +204,12 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Very</span>
-                                <h6>Soon</h6>
+                                <span class="bringer-meta">E-com</span>
+                                <h6>Интернет магазин одежды</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="#"></a>
+                        <a href="/e-commerce"></a>
                     </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
@@ -218,12 +218,12 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Very</span>
-                                <h6>Soon</h6>
+                                <span class="bringer-meta">E-com</span>
+                                <h6>Тонер маркет - магазин катриджей</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="#"></a>
+                        <a href="/e-commerce"></a>
                     </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
@@ -232,12 +232,12 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Very</span>
-                                <h6>Soon</h6>
+                                <span class="bringer-meta">Corporate portal</span>
+                                <h6>Корпоративный портал</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="#"></a>
+                        <a href="/corporate-portal"></a>
                     </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
