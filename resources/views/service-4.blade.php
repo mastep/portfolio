@@ -28,7 +28,7 @@
 
                         <div class="bringer-price-card-footer">
                             <span class="bringer-label">Стоимость</span>
-                            <div class="bringer-price">₽ 3800 / час.</div>
+                            <div class="bringer-price">₽ 4800 / час.</div>
                         </div>
                     </div>
                 </div>
