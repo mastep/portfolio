@@ -93,6 +93,8 @@ jQuery(function ($) {
                     setTimeout(
                         function () {
                             $(".afterloadhide").hide();
+                            $("#main_video").attr("autoplay");
+                            $("#main_video").attr("playsinline");
                             $("#main_video")[0].play();
                         }, 5000
                     );
