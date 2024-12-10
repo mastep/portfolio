@@ -46,7 +46,7 @@
         0%   {box-shadow: 0 0 0 0em rgba(255,255,255,.4);}
         100% {box-shadow: 0 0 0 2em rgba(255,255,255,.0);}
     }
-    .promo-fixed{ bottom:0; right:30px;}
+    .promo-bottom{ bottom:0; right:30px;}
     .promo img {position: absolute;right:-20px; top:-5px; max-width: 40px; border-radius: 50%; animation: radial-pulse 1s infinite;}
     .logo{max-height: 90px;}
     #navbarToggleExternalContent3{position: absolute; right:0;}
@@ -110,6 +110,10 @@
     .copyright{
         font-size:0.7em;
     }
+    #navbarToggleExternalContent3 button{
+        min-width: 120px;
+        text-align: left !important;
+    }
 
 </style>
 
@@ -118,12 +122,12 @@
 
 <div class="container-fluid">
     <div class="d-flex">
-        <div class="p-2 w-25 d-none d-md-block">
+        <div class="p-2 w-25">
             <a href="./">
                 <img src="./img/logo.svg" class="img-fluid logo"/>
             </a>
         </div>
-        <div class="p-2 flex-fill">
+        <div class="p-2 flex-fill d-none d-md-block">
             <div>
                 <ul class="nav">
                     <li class="nav-item">
@@ -135,6 +139,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Контакты</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Купить билет</a>
+                    </li>
                 </ul>
             </div>
 
@@ -145,13 +152,13 @@
                     <strong>Скидка 10%</strong>
                     <img src="./img/vk.png">
                 </div>
-                <div class="promo promo-fixed bd-placeholder-img rounded-pill d-block d-md-none">
+                <div class="promo promo-bottom bd-placeholder-img rounded-pill d-block d-md-none">
                     <strong>Скидка 10%</strong>
                     <img src="./img/vk.png">
                 </div>
             </a>
         </div>
-        <div class="p-2">
+        <div class="p-2 position-absolute end-0 d-block d-md-none">
 
 
                     <button data-mdb-button-init class="navbar-toggler ms-auto" type="button" data-mdb-collapse-init
@@ -159,11 +166,12 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
                     </button>
-            <div class="collapse" id="navbarToggleExternalContent3">
+            <div class="collapse pos" id="navbarToggleExternalContent3">
                 <div class="bg-body-tertiary p-0">
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-block border-bottom m-0">Link 1</button>
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-block border-bottom m-0">Link 2</button>
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-block m-0">Link 3</button>
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-block border-bottom m-0">Главная</button>
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-block border-bottom m-0">О нас</button>
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-block m-0">Контакты</button>
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-block m-0">Купить билет</button>
                 </div>
             </div>
         </div>
