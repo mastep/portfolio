@@ -36,8 +36,8 @@
 
 <style>
     body{background: #000000; padding:30px 0 15px 0; color:#FFFFFF}
-    .nav-link, .fa-bars, .card-title, #navbarToggleExternalContent3 button {color:#8ac643;}
-    .nav-link:hover, .nav-link:focus{color:#fff;}
+    .nav-link, .fa-bars, .card-title {color:#8ac643;}
+    .nav-link:hover, .nav-link:focus, {color:#fff;}
     .promo{position:fixed; z-index: 10; background-color:#8ac643; padding: 3px 0px 3px 15px; color: #FFFFFF; width: 125px;}
 
 
@@ -46,7 +46,7 @@
         0%   {box-shadow: 0 0 0 0em rgba(255,255,255,.4);}
         100% {box-shadow: 0 0 0 2em rgba(255,255,255,.0);}
     }
-    .promo-bottom{ bottom:0; right:30px;}
+    .promo-bottom{ bottom:10px; right:30px;}
     .promo img {position: absolute;right:-20px; top:-5px; max-width: 40px; border-radius: 50%; animation: radial-pulse 1s infinite;}
     .logo{max-height: 90px;}
     #navbarToggleExternalContent3{position: absolute; right:0;}
@@ -111,8 +111,15 @@
         font-size:0.7em;
     }
     #navbarToggleExternalContent3 button{
-        min-width: 120px;
+        min-width: 150px;
         text-align: left !important;
+        color:#000;
+    }
+    #navbarToggleExternalContent3 .bg-body-tertiary{
+        opacity: 0.6;
+    }
+    .fa-bars{
+        font-size: 2em !important;
     }
 
 </style>
@@ -122,7 +129,7 @@
 
 <div class="container-fluid">
     <div class="d-flex">
-        <div class="p-2 w-25">
+        <div class="p-2 col-md-3">
             <a href="./">
                 <img src="./img/logo.svg" class="img-fluid logo"/>
             </a>
@@ -184,10 +191,10 @@
     </video>
 
     <div class="btn_container d-flex justify-content-center">
-        <div class="p-2 ">
+        <div>
             <button class="btn_ bd-placeholder-img rounded-pill">Купить билет</button>
         </div>
-        <div class="p-2 ">
+        <div>
             <button class="btn_ btn_color bd-placeholder-img rounded-pill">Выбрать шоу</button>
         </div>
     </div>
@@ -197,7 +204,8 @@
 
 
     <div class="p-md-5 w-100">
-        <h1>Vasiliev Groove – эксклюзивное барабанное шоу в России</h1>
+        <p class="p-2">
+        <h1>Vasiliev Groove – эксклюзивное барабанное шоу в России</h1></p>
         <p>
             Шоу Vasiliev Groove — это сочетание музыки, театра, юмора, танцев, иммерсивного
             интерактива со зрителями, стильных дизайнерских образов и костюмов.
@@ -212,6 +220,8 @@
             сопровождают специально созданные для каждого номера музыкальные композиции
             с видеорядом и световым шоу.<br><br>
             <strong>Восторг и яркие эмоции испытает каждый!</strong></p>
+            <p></p>
+            <p><br></p>
     </div>
 
 
@@ -316,8 +326,8 @@
 <div class="container p-md-5">
 
 
-    <div class="p-md-5 w-100">
-        <p><strong>Vasiliev Groove</strong> – эксклюзивное барабанное шоу, покорившее сердца более 1 000
+    <div class="p-sm-5 w-100">
+        <p class="p-2"><strong>Vasiliev Groove</strong> – эксклюзивное барабанное шоу, покорившее сердца более 1 000
         000 зрителей в 100 городов России и 20 стран мира.
         Ансамбль, некогда сформированный на базе курсового оркестра Московской
         Военной Консерватории первокурсником Романом Васильевым, смог задать
@@ -325,21 +335,18 @@
         шоу.
         </p>
         <p>Vasiliev Groove:</p>
-        <p>
-        С 2011 года сделали более 4 000 шоу на мероприятиях мирового, федерального и
-        регионального уровней;
-        </p>
-        <p>
-        Выступали на закрытии Чемпионата мира по футболу FIFA 2018,
-        Параолимпийских играх в Сочи в 2014, Чемпионате мира по футболу 2021 в
-        Катаре;</p>
-        <p>
-        Победители Шоу «Лига удивительных людей» на телеканале «Россия 1»;
-        Создали собственные сольные шоу: спектакль «13», шоу «MIRRORS», Vasiliev
-        Groove: Beat of Evolution, шоу-спектакль «Щелкунчик и Барабанный король», а
-        также самое масштабное шоу в парке Зарядье с 50 барабанными установками и
-        100 артистами на сцене.
-        </p>
+        <ul>
+            <li> С 2011 года сделали более 4 000 шоу на мероприятиях мирового, федерального и
+                регионального уровней;</li>
+            <li> Выступали на закрытии Чемпионата мира по футболу FIFA 2018,
+                Параолимпийских играх в Сочи в 2014, Чемпионате мира по футболу 2021 в
+                Катаре;</li>
+            <li>Победители Шоу «Лига удивительных людей» на телеканале «Россия 1»;
+                Создали собственные сольные шоу: спектакль «13», шоу «MIRRORS», Vasiliev
+                Groove: Beat of Evolution, шоу-спектакль «Щелкунчик и Барабанный король», а
+                также самое масштабное шоу в парке Зарядье с 50 барабанными установками и
+                100 артистами на сцене.</li>
+        </ul>
         <p>
         Музыка — это только часть наших проектов! Наша миссия – дарить
         незабываемые эмоции, яркие впечатления и свою любовь зрителям.
