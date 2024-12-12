@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -40,8 +40,11 @@
         color:#FFFFFF;
         font-size: 0.88em;
     }
-    .nav-link, .fa-bars, .card-title {color:#8ac643;}
-    .nav-link:hover, .nav-link:focus {color:#fff;}
+    .nav-item{margin: 0 5px 0 5px;}
+    a{color:#fff;}
+    .nav-link:focus, a:focus{ outline: none !important; box-shadow:none;}
+    .nav-link, .fa-bars, .card-title, .color_corp {color:#8ac643; transition: none !important; text-decoration: none;}
+    .nav-link:hover, .nav-link:focus, .nav-link.active {color:#000; background:#8ac643; border-radius: 15px;}
     .promo{position:fixed; z-index: 2; background-color:#8ac643; padding: 8px 0px 8px 15px; color: #000; width: 135px;}
 
 
@@ -53,6 +56,7 @@
     .promo-bottom{ bottom:10px; right:30px;}
     .promo img {position: absolute;right:-20px; top:-5px; max-width: 50px; border-radius: 50%; animation: radial-pulse 1s infinite;}
     .logo{max-height: 45px;}
+    .logo_short{margin-top:40px; max-height: 35px;}
     #navbarToggleExternalContent3{position: absolute; right:0;}
     .btn_container{
         margin-top:0px;
@@ -116,9 +120,9 @@
         width: 20% !important;
         margin: 30px 0 0 20px !important;
     }
-    #Carousel2 .card-body{
-        margin-left:100px !important;
-        min-height: 200px;
+    #Carousel2 .card{
+        min-height: 400px;
+        border-radius: 20px;
     }
 
     #Carousel2 .f-carousel__slide{
@@ -145,7 +149,14 @@
         width:300px;
         height: 100vh;
     }
+    #slidePage .nav{
+        display: block;
+    }
     .nav-list a{color:#000;}
+    #slidePage a{
+        margin: 0;
+        padding: 5px 0 5px 0;
+    }
 
 
     @keyframes slide-move {
@@ -174,6 +185,19 @@
     #slidePage .btn_{
         margin: 0;
     }
+    #slidePage .nav-soc a{
+        color:#000;
+    }
+    /*Up button*/
+    #to-top {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        display: none;
+    }
+    #to-top i{
+        font-size: 36px;
+    }
 
 </style>
 
@@ -185,30 +209,33 @@
         <div class="d-flex">
         <div class="p-2 col-md-3">
             <a href="./">
-                <img src="./img/logo.svg" class="img-fluid logo"/>
+                <img src="./img/logo.png" class="img-fluid logo"/>
             </a>
         </div>
         <div class="p-2 col-md-6">
             <div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Главная</a>
+                        <a id="mainLink" class="nav-link" href="./">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">О нас</a>
+                        <a class="nav-link" href="#ticket">Купить билет</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Контакты</a>
+                        <a class="nav-link" href="#">Щелкунчик</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Купить билет</a>
+                        <a class="nav-link" href="#">Шоу Vasiliev Groove </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Контакты</a>
                     </li>
                 </ul>
             </div>
 
         </div>
         <div class="p-2 w-25 col-md-3">
-            <a href="">
+            <a href="https://t.me/Vasiliev_Groove_Show_bot">
                 <div class="promo bd-placeholder-img rounded-pill">
                     <strong>Скидка 10%</strong>
                     <img src="./img/vk.png">
@@ -234,31 +261,36 @@
 
                         <div class="p-2 mt-5 mx-5">
                             <a href="./">
-                                <img src="./img/logo_vg.svg" class="img-fluid logo"/>
+                                <img src="./img/logo_short.png" class="img-fluid logo"/>
                             </a>
                         </div>
                         <div class="p-2 m-5 my-3 nav-list">
-                            <p><a href="">Link 1</a></p>
-                            <p><a href="">Link 1</a></p>
-                            <p><a href="">Link 1</a></p>
-                            <p><a href="">Link 1</a></p>
-                            <p><a href="">Link 1</a></p>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./">Главная</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#ticket">Купить билет</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Щелкунчик</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Шоу Vasiliev Groove </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contacts">Контакты</a>
+                                </li>
+                            </ul>
                         </div>
                         <div class="p-2 m-5 my-3 nav-soc">
                             <div class="m-md-3">
-                                <!-- Twitter -->
-                                <i class="fab fa-telegram"></i>
-
-
-                                <!-- Vkontakte -->
-                                <i class="fab fa-vk"></i>
-
-
-                                <!-- Whatsapp -->
-                                <i class="fab fa-whatsapp"></i>
+                                <a href="https://vk.com/vasilievgroove"><i class="fab fa-vk"></i></a>
+                                <a href="https://wa.me/79039605574"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://t.me/vgdrummers"><i class="fab fa-telegram"></i></a>
                             </div>
                             <div class="m-0 my-3">
-                                <button class="btn_ btn_color bd-placeholder-img rounded-pill">Выбрать шоу</button>
+                                <a href="#events"><button class="btn_ btn_color bd-placeholder-img rounded-pill">Выбрать шоу</button></a>
                             </div>
                         </div>
                      </div>
@@ -266,10 +298,10 @@
         </div>
     </div>
     <!--promo-->
-    <div class="promo promo-bottom bd-placeholder-img rounded-pill d-block d-md-none">
+    <a href="https://t.me/Vasiliev_Groove_Show_bot"><div class="promo promo-bottom bd-placeholder-img rounded-pill d-block d-md-none">
         <strong>Скидка 10%</strong>
         <img src="./img/vk.png">
-    </div>
+    </div></a>
 </div>
 <!--Video-->
 <div class="container-fluid p-0">
@@ -282,10 +314,10 @@
 
     <div class="btn_container d-flex justify-content-center">
         <div>
-            <button class="btn_ btn_color bd-placeholder-img rounded-pill">Выбрать шоу</button>
+            <a href="#events"><button class="btn_ btn_color bd-placeholder-img rounded-pill">Выбрать шоу</button></a>
         </div>
         <div>
-            <button class="btn_ bd-placeholder-img rounded-pill">Купить билет</button>
+            <a href="#ticket"><button class="btn_ bd-placeholder-img rounded-pill">Купить билет</button></a>
         </div>
     </div>
 </div>
@@ -295,22 +327,25 @@
 
     <div class="p-md-5 w-100">
         <p class="m-5">
-            <h5 class="text-center">Vasiliev Groove – эксклюзивное барабанное шоу в России</h5>
+        <h5 class="text-center">Vasiliev Groove – <strong class="color_corp">эксклюзивное</strong> барабанное <strong class="color_corp">шоу</strong> в России</h5>
         </p>
+        <hr class="my-5">
         <p>
-            Шоу Vasiliev Groove — это сочетание музыки, театра, юмора, танцев, иммерсивного
-            интерактива со зрителями, стильных дизайнерских образов и костюмов.
+            <strong class="color_corp">Шоу Vasiliev Groove</strong> — это сочетание музыки, театра, юмора, танцев, иммерсивного
+            интерактива со зрителями, стильных дизайнерских образов и костюмов.</p>
+            <p>
             Vasiliev Groove постоянно предлагают миру что-то новое и необычное: использование
-            разнообразных инструментов - от акустических и маршевых барабанов до цимбал и
-            маримбы с дождевыми флейтами; невероятно зрелищное шоу с огнём и светящимися
+                разнообразных инструментов - от акустических и маршевых <strong class="color_corp">барабанов до цимбал</strong> и
+                маримбы с дождевыми флейтами; невероятно <strong class="color_corp">зрелищное шоу</strong> с огнём и светящимися
             барабанами с водой, болгарками с холодными искрами и пневмопушками с яркими
             конфетти; широкую палитру номеров - от патриотической и ретро тематики до
             этнических и современных направлений; многообразие состава артистов шоу -
             вокалисты, детский ансамбль Vasiliev Groove Kids, шоу-оркестр, гимнасты.
-            Зажигательные ритмы и биты от профессиональных барабанщиков неизменно
+            </p><p>
+        <strong class="color_corp">Зажигательные ритмы</strong> и биты от профессиональных барабанщиков неизменно
             сопровождают специально созданные для каждого номера музыкальные композиции
-            с видеорядом и световым шоу.<br><br>
-            <strong>Восторг и яркие эмоции испытает каждый!</strong></p>
+        с видеорядом и <strong class="color_corp">световым шоу</strong>.</p>
+        <p><h5 class="color_corp  m-5 text-center">Восторг и яркие эмоции испытает каждый!</h5></p>
     </div>
 
 
@@ -355,7 +390,7 @@
         </div>
     </div>
 
-    <div class="container mt-md-5">
+    <div id="events" class="container mt-md-5">
         <div class="row justify-content-md-center">
             <div class="col-6 col-md-auto text-center">
                 <img src="./img/event1.jpg" width="100%">
@@ -369,6 +404,7 @@
     </div>
 
     <div class="container mt-md-5 w-auto">
+        <h1 id="ticket" class="color_corp text-center">Афиша</h1>
         <div class="text-center m-3">
             <img width="100%" src="./img/frame-afisha.png" style="max-width: 775px;">
         </div>
@@ -438,29 +474,33 @@
     <div class="p-sm-5  w-100">
         <p class="m-3">&nbsp;</p>
         <p>
-            <strong>Vasiliev Groove</strong> – эксклюзивное барабанное шоу, покорившее сердца более 1
+            <strong class="color_corp">Vasiliev Groove</strong> – эксклюзивное барабанное шоу, покорившее сердца более 1
             млн. зрителей в 100 городов России и 20 стран мира.
         </p><p>
             Ансамбль, некогда сформированный на базе курсового оркестра Московской
             Военной Консерватории первокурсником Романом Васильевым, смог задать
-            новый тренд в индустрии развлечений — барабанное шоу мирового уровня.
-            С 2011 года сделали более 4 000 шоу на мероприятиях международного,
-            федерального и регионального уровней;
-            Выступали на закрытии Чемпионата мира по футболу FIFA 2018,
-            Параолимпийских играх в Сочи в 2014,
-            Чемпионате мира по футболу 2021 в Катаре;
-            Победители Шоу «Лига удивительных людей» на телеканале «Россия 1»;
-            Создали собственные сольные шоу:
-            шоу «Beat of Evolution»
-            спектакль «13»
-            шоу «MIRRORS»
-            шоу-спектакль «Щелкунчик и Барабанный король».
-        </p><p>
+        новый тренд в индустрии развлечений — <strong class="color_corp">барабанное шоу мирового уровня</strong>.
+        </p>
+        <p>
+            <ul>
+                <li>С 2011 года <strong class="color_corp">сделали более 4 000 шоу</strong> на мероприятиях международного,
+                    федерального и регионального уровней;</li>
+                <li>Выступали на закрытии Чемпионата мира по футболу FIFA 2018,
+                    Параолимпийских играх в Сочи в 2014,
+                    Чемпионате мира по футболу 2021 в Катаре;</li>
+                <li> Победители Шоу «Лига удивительных людей» на телеканале «Россия 1»;</li></p>
+            </ul>
+            <p><strong class="color_corp">Создали собственные сольные шоу:</strong></p>
+            <p> - шоу «Beat of Evolution»</p>
+            <p> - спектакль «13»</p>
+            <p> - шоу «MIRRORS»</p>
+            <p> - шоу-спектакль «Щелкунчик и Барабанный король».</p>
+           <p>
             Также самое масштабное шоу в парке Зарядье с 50 барабанными установками и
             100 артистами на сцене.
-        </p><p>
+        </p><h5 class="color_corp  m-5 text-justify">
             Наша миссия – дарить незабываемые впечатления, яркие эмоции и вдохновение.
-        </p>
+        </h5>
     </div>
 </div>
 
@@ -480,14 +520,13 @@
     </div>
 </div>
 
-<div class="mt-5">
-    <b class="mt-5"><br></b>
-</div>
+
 <div class="container">
 
     <div class="col">
-        <h1>Отзывы от наших зрителей</h1>
+
         <div class="m-5">
+            <h1 class="text-center color_corp">Отзывы от наших зрителей</h1>
         </div>
         <div id="Carousel2">
             <div class="f-carousel__viewport">
@@ -496,29 +535,16 @@
                     <div class="f-carousel__slide">
                         <div class="col">
                             <div class="card">
-                                <div class="w-25 ratio ratio-1x1 rounded-circle overflow-hidden position-absolute start-0">
-                                    <img src="./img/review/1.jpg" class="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Инна Кузьменко</h5>
-                                    <p class="card-text">
-                                        «Отличное выступления! Спасибо за незабываемые впечатления!
-                                        Приехали на шоу из Ростова и эта поездка запомнится надолго»</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--item-->
-                    <div class="f-carousel__slide">
-                        <div class="col">
-                            <div class="card">
-                                <div class="w-25 ratio ratio-1x1 rounded-circle overflow-hidden position-absolute start-0">
-                                    <img src="./img/review/2.jpg" class="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">manuyta21</h5>
-                                    <p class="card-text">«Спасибо, концерт очень крутой, вобще как всегда, только самого Романа на сцене
-                                        не хватило»</p>
+                                <div class="container">
+                                    <div class="row p-5">
+                                        <div class="col-2 p-2"><div class="w-100 ratio ratio-1x1 rounded-circle overflow-hidden">
+                                            <img src="./img/review/1.jpg" class="">
+                                        </div></div>
+                                        <div class="col-10"><h5 class="card-title mt-2">Инна Кузьменко</h5></div>
+                                        <div class="col-12"><p class="card-text">
+                                            «Отличное выступления! Спасибо за незабываемые впечатления!
+                                            Приехали на шоу из Ростова и эта поездка запомнится надолго»</p></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -527,29 +553,14 @@
                     <div class="f-carousel__slide">
                         <div class="col">
                             <div class="card">
-                                <div class="w-25 ratio ratio-1x1 rounded-circle overflow-hidden position-absolute start-0">
-                                    <img src="./img/review/3.jpg" class="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Диана Гулоб</h5>
-                                    <p class="card-text">«Вам спасибо! Пересекались с вами на мероприятиях много раз! Каждый раз
-                                        восторг, а детишки - просто чудо!!!»</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--item-->
-                    <div class="f-carousel__slide">
-                        <div class="col">
-                            <div class="card">
-                                <div class="w-25 ratio ratio-1x1 rounded-circle overflow-hidden position-absolute start-0">
-                                    <img src="./img/review/4.jpg" class="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Лера Изумруд</h5>
-                                    <p class="card-text">
-                                        «Это было очень круто, ребята вы
-                                        талант»</p>
+                                <div class="container">
+                                    <div class="row p-5">
+                                        <div class="col-2 p-2"><div class="w-100 ratio ratio-1x1 rounded-circle overflow-hidden">
+                                            <img src="./img/review/2.jpg" class="">
+                                        </div></div>
+                                        <div class="col-10"><h5 class="card-title mt-2">manuyta21</h5></div>
+                                        <div class="col-12"><p class="card-text">«Спасибо, концерт очень крутой, вобще как всегда, только самого Романа на сцене не хватило»</p></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -558,28 +569,15 @@
                     <div class="f-carousel__slide">
                         <div class="col">
                             <div class="card">
-                                <div class="w-25 ratio ratio-1x1 rounded-circle overflow-hidden position-absolute start-0">
-                                    <img src="./img/review/5.jpg" class="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">muzvetra</h5>
-                                    <p class="card-text">
-                                        «Ещё раз спасибо за эмоции! <i class="bi bi-emoji-heart-eyes"></i><i class="bi bi-emoji-heart-eyes"></i><i class="bi bi-emoji-heart-eyes"></i>»<br><br></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--item-->
-                    <div class="f-carousel__slide">
-                        <div class="col">
-                            <div class="card">
-                                <div class="w-25 ratio ratio-1x1 rounded-circle overflow-hidden position-absolute start-0">
-                                    <img src="./img/review/6.jpg" class="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">liza_skier</h5>
-                                    <p class="card-text">
-                                        «Очень захватывающие представление <i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i>»</p>
+                                <div class="container">
+                                    <div class="row p-5">
+                                        <div class="col-2 p-2"><div class="w-100 ratio ratio-1x1 rounded-circle overflow-hidden">
+                                            <img src="./img/review/3.jpg" class="">
+                                        </div></div>
+                                        <div class="col-10"><h5 class="card-title mt-2">Диана Гулоб</h5></div>
+                                        <div class="col-12"><p class="card-text">«Вам спасибо! Пересекались с вами на мероприятиях много раз! Каждый раз
+                                                восторг, а детишки - просто чудо!!!»</p></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -588,14 +586,66 @@
                     <div class="f-carousel__slide">
                         <div class="col">
                             <div class="card">
-                                <div class="w-25 ratio ratio-1x1 rounded-circle overflow-hidden position-absolute start-0">
-                                    <img src="./img/review/7.jpg" class="">
+                                <div class="container">
+                                    <div class="row p-5">
+                                        <div class="col-2 p-2"><div class="w-100 ratio ratio-1x1 rounded-circle overflow-hidden">
+                                            <img src="./img/review/4.jpg" class="">
+                                        </div></div>
+                                        <div class="col-10"><h5 class="card-title mt-2">Лера Изумруд</h5></div>
+                                        <div class="col-12"><p class="card-text">
+                                                «Это было очень круто, ребята вы
+                                                талант»</p></div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">(Без имени)</h5>
-                                    <p class="card-text">
-                                        «Вы молодцы!!! Настроение праздничное! Спасибо! И.. Меня спрашивают, где и
-                                        когда можно посмотреть "Щелкунчика"»</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--item-->
+                    <div class="f-carousel__slide">
+                        <div class="col">
+                            <div class="card">
+                                <div class="container">
+                                    <div class="row p-5">
+                                        <div class="col-2 p-2"><div class="w-100 ratio ratio-1x1 rounded-circle overflow-hidden">
+                                            <img src="./img/review/5.jpg" class="">
+                                        </div></div>
+                                        <div class="col-10"><h5 class="card-title mt-2">muzvetra</h5></div>
+                                        <div class="col-12"><p class="card-text">«Ещё раз спасибо за эмоции! <i class="bi bi-emoji-heart-eyes"></i><i class="bi bi-emoji-heart-eyes"></i><i class="bi bi-emoji-heart-eyes"></i>»<br><br></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--item-->
+                    <div class="f-carousel__slide">
+                        <div class="col">
+                            <div class="card">
+                                <div class="container">
+                                    <div class="row p-5">
+                                        <div class="col-2 p-2"><div class="w-100 ratio ratio-1x1 rounded-circle overflow-hidden">
+                                            <img src="./img/review/6.jpg" class="">
+                                        </div></div>
+                                        <div class="col-10"><h5 class="card-title mt-2">liza_skier</h5></div>
+                                        <div class="col-12"><p class="card-text">
+                                                «Очень захватывающие представление <i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i><i class="bi bi-fire"></i>»</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--item-->
+                    <div class="f-carousel__slide">
+                        <div class="col">
+                            <div class="card">
+                                <div class="container">
+                                    <div class="row p-5">
+                                        <div class="col-2 p-2"><div class="w-100 ratio ratio-1x1 rounded-circle overflow-hidden">
+                                            <img src="./img/review/7.jpg" class="">
+                                        </div></div>
+                                        <div class="col-10"><h5 class="card-title mt-2">(Без имени)</h5></div>
+                                        <div class="col-12"><p class="card-text">
+                                                «Вы молодцы!!! Настроение праздничное! Спасибо! И.. Меня спрашивают, где и
+                                                когда можно посмотреть "Щелкунчика"»</p></div>
                                 </div>
                             </div>
                         </div>
@@ -610,52 +660,34 @@
 </div>
 </div>
 
-<div class="container-fluid">
-    <div class="d-flex">
-        <div class="p-2 w-25 d-none d-md-block">
-        </div>
-        <div class="p-2 flex-fill">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Политика конфиденциальности</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Возврат билетов</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Корпоративным клиентам</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Сертификаты</a>
-                </li>
-            </ul>
+<div class="container doc_info">
+    <div class="row">
+            <div class="p-2 col-12 col-md-3 text-center"><a href="#">Политика конфиденциальности</a></div>
+            <div class="p-2 col-12 col-md-3 text-center"><a href="#">Возврат билетов</a></div>
+            <div class="p-2 col-12 col-md-3 text-center"><a href="#">Корпоративным клиентам</a></div>
+            <div class="p-2 col-12 col-md-3 text-center"><a href="#">Сертификаты</a></div>
+    </div>
+</div>
+<hr>
+<div id="contacts" class="container">
+    <div class="p-0 text-center">
+        <img src="./img/logo.png" class="img-fluid logo"/>
+        <div class="m-5">
+            <div class="copyright" field="text">©2024, Все права защищены</div>
+
         </div>
     </div>
 </div>
 <hr>
 <div class="container ">
     <div class="p-0 text-center">
-        <img src="./img/logo.svg" class="img-fluid logo"/>
-        <div class="m-5">
-
-            <div class="copyright" field="text">©2024, Все права защищены</div>
-            <div class="m-md-3">
-                <!-- Twitter -->
-                <i class="fab fa-telegram"></i>
-
-
-                <!-- Vkontakte -->
-                <i class="fab fa-vk"></i>
-
-
-                <!-- Whatsapp -->
-                <i class="fab fa-whatsapp"></i>
-            </div>
+        <div class="m-md-3">
+            <a href="https://vk.com/vasilievgroove"><i class="fab fa-vk"></i></a>
+            <a href="https://wa.me/79039605574"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/vgdrummers"><i class="fab fa-telegram"></i></a>
         </div>
     </div>
 </div>
-
-
 <!-- MDB -->
 <script type="text/javascript" src="./js/mdb.umd.min.js"></script>
 <!-- MDB -->
@@ -692,6 +724,24 @@
     });
     new Carousel(document.getElementById("Carousel2"),{infinite:false});
 </script>
+<!--CUSTOM-->
+<script>
+    document.getElementById("mainLink").focus();
 
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if($(this).scrollTop() != 0) {
+                $('#to-top').fadeIn();
+            } else {
+                $('#to-top').fadeOut();
+            }
+        });
+
+        $('#to-top').click(function() {
+            $('html, body').animate({scrollTop:0}, '300');
+        });
+    });
+</script>
+    <div id="to-top"><i class="bi bi-arrow-up-circle-fill color_corp"></i></div>
 </body>
 </html>
