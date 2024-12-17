@@ -880,10 +880,13 @@
 </script>
 <!--CUSTOM-->
 <script>
+    $(window).on('load', function (event) {
+        // Preloader
+        $('#preloader').fadeOut(500);
+    });
     document.getElementById("mainLink").focus();
 
     $(document).ready(function() {
-        $('#preloader').fadeOut(500);
         $(window).scroll(function() {
             if($(this).scrollTop() != 0) {
                 $('#to-top').fadeIn();
