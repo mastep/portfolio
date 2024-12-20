@@ -41,6 +41,7 @@
     #preloader .spinner-custom{color:#fff}
     #preloader .dot {max-width: 50px; border-radius: 50%; animation: radial-pulse 1s infinite;}
     .color_corp, .fa-bars{color:#8ac643;}
+    .color_opacity{color:#CDD1D2; opacity:0.5}
     .nav-item{margin: 0 5px 0 5px;}
      a, .color_light{color:#fff;}
     .nav-link:focus, a:focus{ outline: none !important; box-shadow:none;}
@@ -323,11 +324,12 @@
     </div></a>
 </div>
 <!--Video-->
-<div class="container-fluid p-0">
-    <video class="d-none d-md-block" width="100%" no-controls autoplay loop playsinline muted>
+<div class="container-fluid p-0 position-relative">
+    <i id="mute" class="bi bi-volume-mute position-absolute start-0 top-0 color_light display-6 m-3 color_opacity cursor-pointer"></i>
+    <video id="event1_main_w" class="d-none d-md-block" width="100%" no-controls autoplay loop playsinline muted>
         <source src="./video/video-event1-w.mp4" type="video/mp4" />
     </video>
-    <video class="d-block d-md-none" width="100%" no-controls autoplay loop playsinline muted>
+    <video id="event1_main_h" class="d-block d-md-none" width="100%" no-controls autoplay loop playsinline muted>
         <source src="./video/video-event1-h.mp4" type="video/mp4" />
     </video>
 
@@ -872,10 +874,9 @@
     $(window).on('load', function (event) {
         // Preloader
         $('#preloader').fadeOut(500);
-    });
-    document.getElementById("mainLink").focus();
+        document.getElementById("mainLink").focus();
 
-    $(document).ready(function() {
+
         $(window).scroll(function() {
             if($(this).scrollTop() != 0) {
                 $('#to-top').fadeIn();
@@ -887,8 +888,19 @@
         $('#to-top').click(function() {
             $('html, body').animate({scrollTop:0}, '300');
         });
+
+        $('#event1_main_w, #event1_main_h').click(function() {
+            $("#mute").toggleClass("bi-volume-up");
+            if($(this).prop('muted')){
+                $(this).prop('muted', false);
+            }else{
+                $(this).prop('muted', true);
+            }
+
+        });
+
     });
 </script>
-    <div id="to-top"><i class="bi bi-arrow-up-circle-fill" style="color:#CDD1D2; opacity:0.5"></i></div>
+    <div id="to-top"><i class="bi bi-arrow-up-circle-fill color_opacity"></i></div>
 </body>
 </html>
