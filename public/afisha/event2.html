@@ -17,210 +17,23 @@
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
     <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="./css/mdb.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--fancybox-->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <script src="./js/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="./css/fancybox.css"/>
     <!--carousel-->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.umd.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"/>
+    <script src="./js/carousel.umd.js"></script>
+    <script src="./js/carousel.autoplay.umd.js"></script>
+    <link rel="stylesheet" href="./css/carousel.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
 </head>
 <body>
-
-
-
-
-<style>
-    body{
-        font-family: Futura PT, sans-serif !important;
-        background: #000000;
-        padding:0 0 15px 0;
-        color:#FFFFFF;
-        font-size: 0.88em;
-    }
-    .color_corp, .fa-bars{color:#8ac643;}
-    .nav-item{margin: 0 5px 0 5px;}
-     a, .color_light{color:#fff;}
-    .nav-link:focus, a:focus{ outline: none !important; box-shadow:none;}
-    .nav-link, .card-title {color:#fff; transition: none !important; text-decoration: none;}
-    .nav-link:hover, .nav-link:focus, .nav-link.active {color:#8ac643;}
-    .promo{position:fixed; z-index: 2; background-color:#8ac643; padding: 8px 0px 8px 15px; color: #000; width: 135px;}
-    .review_photo{
-        font-size: 2em;
-    }
-
-
-    @keyframes radial-pulse {
-        0%   {box-shadow: 0 0 0 0em rgba(255,255,255,.4);}
-        100% {box-shadow: 0 0 0 2em rgba(255,255,255,.0);}
-    }
-    .promo-bottom{ bottom:10px; right:30px;}
-    .promo img {position: absolute;right:-20px; top:-5px; max-width: 50px; border-radius: 50%; animation: radial-pulse 1s infinite;}
-    .logo{max-height: 45px;}
-    .logo_short{margin-top:40px; max-height: 35px;}
-    #navbarToggleExternalContent3{position: absolute; right:0;}
-    .btn_container{
-        margin-top:30px;
-    }
-    .btn_{
-        background: transparent;
-        border: 1px solid #FFFFFF;
-        color: #FFFFFF;
-        padding: 13px 50px;
-    }
-    .btn_color{
-        background-color: #8ac643;
-        color:#000;
-        border-color: #8ac643;
-    }
-    .f-carousel {
-        --f-carousel-slide-width: 100%;
-        --f-progress-color: #8ac643;
-
-    }
-
-    @media (max-width: 576px) {
-        .btn_container{
-            margin-top:40px;
-        }
-        .reward{
-            min-height: 98px;
-        }
-    }
-
-
-    @media (min-width: 768px) {
-
-        .f-carousel {
-            --f-carousel-slide-width: calc(100% / 3);
-        }
-        #Carousel2.f-carousel {
-            --f-carousel-slide-width: calc(100% / 3.12) !important;
-        }
-
-    }
-
-
-    .f-carousel__slide h5{
-        color:#000;
-        margin-bottom: 30px;
-        font-weight: bold;
-    }
-    .img-cover{
-        object-fit: cover;
-        object-position: center;
-    }
-    .fab{
-        font-size: 36px;
-        margin-top: 10px;
-        margin-right: 10px;
-    }
-
-
-    #Carousel2 .w-25 {
-        width: 20% !important;
-        margin: 30px 0 0 20px !important;
-    }
-    #Carousel2 .card{
-        min-height: 595px;
-        border-radius: 20px;
-    }
-
-    #Carousel2 .f-carousel__slide{
-        margin-right:20px;
-    }
-    .copyright{
-        font-size:0.7em;
-    }
-    .copyright .text-muted{
-        opacity: 0.7;
-    }
-
-    #navbarToggleExternalContent3 button{
-        min-width: 150px;
-        text-align: left !important;
-        color:#000;
-    }
-    #navbarToggleExternalContent3 .bg-body-tertiary{
-    }
-    .fa-bars{
-        font-size: 2em !important;
-    }
-
-    .reward img{
-        background: #fff;
-        padding: 10px;
-        border-radius: 15px;
-        max-width: 120px;
-    }
-    .f-carousel__dots{
-        display: none;
-    }
-    #slidePage .bg-body-tertiary{
-        color:#000;
-        width:300px;
-        height: 100vh;
-    }
-    #slidePage .nav{
-        display: block;
-    }
-    .nav-list a{color:#000;}
-    #slidePage a{
-        margin: 0;
-        padding: 5px 0 5px 0;
-    }
-
-
-    @keyframes slide-move {
-        0%   {right:-500px;}
-        100% {right:-30px;}
-    }
-    @keyframes slide-move2 {
-        0% {right:-30px;}
-        100%   {right:-500px;}
-    }
-    #slidePage{
-        z-index: 3;
-        right: -500px;
-        position: absolute;
-        top:-16px !important;
-    }
-    #slidePage.hide{
-        animation: slide-move2 .5s forwards;
-    }
-    #slidePage.show{
-        animation: slide-move .5s forwards;
-    }
-    #slidePage .nav-soc{
-        margin-top: 100% !important;
-    }
-    #slidePage .btn_{
-        margin: 0;
-    }
-    #slidePage .nav-soc a{
-        color:#000;
-    }
-    /*Up button*/
-    #to-top {
-        position: fixed;
-        bottom: 100px;
-        right: 20px;
-        display: none;
-    }
-    #to-top i{
-        font-size: 36px;
-    }
-    .card-text{
-        font-size: 16px;
-    }
-
-</style>
-
-
-
-
+<div id="preloader">
+    <div class="d-flex h-100 flex-column align-items-center justify-content-center z-3">
+        <div class="align-self-center"><img src="./img/preloader.gif"></div>
+    </div>
+</div>
 <div class="container-fluid p-0">
     <div class="d-none d-md-block">
         <div class="d-flex">
@@ -236,7 +49,7 @@
                         <a class="nav-link" href="./">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#ticket">Купить билет</a>
+                        <a  class="nav-link" href="#ticket">Купить билет</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="event1.html">Щелкунчик</a>
@@ -321,12 +134,13 @@
     </div></a>
 </div>
 <!--Video-->
-<div class="container-fluid p-0">
-    <video class="d-none d-md-block" width="100%" no-controls autoplay loop playsinline muted>
-        <source src="" type="video/mp4" />
+<div class="container-fluid p-0 position-relative">
+    <!--<i id="mute" class="bi bi-volume-mute position-absolute start-0 top-0 color_light display-6 m-3 color_opacity cursor-pointer"></i>-->
+    <video id="event1_main_w" class="d-none d-md-block" width="100%" no-controls autoplay loop playsinline muted>
+        <source src="./video/video-event2-w.mp4" type="video/mp4" />
     </video>
-    <video class="d-block d-md-none" width="100%" no-controls autoplay loop playsinline muted>
-        <source src="" type="video/mp4" />
+    <video id="event1_main_h" class="d-block d-md-none" width="100%" no-controls autoplay loop playsinline muted>
+        <source src="./video/video-event2-h.mp4" type="video/mp4" />
     </video>
 
     <div class="btn_container d-flex justify-content-center">
@@ -344,29 +158,34 @@
 
     <div class="p-md-5 w-100">
         <p class="m-5">
-        <h5 class="text-center">Vasiliev Groove – <strong class="color_corp">эксклюзивное</strong> барабанное <strong class="color_corp">шоу</strong> в России</h5>
+        <h5 id="event" class="text-center color_light"><strong>Vasiliev Groove - Шоу Барабанщиков</strong></h5>
         </p>
         <hr class="my-5">
         <p>
-        <strong class="color_corp">Шоу Vasiliev Groove</strong> — это сочетание музыки, театра, юмора, танцев, иммерсивного
-        интерактива со зрителями, стильных дизайнерских образов и костюмов.</p>
-        <p>
-        Vasiliev Groove постоянно предлагают миру что-то новое и необычное: использование
-            разнообразных инструментов - от акустических и маршевых <strong class="color_corp">барабанов</strong> до цимбал и
-            маримбы с дождевыми флейтами; невероятно <strong class="color_corp">зрелищное шоу</strong> с огнём и светящимися
-        барабанами с водой, болгарками с холодными <strong class="color_corp">искрами</strong> и пневмопушками с яркими
-        конфетти; широкую палитру номеров - от патриотической и ретро тематики до
-        этнических и современных направлений; многообразие состава артистов шоу -
-        вокалисты, детский ансамбль, шоу-оркестр.
+            <strong class="color_corp">Vasiliev Groove</strong><strong> - это эксклюзивное Шоу, не имеющее аналогов в России.</strong>
         </p>
         <p>
-            <strong class="color_corp">Уникальное шоу</strong> профессиональных барабанщиков неизменно сопровождают специально созданные для каждого номера музыкальные композиции с видеорядом и световым шоу.
+            Мы представляем сочетание музыки, театра, юмора, танцев и интерактива со зрителями.
         </p>
-        <p><h6>Восторг и яркие эмоции <strong class="color_corp">испытает каждый!</strong></h6></p>
+        <p>
+            Шоу барабанщиков, духовой оркестр, группа музыкантов и другие артисты не оставят равнодушными ни одного зрителя!
+        </p>
+        <p>
+            <strong class="color_corp">Спецэффекты:</strong>
+            <ul>
+                <li>Светящиеся Барабаны</li>
+                <li>Игра по барабанам с водой</li>
+                <li>Болгарки (холодные искры)</li>
+                <li>Тальк, пневмопушки (конфетти)</li>
+                <li>Воздушные шары</li>
+            </ul>
+
+        </p>
     </div>
 
 
 
+    <!--
     <div class="container my-5">
         <div class="row justify-content-md-center">
             <div class="col-md-4 text-left text-md-center">
@@ -426,70 +245,134 @@
             <img width="100%" src="./img/frame-afisha.png" style="max-width: 775px;">
             <p><br></p>
         </div>
-    </div>
+    </div>-->
 
+<div class="container-fluid p-md-0 py-md-5 my-5 mt-md-0">
+    <h1 id="ticket" class="text-center color_light m-4">Афиша</h1>
+    <div class="row">
+        <div class="d-none d-xl-block p-md-0">
+            <div class="container" >
+            <div class="row overflow-hidden" style="min-height: 400px; background: linear-gradient(0.25turn, #000, #010a81); border-radius:20px !important; padding:0; margin: 0">
+                <div class="col-5 p-0 pb-0">
+
+                    <div class="container-fluid my-3">
+                        <div class="row">
+                            <div class="col-12">  <h2><strong>Щелкунчик</strong></h2>
+                                <h6>и Барабанный король</h6><br><br></div>
+                            <div class="col-8"> <h2>31 января<br>19:00</h2></div>
+                            <div class="col-4"><h5>Театр музыки и шоу ||| РИМ
+                               <br><strong> г. Пушкино</strong></h5></div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-8"><h5>от 1500р.</h5></div>
+                            <div class="col-4"><h5><i class="bi bi-hourglass-split"></i> 1,5 часа</h5></div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-8"><a href="#ticket"><button class="btn_ btn_color bd-placeholder-img rounded-pill">Купить билет</button></a></div>
+                            <div class="col-4"><a href="#event"><button class="btn_ btn_ bd-placeholder-img rounded-pill" style="padding:3px 20px">подробнее</button></a></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-7 position-relative p-0 rounded-pill" style=" background: url(./img/tickets/event1/ticket-w.jpg); background-size: cover; background-position: 50% 50%; border-top-right-radius:unset !important; border-bottom-right-radius:unset !important; border-radius:20px !important;">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-12 d-block d-xl-none m-0 p-0 position-relative">
+            <div class="d-flex justify-content-center">
+                <img width="100%" src="./img/tickets/event1/ticket-h.jpg">
+            </div>
+            <div class="d-flex justify-content-center" >
+
+                <div class="container p-0 position-absolute top-50" style="margin-top: 50px; width: 100%; left: 10px">
+                        <div class="row mx-auto  p-0 m-0">
+                            <div class="col-8 p-0"> <h4>31 января</h4></div>
+                            <div class="col-4 p-0"><a href="#review"><button class="btn_ btn_ bd-placeholder-img rounded-pill w-100" style="padding:3px 20px">отзывы</button></a></div>
+                            <div class="col-8 p-0"> <h5>19:00</h5></div>
+                            <div class="col-4 p-1 text-center"><img class="w-50" src="./img/place/place-third-rome.png"></div>
+                            <div class="col-8 p-0"><h8><i class="bi bi-hourglass-split"></i> 1,5 часа</h8></div>
+                            <div class="col-4 p-0 text-center"><a href="#event"><button class="btn_ btn_ bd-placeholder-img rounded-pill w-100" style="padding:3px 7px">подробнее</button></a></div>
+
+
+                        </div>
+                </div>
+                <div class="col-12 text-center p-0- m-0"><a href="#ticket"><button class="w-75 btn_ btn_color bd-placeholder-img rounded-pill">Купить билет</button></a></div>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="row">
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/1.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/1.jpg" />
+            <a href="./img/gallery/event2/1.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/1.jpg" />
             </a>
         </div>
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/2.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/2.jpg" />
+            <a href="./img/gallery/event2/2.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/2.jpg" />
             </a>
         </div>
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/3.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/3.jpg" />
+            <a href="./img/gallery/event2/3.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/3.jpg" />
             </a>
         </div>
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/4.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/4.jpg" />
+            <a href="./img/gallery/event2/4.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/4.jpg" />
             </a>
         </div>
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/5.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/5.jpg" />
+            <a href="./img/gallery/event2/5.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/5.jpg" />
             </a>
         </div>
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/6.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/6.jpg" />
+            <a href="./img/gallery/event2/6.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/6.jpg" />
             </a>
         </div>
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/7.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/7.jpg" />
+            <a href="./img/gallery/event2/7.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/7.jpg" />
             </a>
         </div>
         <!--item-->
         <div class="col-6 col-md-3 p-0 m-0">
-            <a href="./img/gallery/8.jpg" data-fancybox="gallery">
-                <img width="100%" src="./img/gallery/8.jpg" />
+            <a href="./img/gallery/event2/8.jpg" data-fancybox="gallery">
+                <img width="100%" src="./img/gallery/event2/8.jpg" />
             </a>
         </div>
     </div>
 </div>
 
 
-<div class="container p-md-5">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center p-0">
+            <div class="ratio ratio-16x9">
+                <iframe class="embed-responsive-item" src="https://rutube.ru/play/embed/04faabec82415cf7536262831ad38bde" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container p-md-5 p-0">
 
 
-    <div class="p-sm-5  w-100">
+    <div class="p-0 m-0 w-100">
         <p class="m-3">&nbsp;</p>
         <p>
             <strong class="color_corp">Vasiliev Groove</strong> – эксклюзивное барабанное шоу, покорившее сердца более <strong class="color_corp">1 млн. зрителей</strong> в 100 городов России и 20 стран мира.
@@ -545,6 +428,19 @@
 </div>
 
 
+    <div id="events" class="container mt-5">
+        <div class="mt-5">
+            <h1 class="text-center color_light my-5">Также ознакомьтесь с другими нашими проектами!</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 col-md-5 text-center">
+                <a href="event2.html"><img src="./img/event2.jpg" width="100%"></a>
+                <p class="text-center"><a href="#event"><button class="btn_ bd-placeholder-img rounded-pill mt-3 w-100 mw-100 px-3">Подробнее</button></a></p>
+            </div>
+        </div>
+    </div>
+
+
 <div class="container">
 
     <div class="col">
@@ -553,7 +449,7 @@
             <h1 class="text-center color_light">Отзывы наших зрителей</h1>
         </div>
         <div id="Carousel2">
-            <div class="f-carousel__viewport">
+            <div id="review" class="f-carousel__viewport">
                 <div class="f-carousel__track">
                     <!--item-->
                     <div class="f-carousel__slide">
@@ -562,6 +458,9 @@
                                 <div class="container">
                                     <div class="row p-5">
                                         <div class="col-2 p-1">
+                                            <div class="w-100 ratio ratio-1x1 overflow-hidden">
+                                                <img src="./img/review/8.jpg" class="">
+                                            </div>
                                         </div>
                                         <div class="col-10"><h5 class="card-title mt-2">Elena Elena44</h5></div>
                                         <div class="col-12"><p class="card-text">
@@ -579,7 +478,9 @@
                                 <div class="container">
                                     <div class="row p-5">
                                         <div class="col-2 p-1">
-
+                                            <div class="w-100 ratio ratio-1x1 overflow-hidden">
+                                                <img src="./img/review/9.jpg" class="">
+                                            </div>
                                         </div>
                                         <div class="col-10"><h5 class="card-title mt-2">Алексеева Анастасия</h5></div>
                                         <div class="col-12"><p class="card-text">
@@ -717,8 +618,10 @@
 
 
     </div>
+    </div>
 </div>
-</div>
+
+
 
 <div class="container doc_info">
     <div class="row">
@@ -795,9 +698,12 @@
 </script>
 <!--CUSTOM-->
 <script>
-    document.getElementById("mainLink").focus();
+    $(window).on('load', function (event) {
+        // Preloader
+        $('#preloader').fadeOut(500);
+        document.getElementById("mainLink").focus();
 
-    $(document).ready(function() {
+
         $(window).scroll(function() {
             if($(this).scrollTop() != 0) {
                 $('#to-top').fadeIn();
@@ -809,8 +715,20 @@
         $('#to-top').click(function() {
             $('html, body').animate({scrollTop:0}, '300');
         });
+
+        /* Mute
+        $('#event1_main_w, #event1_main_h').click(function() {
+            $("#mute").toggleClass("bi-volume-up");
+            if($(this).prop('muted')){
+                $(this).prop('muted', false);
+            }else{
+                $(this).prop('muted', true);
+            }
+
+        });*/
+
     });
 </script>
-    <div id="to-top"><i class="bi bi-arrow-up-circle-fill" style="color:#CDD1D2; opacity:0.5"></i></div>
+    <div id="to-top"><i class="bi bi-arrow-up-circle-fill color_opacity"></i></div>
 </body>
 </html>
