@@ -173,6 +173,20 @@
                         </div>
                         <a href="/project-art-of-tea"></a>
                     </div><!-- .bringer-portfolio-card -->
+                    <!-- Card Item 02 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio05.jpg" alt="" width="1200" height="1200">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Landing page</span>
+                                <h6>Vasiliev Groove</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="/project_vasiliev_groove_landing"></a>
+                    </div><!-- .bringer-portfolio-card -->
 
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
@@ -217,34 +231,7 @@
                         </div>
                         <a href="/e-commerce"></a>
                     </div><!-- .bringer-portfolio-card -->
-                    <!-- Card Item 02 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Corporate portal</span>
-                                <h6>Корпоративный портал</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="/corporate-portal"></a>
-                    </div><!-- .bringer-portfolio-card -->
-                    <!-- Card Item 02 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio05.jpg" alt="" width="1200" height="1200">
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Very</span>
-                                <h6>Soon</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="#"></a>
-                    </div><!-- .bringer-portfolio-card -->
+
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">

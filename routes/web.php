@@ -15,6 +15,10 @@ Route::get('project-landing-page', function () {
     return view('project3');
 });
 
+Route::get('project_vasiliev_groove_landing', function () {
+    return view('project_vg_landing');
+});
+
 Route::get('landing-page', function () {
     return view('service-1');
 });
