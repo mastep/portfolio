@@ -19,7 +19,7 @@
             <!-- Slider Item -->
             <div class="swiper-slide">
                 <div class="bringer-hero-media bringer-masked-media" data-appear="fade-right" data-unload="fade-left" data-delay="150" data-threshold="0">
-                    <h1 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title">Создаем самые вкусные сайты</h1>
+                    <h1 data-appear="fade-right" data-unload="fade-up" data-delay="200" class="bringer-page-title adaptive">Создаем самые вкусные сайты</h1>
                     <video  data-video-src="video/blackberry.mp4"  playsinline muted loop autoplay></video>
                 </div>
             </div>
