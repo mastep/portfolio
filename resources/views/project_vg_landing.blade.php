@@ -22,7 +22,7 @@
         <div class="stg-row stg-no-gap stg-top-gap"  style="background-color:#fff; overflow: hidden; border-radius: 2em; margin-top:10%">
             <div class="stg-col-8">
                 <div data-appear="fade-right" data-unload="fade-left">
-                    <h1 style="color: #000; margin: 5% 0 0 10%">Сайт визитка<br>Vasiliev Groove</h1>
+                    <h1 style="color: #000; margin: 5% 10% 0 10%">Сайт визитка<br>Vasiliev Groove</h1>
                     <p style="color: #888; margin: 3% 10% 0 10%">
                         Срок реализации: 7 дней
                         <br>
