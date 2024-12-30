@@ -88,6 +88,17 @@ jQuery(function ($) {
             +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+ptb+"</h9></div>"
         );
 
+        if($("#main_video")){
+            $("#main_video").ready(function(){
+                    setTimeout(
+                        function () {
+                            $(".afterloadhide").hide();
+                            $("#main_video")[0].play();
+                        }, 5000
+                    );
+                }
+            );
+        }
 
 
         $('video[data-video-src]').each( function(index, element) {
