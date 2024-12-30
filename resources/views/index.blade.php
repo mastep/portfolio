@@ -41,8 +41,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <h3 class="bringer-page-title afterloadhide">Покоряйте новые горизонты<br/>Мы предоставим технологии<br>и наш опыт</h3>
-                        <video src="./video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted></video>
+                        <video src="./video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay></video>
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
@@ -107,7 +106,7 @@
                     <h4>Корпоративные порталы / ЦРМ</h4>
                     <p><span class="bringer-highlight">Мы</span> внедряем корпоративные порталы и CRM от компании 1С-Битрикс.</p>
                     <p>Определяем количество пользователей для работы проекта, облачное размещение проекта или нет, количество необходимых модулей.</p>
-                    <p><span class="bringer-highlight">Вы</span> получаете эффективный инструмент повышающий показатели компании.</p>
+                    <p><span class="bringer-highlight">Вы</span> получаете эффективный инструмент повышающий показатели компании. <a href="/corporate-portal" class="bringer-arrow-link">Подробнее здесь</a></p>
                 </div>
                 <div class="stg-col-3"><!-- Empty Column --></div>
             </div>
