@@ -1348,7 +1348,7 @@
         margin:5%;
         font-size:1.3em
     }
-    #bringer-main .stg-container section{
+    #bringer-main .stg-container section:nth-of-type(1){
         padding-top:0;
     }
 }
