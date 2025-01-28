@@ -25,7 +25,7 @@
                     <h1 class="bringer-post-title" data-appear="fade-up" data-unload="fade-left">Art Of Tea</h1>
                 </div>
                 <div class="stg-col-6 stg-tp-col-9 stg-tp-offset-3 align-right" data-appear="fade-up" data-delay="100" data-unload="fade-right">
-                    <p>Интернет-магазин ArtOfTea.lv специализируется на продаже высококачественных сортов чая и аксессуаров для чаепития. В ассортименте магазина представлен широкий выбор: от классического черного до экзотического зеленого и ароматного фруктового.</p>
+                    <p>Интернет-магазин <a href="https://artoftea.lv/en/product/mint-variety">ArtOfTea.lv</a> специализируется на продаже высококачественных сортов чая и аксессуаров для чаепития. В ассортименте магазина представлен широкий выбор: от классического черного до экзотического зеленого и ароматного фруктового.</p>
                 </div>
             </div>
 
