@@ -30,7 +30,7 @@
                                 <img src="img/home/social-proof01.jpg" alt="Client 01">
                                 <img src="img/home/social-proof02.jpg" alt="Client 02">
                                 <img src="img/home/social-proof03.jpg" alt="Client 03">
-                                <a href="#">MVP</a>
+                                <a href="#">MVP+</a>
                             </div>
                             <p data-appear="fade-up" data-unload="fade-up" data-delay="100">Быстрый старт! MVP за 5 дней</p>
                         </div>
