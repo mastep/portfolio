@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page Title -->
-    <title>Burton.team | @yield('title', 'Креативное агентство по созданию сайтов')</title>
+    <title>@yield('title', 'Создать сайт, интернет магазин быстро! MVP за 5 дней.') | Burton.team</title>
     <meta name="description" content="Креативное агентство по созданию сайтов. @yield('meta-description')">
     <meta name="keywords" content="@yield('meta-keywords'), разработка сайтов, веб-разработка, программирование, создание сайтов, интернет-проекты, создать сайт, создать корпоративный портал 1С-Битрикс, создать сайт визитку">
     <meta name="author" content="Burton.team">
