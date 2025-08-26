@@ -69,8 +69,8 @@ jQuery(function ($) {
 
         var ph1="+7 999 113 75 00";
         var ph2=ph1.replace(/ /g, "");
-        var pm="info@burton.team";
-        var pt="burtonTeam";
+        var pm="info@7lab.pro";
+        var pt="pro_7lab";
 
 
         var phb="<a href='tel:"+ph2+"'>"+ph1+"</a>";

@@ -3972,7 +3972,7 @@ button.pswp__button.bringer-pswp-next::after {
     input[type="reset"]:hover,
     input[type="submit"]:hover,
     button:not([class*='pswp']):hover,
-    a.bringer-button:hover {
+    a.bringer-button:hover, .color_blue {
         color: var(--bringer-s-accented-text);
         background-color: var(--bringer-button-hover-bg);
     }
@@ -4430,4 +4430,10 @@ button.pswp__button.bringer-pswp-next::after {
     content: '✔';
     background-color: #333;
     cursor: pointer;
+}
+
+.bringer-logo h1 strong{
+    background-color:#fff;
+    color:#355cc1;
+    padding:10px 20px;
 }

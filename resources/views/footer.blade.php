@@ -7,7 +7,11 @@
                 <div class="stg-col-5 stg-tp-col-12 stg-tp-bottom-gap-l">
                     <div class="bringer-info-widget">
                         <a href="./" class="bringer-logo footer-logo">
-                            <img class="footer-logo" src="img/logo.png" alt="bringer." width="176" height="48">
+                            @if(App\Helpers\Helper::isDefProject())
+                                <img class="footer-logo" src="img/logo-7lab.png" alt="bringer." width="176" height="48">
+                            @else
+                                <img class="footer-logo" src="img/logo.png" alt="bringer." width="176" height="48">
+                            @endif
                         </a>
                         <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.</div>
                     </div>
@@ -21,7 +25,13 @@
     <div class="bringer-footer-line stg-container">
         <div id="footer-text" class="stg-row">
             <div class="bringer-toggles-item--title stg-col-5 stg-m-col-6">
-                <div class="bringer-label">&copy; BURTON<span class="bringer-accent">.</span></div>
+                <div class="bringer-label">&copy;
+                    @if(App\Helpers\Helper::isDefProject())
+                        7LAB.PRO
+                    @else
+                        BURTON
+                    @endif
+                        <span class="bringer-accent">.</span></div>
                 <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="15" src="/img/logo-min-white.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
             </div>
         </div>
