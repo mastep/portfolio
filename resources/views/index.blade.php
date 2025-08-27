@@ -265,7 +265,7 @@
                     <div class="bringer-form-content bringer-cta-form">
                         <div class="bringer-cta-form-content" data-appear="fade-up" data-delay="100">
                             <div class="bringer-cta-title">Пишите свою почту. Далее работать будем мы!</div>
-                            <input type="email" id="subscribe_email" name="subscribe_email" placeholder="email@example.com" required>
+                            <input type="email" id="subscribe_email" name="subscribe_email" placeholder="@" required>
                         </div>
                         <div class="bringer-cta-form-button" data-appear="fade-up" data-delay="200">
                             <button type="submit">
