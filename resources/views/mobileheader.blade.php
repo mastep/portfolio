@@ -11,7 +11,7 @@
         @endif
 
     </a>
-    <a href="/form" class="bringer-button  link-form" title="Это бесплатно">Рассчитать Ваш проект</a>
+    <a href="/form" class="bringer-button  link-form" title="Это бесплатно">Рассчитать проект</a>
     <a href="#" class="bringer-mobile-menu-toggler">
         <i class="bringer-menu-toggler-icon">
             <span></span>
