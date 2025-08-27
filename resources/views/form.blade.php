@@ -24,7 +24,7 @@
         <section>
 
             <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">Расчет проекта</h1>
-            <p >заполните форму или просто <a href='https://t.me/burtonTeam'>отправьте голосовое <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240.1 240.1">
+            <p >заполните форму или просто <a href='https://t.me/pro_7lab'>отправьте голосовое <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240.1 240.1">
                     <linearGradient id="Oval_1_" gradientUnits="userSpaceOnUse" x1="-838.041" y1="660.581" x2="-838.041" y2="660.3427" gradientTransform="matrix(1000 0 0 -1000 838161 660581)">
                         <stop offset="0" style="stop-color:#2AABEE"/>
                         <stop offset="1" style="stop-color:#229ED9"/>
