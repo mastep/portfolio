@@ -43,7 +43,7 @@
     <script type="text/javascript">
         var pn="7LAB.PRO";
         var ph1="+7 999 113 75 00";
-        var pm="info@7lab.pro";
+        var pm="hello@7lab.pro";
         var pt="pro_7lab";
     </script>
 </head>
