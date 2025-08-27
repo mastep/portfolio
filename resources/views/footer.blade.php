@@ -27,7 +27,7 @@
             <div class="bringer-toggles-item--title stg-col-5 stg-m-col-6">
                     @if(App\Helpers\Helper::isDefProject())
                     <div class="bringer-label">&copy;
-                        7LAB.PRO
+                        {{env('NAME_SITE')}}
                         <span class="bringer-accent">.</span></div>
                     <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="25" src="/img/logo-min-white-7lab.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
                     @else

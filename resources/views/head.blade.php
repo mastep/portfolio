@@ -40,5 +40,11 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/98359170" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <script type="text/javascript">
+        var pn="{{env('SITE_NAME')}}";
+        var ph1="{{env('PHONE')}}";
+        var pm="{{env('EMAIL')}}";
+        var pt="{{env('TELEGRAM')}}";
+    </script>
 </head>
 @yield('content')
