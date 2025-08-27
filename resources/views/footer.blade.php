@@ -25,14 +25,17 @@
     <div class="bringer-footer-line stg-container">
         <div id="footer-text" class="stg-row">
             <div class="bringer-toggles-item--title stg-col-5 stg-m-col-6">
-                <div class="bringer-label">&copy;
                     @if(App\Helpers\Helper::isDefProject())
+                    <div class="bringer-label">&copy;
                         7LAB.PRO
-                    @else
-                        BURTON
-                    @endif
                         <span class="bringer-accent">.</span></div>
-                <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="15" src="/img/logo-min-white.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
+                    <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="25" src="/img/logo-min-white-7lab.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
+                    @else
+                    <div class="bringer-label">&copy;
+                        BURTON
+                        <span class="bringer-accent">.</span></div>
+                    <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="15" src="/img/logo-min-white.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
+                    @endif
             </div>
         </div>
     </div><!-- bringer-footer-line -->
