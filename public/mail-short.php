@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Burton.team';
+        $mail->Subject = '7LAB.PRO';
         $mail->Body    = 'Send <a href="mailto:'.$email.'">'.$email.'</a>';
         $mail->AltBody = $email;
 
