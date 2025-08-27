@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page Title -->
-    <title>@yield('title', 'Создать сайт, интернет магазин быстро! MVP за 5 дней.') | {{env('NAME_SITE')}}</title>
+    <title>@yield('title', 'Создать сайт, интернет магазин быстро! MVP за 5 дней.') | 7LAB.PRO</title>
     <meta name="description" content="Креативное агентство по созданию сайтов. @yield('meta-description')">
     <meta name="keywords" content="@yield('meta-keywords'), разработка сайтов, веб-разработка, программирование, создание сайтов, интернет-проекты, создать сайт, создать корпоративный портал 1С-Битрикс, создать сайт визитку">
-    <meta name="author" content="{{env('NAME_SITE')}}">
+    <meta name="author" content="7LAB.PRO">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
@@ -41,10 +41,10 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/98359170" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <script type="text/javascript">
-        var pn="{{env('NAME_SITE')}}";
-        var ph1="{{env('PHONE')}}";
-        var pm="{{env('EMAIL')}}";
-        var pt="{{env('TELEGRAM')}}";
+        var pn="7LAB.PRO";
+        var ph1="+7 999 113 75 00";
+        var pm="info@7lab.pro";
+        var pt="pro_7lab";
     </script>
 </head>
 @yield('content')
