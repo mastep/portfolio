@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::domain('localhost')->group(function () {
+Route::domain('burton.team')->group(function () {
     $url=str_replace(["burton.team", 'localhost'], "7lab.pro", url()->full());
     header("Location: $url", true, 301); exit();
 });
