@@ -18,4 +18,8 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} ^burton\.team$ [NC]
+    RewriteRule ^(.*)$ https://7lab.pro [R=301,L]
 </IfModule>
