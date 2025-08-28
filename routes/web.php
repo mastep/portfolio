@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::domain('localhost')->group(function () {
+    return redirect()->away('https://7lab.pro');
+});
+
 Route::get('/', function () {
     return view('index');
 });
