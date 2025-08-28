@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::domain('burton.team')->group(function () {
-    header("Location: https://7lab.pro", true, 301);
-    exit();
+        redirect()->away('https://7lab.pro');
 });
 
 Route::get('/', function () {
