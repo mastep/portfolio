@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::domain('burton.team')->group(function () {
+Route::domain('localhost')->group(function () {
+    if(strstr(url()->current(),'burton.team')){
         redirect()->away('https://7lab.pro');
+    }
 });
 
 Route::get('/', function () {
