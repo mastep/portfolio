@@ -6,7 +6,7 @@
     RewriteEngine On
 
     RewriteBase /
-    RewriteCond %{HTTP_HOST} ^burton\.team$ [NC]
+    RewriteCond %{HTTP_HOST} !^7lab\.pro [NC]
     RewriteRule ^(.*)$ https://7lab.pro/$1 [R=301,L]
 
     # Handle Authorization Header
