@@ -8,7 +8,7 @@
                     <div class="bringer-info-widget">
                         <a href="./" class="bringer-logo footer-logo">
                             @if(App\Helpers\Helper::isDefProject())
-                                <img class="footer-logo" src="img/logo-7lab.png" alt="bringer." width="176" height="48">
+                                <img class="footer-logo" src="img/logo-7lab-op30.svg" alt="bringer." width="176" height="48">
                             @else
                                 <img class="footer-logo" src="img/logo.png" alt="bringer." width="176" height="48">
                             @endif
@@ -29,7 +29,7 @@
                     <div class="bringer-label">&copy;
                         7LAB.PRO
                         <span class="bringer-accent">.</span></div>
-                    <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="25" src="/img/logo-min-white-7lab.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
+                    <div class="stg-m-bottom-gap">&nbsp;2012 - @php echo date('Y');@endphp</div>
                     @else
                     <div class="bringer-label">&copy;
                         BURTON

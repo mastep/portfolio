@@ -3,8 +3,8 @@
     <a href="./" class="bringer-logo">
 
         @if(App\Helpers\Helper::isDefProject())
-            <img class="logo-mobile" src="img/logo-7lab.png" width="200">
-            <img class="logo-mobile-xs" src="img/logo-mobile-7lab.png">
+            <img class="logo-mobile" src="img/logo-7lab.svg" width="200">
+            <img class="logo-mobile-xs" src="img/logo-7lab.svg">
         @else
             <img class="logo-mobile" src="img/logo.png" width="200">
             <img class="logo-mobile-xs" src="img/logo-mobile.png">
