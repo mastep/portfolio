@@ -848,6 +848,9 @@
 /* MOBILE PHONES
    ============= */
 @media only screen and (max-width: 739px) {
+    .bringer-hero-block .bringer-page-title {
+        margin-top:0.8em;
+    }
     .bringer-mobile-nav::after {
         background: linear-gradient( 180deg, transparent 0%, var(--bringer-s-body-bg) 100%);
         opacity: 0.85;
