@@ -268,9 +268,12 @@
                             <input type="email" id="subscribe_email" name="subscribe_email" placeholder="@" required>
                         </div>
                         <div class="bringer-cta-form-button" data-appear="fade-up" data-delay="200">
-                            <button type="submit">
-                                <span class="bringer-icon bringer-icon-arrow-submit"></span>
-                            </button>
+                            <div id="button_submit"></div>
+                            <!--AntiSPAM-->
+                            <script type="text/javascript">
+                                document.getElementById("button_submit").innerHTML='<button type="submit"><span class="bringer-icon bringer-icon-arrow-submit"></span> </button>';
+                            </script>
+                            <!--AntiSPAM END-->
                         </div>
                         <div class="bringer-contact-form__response"></div>
                     </div>
