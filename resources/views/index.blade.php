@@ -21,7 +21,7 @@
                 <div class="stg-row stg-bottom-gap-l stg-m-bottom-gap-l">
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
-                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">Цифровизируйте бизнес с нами. MVP за 5 дней!</h1>
+                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">E-commerce, landing page, API, web support</h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
