@@ -4,7 +4,7 @@
 
         @if(App\Helpers\Helper::isDefProject())
             <img class="logo-mobile" src="img/logo-7lab.svg" width="200">
-            <img class="logo-mobile-xs" src="img/logo-7lab.svg" style="max-height: 65px">
+            <img class="logo-mobile-xs" src="img/logo-7lab.svg" style="max-height: 40px">
         @else
             <img class="logo-mobile" src="img/logo.png" width="200">
             <img class="logo-mobile-xs" src="img/logo-mobile.png">

@@ -22,7 +22,7 @@
             <div class="stg-row stg-large-gap stg-tp-normal-gap stg-tp-column-reverse">
                 <div class="stg-col-6 stg-vertical-space-between" data-unload="fade-left">
                     <div class="stg-tp-bottom-gap">
-                        <h1 class="bringer-page-title" data-split-appear="fade-up">Корп. порталы</h1>
+                        <h1 class="bringer-page-title" data-split-appear="fade-up"><nobr>Корпоративные</nobr> порталы</h1>
                         <p class="bringer-large-text" data-appear="fade-right" data-delay="100">Корпоративный портал — это веб-платформа, обеспечивающая централизованный доступ к информации, инструментам и знаниям для всех сотрудников компании. Мы запускаем корпоративные порталы на платформе <a href="https://www.1c-bitrix.ru/products/bitrix24/" target="_blank">Битрикс24</a>.</p>
                         <p class="bringer-large-text bringer-tp-normal-text" data-appear="fade-right" data-delay="200">Он предназначен для автоматизации внутренних процессов взаимодействия компании с работниками и улучшения внутренней коммуникации.</p>
 
