@@ -28,7 +28,7 @@
 
                         <div class="bringer-price-card-footer">
                             <span class="bringer-label">Стоимость от</span>
-                            <div class="bringer-price">₽20 000</div>
+                            <div class="bringer-price">₽35 000</div>
                         </div>
                     </div>
                     <div class="tp-align-right">
