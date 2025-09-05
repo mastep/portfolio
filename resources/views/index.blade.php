@@ -91,7 +91,7 @@
                     <p><span class="bringer-highlight">Мы</span> запускаем современные интернет магазины под ключ.</p>
                     <p>А это значит прорабатываем дизайн, навигацию, архитектуру, эквайринг, базы данных, сервер, торговый каталог, админку, личный кабинет. Закрываем абсолютно все технические вопросы!</p>
                         <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку.
-                        <a href="/e-commerce" class="bringer-arrow-link">Подробнее здесь</a></p>
+                        <a href="/e-commerce" class="bringer-arrow-link" title="Создать интернет магазин">Подробнее здесь</a></p>
                 </div>
             </div>
             <!-- Step 02 Row -->
@@ -106,7 +106,7 @@
                     <h4>Корпоративные порталы / ЦРМ</h4>
                     <p><span class="bringer-highlight">Мы</span> внедряем корпоративные порталы и CRM от компании 1С-Битрикс.</p>
                     <p>Определяем количество пользователей для работы проекта, облачное размещение проекта или нет, количество необходимых модулей.</p>
-                    <p><span class="bringer-highlight">Вы</span> получаете эффективный инструмент повышающий показатели компании. <a href="/corporate-portal" class="bringer-arrow-link">Подробнее здесь</a></p>
+                    <p><span class="bringer-highlight">Вы</span> получаете эффективный инструмент повышающий показатели компании. <a href="/corporate-portal" class="bringer-arrow-link" title="Создать корпоративный портал">Подробнее здесь</a></p>
                 </div>
                 <div class="stg-col-3"><!-- Empty Column --></div>
             </div>
@@ -122,7 +122,7 @@
                     <h4>Сайты визитки</h4>
                     <p><span class="bringer-highlight">Мы</span> создаем сайты визитки.</p>
                     <p>Подбираем готовые шаблоны, наполняем контентом, регистрируем хостинг, домен, настраиваем почту, загружаем все на сервер.</p>
-                    <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing-page" class="bringer-arrow-link">Подробнее здесь</a>
+                    <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing-page" class="bringer-arrow-link" title="Создать сайт визитку">Подробнее здесь</a>
                     </p>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01.jpg" alt="" width="1200" height="1200" alt="E-commerce для Art of Tea. Разработка интернет магазина.">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -175,7 +175,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio05.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio05.jpg" alt="" width="1200" height="1200" alt="Сайт визитка для Vasiliev Groove. Разработка интернет магазина.">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -190,7 +190,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02.jpg" alt="" width="1200" height="1200" alt="Корпоративный портал для химического холдинга">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -205,7 +205,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio03.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio03.jpg" alt="" width="1200" height="1200" alt="Разработка интернет магазина одежды.">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -219,7 +219,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02__.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio02__.jpg" alt="" width="1200" height="1200" alt="E-commerce. Разработка интернет магазина катриджей.">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -234,7 +234,7 @@
                     <!-- Card Item 02 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio04.jpg" alt="" width="1200" height="1200" alt="Разработка сайта визитки для Burton.team">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -269,7 +269,7 @@
                             <div id="button_submit"></div>
                             <!--AntiSPAM-->
                             <script type="text/javascript">
-                                document.getElementById("button_submit").innerHTML='<button type="submit"><span class="bringer-icon bringer-icon-arrow-submit"></span> </button>';
+                                document.getElementById("button_submit").innerHTML='<button type="submit" title="Отправить запрос"><span class="bringer-icon bringer-icon-arrow-submit"></span> </button>';
                             </script>
                             <!--AntiSPAM END-->
                         </div>

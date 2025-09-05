@@ -8,7 +8,7 @@
                     <div class="bringer-info-widget">
                         <a href="./" class="bringer-logo footer-logo">
                             @if(App\Helpers\Helper::isDefProject())
-                                <img class="footer-logo" src="img/logo-7lab_gray.svg" alt="bringer." width="106">
+                                <img class="footer-logo" src="img/logo-7lab_gray.svg" alt="bringer." width="106" alt="7lab.pro - Разработка сайта, интернет магазина, сайта визитики.">
                             @else
                                 <img class="footer-logo" src="img/logo.png" alt="bringer." width="176" height="48">
                             @endif
