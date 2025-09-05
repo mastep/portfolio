@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page Title -->
-    <title>@yield('title', 'Создать сайт, интернет магазин быстро! MVP за 5 дней. ') | 7LAB.PRO</title>
+    <title>@yield('title', 'Создать сайт, интернет магазин! MVP за 5 дней. ') | 7LAB.PRO</title>
     <meta name="description" content="@yield('meta-description', 'Мы - увлеченная команда дизайнеров и разработчиков. Команда, которая верит в силу творчества. Мы специализируемся на разработке веб-решений для бизнеса.') | 7LAB.PRO">
     <meta name="keywords" content="@yield('meta-keywords'), разработка сайтов, веб-разработка, программирование, создание сайтов, интернет-проекты, создать сайт, создать корпоративный портал 1С-Битрикс, создать сайт визитку">
     <meta name="author" content="7LAB.PRO">
