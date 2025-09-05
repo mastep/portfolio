@@ -11,22 +11,33 @@
             </li>
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="#">
-                    <span itemprop="name">Услуги</span></a>
-                    <meta itemprop="position" content="2" />
-                    </a>
+                <a href="#">
+                   Услуги
+                </a>
                 <ul class="sub-menu">
                     <li>
-                        <a itemprop="item" href="/e-commerce">Интернет-магазины</a>
+                        <a itemprop="item" href="/e-commerce">
+                            <span itemprop="name">Интернет-магазины</span>
+                            <meta itemprop="position" content="2" />
+                        </a>
                     </li>
                     <li>
-                        <a itemprop="item" href="/corporate-portal">Корпоративные порталы</a>
+                        <a itemprop="item" href="/corporate-portal">
+                            <span itemprop="name">Корпоративные порталы</span>
+                            <meta itemprop="position" content="3" />
+                        </a>
                     </li>
                     <li>
-                        <a itemprop="item" href="/landing-page">Сайты-визитки</a>
+                        <a itemprop="item" href="/landing-page">
+                            <span itemprop="name">Сайты-визитки</span>
+                            <meta itemprop="position" content="4" />
+                        </a>
                     </li>
                     <li>
-                        <a itemprop="item" href="/it-sharing">IT - шеринг</a>
+                        <a itemprop="item" href="/it-sharing">
+                            <span itemprop="name">IT - шеринг</span>
+                            <meta itemprop="position" content="5" />
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -34,7 +45,7 @@
                 itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="/#ourPortfolio" onclick="document.getElementsByClassName('bringer-mobile-menu-toggler')[0].click();">
                     <span itemprop="name">Портфолио</span></a>
-                    <meta itemprop="position" content="3" />
+                    <meta itemprop="position" content="6" />
                 </a>
             </li>
 
