@@ -255,9 +255,7 @@
             </div><!-- .bringer-portfolio-carousel -->
         </section>
 
-        <section data-padding="bottom">
-        @include('slider')
-        </section>
+
         <!-- Section: CTA -->
         <section data-padding="bottom">
             <div class="bringer-masked-cta bringer-masked-block" data-unload="fade-down">
