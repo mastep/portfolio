@@ -23,7 +23,7 @@
                 <div class="stg-col-6 stg-vertical-space-between" data-unload="fade-left">
                     <div class="stg-tp-bottom-gap">
                         <h1 class="bringer-page-title" data-split-appear="fade-up">Сайт визитка</h1>
-                        <p class="bringer-large-text" data-appear="fade-right" data-delay="100">Сайт-визитка или Landing Page — это небольшой веб-сайт, содержащий основную информацию о компании или услугах, предоставляемых ею. Сайт-визитка обычно состоит из нескольких страниц с информацией о компании, контактных данных, а также, возможно, с отзывами клиентов и примерами работ.</p>
+                        <p class="bringer-large-text" data-appear="fade-right" data-delay="100">Сайт-визитка или Landing Page — это небольшой веб-сайт, содержащий основную информацию о компании и предоставляемых услугах. Сайт-визитка обычно состоит из нескольких страниц с информацией о компании, контактных данных, а также, возможно, с отзывами клиентов и примерами работ.</p>
                         <p class="bringer-large-text bringer-tp-normal-text" data-appear="fade-right" data-delay="200">Такие сайты используются для первичного ознакомления потенциальных клиентов с компанией и её предложениями.</p>
 
                         <div class="bringer-price-card-footer">
