@@ -30,9 +30,9 @@
                                 <img src="img/home/social-proof01.jpg" alt="Client 01">
                                 <img src="img/home/social-proof02.jpg" alt="Client 02">
                                 <img src="img/home/social-proof03.jpg" alt="Client 03">
-                                <a href="#">MVP</a>
+                                <a href="/form">-40%</a>
                             </div>
-                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100">Быстрый старт за 5 дней!</p>
+                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100"><a href="/form" title="Гарантия лучшей цены. Скидка до 40%">Сделаем скидку от Вашей цены!</a></p>
                         </div>
                     </div>
                 </div><!-- .stg-row -->
