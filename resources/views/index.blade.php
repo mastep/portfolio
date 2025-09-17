@@ -32,7 +32,7 @@
                                 <img src="img/home/social-proof03.jpg" alt="Client 03">
                                 <a href="/form">-40%</a>
                             </div>
-                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100"><a href="/form" title="Гарантия лучшей цены. Скидка до 40%">Сделаем скидку от Вашей цены!</a></p>
+                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка до 40%">Сделаем скидку от Вашей цены!</p>
                         </div>
                     </div>
                 </div><!-- .stg-row -->
