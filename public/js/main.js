@@ -1302,7 +1302,7 @@ jQuery(function ($) {
     $(document).ready(function() {
         // General UI
 
-        $(document).on('contextmenu', function (e){RightClickProtection( '.protect', e);});
+        //$(document).on('contextmenu', function (e){RightClickProtection( '.protect', e);});
         MainMenuInit();
         CircleLinks();
 
