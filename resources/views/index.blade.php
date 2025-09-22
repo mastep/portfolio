@@ -138,7 +138,7 @@
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap" data-unload="fade-right" data-appear="fade-left">
                     <div class="bringer-parallax-media">
-                        <video src="./video/main-team.mp4" width="960" height="960" class="data-poster" poster="img/home/about03.jpg" loop muted autoplay></video>
+                        <video data-video-src="./video/main-team.mp4" width="960" height="960" class="data-poster" poster="img/home/about03.jpg" loop muted autoplay></video>
                     </div>
                 </div>
             </div><!-- .stg-row -->
