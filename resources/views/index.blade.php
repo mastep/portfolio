@@ -82,7 +82,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-col-6" data-appear="fade-right">
                     <div >
-                        <video src="./video/service01.mp4" width="960" height="960" muted autoplay onmouseover="this.play();" ></video>
+                        <video data-video-src="./video/service01.mp4" width="960" height="960" muted autoplay onmouseover="this.play();" ></video>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-right" data-delay="100">
@@ -98,7 +98,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
                 <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-left">
                     <div>
-                        <video src="./video/service02.mp4" width="960" height="960" muted onmouseover="this.play();"></video>
+                        <video data-video-src="./video/service02.mp4" width="960" height="960" muted onmouseover="this.play();"></video>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-left" data-delay="100">
@@ -114,7 +114,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-right">
                     <div>
-                        <video src="./video/service05.mp4" width="960" height="960" muted onmouseover="this.play();"></video>
+                        <video data-video-src="./video/service05.mp4" width="960" height="960" muted onmouseover="this.play();"></video>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-right" data-delay="100">
