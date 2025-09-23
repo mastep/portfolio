@@ -66,7 +66,7 @@
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-6 stg-tp-col-6 stg-m-col-12 stg-m-top-gap" data-appear="fade-up" data-delay="400" data-unload="fade-up">
-                        <p class="bringer-large-text">Мы действительно любим свое дело!<br>Наше ремесло это создавать для Вас современные и качественные сайты.</p>
+                        <p class="bringer-large-text">Мы действительно любим свое дело!<br>Наше ремесло это создавать современные сайты с уникальным дизайном.</p>
                     </div>
                 </div><!-- .stg-row -->
             </div><!-- .bringer-hero-block -->
@@ -278,7 +278,7 @@
                     <span class="bringer-form-spinner"></span>
                 </form>
                 <div class="bringer-masked-cta-content bringer-masked-content at-top-right">
-                    <p class="bringer-large-text" data-appear="fade-down">Давайте создадим для Вас цифровую резиденцию ✨</p>
+                    <p class="bringer-large-text" data-appear="fade-down">Пора создать свою цифровую резиденцию ✨</p>
                 </div>
             </div>
         </section>
