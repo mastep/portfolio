@@ -25,11 +25,14 @@
                         <h1 class="bringer-page-title" data-split-appear="fade-up">Интернет магазин</h1>
                         <p class="bringer-large-text" data-appear="fade-right" data-delay="100">Интернет магазин или E-commerce — является дополнительным каналом сбыта оффлайнового магазина или же создается как отдельный флагманский сайт, который предлагает товары для покупки через интернет. Он позволяет пользователям формировать заказы, выбирать способы оплаты и доставки, не выходя из дома или офиса.</p>
                         <p class="bringer-large-text bringer-tp-normal-text" data-appear="fade-right" data-delay="200">Процесс покупки происходит онлайн, что делает его удобным и доступным для широкой аудитории. Интернет-магазины позволяют клиентам просматривать ассортимент продукции, читать описания товаров, сравнивать цены и характеристики, а также использовать функцию поиска и умные фильтры для нахождения конкретных моделей или брендов.</p>
-
+                        @php
+                        /*
                         <div class="bringer-price-card-footer">
                             <span class="bringer-label">Стоимость от</span>
                             <div class="bringer-price">₽450 000</div>
                         </div>
+                        */
+                        @endphp
                     </div>
                     <div class="tp-align-right">
                         <a href="/project-art-of-tea" class="bringer-icon-link">

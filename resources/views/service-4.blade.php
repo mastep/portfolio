@@ -25,11 +25,13 @@
                         <h1 class="bringer-page-title" data-split-appear="fade-up">IT - шеринг</h1>
                         <p class="bringer-large-text" data-appear="fade-right" data-delay="100">модель, при которой компании арендуют IT-специалистов или целые команды на определенный период времени вместо того, чтобы нанимать их в штат. Эта модель стала популярной в последние годы, особенно в условиях растущего дефицита IT-кадров и оптимизации расходов.</p>
                         <p class="bringer-large-text bringer-tp-normal-text" data-appear="fade-right" data-delay="200">IT - шеринг напоминает каршеринг ( "Сar - шеринг"). Когда Вы не покупаете автомобиль, а пользуетесь его арендой.</p>
-
+                        @php
+                        /*
                         <div class="bringer-price-card-footer">
                             <span class="bringer-label">Стоимость</span>
                             <div class="bringer-price">₽ 4800 / час.</div>
-                        </div>
+                        </div>*/
+                        @endphp
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l" data-appear="fade-left" data-unload="fade-right">

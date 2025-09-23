@@ -25,11 +25,13 @@
                         <h1 class="bringer-page-title" data-split-appear="fade-up"><nobr>Корпоративные</nobr> порталы</h1>
                         <p class="bringer-large-text" data-appear="fade-right" data-delay="100">Корпоративный портал — это веб-платформа, обеспечивающая централизованный доступ к информации, инструментам и знаниям для всех сотрудников компании. Мы запускаем корпоративные порталы на платформе <a href="https://www.1c-bitrix.ru/products/bitrix24/" target="_blank">Битрикс24</a>.</p>
                         <p class="bringer-large-text bringer-tp-normal-text" data-appear="fade-right" data-delay="200">Он предназначен для автоматизации внутренних процессов взаимодействия компании с работниками и улучшения внутренней коммуникации.</p>
-
+                        @php
+                        /*
                         <div class="bringer-price-card-footer">
                             <span class="bringer-label">Стоимость от</span>
                             <div class="bringer-price">₽450 000</div>
-                        </div>
+                        </div>*/
+                        @endphp
                     </div>
                     <div class="tp-align-right">
                         <a href="/project-corportal" class="bringer-icon-link">
