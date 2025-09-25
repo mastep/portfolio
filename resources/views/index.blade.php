@@ -62,7 +62,7 @@
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
                             <div class="bringer-counter-number" data-suffix=" лет">12</div>
-                            <div class="bringer-counter-label">Безупречного опыта в создании решений для бизнеса!</div>
+                            <div class="bringer-counter-label">Безупречного опыта в создании web решений для бизнеса!</div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-6 stg-tp-col-6 stg-m-col-12 stg-m-top-gap" data-appear="fade-up" data-delay="400" data-unload="fade-up">
