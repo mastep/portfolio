@@ -61,7 +61,7 @@
                     </div>
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div class="bringer-counter-number" data-suffix=" лет">12</div>
+                            <div><h3>12 лет</h3></div>
                             <div class="bringer-counter-label">Безупречного опыта в разработке web решений для бизнеса!&nbsp;&nbsp;&nbsp;</div>
                         </div><!-- .bringer-counter -->
                     </div>
