@@ -55,14 +55,14 @@
                 <div class="stg-row stg-valign-bottom">
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div class="bringer-counter-number" data-suffix="K+">10000</div>
-                            <div class="bringer-counter-label">Строк написанного кода</div>
+                            <div><h3>AI</h3></div>
+                            <div class="bringer-counter-label">Применяем в разработке ИИ. Запускаем сайты быстрее других! </div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div class="bringer-counter-number" data-suffix="+">12</div>
-                            <div class="bringer-counter-label">Лет безупречного опыта</div>
+                            <div class="bringer-counter-number" data-suffix=" лет">12</div>
+                            <div class="bringer-counter-label">Безупречного опыта! Создаем решения для бизнеса!</div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-6 stg-tp-col-6 stg-m-col-12 stg-m-top-gap" data-appear="fade-up" data-delay="400" data-unload="fade-up">
