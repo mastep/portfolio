@@ -41,7 +41,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <video src="./video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay></video>
+                        <video src="./video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay playsinline></video>
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
@@ -74,7 +74,7 @@
 
         <!-- Section: Steps -->
         <section class="backlight-top" id="page01">
-            <video id="StepsVideo" data-video-src="./video/main_video_01.mp4" autoplay loop muted></video>
+            <video id="StepsVideo" data-video-src="./video/main_video_01.mp4" autoplay loop muted playsinline></video>
             <div class="stg-bottom-gap-l">
                 <h2 data-appear="fade-up" data-unload="fade-up">Что мы делаем?</h2>
             </div>
@@ -82,7 +82,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-col-6" data-appear="fade-right">
                     <div >
-                        <video data-video-src="./video/service01.mp4" width="960" height="960" muted autoplay onmouseover="this.play();" ></video>
+                        <video data-video-src="./video/service01.mp4" width="960" height="960" muted autoplay playsinline onmouseover="this.play();" ></video>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-right" data-delay="100">
@@ -138,7 +138,7 @@
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap" data-unload="fade-right" data-appear="fade-left">
                     <div class="bringer-parallax-media">
-                        <video data-video-src="./video/main-team.mp4" width="960" height="960" class="data-poster" poster="img/home/about03.jpg" loop muted autoplay></video>
+                        <video data-video-src="./video/main-team.mp4" width="960" height="960" class="data-poster" poster="img/home/about03.jpg" loop muted autoplay playsinline></video>
                     </div>
                 </div>
             </div><!-- .stg-row -->
