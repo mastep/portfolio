@@ -13,7 +13,8 @@
                                 <img class="footer-logo" src="img/logo.png" alt="bringer." width="176" height="48">
                             @endif
                         </a>
-                        <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.</div>
+                        <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.
+                        </div>
                     </div>
                 </div>
                 @include('footer-menu')
@@ -25,17 +26,11 @@
     <div class="bringer-footer-line stg-container">
         <div id="footer-text" class="stg-row">
             <div class="bringer-toggles-item--title stg-col-5 stg-m-col-6">
-                    @if(App\Helpers\Helper::isDefProject())
                     <div class="bringer-label">&copy;
                         7LAB.PRO
-                        <span class="bringer-accent">.</span></div>
-                    <div class="stg-m-bottom-gap">&nbsp;2012 - @php echo date('Y');@endphp</div>
-                    @else
-                    <div class="bringer-label">&copy;
-                        BURTON
-                        <span class="bringer-accent">.</span></div>
-                    <div class="stg-m-bottom-gap"><img align="left" class="float-left" width="15" src="/img/logo-min-white.png">&nbsp;2012 - @php echo date('Y');@endphp</div>
-                    @endif
+                        <span class="bringer-accent">.</span>
+                    </div>
+                    <div class="stg-m-bottom-gap"><a href="./privacy">Политика конфиденциальности</a></div>
             </div>
         </div>
     </div><!-- bringer-footer-line -->

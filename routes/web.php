@@ -36,4 +36,8 @@ Route::get('it-sharing', function () {
     return view('service-4');
 });
 
+Route::get('privacy', function () {
+    return view('privacy');
+});
+
 
