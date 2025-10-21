@@ -38,7 +38,7 @@
                                 №&nbsp;152-ФЗ «О&nbsp;персональных данных» (далее&nbsp;—
                                 Закон о&nbsp;персональных данных) и&nbsp;определяет порядок обработки
                                 персональных данных и&nbsp;меры по&nbsp;обеспечению безопасности персональных
-                                данных, предпринимаемые <span class="link mark owner-name-field" id="owner-name-value" data-scroll-to="#owner-name-field">Чуриковым Игорем Николаевичем</span> (далее&nbsp;— Оператор).
+                                данных, предпринимаемые <span class="link mark owner-name-field" id="owner-name-value" data-scroll-to="#owner-name-field">7LAB.PRO</span> (далее&nbsp;— Оператор).
                             </div>
                             <div class="ol">
                                 <div class="li">
