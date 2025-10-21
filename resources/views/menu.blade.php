@@ -39,6 +39,12 @@
                             <meta itemprop="position" content="5" />
                         </a>
                     </li>
+                    <li>
+                        <a itemprop="item" href="/api">
+                            <span itemprop="name">API</span>
+                            <meta itemprop="position" content="6" />
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li itemprop="itemListElement" itemscope

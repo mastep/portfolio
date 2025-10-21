@@ -40,4 +40,8 @@ Route::get('privacy', function () {
     return view('privacy');
 });
 
+Route::get('api', function () {
+    return view('service-api');
+});
+
 
