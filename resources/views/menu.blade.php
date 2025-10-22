@@ -16,6 +16,12 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
+                        <a itemprop="item" href="/api">
+                            <span itemprop="name">API</span>
+                            <meta itemprop="position" content="1" />
+                        </a>
+                    </li>
+                    <li>
                         <a itemprop="item" href="/e-commerce">
                             <span itemprop="name">Интернет-магазины</span>
                             <meta itemprop="position" content="2" />
@@ -37,12 +43,6 @@
                         <a itemprop="item" href="/it-sharing">
                             <span itemprop="name">IT - шеринг</span>
                             <meta itemprop="position" content="5" />
-                        </a>
-                    </li>
-                    <li>
-                        <a itemprop="item" href="/api">
-                            <span itemprop="name">API</span>
-                            <meta itemprop="position" content="6" />
                         </a>
                     </li>
                 </ul>
