@@ -1,9 +1,15 @@
 @php
-    $sale='30%';
+
     function getMonth():string  {
         $months=['январе', 'феврале', 'марте', 'апреле', 'мае', 'июне', 'июле', 'августе', 'сентябре', 'октябре', 'ноябре', 'декабре'];
         return $months[date('n')-1];
     }
+    function getSale():string  {
+        $data=["11"=>25];
+        $result=$data[date('n')]??30;
+        return $result."%";
+    }
+    $sale=getSale();
     $month=getMonth();
 @endphp
 @include('head')
@@ -29,7 +35,11 @@
                 <div class="stg-row stg-bottom-gap-l stg-m-bottom-gap-l">
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
-                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up"><a href="./landing-page" title="Разработка сайтов">Создаем сайты</a> 12 лет: <a href="./e-commerce" title="Разработка E-commerce">E-com</a>, <a href="./landing-page" title="Разработка Landing page" style="color:#fff">landing-page</a>, <a href="./api" title="Разработка API">API</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">web support</a></h1>
+                        <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">
+                            <a href="./landing-page" title="Разработка сайтов">Создаем сайты</a> 12 лет:
+                            <a href="./e-commerce" title="Разработка E-commerce">E-com</a>,
+                            <a href="./landing-page" title="Разработка Landing page" style="color:#fff">landing-page</a>,
+                            <a href="./api" title="Разработка API">API</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">web support</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
