@@ -107,7 +107,8 @@ jQuery(function ($) {
                 if ( rcp_timer !== null ) {
                     clearInterval(rcp_timer);
                 }
-                e.preventDefault();
+                if(e){e.preventDefault();}
+
                 if ( rcp_message ) {
                     document.body.classList.add('rcp-show');
                     $this.addClass('rcp-show');

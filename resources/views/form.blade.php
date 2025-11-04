@@ -34,22 +34,25 @@
                     </svg> </a>, чтобы мы более подробно смогли понять, что Вам необходимо реализовать.</p>
                     <script src="https://forms.yandex.ru/_static/embed.js"></script>
             <div class="frame-form-container">
-            <iframe name="frame-form" id="frame-form" src="https://forms.yandex.ru/u/66eb0c44068ff0525407e602/?iframe=1" frameborder="0" name="ya-form-66eb0c44068ff0525407e602" style="width:100%"></iframe>
-            <div class="frame-form-container-footer"></div>
+                <iframe name="frame-form" id="frame-form" src="https://forms.yandex.ru/u/66eb0c44068ff0525407e602/?iframe=1" frameborder="0" name="ya-form-66eb0c44068ff0525407e602" style="width:100%"></iframe>
+                <div class="frame-form-container-footer"></div>
+                <style>
+                    .frame-form-container{
+                        position: relative;
+                    }
+                    .frame-form-container-footer{
+                        background: #08090d;
+                        position: absolute;
+                        height: 62px;
+                        width: 100%;
+                        bottom: 0px;
+                    }
+                </style>
+
+
             </div>
         </section>
-                    <style>
-                        .frame-form-container{
-                            position: relative;
-                        }
-                        .frame-form-container-footer{
-                            background: #08090d;
-                            position: absolute;
-                            height: 62px;
-                            width: 100%;
-                            bottom: 0px;
-                        }
-                    </style>
+
         <section>
 
         </section>
@@ -60,6 +63,15 @@
 @include('show-message')
 @include('backlight')
 @include('scripts')
+
+@if (request()->has('done'))
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+                ModalMessage('.contact-mail-true');
+        });
+    </script>
+@endif
 </body>
 </html>
 @endsection
