@@ -30,13 +30,20 @@
                         <p class="bringer-large-text bringer-tp-normal-text" data-appear="fade-right" data-delay="200">
                             Мы разрабатываем API — надежные «мосты» между вашими программами, сайтами и сервисами.
                         </p>
-                        @php
-                        /*
-                        <div class="bringer-price-card-footer">
-                            <span class="bringer-label">Стоимость</span>
-                            <div class="bringer-price">₽ 4800 / час.</div>
-                        </div>*/
-                        @endphp
+                        <div class="stg-row stg-valign-middle stg-top-gap stg-no-gap" data-unload="fade-left">
+                            <a href="{{asset('REST-API-Solution.pdf')}}" class="bringer-icon-link">
+                                <div class="bringer-icon-wrap">
+                                    <i class="bringer-icon bringer-icon-explore"></i>
+                                </div>
+                                <div class="bringer-icon-link-content">
+                                    <h6>
+                                        Посмотреть план работ<br> разработки REST API
+                                    </h6>
+                                    <span class="bringer-label">pdf</span>
+                                </div>
+                            </a><!-- .bringer-icon-link -->
+                        </div>
+
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l" data-appear="fade-left" data-unload="fade-right">
