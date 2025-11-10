@@ -1,7 +1,7 @@
 @php
 
     function getMonth():string  {
-        $months=['январе', 'феврале', 'марте', 'апреле', 'мае', 'июне', 'июле', 'августе', 'сентябре', 'октябре', 'ноябре', 'декабре'];
+        $months=['в январе', 'в феврале', 'в марте', 'в апреле', 'в мае', 'в июне', 'в июле', 'в августе', 'в сентябре', 'в октябре', 'в ноябре', 'в декабре'];
         return $months[date('n')-1];
     }
     function getSale():string  {
@@ -48,10 +48,21 @@
                                 <img src="img/home/social-proof01.jpg" alt="Client 01">
                                 <img src="img/home/social-proof02.jpg" alt="Client 02">
                                 <img src="img/home/social-proof03.jpg" alt="Client 03">
-                                <a href="/form" title="Гарантия лучшей цены. Скидка до {{$sale}}. Заказать сайт.">-{{$sale}}</a>
-                            </div>
-                            <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка до {{$sale}}">Скидка в {{$month}} до {{$sale}}
-                            </p>
+                                @if(in_array(date('d.m'),['11.11','10.11']))
+                                    @php $sale='65%'; @endphp
+                                    <a href="/form" title="Только 11.11: Скидка {{$sale}}. Заказать сайт.">-{{$sale}}</a>
+                                </div>
+                                <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}} только 11.11">
+                                    Скидка {{$sale}} только 11.11
+                                </p>
+                                @else
+                                    <a href="/form" title="Гарантия лучшей цены. Скидка {{$sale}}. Заказать сайт.">-{{$sale}}</a>
+                                </div>
+                                <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}}">
+                                    Скидка {{$month}} {{$sale}}
+                                </p>
+                                @endif
+
 
 
 
