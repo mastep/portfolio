@@ -36,9 +36,9 @@
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
                         <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">
-                            <a href="./landing-page" title="Разработка сайтов">Создаем сайты</a> 12 лет:
-                            <a href="./e-commerce" title="Разработка E-commerce">E-com</a>,
-                            <a href="./landing-page" title="Разработка Landing page" style="color:#fff">landing-page</a>,
+                            <a href="#page01" title="API, e-commerce, support">Решения</a> для бизнеса
+                            <a href="./e-commerce" title="Разработка E-commerce, интернет магазина">E-com</a>,
+                            <a href="./telegram-bot" title="Разработка Landing page" style="color:#fff">telegram боты</a>,
                             <a href="./api" title="Разработка API">API</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">web support</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">

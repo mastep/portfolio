@@ -2,6 +2,8 @@
 @section('title', 'Разработка API - цифровая нервная система вашего бизнеса')
 @section('meta-description', 'Разработка API, синхронизация, обмен между системами')
 @section('meta-keywords', 'api, обмен, данные, синхронизация')
+@section('link-title1', 'Заказать API')
+@section('link-title3', '')
 @section('content')
 <body>
 <!-- Header -->

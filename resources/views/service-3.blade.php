@@ -33,21 +33,7 @@
                         </div>*/
                         @endphp
                     </div>
-                    <div class="tp-align-right">
-                        <a href="/project-corportal" class="bringer-icon-link">
-                            <div class="bringer-icon-wrap">
-                                <i class="bringer-icon bringer-icon-explore"></i>
-                            </div>
-                            <div class="bringer-icon-link-content">
-                                <h6>
-                                    Посмотрите
-                                    <br>
-                                    наш корп. портал
-                                </h6>
-                                <span class="bringer-label">для ChimElements Group</span>
-                            </div>
-                        </a><!-- .bringer-icon-link -->
-                    </div>
+                    @include("link-content",['link_title1'=>'Посмотрите кейс<br>корпоративного портала', 'link_title2'=>'на Figma.com', 'link_href'=>'https://www.figma.com/proto/lgKys6u1oXUe8Mht7yPOFG/Scrolling-Animation--Community-?node-id=1-161&starting-point-node-id=1%3A161&t=tBiRh2UrZ0ucJiS3-1', 'link_target'=>'_blank'])
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l" data-appear="fade-left" data-unload="fade-right">
                     <img class="bringer-lazy" src="img/null.png" data-src="img/inner-pages/service-details3.jpg" alt="Brainding" width="800" height="1200">

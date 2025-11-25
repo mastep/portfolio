@@ -22,6 +22,12 @@
                         </a>
                     </li>
                     <li>
+                        <a itemprop="item" href="/telegram-bot">
+                            <span itemprop="name">Telegram боты</span>
+                            <meta itemprop="position" content="1" />
+                        </a>
+                    </li>
+                    <li>
                         <a itemprop="item" href="/e-commerce">
                             <span itemprop="name">Интернет-магазины</span>
                             <meta itemprop="position" content="2" />

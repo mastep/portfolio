@@ -273,6 +273,7 @@ a {
 
 a,
 a:focus,
+.bringer-page-title a,
 a:visited {
     text-decoration: none;
     color: var(--bringer-s-text-accent);

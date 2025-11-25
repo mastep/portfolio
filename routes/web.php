@@ -44,4 +44,8 @@ Route::get('api', function () {
     return view('service-api');
 });
 
+Route::get('telegram-bot', function () {
+    return view('service-telegram-bot');
+});
+
 
