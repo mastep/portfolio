@@ -115,12 +115,14 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-12" data-appear="fade-right">
                     <div>
-                        <video data-video-src="./video/telegram-bot.mp4" width="960" height="960" muted loop autoplay playsinline onmouseover="this.play();"></video>
+                        <a href="/telegram-bot" title="Создать Telegram бота">
+                            <video data-video-src="./video/telegram-bot.mp4" width="960" height="960" muted loop autoplay playsinline onmouseover="this.play();"></video>
+                        </a>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-12" data-appear="fade-left" data-delay="100">
                     <span class="bringer-label">Telegram-bot </span>
-                    <h4>Telegram-боты</h4>
+                    <a href="/telegram-bot" title="Создать Telegram бота"><h4>Telegram-боты</h4></a>
                     <p><span class="bringer-highlight">Мы</span> разрабатываем Telegram-ботов.</p>
                     <p>Представьте бизнес-помощника, который круглосуточно, в режиме 24/7, отвечает на вопросы, принимает платежи и записывает клиентов на приём.</p>
                     <p>Современные боты обладают широким функционалом: они способны демонстрировать витрину товаров, формировать корзину заказов, обрабатывать платежи, а также делать рассылки и напоминания. Они грамотно взаимодействуют с клиентами, отвечая на их вопросы, и выполняют множество других задач.</p>
@@ -130,13 +132,15 @@
             <!-- Step 02 Row -->
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-bottom-gap-xl stg-top-gap-xl" data-unload="fade-right">
                 <div class="stg-col-3  stg-tp-col-6 stg-m-col-12 stg-m-bottom-gap" data-appear="fade-left">
-                    <div >
-                        <video data-video-src="./video/service01.mp4" width="960" height="960" muted autoplay playsinline onmouseover="this.play();" ></video>
+                    <div>
+                        <a href="/e-commerce" title="Создать интернет магазин">
+                            <video data-video-src="./video/service01.mp4" width="960" height="960" muted autoplay playsinline onmouseover="this.play();" ></video>
+                        </a>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-12" data-appear="fade-right" data-delay="100">
                     <span class="bringer-label">e-commerce priority</span>
-                    <h4>Интернет-магазины</h4>
+                    <a href="/e-commerce" title="Создать интернет магазин"><h4>Интернет-магазины</h4></a>
                     <p><span class="bringer-highlight">Мы</span> запускаем современные интернет магазины под ключ.</p>
                     <p>А это значит прорабатываем дизайн, навигацию, архитектуру, эквайринг, базы данных, сервер, торговый каталог, админку, личный кабинет. Закрываем абсолютно все технические вопросы!</p>
                     <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку.
@@ -148,12 +152,14 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-right">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-12" data-appear="fade-right">
                     <div>
-                        <video data-video-src="./video/service05.mp4" width="960" height="960" muted playsinline onmouseover="this.play();"></video>
+                        <a href="/landing-page" title="Создать сайт визитку">
+                            <video data-video-src="./video/service05.mp4" width="960" height="960" muted playsinline onmouseover="this.play();"></video>
+                        </a>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-12" data-appear="fade-right" data-delay="100">
                     <span class="bringer-label">Landing Page</span>
-                    <h4>Сайты визитки</h4>
+                    <a href="/landing-page" title="Создать сайт визитку"><h4>Сайты визитки</h4></a>
                     <p><span class="bringer-highlight">Мы</span> создаем сайты визитки.</p>
                     <p>Подбираем готовые шаблоны, наполняем контентом, регистрируем хостинг, домен, настраиваем почту, загружаем все на сервер.</p>
                     <p><span class="bringer-highlight">Вы</span> получаете в кратчайший срок свою интернет резиденцию. <a href="/landing-page" class="bringer-arrow-link" title="Создать сайт визитку">Подробнее здесь</a>
