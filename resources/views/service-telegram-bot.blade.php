@@ -77,7 +77,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
                     <div class="bringer-parallax-media">
-                        <img class="bringer-lazy" src="img/null.png" data-src="img/inner-pages/service-telegram-bot3.jpg" alt="API 03" width="960" height="960">
+                        <video data-video-src="./video/telegram-bot.mp4" width="960" height="960" muted loop autoplay playsinline onmouseover="this.play();"></video>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
