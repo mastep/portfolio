@@ -124,7 +124,7 @@
 
     #StepsVideo{
         position: absolute;
-        width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-20%
+        width: auto; min-width: 200vw; min-height: 100%; top:0px; left:-20%
     }
     .logo-mobile-xs{
         display: none;
@@ -842,6 +842,9 @@
     }
     .bringer-info-widget .bringer-label {
         margin-bottom: 8px;
+    }
+    #StepsVideo{
+        display: none;
     }
 }
 

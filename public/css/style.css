@@ -4393,7 +4393,7 @@ button.pswp__button.bringer-pswp-next::after {
 
 #StepsVideo{
     position: absolute;
-    width: auto; min-width: 120vw; min-height: 100%; top:0px; left:-30%
+    width: auto; max-width: 180vw; min-height: 100%; top:0px; left:-47%
 }
 
 .afterloadhide{
