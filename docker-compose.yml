@@ -1,0 +1,7 @@
+services:
+  web:
+    image: shinsenter/laravel:dev-php8.3-nginx
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "80:80"
