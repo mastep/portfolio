@@ -120,7 +120,7 @@
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-right" data-delay="100">
                     <span class="bringer-label">e-commerce priority</span>
-                    <h4>Интернет магазины</h4>
+                    <h4>Интернет-магазины</h4>
                     <p><span class="bringer-highlight">Мы</span> запускаем современные интернет магазины под ключ.</p>
                     <p>А это значит прорабатываем дизайн, навигацию, архитектуру, эквайринг, базы данных, сервер, торговый каталог, админку, личный кабинет. Закрываем абсолютно все технические вопросы!</p>
                         <p><span class="bringer-highlight">Вы</span> получаете готовую бизнес площадку.
@@ -131,15 +131,16 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
                 <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-left">
                     <div>
-                        <video data-video-src="./video/service02.mp4" width="960" height="960" muted onmouseover="this.play();"></video>
+                        <video data-video-src="./video/telegram-bot.mp4" width="960" height="960" muted loop autoplay playsinline onmouseover="this.play();"></video>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-left" data-delay="100">
-                    <span class="bringer-label">Corporate Portal / CRM</span>
-                    <h4>Корпоративные порталы / ЦРМ</h4>
-                    <p><span class="bringer-highlight">Мы</span> внедряем корпоративные порталы и CRM от компании 1С-Битрикс.</p>
-                    <p>Определяем количество пользователей для работы проекта, облачное размещение проекта или нет, количество необходимых модулей.</p>
-                    <p><span class="bringer-highlight">Вы</span> получаете эффективный инструмент повышающий показатели компании. <a href="/corporate-portal" class="bringer-arrow-link" title="Создать корпоративный портал">Подробнее здесь</a></p>
+                    <span class="bringer-label">Telegram-bot </span>
+                    <h4>Telegram-боты</h4>
+                    <p><span class="bringer-highlight">Мы</span> разрабатываем Telegram-ботов.</p>
+                    <p>Представьте бизнес-помощника, который круглосуточно, в режиме 24/7, отвечает на вопросы, принимает платежи и записывает клиентов на приём.</p>
+                    <p>Современные боты обладают широким функционалом: они способны демонстрировать витрину товаров, формировать корзину заказов, обрабатывать платежи, а также делать рассылки и напоминания. Они грамотно взаимодействуют с клиентами, отвечая на их вопросы, и выполняют множество других задач.</p>
+                    <p>Поручив рутинные бизнес-задачи ботам, вы сможете оптимизировать расходы и сэкономить на найме новых сотрудников. <a href="/telegram-bot" class="bringer-arrow-link" title="Создать Telegram бота">Подробнее здесь</a></p>
                 </div>
                 <div class="stg-col-3"><!-- Empty Column --></div>
             </div>
@@ -147,7 +148,7 @@
             <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-6" data-appear="fade-right">
                     <div>
-                        <video data-video-src="./video/service05.mp4" width="960" height="960" muted onmouseover="this.play();"></video>
+                        <video data-video-src="./video/service05.mp4" width="960" height="960" muted playsinline onmouseover="this.play();"></video>
                     </div>
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-6" data-appear="fade-right" data-delay="100">
