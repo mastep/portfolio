@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   # Laravel приложение с PHP 8.3 и Nginx
