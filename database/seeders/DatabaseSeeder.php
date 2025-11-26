@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test.'Str::random(15).'.@example.com',
+            'email' => 'test'.Str::random(15).'.@example.com',
         ]);
 
         // Заполнение данных для Telegram бота
