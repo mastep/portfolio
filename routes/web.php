@@ -48,4 +48,8 @@ Route::get('telegram-bot', function () {
     return view('service-telegram-bot');
 });
 
+// Telegram Bot routes
+Route::post('/telegram/webhook', [App\Http\Controllers\TelegramController::class, 'webhook']);
+Route::get('/webapp', [App\Http\Controllers\WebAppController::class, 'index']);
+Route::get('/api/products', [App\Http\Controllers\WebAppController::class, 'api']);
 

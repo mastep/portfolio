@@ -19,5 +19,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Заполнение данных для Telegram бота
+        $this->call([
+            ProductSeeder::class,
+            QASeeder::class,
+        ]);
     }
 }
