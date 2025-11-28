@@ -10,8 +10,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-      kafka:
-        condition: service_healthy
+      #kafka:
+        #condition: service_healthy
     networks:
       - telegram_bot_network
     environment:
@@ -40,12 +40,13 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
       - telegram_bot_network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "${DB_HOST}", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
       interval: 10s
       timeout: 5s
       retries: 5
