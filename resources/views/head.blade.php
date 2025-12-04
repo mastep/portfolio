@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>@yield('title', 'Создать интернет магазин, сайт для бизнеса. Возьмём сайт на борт нашей поддержки! ') | 7LAB.PRO</title>
+    <meta name="description" content="@yield('meta-description', 'Мы - увлеченная команда дизайнеров и разработчиков. Команда, которая верит в силу творчества. Мы специализируемся на разработке веб-решений для бизнеса.') | 7LAB.PRO">
+    <meta name="keywords" content="@yield('meta-keywords'), разработка сайтов, веб-разработка, программирование, создание сайтов, интернет-проекты, создать сайт, создать корпоративный портал 1С-Битрикс, создать сайт визитку">
+    <meta name="author" content="7LAB.PRO">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+    <!-- Config -->
+    <link type="text/css" rel="stylesheet" href="css/config.css">
+    <!-- Libraries -->
+    <link type="text/css" rel="stylesheet" href="css/libs.css">
+    <!-- Template Styles -->
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <!-- Responsive -->
+    <link type="text/css" rel="stylesheet" href="css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" href="https://7lab.pro/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="7Lab.pro" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(98359170, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/98359170" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script type="text/javascript">
+        var pn="7LAB.PRO";
+        var ph1="+7 999 113 75 00";
+        var pm="hello@7lab.pro";
+        var pt="{{config('app.TELEGRAM')}}";
+    </script>
+</head>
+@yield('content')

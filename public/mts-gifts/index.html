@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Новогодний розыгрыш МТС</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --mts-red: #fe0032;
+      --mts-red-dark: #fe0032;
+      --mts-white: #ffffff;
+      --mts-bg: #fdfdfd;
+      --transition-fast: 0.4s;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      /*font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;*/
+      font: 300 16px/23px MTS Wide,sans-serif;
+      color: var(--mts-white);
+    }
+
+
+    @font-face {
+        font-family: MTS Wide;
+        src: url(fonts/MTSWide-Light.woff2) format("woff2"),url(fonts/MTSWide-Light.ttf) format("truetype");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap
+    }
+
+    /* Preloader */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--mts-red);
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .preloader__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .preloader__fullscreen-hint {
+      color: #ffffff;
+      font-size: 1.1rem;
+      text-align: center;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    .preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader__spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: preloaderSpin 1s linear infinite;
+    }
+
+    @keyframes preloaderSpin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .screen {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* ---------- ЭКРАН 1: ЗАСТАВКА ---------- */
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      color: var(--mts-white);
+      overflow: hidden;
+    }
+
+    .intro__video-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .intro__video-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.35), transparent 55%),
+        linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .intro__video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .intro__content {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      padding: 6vh 6vw;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(120deg, rgba(254,0,50,0.85), rgba(254,0,50,0.4));
+      border-radius: 32px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.16);
+      animation: slideInFromLeft 2.5s cubic-bezier(0.4, 0, 0.2, 1) 4s forwards;
+      opacity: 0;
+      transform: translateX(-100px);
+      overflow: hidden;
+    }
+
+    /* Снежинки на фоне */
+    .intro__content::before,
+    .intro__content::after {
+      content: "❄";
+      position: absolute;
+      font-size: 60px;
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(255, 255, 255, 0.3);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    }
+
+    /* Первая снежинка */
+    .intro__content::before {
+      top: 15%;
+      right: 10%;
+      animation: floatSnowflake 3s ease-in-out infinite, rotateSnowflake 8s linear infinite;
+    }
+
+    /* Вторая снежинка */
+    .intro__content::after {
+      content: "❅";
+      font-size: 50px;
+      bottom: 20%;
+      left: 8%;
+      animation: floatSnowflake 3.5s ease-in-out infinite 0.5s, rotateSnowflake 10s linear infinite reverse;
+    }
+
+    /* Дополнительные снежинки через псевдоэлементы дочерних элементов */
+    .intro__content > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes floatSnowflake {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-15px) scale(1.1);
+      }
+    }
+
+    @keyframes rotateSnowflake {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Третья снежинка */
+    .intro__label::before {
+      content: "❆";
+      position: absolute;
+      font-size: 40px;
+      top: -10px;
+      right: -20px;
+      opacity: 0.4;
+      color: rgba(255, 255, 255, 0.7);
+      text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.7),
+        0 0 15px rgba(255, 255, 255, 0.4);
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+      animation: floatSnowflake 2.8s ease-in-out infinite 1s, rotateSnowflake 12s linear infinite;
+      z-index: -1;
+    }
+
+    /* Четвертая снежинка */
+    .intro__title::after {
+      content: "❄";
+      position: absolute;
+      font-size: 45px;
+      bottom: -15px;
+      left: -25px;
+      opacity: 0.4;
+      color: rgba(255, 255, 255, 0.7);
+      text-shadow: 
+        0 0 9px rgba(255, 255, 255, 0.7),
+        0 0 18px rgba(255, 255, 255, 0.4);
+      filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.5));
+      animation: floatSnowflake 3.2s ease-in-out infinite 1.5s, rotateSnowflake 9s linear infinite reverse;
+      z-index: -1;
+    }
+
+    @keyframes slideInFromLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .intro__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #ffe6ea;
+    }
+
+    .intro__label-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00ff88;
+      box-shadow: 0 0 14px #00ff88;
+    }
+
+    .intro__title {
+      font-size: clamp(2.8rem, 4.5vw, 4.4rem);
+      line-height: 1.05;
+      font-weight: 800;
+    }
+
+    .intro__title span {
+      display: inline-block;
+      padding: 0.12em 0.24em;
+      background: #ffffff;
+      color: var(--mts-red);
+      border-radius: 0.25em;
+      box-shadow: 0 0.3em 0 0 rgba(254,0,50,0.45);
+      transform: skewX(-6deg);
+      margin-left: 0.2em;
+    }
+
+    .intro__subtitle {
+      font-size: 1.1rem;
+      max-width: 540px;
+      color: #ffeef0;
+      opacity: 0.96;
+    }
+
+    .intro__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      font-size: 0.95rem;
+      color: #ffe6ea;
+    }
+
+    .intro__meta-item strong {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      opacity: 0.8;
+    }
+
+    .intro__meta-item span {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .intro__cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary {
+      position: relative;
+      overflow: visible;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.3rem 3rem;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--mts-red);
+      border: 3px solid #ffffff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+      animation: borderPulse 2s ease-in-out infinite;
+    }
+
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      background: linear-gradient(120deg, rgba(255,255,255,0.15), rgba(255,0,50,0.25));
+      opacity: 0;
+      transition: opacity var(--transition-fast) ease;
+    }
+
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+      background: var(--mts-red);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.6);
+    }
+
+    @keyframes borderPulse {
+      0%, 100% {
+        border-color: #ffffff;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.45), 0 0 0 0 rgba(255,255,255,0.7);
+      }
+      50% {
+        border-color: rgba(255,255,255,0.8);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.45), 0 0 0 8px rgba(255,255,255,0.3);
+      }
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.06);
+      color: #ffffff;
+      font-size: 0.95rem;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: background var(--transition-fast) ease, border-color var(--transition-fast) ease, transform 0.18s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* СНЕЖИНКИ НА ЭКРАНАХ */
+    .intro__snow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    
+    /* Снежинки на экране лотереи */
+    .lottery .intro__snow {
+      z-index: 2;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -20px;
+      color: #ffffff;
+      font-size: 12px;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.9));
+      animation-name: snowfall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes snowfall {
+      0% {
+        transform: translate3d(0, -10%, 0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* ---------- ЭКРАН 2: ЛОТЕРЕЯ ---------- */
+    .lottery {
+      color: var(--mts-red);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      padding: 3vh 3.5vw 3.5vh;
+    }
+
+
+    .lottery__title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .lottery__kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.21em;
+      text-transform: uppercase;
+      color: #fe0032;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lottery__kicker-img {
+      width: 1.2rem;
+      height: 1.2rem;
+      object-fit: contain;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .lottery__title {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .lottery__subtitle {
+      font-size: 0.95rem;
+      color: #7b1217;
+      opacity: 0.9;
+    }
+
+
+    .lottery__grid-wrapper {
+      position: relative;
+      flex: 1;
+      border-radius: 26px;
+      box-shadow: inset 0 0 0 1px rgba(254,0,50,0.06), 0 24px 60px rgba(254,0,50,0.2);
+      padding: 1.2rem;
+      overflow: hidden;
+    }
+
+    .lottery__grid {
+      position: absolute;
+      inset: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      justify-content: center;
+      gap: 0.45rem;
+      transition: transform 0.6s ease-out;
+      align-content: flex-start;
+      perspective: 1000px;
+    }
+
+
+    .employee {
+      position: relative;
+      flex: 0 0 150px;
+      width: 150px !important; 
+      height: 150px !important;
+      min-width: 150px;
+      max-width: 150px;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition:
+        transform 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        margin 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        left 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        top 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        width 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        height 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        flex 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        min-width 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        max-width 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 1;
+      will-change: transform, opacity, width, height;
+    }
+
+    .employee__img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.85);
+      box-shadow:
+        0 8px 18px rgba(254,0,50,0.35),
+        0 0 0 6px rgba(255,255,255,0.7);
+      background: var(--mts-red);
+      transform-origin: center;
+      transition: inherit;
+      object-fit: cover;
+      object-position: center;
+      clip-path: circle(50%);
+      -webkit-clip-path: circle(50%);
+    }
+
+    .employee::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
+      border: 1px dashed rgba(254,0,50,0.12);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .employee-hovered .employee__img {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow:
+        0 10px 22px rgba(254,0,50,0.45),
+        0 0 0 7px rgba(255,255,255,0.8);
+    }
+
+    .employee-hovered::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Класс для плавного исчезновения элемента с flip horizontal */
+    .employee--fading {
+      opacity: 0 !important;
+      transform: rotateY(180deg) scale(0) !important;
+      filter: blur(4px) !important;
+      flex: 0 0 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+      min-width: 0 !important;
+      max-width: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      pointer-events: none;
+      z-index: 1000;
+      transition:
+        opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        flex 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        width 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        height 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        min-width 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        max-width 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        margin 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      overflow: hidden;
+    }
+    
+    .employee--fading .employee__img {
+      transition: inherit;
+    }
+    
+    /* Плавное перестроение остальных элементов */
+    .lottery__grid .employee:not(.employee--fading) {
+      transition:
+        transform 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        margin 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        height 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        flex 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        min-width 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        max-width 5.2s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 5.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+
+    /* ПРЕ-ВИДЕО-ТАЙМЕР 5 СЕК ПЕРЕД РОЗЫГРЫШЕМ */
+    .lottery__pre-timer {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 25;
+      pointer-events: none;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.7), rgba(255,255,255,0.2), transparent 70%);
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .lottery__pre-timer.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .lottery__pre-timer-inner {
+      position: relative;
+      width: min(280px, 45vw);
+      height: min(280px, 45vw);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* Контейнер для фоновой картинки подарка */
+    .lottery__pre-timer-gift {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('lib/images/timer-gift.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Число внутри подарка */
+    .lottery__pre-timer-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4.5rem;
+      font-weight: 900;
+      text-shadow: 
+        0 4px 12px rgba(0,0,0,0.8),
+        0 0 20px rgba(255,255,255,0.5);
+      z-index: 10;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .lottery__pre-timer-label {
+      font-size: clamp(2.8rem, 4.5vw, 4.4rem);
+      line-height: 1.05;
+      font-weight: 800;
+      position: absolute;
+      bottom: -300px;
+      left: 0;
+      padding: 0.12em 0.24em;
+      color: var(--mts-white);
+      border-radius: 0.25em;
+      transform: skewX(-6deg);
+      margin-left: -165px;
+      width: 650px;
+      background: var(--mts-red);
+      padding: 2rem 4rem;
+    }
+
+    /* ВСПЫШКА ПРИ СТАРТЕ РОЗЫГРЫША */
+    .lottery__flash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,1), rgba(255,255,255,0.4), transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+      z-index: 24;
+      transition: opacity 0.35s ease-out;
+    }
+
+    .lottery__flash.is-visible {
+      opacity: 1;
+    }
+
+    /* ---------- АДАПТИВ ---------- */
+    @media (max-width: 960px) {
+      .intro__content {
+        padding: 4.5vh 6vw;
+        border-radius: 26px;
+      }
+      .lottery__grid-wrapper {
+        padding: 0.9rem;
+      }
+      .lottery__grid {
+        inset: 0.9rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .intro__content { gap: 1.6rem; }
+      .intro__meta { flex-direction: column; }
+      .lottery { padding-inline: 4vw; }
+      .employee {
+        width: 150px !important;
+        height: 150px !important;
+        min-width: 150px;
+        max-width: 150px;
+        aspect-ratio: 1 / 1 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .employee {
+        width: 150px !important;
+        height: 150px !important;
+        min-width: 150px;
+        max-width: 150px;
+        aspect-ratio: 1 / 1 !important;
+      }
+    }
+
+
+
+    .lottery__grid[data-count-children="55"] .employee{
+        flex: 0 0 160px;
+        width: 160px !important; 
+        height: 160px !important;
+        min-width: 160px;
+        max-width: 160px;
+      }
+
+
+   
+
+    .lottery__grid[data-count-children="40"] .employee{
+        flex: 0 0 190px;
+        width: 190px !important; 
+        height: 190px !important;
+        min-width: 190px;
+        max-width: 190px;
+      }
+
+      .lottery__grid[data-count-children="20"] .employee{
+        flex: 0 0 280px;
+        width: 280px !important; 
+        height: 280px !important;
+        min-width: 280px;
+        max-width: 280px;
+      }
+
+
+
+      .lottery__grid[data-count-children="10"] .employee{
+        flex: 0 0 400px;
+        width: 400px !important; 
+        height: 400px !important;
+        min-width: 400px;
+        max-width: 400px;
+      }
+
+      .lottery__grid[data-count-children="3"] .employee{
+        flex: 0 0 550px;
+        width: 550px !important; 
+        height: 550px !important;
+        min-width: 550px;
+        max-width: 550px;
+      }
+
+
+    /* Стили для победителя */
+    .employee--winner {
+      margin-top: 40px;
+      flex: 0 0 600px !important;
+      width: 600px !important;
+      height: 600px !important;
+      min-width: 600px !important;
+      max-width: 600px !important;
+      max-height: 600px !important;
+      z-index: 1000;
+      animation: winnerPulse 2s ease-in-out infinite;
+      position: relative;
+    }
+
+    .lottery__winner-panel::before {
+      content: "";
+      position: absolute;
+      top: -240px;
+      left: 130%;
+      transform: translateX(-50%);
+      width: 420px;
+      height: 420px;
+      background-image: url('lib/images/gift-open.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1001;
+      animation: giftFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes giftFloat {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      50% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+    }
+
+    @keyframes winnerPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(254, 0, 50, 0.7);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 30px rgba(254, 0, 50, 0);
+      }
+    }
+
+    .employee--winner .employee__img {
+      border: 8px solid rgba(255, 255, 255, 0.95);
+      box-shadow:
+        0 20px 60px rgba(254, 0, 50, 0.5),
+        0 0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 0 40px rgba(254, 0, 50, 0.2);
+    }
+
+    /* Поздравительный текст */
+    .lottery__winner-panel {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2000;
+      pointer-events: none;
+      opacity: 0;
+      animation: winnerTextAppear 1s ease-out 0.5s forwards;
+    }
+
+    @keyframes winnerTextAppear {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .lottery__winner-title {
+      font-size: clamp(2rem, 8vw, 5rem);
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow:
+        0 0 20px rgba(254, 0, 50, 0.8),
+        0 4px 20px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(254, 0, 50, 0.6);
+      margin-bottom: 4rem;
+      animation: winnerTextShine 3s ease-in-out infinite;
+    }
+
+    @keyframes winnerTextShine {
+      0%, 100% {
+        text-shadow:
+          0 0 20px rgba(254, 0, 50, 0.8),
+          0 4px 20px rgba(0, 0, 0, 0.8),
+          0 0 40px rgba(254, 0, 50, 0.6);
+      }
+      50% {
+        text-shadow:
+          0 0 30px rgba(254, 0, 50, 1),
+          0 4px 20px rgba(0, 0, 0, 0.8),
+          0 0 60px rgba(254, 0, 50, 0.8);
+      }
+    }
+
+    .lottery__winner-subtitle {
+      font-size: clamp(1.2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(254, 0, 50, 0.4);
+    }
+
+    /* Кнопка полноэкранного режима */
+    .fullscreen-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Скрытие кнопки на экране лотереи */
+    .lottery ~ .fullscreen-btn {
+      display: none !important;
+    }
+
+    /* Кнопка на preloader */
+    .preloader .fullscreen-btn {
+      position: static;
+      width: auto;
+      height: auto;
+      min-width: 200px;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      gap: 0.5rem;
+    }
+
+    .preloader .fullscreen-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 1);
+      transform: scale(1.05);
+    }
+
+    .preloader .fullscreen-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .fullscreen-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+      border-color: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
+    }
+
+    .fullscreen-btn:active {
+      transform: scale(0.95);
+    }
+
+    .fullscreen-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+    }
+
+    /* Иконка для входа в полноэкранный режим */
+    .fullscreen-btn .icon-enter {
+      display: block;
+    }
+
+    .fullscreen-btn .icon-exit {
+      display: none;
+    }
+
+    /* Иконка для выхода из полноэкранного режима */
+    body:fullscreen .fullscreen-btn .icon-enter,
+    body:-webkit-full-screen .fullscreen-btn .icon-enter,
+    body:-moz-full-screen .fullscreen-btn .icon-enter,
+    body:-ms-fullscreen .fullscreen-btn .icon-enter {
+      display: none;
+    }
+
+    body:fullscreen .fullscreen-btn .icon-exit,
+    body:-webkit-full-screen .fullscreen-btn .icon-exit,
+    body:-moz-full-screen .fullscreen-btn .icon-exit,
+    body:-ms-fullscreen .fullscreen-btn .icon-exit {
+      display: block;
+    }
+
+    /* Скрытие кнопки в полноэкранном режиме */
+    :fullscreen .fullscreen-btn,
+    :-webkit-full-screen .fullscreen-btn,
+    :-moz-full-screen .fullscreen-btn,
+    :-ms-fullscreen .fullscreen-btn {
+      display: none !important;
+    }
+
+    html:fullscreen .fullscreen-btn,
+    html:-webkit-full-screen .fullscreen-btn,
+    html:-moz-full-screen .fullscreen-btn,
+    html:-ms-fullscreen .fullscreen-btn {
+      display: none !important;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Кнопка полноэкранного режима (на основном экране) -->
+  <button class="fullscreen-btn" id="fullscreenBtn" aria-label="Полноэкранный режим" style="display: none;">
+    <svg class="icon-enter" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+    </svg>
+    <svg class="icon-exit" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
+    </svg>
+  </button>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__content">
+      <div class="preloader__spinner"></div>
+      <p class="preloader__fullscreen-hint">Рекомендуем включить полноэкранный режим.</p>
+      <button class="fullscreen-btn" id="preloaderFullscreenBtn" aria-label="Полноэкранный режим">
+        <svg class="icon-enter" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+        </svg>
+        <span>Включить полноэкранный режим</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- АУДИО СТАРТА -->
+  <audio id="startSound" preload="auto">
+    <source src="audio/start-sound.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ЭКРАН 1: ЗАСТАВКА -->
+  <section class="screen intro" id="top">
+    <div class="intro__video-bg">
+      <video src="lib/videos/team-laughing.mp4" autoplay muted loop playsinline></video>
+    </div>
+
+    <div class="intro__snow" id="introSnow"></div>
+
+    <div class="intro__content">
+      <div class="intro__label">
+        <span class="intro__label-dot"></span>
+        Новогодний розыгрыш для команды МТС
+      </div>
+
+      <h1 class="intro__title">
+        Улыбнись — <span>подарки от МТС</span> уже здесь
+      </h1>
+
+      <p class="intro__subtitle">
+        Среди сотрудников МТС мы прямо сейчас разыгрываем праздничный сюрприз.
+        Смотрите, как один из сотни улыбающихся коллег станет главным победителем вечера.
+      </p>
+
+      <div class="intro__meta">
+        <div class="intro__meta-item">
+          <strong>Формат</strong>
+          <span>Живой розыгрыш в прямом эфире из офиса</span>
+        </div>
+        <div class="intro__meta-item">
+          <strong>Правила</strong>
+          <span>100 участников → 3 финалиста → 1 счастливчик</span>
+        </div>
+      </div>
+
+      <div class="intro__cta-row">
+        <button class="btn-primary" id="scrollToLottery">
+          <span>НАЧАТЬ</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ЭКРАН 2: ЛОТЕРЕЯ -->
+  <section class="screen lottery" id="lottery">
+    <div class="intro__snow" id="lotterySnow"></div>
+    
+    <div class="lottery__grid-wrapper">
+      <div class="lottery__grid" id="employeesGrid"></div>
+
+      <!-- Пре-таймер "видео таймер" на 5 секунд -->
+      <div class="lottery__pre-timer" id="preTimer">
+        <div class="lottery__pre-timer-inner">
+          <div class="lottery__pre-timer-gift">
+            <div class="lottery__pre-timer-number" id="preTimerNumber">5</div>
+          </div>
+          <div class="lottery__pre-timer-label">Розыгрыш iPhone 17 Pro Max</div>
+        </div>
+      </div>
+
+      <!-- Вспышка при старте -->
+      <div class="lottery__flash" id="lotteryFlash"></div>
+
+      <!-- Поздравительная панель -->
+      <div class="lottery__winner-panel" id="winnerPanel" style="display: none;">
+        <div class="lottery__winner-title">ПОЗДРАВЛЯЕМ!</div>
+        <div class="lottery__winner-subtitle">Вы победитель!</div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    let lotteryStarted = false;
+    let employeesCreated = false;
+    let employeesList = [];
+
+    // Единая функция для подсчета .employee элементов
+    function getEmployeeCount() {
+      const grid = document.getElementById("employeesGrid");
+      if (!grid) return 0;
+      return grid.querySelectorAll(".employee").length;
+    }
+
+    // Единая функция для получения массива .employee элементов
+    function getEmployeeElements() {
+      const grid = document.getElementById("employeesGrid");
+      if (!grid) return [];
+      return Array.from(grid.querySelectorAll(".employee"));
+    }
+
+    // Функция для обновления атрибута data-count-children
+    function updateCountAttribute() {
+      const grid = document.getElementById("employeesGrid");
+      if (!grid) return;
+      
+      const count = getEmployeeCount();
+      if(count==55 || count==40|| count==20 || count==10 || count==3 || count==1) {
+        grid.setAttribute("data-count-children", count);
+      }
+    }
+
+    // Создание участников без запуска розыгрыша
+    function createEmployees() {
+      if (employeesCreated) return;
+
+      const grid = document.getElementById("employeesGrid");
+
+      if (!grid) return;
+
+      employeesList = [];
+      const TOTAL = 77;
+
+      for (let i = 0; i < TOTAL; i++) {
+        const el = createEmployeeElement(i);
+        employeesList.push(el);
+        grid.appendChild(el);
+      }
+
+      employeesCreated = true;
+      updateCountAttribute();
+    }
+
+    // Плавный скролл к лотерее
+    function setupScrollButtons() {
+      const lotteryEl = document.getElementById("lottery");
+      const primary = document.getElementById("scrollToLottery");
+
+      function scrollToLottery() {
+        lotteryEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function startLotteryAndScroll() {
+        if (!lotteryStarted) {
+          lotteryStarted = true;
+          scrollToLottery();
+          // Небольшая задержка перед запуском, чтобы скролл успел начаться
+          setTimeout(() => {
+            runLottery();
+          }, 300);
+        } else {
+          scrollToLottery();
+        }
+      }
+
+      primary && primary.addEventListener("click", startLotteryAndScroll);
+
+      // Запуск лотереи по клавише Enter
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.keyCode === 13) {
+          event.preventDefault();
+          startLotteryAndScroll();
+        }
+      });
+    }
+
+    // Снег на экране 1
+    function createSnow() {
+      const containers = [
+        document.getElementById("introSnow"),
+        document.getElementById("lotterySnow")
+      ];
+
+      const flakesCount = 45;
+      const symbols = ["✦", "❅", "✶", "✻", "❆"];
+
+      containers.forEach(container => {
+        if (!container) return;
+
+        for (let i = 0; i < flakesCount; i++) {
+          const span = document.createElement("span");
+          span.className = "snowflake";
+          span.textContent = symbols[i % symbols.length];
+
+          const size = 12 + Math.random() * 10;
+          const left = Math.random() * 100;
+          const duration = 9 + Math.random() * 8;
+          const delay = Math.random() * 10;
+          const drift = (Math.random() - 0.5) * 40;
+
+          span.style.left = left + "%";
+          span.style.fontSize = size + "px";
+          span.style.animationDuration = duration + "s";
+          span.style.animationDelay = delay + "s";
+          span.style.setProperty("--drift", drift + "px");
+
+          container.appendChild(span);
+        }
+      });
+    }
+
+    // Набор из 4 разных SVG аватаров для сотрудников
+    // Размеры и форма круга задаются через CSS
+    const EMPLOYEE_AVATAR_DATA_URIS = [
+      './lib/images/staff/1.svg',
+      './lib/images/staff/2.svg',
+      './lib/images/staff/3.svg',
+      './lib/images/staff/4.svg',
+      './lib/images/staff/5.svg',
+      './lib/images/staff/6.svg',
+      './lib/images/staff/7.svg',
+      './lib/images/staff/8.svg',
+      './lib/images/staff/9.svg',
+      './lib/images/staff/10.svg',
+      './lib/images/staff/11.svg',
+      './lib/images/staff/12.svg',
+    ];
+
+    function createEmployeeElement(index) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "employee";
+      wrapper.dataset.index = String(index);
+
+      const img = document.createElement("img");
+      img.className = "employee__img";
+      img.src = EMPLOYEE_AVATAR_DATA_URIS[Math.floor(Math.random() * EMPLOYEE_AVATAR_DATA_URIS.length)];
+      img.alt = "Сотрудник " + (index + 1);
+
+      wrapper.appendChild(img);
+
+      wrapper.addEventListener("mouseenter", () => {
+        wrapper.classList.add("employee-hovered");
+      });
+      wrapper.addEventListener("mouseleave", () => {
+        wrapper.classList.remove("employee-hovered");
+      });
+
+      return wrapper;
+    }
+
+
+
+    function runLottery() {
+      const grid = document.getElementById("employeesGrid");
+      const preTimer = document.getElementById("preTimer");
+      const preTimerNumber = document.getElementById("preTimerNumber");
+      const lotteryFlash = document.getElementById("lotteryFlash");
+      const startSound = document.getElementById("startSound");
+
+      // Используем уже созданных участников, если они есть
+      let employees = [];
+      const TOTAL = 170;
+
+      if (employeesCreated && employeesList.length > 0) {
+        // Используем уже созданных участников
+        employees = Array.from(employeesList);
+      } else {
+        // Создаем новых участников
+        for (let i = 0; i < TOTAL; i++) {
+          const el = createEmployeeElement(i);
+          employees.push(el);
+          grid.appendChild(el);
+        }
+        employeesList = employees;
+        employeesCreated = true;
+      }
+      
+      updateCountAttribute();
+
+
+      let isFinished = false;
+      let countdownRAF = null;
+
+      function startIntervalCountdown(duration) {
+        if (countdownRAF) {
+          cancelAnimationFrame(countdownRAF);
+          countdownRAF = null;
+        }
+
+        const startTs = performance.now();
+        const endTs = startTs + duration;
+
+        function step(ts) {
+          const left = Math.max(0, endTs - ts);
+          if (left > 0 && !isFinished) {
+            countdownRAF = requestAnimationFrame(step);
+          }
+        }
+
+        countdownRAF = requestAnimationFrame(step);
+      }
+
+
+      function scheduleNextRemoval() {
+        if (isFinished) return;
+
+        const count = getEmployeeCount();
+
+        if (count <= 0) {
+          isFinished = true;
+          startIntervalCountdown(0);
+          return;
+        }
+
+        // Если остался один элемент - останавливаем удаление и показываем победителя
+        if (count === 1) {
+          isFinished = true;
+          showWinnerEffects(); // Показываем сразу без задержки
+          return;
+        }
+
+        // Пауза в 6 секунд, если осталось 3 или 2 элемента
+        if (count === 4 || count === 3) {
+          setTimeout(() => {
+            if (isFinished) return;
+            performRemoval();
+          }, 6000); // Пауза 6 секунд
+          return;
+        }
+
+        let delayMs = 760;
+
+        startIntervalCountdown(delayMs);
+
+        setTimeout(() => {
+          if (isFinished) return;
+          performRemoval();
+        }, delayMs);
+      }
+
+      function performRemoval() {
+        // Получаем все элементы из контейнера .lottery__grid
+        const gridContainer = document.getElementById("employeesGrid");
+        if (!gridContainer) {
+          scheduleNextRemoval();
+          return;
+        }
+
+        const allEmployeesInGrid = getEmployeeElements();
+        
+        // Проверяем количество элементов в контейнере
+        const count = getEmployeeCount();
+        if (count <= 0) {
+          isFinished = true;
+          startIntervalCountdown(0);
+          return;
+        }
+
+        // Если остался один элемент - останавливаем удаление и показываем победителя
+        if (count === 1) {
+          isFinished = true;
+          showWinnerEffects(); // Показываем сразу без задержки
+          return;
+        }
+
+        // Если осталось меньше 2 элементов, не удаляем
+        if (count < 2) {
+          isFinished = true;
+          showWinnerEffects(); // Показываем сразу без задержки
+          return;
+        }
+
+        // Удаляем один случайный элемент
+        const index = Math.floor(Math.random() * allEmployeesInGrid.length);
+        const toRemove = allEmployeesInGrid[index];
+
+        if (toRemove) {
+          let isRemoved = false;
+          
+          // Функция для удаления элемента после завершения transition
+          const handleTransitionEnd = (event) => {
+            // Проверяем, что это событие относится к нужному элементу
+            // и что элемент еще не был удален
+            if (isRemoved || event.target !== toRemove) return;
+            
+            // Проверяем, что завершился переход opacity или transform
+            if (event.propertyName === 'opacity' || event.propertyName === 'transform') {
+              isRemoved = true;
+              // Очищаем fallback timeout
+              if (toRemove._fallbackTimeout) {
+                clearTimeout(toRemove._fallbackTimeout);
+                delete toRemove._fallbackTimeout;
+              }
+              // Удаляем обработчик события
+              toRemove.removeEventListener('transitionend', handleTransitionEnd);
+              // Удаляем элемент из DOM
+              toRemove.remove();
+              // Обновляем атрибут после удаления элемента из DOM
+              updateCountAttribute();
+              
+              // Проверяем количество элементов сразу после удаления
+              const currentCount = getEmployeeCount();
+              if (currentCount === 1) {
+                // Если остался один элемент - показываем победителя сразу
+                isFinished = true;
+                showWinnerEffects(); // Показываем сразу без задержки
+                return;
+              }
+            }
+          };
+
+          // Добавляем обработчик события окончания transition
+          toRemove.addEventListener('transitionend', handleTransitionEnd);
+          
+          // Fallback: если transitionend не сработает, удаляем через максимальное время transition
+          const fallbackTimeout = setTimeout(() => {
+            if (!isRemoved && toRemove.parentNode) {
+              isRemoved = true;
+              toRemove.removeEventListener('transitionend', handleTransitionEnd);
+              toRemove.remove();
+              updateCountAttribute();
+              
+              // Проверяем количество элементов сразу после удаления
+              const currentCount = getEmployeeCount();
+              if (currentCount === 1) {
+                // Если остался один элемент - показываем победителя сразу
+                isFinished = true;
+                showWinnerEffects(); // Показываем сразу без задержки
+                if (toRemove._fallbackTimeout) {
+                  delete toRemove._fallbackTimeout;
+                }
+                return;
+              }
+            }
+            if (toRemove._fallbackTimeout) {
+              delete toRemove._fallbackTimeout;
+            }
+          }, 2700); // Немного больше времени, чем transition (1600ms)
+          
+          // Сохраняем timeout для очистки
+          toRemove._fallbackTimeout = fallbackTimeout;
+          
+          // Добавляем класс для запуска CSS-перехода
+          // Элемент остается в потоке для плавного перестроения остальных
+          toRemove.classList.add("employee--fading");
+        }
+
+        // Обновляем массив employees, синхронизируя с элементами в контейнере
+        // Ждем немного, чтобы элементы успели удалиться из DOM
+        setTimeout(() => {
+          // Проверяем количество элементов перед обновлением
+          const currentCount = getEmployeeCount();
+          
+          // Если остался один элемент, останавливаем процесс
+          if (currentCount === 1) {
+            isFinished = true;
+            // Убираем класс fading у всех элементов на случай, если какой-то начал удаляться
+            const allEmployees = getEmployeeElements();
+            allEmployees.forEach(emp => {
+              emp.classList.remove("employee--fading");
+            });
+            showWinnerEffects(); // Показываем сразу без задержки
+            return;
+          }
+          
+          const remainingInGrid = getEmployeeElements();
+          employees.length = 0;
+          employees.push(...remainingInGrid);
+
+          // Обновляем атрибут data-count-children
+          updateCountAttribute();
+
+          // Проверяем количество элементов в контейнере после удаления
+          const finalCount = getEmployeeCount();
+          
+          if (finalCount === 1) {
+            isFinished = true;
+            showWinnerEffects(); // Показываем сразу без задержки
+            return;
+          }
+
+          // Если все элементы удалены, завершаем лотерею
+          if (finalCount <= 0) {
+            isFinished = true;
+            startIntervalCountdown(0);
+            return;
+          }
+
+          // Пауза в 6 секунд, если осталось 3 или 2 элемента
+          if (finalCount === 3 || finalCount === 2) {
+            setTimeout(() => {
+              scheduleNextRemoval();
+            }, 6000); // Пауза 6 секунд
+            return;
+          }
+
+          // Проверяем, все ли оставшиеся элементы имеют одинаковый src
+          if (finalCount > 1) {
+            const firstImg = remainingInGrid[0].querySelector(".employee__img");
+            if (firstImg && firstImg.src) {
+              const firstSrc = firstImg.src;
+              const allHaveSameSrc = remainingInGrid.every(employee => {
+                const img = employee.querySelector(".employee__img");
+                return img && img.src === firstSrc;
+              });
+
+              // Если все оставшиеся элементы имеют одинаковый src, они становятся победителями
+              if (allHaveSameSrc) {
+                startIntervalCountdown(0);
+                showWinnerEffects(); // Показываем сразу без задержки
+                isFinished = true;
+                return;
+              }
+            }
+          }
+
+          scheduleNextRemoval();
+        }, 600);
+      }
+
+      // Вспышка при старте
+      function triggerFlash() {
+        if (!lotteryFlash) return;
+        lotteryFlash.classList.add("is-visible");
+        setTimeout(() => {
+          lotteryFlash.classList.remove("is-visible");
+        }, 320);
+      }
+
+      // Функция для показа эффектов победителя
+      function showWinnerEffects() {
+        const grid = document.getElementById("employeesGrid");
+        const winnerPanel = document.getElementById("winnerPanel");
+        
+        if (!grid) return;
+
+        // Находим оставшийся элемент и делаем его победителем
+        const winner = grid.querySelector(".employee");
+        if (winner) {
+          winner.classList.add("employee--winner");
+          updateCountAttribute();
+        }
+
+        // Показываем поздравительный текст
+        if (winnerPanel) {
+          winnerPanel.style.display = "block";
+        }
+      }
+
+      // 5‑секундный пре-таймер
+      function startPreTimer() {
+        if (!preTimer || !preTimerNumber) {
+          scheduleNextRemoval();
+          return;
+        }
+
+        preTimer.classList.add("is-visible");
+        const TOTAL_MS = 5000;
+        const start = performance.now();
+        let lastShown = 5;
+
+        function step(ts) {
+          const elapsed = ts - start;
+          const left = Math.max(0, TOTAL_MS - elapsed);
+          const secondsLeft = Math.ceil(left / 1000);
+          if (secondsLeft !== lastShown) {
+            lastShown = secondsLeft;
+          }
+          preTimerNumber.textContent = secondsLeft > 0 ? secondsLeft : "СТАРТ!";
+
+          if (left > 0) {
+            requestAnimationFrame(step);
+          } else {
+            // завершение таймера: звук + вспышка + старт
+            preTimer.classList.remove("is-visible");
+
+            try {
+              if (startSound && typeof startSound.play === "function") {
+                startSound.currentTime = 0;
+                startSound.play().catch(() => {});
+              }
+            } catch (e) {}
+
+            triggerFlash();
+            scheduleNextRemoval();
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      // Небольшая задержка, чтобы сетка успела отрисоваться
+      setTimeout(() => {
+        startPreTimer();
+      }, 800);
+    }
+
+    // Функция для перехода в полноэкранный режим
+    function requestFullscreen() {
+      const element = document.documentElement;
+      if (element.requestFullscreen) {
+        element.requestFullscreen().catch(err => {
+          console.log('Ошибка при запросе полноэкранного режима:', err);
+        });
+      } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+      } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+      }
+    }
+
+    // Функция для выхода из полноэкранного режима
+    function exitFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+
+    // Проверка, находимся ли мы уже в полноэкранном режиме
+    function isFullscreen() {
+      return !!(document.fullscreenElement || 
+                document.webkitFullscreenElement || 
+                document.mozFullScreenElement || 
+                document.msFullscreenElement);
+    }
+
+    // Переключение полноэкранного режима
+    function toggleFullscreen() {
+      if (isFullscreen()) {
+        exitFullscreen();
+      } else {
+        requestFullscreen();
+      }
+    }
+
+    let fullscreenRequested = false;
+
+    // Запрос полноэкранного режима при первом взаимодействии пользователя
+    function tryRequestFullscreen() {
+      if (!fullscreenRequested && !isFullscreen()) {
+        fullscreenRequested = true;
+        requestFullscreen();
+      }
+    }
+
+    // Скрытие preloader
+    function hidePreloader() {
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+        preloader.classList.add("hidden");
+      }
+    }
+
+    // Время начала загрузки страницы
+    const pageLoadStartTime = performance.now();
+    const MIN_LOADER_TIME = 5000; // Минимум 5 секунд
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setupScrollButtons();
+      createSnow();
+      // Создаем grid с фото сразу при загрузке страницы
+      createEmployees();
+      
+      // Скрываем preloader после загрузки, но не раньше чем через 5 секунд
+      window.addEventListener('load', () => {
+        const elapsed = performance.now() - pageLoadStartTime;
+        const remainingTime = Math.max(0, MIN_LOADER_TIME - elapsed);
+        setTimeout(hidePreloader, remainingTime);
+      });
+      
+      // Обработчик кнопки полноэкранного режима (на основном экране)
+      const fullscreenBtn = document.getElementById("fullscreenBtn");
+      if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+      }
+
+      // Обработчик кнопки полноэкранного режима (на preloader)
+      const preloaderFullscreenBtn = document.getElementById("preloaderFullscreenBtn");
+      if (preloaderFullscreenBtn) {
+        preloaderFullscreenBtn.addEventListener('click', () => {
+          toggleFullscreen();
+          // Скрываем preloader после включения полноэкранного режима, но не раньше чем через 5 секунд
+          const elapsed = performance.now() - pageLoadStartTime;
+          const remainingTime = Math.max(500, MIN_LOADER_TIME - elapsed);
+          setTimeout(() => {
+            hidePreloader();
+          }, remainingTime);
+        });
+      }
+
+      // Обновление иконки и скрытие кнопки при изменении полноэкранного режима
+      function updateFullscreenIcon() {
+        const fullscreenBtn = document.getElementById("fullscreenBtn");
+        if (fullscreenBtn) {
+          // Кнопка всегда скрыта на экране лотереи
+          const lotterySection = document.getElementById("lottery");
+          const isOnLotteryScreen = lotterySection && window.getComputedStyle(lotterySection).display !== 'none';
+          
+          if (isOnLotteryScreen || isFullscreen()) {
+            fullscreenBtn.style.display = 'none';
+          } else {
+            // Показываем кнопку только после скрытия preloader и только на первом экране
+            const preloader = document.getElementById("preloader");
+            if (preloader && preloader.classList.contains("hidden")) {
+              fullscreenBtn.style.display = 'flex';
+            }
+          }
+        }
+      }
+
+      document.addEventListener('fullscreenchange', updateFullscreenIcon);
+      document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+      document.addEventListener('mozfullscreenchange', updateFullscreenIcon);
+      document.addEventListener('MSFullscreenChange', updateFullscreenIcon);
+
+      // Скрываем кнопку при скролле к экрану лотереи
+      function checkScreenAndHideButton() {
+        const lotterySection = document.getElementById("lottery");
+        const fullscreenBtn = document.getElementById("fullscreenBtn");
+        if (lotterySection && fullscreenBtn) {
+          const rect = lotterySection.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isVisible) {
+            fullscreenBtn.style.display = 'none';
+          } else {
+            updateFullscreenIcon();
+          }
+        }
+      }
+
+      // Проверяем при скролле и изменении размера окна
+      window.addEventListener('scroll', checkScreenAndHideButton);
+      window.addEventListener('resize', checkScreenAndHideButton);
+      
+      // Проверяем сразу при загрузке
+      setTimeout(checkScreenAndHideButton, 100);
+      
+      // Пытаемся запросить полноэкранный режим при любом взаимодействии пользователя
+      document.addEventListener('click', tryRequestFullscreen, { once: true });
+      document.addEventListener('keydown', tryRequestFullscreen, { once: true });
+      document.addEventListener('touchstart', tryRequestFullscreen, { once: true });
+      
+      // Также пытаемся сразу (может сработать в некоторых случаях)
+      setTimeout(() => {
+        if (!isFullscreen()) {
+          tryRequestFullscreen();
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>

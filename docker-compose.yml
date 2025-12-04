@@ -1,0 +1,62 @@
+services:
+  # Laravel приложение с PHP 8.3 и Nginx
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TELEGRAM: ${TELEGRAM}
+        DB_CONNECTION: ${DB_CONNECTION}
+        DB_HOST: ${DB_HOST}
+        DB_PORT: ${DB_PORT}
+        DB_DATABASE: ${DB_DATABASE}
+        DB_USERNAME: ${DB_USERNAME}
+        DB_PASSWORD: ${DB_PASSWORD}
+    container_name: telegram_bot_web
+    depends_on:
+        mysql:
+            condition: service_healthy
+    working_dir: /var/www/html
+    networks:
+      - telegram_bot_network
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost
+      DB_CONNECTION: ${DB_CONNECTION}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      KAFKA_BROKERS: kafka:29092
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USERNAME: ${SMTP_USERNAME}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+    healthcheck:
+        test: [ "CMD-SHELL", "php artisan migrate --force && php artisan key:generate && php artisan optimize:clear"  ]
+    ports:
+      - "9000:80"
+    restart: unless-stopped
+
+  # MySQL база данных
+  mysql:
+    image: mysql:8.0
+    container_name: telegram_bot_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - telegram_bot_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+    restart: unless-stopped
+
+networks:
+  telegram_bot_network:
+    driver: bridge
