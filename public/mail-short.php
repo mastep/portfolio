@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = config('app.SMTP_HOST'); ;                     //Set the SMTP server to send through
+        $mail->Host       = config('app.SMTP_HOST');                    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = config('app.SMTP_USERNAME');                     //SMTP username
         $mail->Password   = config('app.SMTP_PASSWORD');                               //SMTP password
