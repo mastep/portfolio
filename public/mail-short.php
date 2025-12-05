@@ -65,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->send();
         http_response_code(200);
     } catch (Exception $e) {
+        echo "An error occurred: " . $e->getMessage();
     }
 } else {
     # Not a POST request, set a 403 (forbidden) response code.
