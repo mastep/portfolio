@@ -46,8 +46,6 @@ ENV EMAIL=${EMAIL}
 ENV TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
 ENV TELEGRAM_TOKEN_CHAT_ID=${TELEGRAM_TOKEN_CHAT_ID}
 
-RUN echo "----------------------------------------------------------------------"
-RUN printenv
 
 # Копируем скачанные файлы из промежуточного образа (git_downloader)
 COPY --from=git_downloader /app/portfolio /var/www/html
