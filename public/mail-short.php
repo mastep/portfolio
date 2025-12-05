@@ -7,31 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require '../vendor/autoload.php';
-use Illuminate\Config\Repository;
-use Symfony\Component\Finder\Finder;
-use Dotenv\Dotenv;
-
-// Проверяем, не была ли уже загружена конфигурация
-if (!isset($config)) {
-    $basePath = __DIR__;
-
-    if (file_exists($basePath.'/.env')) {
-        $dotenv = Dotenv::createImmutable($basePath);
-        $dotenv->load();
-    }
-
-    $config = new Repository(); // Вот наша главная переменная
-
-    $configPath = $basePath . '/config';
-
-    if (is_dir($configPath)) {
-        $files = Finder::create()->files()->ignoreDotFiles(true)->in($configPath)->name('*.php');
-        foreach ($files as $file) {
-            $filename = pathinfo($file->getFilename(), PATHINFO_FILENAME);
-            $config->set($filename, require $file->getRealPath());
-        }
-    }
-}
+$config='../vendor/autoload.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -66,12 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = config('app.SMTP_HOST');                    //Set the SMTP server to send through
+        $mail->Host       = $config['SMTP_HOST'];                    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = config('app.SMTP_USERNAME');                     //SMTP username
-        $mail->Password   = config('app.SMTP_PASSWORD');                               //SMTP password
+        $mail->Username   = $config['SMTP_USERNAME'];                     //SMTP username
+        $mail->Password   = $config['SMTP_PASSWORD'];                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = config('app.SMTP_PORT');                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       = $config['SMTP_PORT'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom($email);
@@ -87,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->send();
         http_response_code(200);
     } catch (Exception $e) {
-
+        echo "An error occurred: " . $e->getMessage();
     }
 } else {
     # Not a POST request, set a 403 (forbidden) response code.
