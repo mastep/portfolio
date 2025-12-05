@@ -299,7 +299,7 @@
         <!-- Section: CTA -->
         <section data-padding="bottom">
             <div class="bringer-masked-cta bringer-masked-block" data-unload="fade-down">
-                <form action="mail-short.php" method="post" data-fill-error="Пожалуйста заполните форму" class="bringer-contact-form is-short bringer-masked-media" data-appear="fade-up">
+                <form action="mail-short" method="post" data-fill-error="Пожалуйста заполните форму" class="bringer-contact-form is-short bringer-masked-media" data-appear="fade-up">
                     <div class="bringer-form-content bringer-cta-form">
                         <div class="bringer-cta-form-content" data-appear="fade-up" data-delay="100">
                             <div class="bringer-cta-title">Пишите свою почту. Далее работать будем мы!</div>

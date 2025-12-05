@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\QA;
-use App\Services\TelegramService;
-use App\Services\KafkaService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
+
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 class MailController extends Controller
