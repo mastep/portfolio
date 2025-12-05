@@ -50,7 +50,7 @@
         var pn="{{config('APP_NAME')}}";
         var ph1="{{config('PHONE')}}";
         var pm="{{config('EMAIL')}}";
-        var pt="{{getenv('TELEGRAM')}}{{env('TELEGRAM')}}{{$_ENV['TELEGRAM']}}";
+        var pt="{{config('TELEGRAM')}}";
     </script>
 </head>
 @yield('content')
