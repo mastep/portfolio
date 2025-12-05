@@ -61,6 +61,5 @@ Route::get('/telegram/webhook_test',function (Illuminate\Http\Request $request){
     echo $answer = QA::findAnswer($update['message']['text'])?? 'Извините, я не нашел ответ на ваш вопрос. Попробуйте переформулировать вопрос или обратитесь к администратору.';
 });
 
-Route::post('mail-short', [App\Http\Controllers\MailController::class, 'send']);
 
 
