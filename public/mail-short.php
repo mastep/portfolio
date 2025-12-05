@@ -7,9 +7,31 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require '../vendor/autoload.php';
-//
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 1));
-$dotenv->load();
+use Illuminate\Config\Repository;
+use Symfony\Component\Finder\Finder;
+use Dotenv\Dotenv;
+
+// Проверяем, не была ли уже загружена конфигурация
+if (!isset($config)) {
+    $basePath = __DIR__;
+
+    if (file_exists($basePath.'/.env')) {
+        $dotenv = Dotenv::createImmutable($basePath);
+        $dotenv->load();
+    }
+
+    $config = new Repository(); // Вот наша главная переменная
+
+    $configPath = $basePath . '/config';
+
+    if (is_dir($configPath)) {
+        $files = Finder::create()->files()->ignoreDotFiles(true)->in($configPath)->name('*.php');
+        foreach ($files as $file) {
+            $filename = pathinfo($file->getFilename(), PATHINFO_FILENAME);
+            $config->set($filename, require $file->getRealPath());
+        }
+    }
+}
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -65,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->send();
         http_response_code(200);
     } catch (Exception $e) {
-        echo "An error occurred: " . $e->getMessage();
+
     }
 } else {
     # Not a POST request, set a 403 (forbidden) response code.
