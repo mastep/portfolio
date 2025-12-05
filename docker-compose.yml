@@ -5,7 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        TELEGRAM: ${TELEGRAM}
         DB_CONNECTION: ${DB_CONNECTION}
         DB_HOST: ${DB_HOST}
         DB_PORT: ${DB_PORT}
