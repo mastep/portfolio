@@ -21,9 +21,6 @@ ARG DB_USERNAME
 ARG DB_PASSWORD
 
 
-#################################################################
-RUN echo "-----------------------${TELEGRAM}----------------------------------------------"
-
 ENV TELEGRAM=${TELEGRAM}
 ENV DB_CONNECTION=${DB_CONNECTION}
 ENV DB_HOST=${DB_HOST}

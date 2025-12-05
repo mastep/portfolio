@@ -47,10 +47,10 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/98359170" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <script type="text/javascript">
-        var pn="7LAB.PRO";
-        var ph1="+7 999 113 75 00";
-        var pm="hello@7lab.pro";
-        var pt="{{config('app.TELEGRAM')}}";
+        var pn="{{config('APP_NAME')}}";
+        var ph1="{{config('PHONE')}}";
+        var pm="{{config('EMAIL')}}";
+        var pt="{{config('TELEGRAM')}}";
     </script>
 </head>
 @yield('content')
