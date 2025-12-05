@@ -10,7 +10,7 @@ require '../vendor/autoload.php';
 
 
 // 2. Загружаем экземпляр приложения Laravel (Service Container)
-$app = require_once .'../bootstrap/app.php';
+$app = require_once '../bootstrap/app.php';
 
 // 3. Запускаем процесс "bootstrap" консольного ядра.
 // Это инициализирует логирование, обработку исключений и, самое главное, ЗАГРУЖАЕТ КОНФИГУРАЦИЮ.
