@@ -20,8 +20,6 @@ $kernel->bootstrap();
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-echo config('app.SMTP_PASSWORD');
-exit;
 
 /**
  * Author: Shadow Themes
