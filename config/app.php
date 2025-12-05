@@ -123,6 +123,14 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'TELEGRAM'=>env('TELEGRAM', '-'),
+    'SMTP_HOST'=>env('SMTP_HOST'),
+    'SMTP_PORT'=>env('SMTP_PORT'),
+    'SMTP_USERNAME'=>env('SMTP_USERNAME'),
+    'SMTP_PASSWORD'=>env('SMTP_PASSWORD'),
+    'TELEGRAM'=>env('TELEGRAM'),
+    'PHONE'=>env('PHONE'),
+    'EMAIL'=>env('EMAIL'),
+    'TELEGRAM_TOKEN'=>env('TELEGRAM_TOKEN'),
+    'TELEGRAM_TOKEN_CHAT_ID'=>env('TELEGRAM_TOKEN_CHAT_ID'),
 
 ];
