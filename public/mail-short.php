@@ -20,6 +20,10 @@ $kernel->bootstrap();
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
+echo config('app.SMTP_HOST');
+echo 'wwww';
+exit;
+
 /**
  * Author: Shadow Themes
  * Author URL: http://shadow-themes.com
