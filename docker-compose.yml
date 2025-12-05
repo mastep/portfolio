@@ -5,21 +5,21 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        DB_CONNECTION: ${DB_CONNECTION}
-        DB_HOST: ${DB_HOST}
-        DB_PORT: ${DB_PORT}
-        DB_DATABASE: ${DB_DATABASE}
-        DB_USERNAME: ${DB_USERNAME}
-        DB_PASSWORD: ${DB_PASSWORD}
-        SMTP_HOST: ${SMTP_HOST}
-        SMTP_PORT: ${SMTP_PORT}
-        SMTP_USERNAME: ${SMTP_USERNAME}
+        DB_CONNECTION: "${DB_CONNECTION}"
+        DB_HOST: "${DB_HOST}"
+        DB_PORT: "${DB_PORT}"
+        DB_DATABASE: "${DB_DATABASE}"
+        DB_USERNAME: "${DB_USERNAME}"
+        DB_PASSWORD: "${DB_PASSWORD}"
+        SMTP_HOST: "${SMTP_HOST}"
+        SMTP_PORT: "${SMTP_PORT}"
+        SMTP_USERNAME: "${SMTP_USERNAME}"
         SMTP_PASSWORD: "${SMTP_PASSWORD}"
-        TELEGRAM: ${TELEGRAM}
+        TELEGRAM: "${TELEGRAM}"
         PHONE: "${PHONE}"
-        EMAIL: ${EMAIL}
-        TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
-        TELEGRAM_TOKEN_CHAT_ID: ${TELEGRAM_TOKEN_CHAT_ID}
+        EMAIL: "${EMAIL}"
+        TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
+        TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
     container_name: telegram_bot_web
     depends_on:
         mysql:
@@ -28,26 +28,26 @@ services:
     networks:
       - telegram_bot_network
     environment:
-      APP_NAME: ${APP_NAME}
+      APP_NAME: "${APP_NAME}"
       APP_ENV: production
       APP_DEBUG: false
       APP_URL: http://localhost
-      DB_CONNECTION: ${DB_CONNECTION}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_DATABASE: ${DB_DATABASE}
-      DB_USERNAME: ${DB_USERNAME}
-      DB_PASSWORD: ${DB_PASSWORD}
+      DB_CONNECTION: "${DB_CONNECTION}"
+      DB_HOST: "${DB_HOST}"
+      DB_PORT: "${DB_PORT}"
+      DB_DATABASE: "${DB_DATABASE}"
+      DB_USERNAME: "${DB_USERNAME}"
+      DB_PASSWORD: "${DB_PASSWORD}"
       KAFKA_BROKERS: kafka:29092
-      SMTP_HOST: ${SMTP_HOST}
-      SMTP_PORT: ${SMTP_PORT}
-      SMTP_USERNAME: ${SMTP_USERNAME}
+      SMTP_HOST: "${SMTP_HOST}"
+      SMTP_PORT: "${SMTP_PORT}"
+      SMTP_USERNAME: "${SMTP_USERNAME}"
       SMTP_PASSWORD: "${SMTP_PASSWORD}"
-      TELEGRAM: ${TELEGRAM}
+      TELEGRAM: "${TELEGRAM}"
       PHONE: "${PHONE}"
-      EMAIL: ${EMAIL}
-      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
-      TELEGRAM_TOKEN_CHAT_ID: ${TELEGRAM_TOKEN_CHAT_ID}
+      EMAIL: "${EMAIL}"
+      TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
+      TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
     healthcheck:
         test: [ "CMD-SHELL", "php artisan migrate --force && php artisan key:generate && php artisan optimize:clear&&php artisan cache:clear"  ]
     ports:
@@ -61,10 +61,10 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
     networks:
       - telegram_bot_network
     healthcheck:
