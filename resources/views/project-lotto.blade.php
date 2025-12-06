@@ -17,7 +17,7 @@
 
     <!-- Page Main -->
     <main id="bringer-main">
-        <div class="stg-container">
+        <div class="stg-container" style="position: relative">
 
             <div class="stg-row stg-no-gap stg-top-gap"  style="overflow: hidden; border-radius: 2em; margin-top:10%; margin-bottom:5%">
 
@@ -26,14 +26,8 @@
 
                 <div class="stg-col-8" style="position: absolute;">
                     <div data-appear="fade-right" data-unload="fade-left">
-                        <h1 style="margin: 5% 10% 0 10%">Корпоратив 2.0</h1>
-                        <p style=" margin: 3% 10% 0 10%; color:#fff">
-                            Готовое решение превращающее корпоратив в захватывающее интерактивное событие.
-                            Фото сотрудников, розыгрыши подарков и незабываемые эмоции!
-                            <br>
-                            Требования к установке: ноутбук, браузер
-                            <br><br>
-                        <div class="stg-no-gap" style="padding-left: 10%">
+
+                        <div class="stg-no-gap" style="padding: 10%">
                             <a href="lotto/" target="_blank" class="bringer-icon-link">
                                 <div class="bringer-icon-wrap" style="background-color: #000;">
                                     <i class="bringer-icon bringer-icon-explore"></i>
@@ -50,7 +44,13 @@
                     </div>
                 </div>
             </div>
-
+            <h1 >Корпоратив 2.0</h1>
+            <p style="color:#fff">
+                Готовое решение превращающее корпоратив в захватывающее интерактивное событие.
+                Фото сотрудников, розыгрыши подарков и незабываемые эмоции!
+                <br>
+                Требования к установке: ноутбук, браузер
+                <br><br>
 
             <!-- Section: Page Title -->
             <section>
