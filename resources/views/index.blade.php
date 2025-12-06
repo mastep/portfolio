@@ -201,6 +201,20 @@
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
+                            <video src="lotto/lib/videos/team-laughing.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">App</span>
+                                <h6>Корпоратив 2.0</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="/project_lotto_app"></a>
+                    </div><!-- .bringer-portfolio-card -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
                             <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01.jpg" alt="" width="1200" height="1200" alt="E-commerce для Art of Tea. Разработка интернет магазина.">
                         </div>
                         <div class="bringer-portfolio-card-footer">
