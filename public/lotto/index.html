@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Новогодний розыгрыш МТС</title>
+  <title>Новогодний розыгрыш</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -158,7 +158,7 @@
       pointer-events: none;
       z-index: 0;
       color: rgba(255, 255, 255, 0.8);
-      text-shadow: 
+      text-shadow:
         0 0 10px rgba(255, 255, 255, 0.8),
         0 0 20px rgba(255, 255, 255, 0.5),
         0 0 30px rgba(255, 255, 255, 0.3);
@@ -214,7 +214,7 @@
       right: -20px;
       opacity: 0.4;
       color: rgba(255, 255, 255, 0.7);
-      text-shadow: 
+      text-shadow:
         0 0 8px rgba(255, 255, 255, 0.7),
         0 0 15px rgba(255, 255, 255, 0.4);
       filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
@@ -231,7 +231,7 @@
       left: -25px;
       opacity: 0.4;
       color: rgba(255, 255, 255, 0.7);
-      text-shadow: 
+      text-shadow:
         0 0 9px rgba(255, 255, 255, 0.7),
         0 0 18px rgba(255, 255, 255, 0.4);
       filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.5));
@@ -410,7 +410,7 @@
       z-index: 1;
       overflow: hidden;
     }
-    
+
     /* Снежинки на экране лотереи */
     .lottery .intro__snow {
       z-index: 2;
@@ -517,7 +517,7 @@
     .employee {
       position: relative;
       flex: 0 0 150px;
-      width: 150px !important; 
+      width: 150px !important;
       height: 150px !important;
       min-width: 150px;
       max-width: 150px;
@@ -613,11 +613,11 @@
       perspective: 1000px;
       overflow: hidden;
     }
-    
+
     .employee--fading .employee__img {
       transition: inherit;
     }
-    
+
     /* Плавное перестроение остальных элементов */
     .lottery__grid .employee:not(.employee--fading) {
       transition:
@@ -688,7 +688,7 @@
       transform: translate(-50%, -50%);
       font-size: 4.5rem;
       font-weight: 900;
-      text-shadow: 
+      text-shadow:
         0 4px 12px rgba(0,0,0,0.8),
         0 0 20px rgba(255,255,255,0.5);
       z-index: 10;
@@ -769,18 +769,18 @@
 
     .lottery__grid[data-count-children="55"] .employee{
         flex: 0 0 160px;
-        width: 160px !important; 
+        width: 160px !important;
         height: 160px !important;
         min-width: 160px;
         max-width: 160px;
       }
 
 
-   
+
 
     .lottery__grid[data-count-children="40"] .employee{
         flex: 0 0 190px;
-        width: 190px !important; 
+        width: 190px !important;
         height: 190px !important;
         min-width: 190px;
         max-width: 190px;
@@ -788,7 +788,7 @@
 
       .lottery__grid[data-count-children="20"] .employee{
         flex: 0 0 280px;
-        width: 280px !important; 
+        width: 280px !important;
         height: 280px !important;
         min-width: 280px;
         max-width: 280px;
@@ -798,7 +798,7 @@
 
       .lottery__grid[data-count-children="10"] .employee{
         flex: 0 0 400px;
-        width: 400px !important; 
+        width: 400px !important;
         height: 400px !important;
         min-width: 400px;
         max-width: 400px;
@@ -806,7 +806,7 @@
 
       .lottery__grid[data-count-children="3"] .employee{
         flex: 0 0 550px;
-        width: 550px !important; 
+        width: 550px !important;
         height: 550px !important;
         min-width: 550px;
         max-width: 550px;
@@ -1080,15 +1080,15 @@
     <div class="intro__content">
       <div class="intro__label">
         <span class="intro__label-dot"></span>
-        Новогодний розыгрыш для команды МТС
+        Новогодний розыгрыш для вашей команды
       </div>
 
       <h1 class="intro__title">
-        Улыбнись — <span>подарки от МТС</span> уже здесь
+        Улыбнись — <span>подарки</span> уже здесь
       </h1>
 
       <p class="intro__subtitle">
-        Среди сотрудников МТС мы прямо сейчас разыгрываем праздничный сюрприз.
+        Среди сотрудников мы прямо сейчас разыгрываем праздничный сюрприз.
         Смотрите, как один из сотни улыбающихся коллег станет главным победителем вечера.
       </p>
 
@@ -1115,7 +1115,7 @@
   <!-- ЭКРАН 2: ЛОТЕРЕЯ -->
   <section class="screen lottery" id="lottery">
     <div class="intro__snow" id="lotterySnow"></div>
-    
+
     <div class="lottery__grid-wrapper">
       <div class="lottery__grid" id="employeesGrid"></div>
 
@@ -1164,7 +1164,7 @@
     function updateCountAttribute() {
       const grid = document.getElementById("employeesGrid");
       if (!grid) return;
-      
+
       const count = getEmployeeCount();
       if(count==55 || count==40|| count==20 || count==10 || count==3 || count==1) {
         grid.setAttribute("data-count-children", count);
@@ -1325,7 +1325,7 @@
         employeesList = employees;
         employeesCreated = true;
       }
-      
+
       updateCountAttribute();
 
 
@@ -1398,7 +1398,7 @@
         }
 
         const allEmployeesInGrid = getEmployeeElements();
-        
+
         // Проверяем количество элементов в контейнере
         const count = getEmployeeCount();
         if (count <= 0) {
@@ -1427,13 +1427,13 @@
 
         if (toRemove) {
           let isRemoved = false;
-          
+
           // Функция для удаления элемента после завершения transition
           const handleTransitionEnd = (event) => {
             // Проверяем, что это событие относится к нужному элементу
             // и что элемент еще не был удален
             if (isRemoved || event.target !== toRemove) return;
-            
+
             // Проверяем, что завершился переход opacity или transform
             if (event.propertyName === 'opacity' || event.propertyName === 'transform') {
               isRemoved = true;
@@ -1448,7 +1448,7 @@
               toRemove.remove();
               // Обновляем атрибут после удаления элемента из DOM
               updateCountAttribute();
-              
+
               // Проверяем количество элементов сразу после удаления
               const currentCount = getEmployeeCount();
               if (currentCount === 1) {
@@ -1462,7 +1462,7 @@
 
           // Добавляем обработчик события окончания transition
           toRemove.addEventListener('transitionend', handleTransitionEnd);
-          
+
           // Fallback: если transitionend не сработает, удаляем через максимальное время transition
           const fallbackTimeout = setTimeout(() => {
             if (!isRemoved && toRemove.parentNode) {
@@ -1470,7 +1470,7 @@
               toRemove.removeEventListener('transitionend', handleTransitionEnd);
               toRemove.remove();
               updateCountAttribute();
-              
+
               // Проверяем количество элементов сразу после удаления
               const currentCount = getEmployeeCount();
               if (currentCount === 1) {
@@ -1487,10 +1487,10 @@
               delete toRemove._fallbackTimeout;
             }
           }, 2700); // Немного больше времени, чем transition (1600ms)
-          
+
           // Сохраняем timeout для очистки
           toRemove._fallbackTimeout = fallbackTimeout;
-          
+
           // Добавляем класс для запуска CSS-перехода
           // Элемент остается в потоке для плавного перестроения остальных
           toRemove.classList.add("employee--fading");
@@ -1501,7 +1501,7 @@
         setTimeout(() => {
           // Проверяем количество элементов перед обновлением
           const currentCount = getEmployeeCount();
-          
+
           // Если остался один элемент, останавливаем процесс
           if (currentCount === 1) {
             isFinished = true;
@@ -1513,7 +1513,7 @@
             showWinnerEffects(); // Показываем сразу без задержки
             return;
           }
-          
+
           const remainingInGrid = getEmployeeElements();
           employees.length = 0;
           employees.push(...remainingInGrid);
@@ -1523,7 +1523,7 @@
 
           // Проверяем количество элементов в контейнере после удаления
           const finalCount = getEmployeeCount();
-          
+
           if (finalCount === 1) {
             isFinished = true;
             showWinnerEffects(); // Показываем сразу без задержки
@@ -1582,7 +1582,7 @@
       function showWinnerEffects() {
         const grid = document.getElementById("employeesGrid");
         const winnerPanel = document.getElementById("winnerPanel");
-        
+
         if (!grid) return;
 
         // Находим оставшийся элемент и делаем его победителем
@@ -1677,9 +1677,9 @@
 
     // Проверка, находимся ли мы уже в полноэкранном режиме
     function isFullscreen() {
-      return !!(document.fullscreenElement || 
-                document.webkitFullscreenElement || 
-                document.mozFullScreenElement || 
+      return !!(document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullScreenElement ||
                 document.msFullscreenElement);
     }
 
@@ -1719,14 +1719,14 @@
       createSnow();
       // Создаем grid с фото сразу при загрузке страницы
       createEmployees();
-      
+
       // Скрываем preloader после загрузки, но не раньше чем через 5 секунд
       window.addEventListener('load', () => {
         const elapsed = performance.now() - pageLoadStartTime;
         const remainingTime = Math.max(0, MIN_LOADER_TIME - elapsed);
         setTimeout(hidePreloader, remainingTime);
       });
-      
+
       // Обработчик кнопки полноэкранного режима (на основном экране)
       const fullscreenBtn = document.getElementById("fullscreenBtn");
       if (fullscreenBtn) {
@@ -1754,7 +1754,7 @@
           // Кнопка всегда скрыта на экране лотереи
           const lotterySection = document.getElementById("lottery");
           const isOnLotteryScreen = lotterySection && window.getComputedStyle(lotterySection).display !== 'none';
-          
+
           if (isOnLotteryScreen || isFullscreen()) {
             fullscreenBtn.style.display = 'none';
           } else {
@@ -1790,15 +1790,15 @@
       // Проверяем при скролле и изменении размера окна
       window.addEventListener('scroll', checkScreenAndHideButton);
       window.addEventListener('resize', checkScreenAndHideButton);
-      
+
       // Проверяем сразу при загрузке
       setTimeout(checkScreenAndHideButton, 100);
-      
+
       // Пытаемся запросить полноэкранный режим при любом взаимодействии пользователя
       document.addEventListener('click', tryRequestFullscreen, { once: true });
       document.addEventListener('keydown', tryRequestFullscreen, { once: true });
       document.addEventListener('touchstart', tryRequestFullscreen, { once: true });
-      
+
       // Также пытаемся сразу (может сработать в некоторых случаях)
       setTimeout(() => {
         if (!isFullscreen()) {
