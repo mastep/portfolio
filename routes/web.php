@@ -20,6 +20,10 @@ Route::get('project_vasiliev_groove_landing', function () {
     return view('project_vg_landing');
 });
 
+Route::get('project_lotto_app', function () {
+    return view('project-lotto');
+});
+
 Route::get('landing-page', function () {
     return view('service-1');
 });
