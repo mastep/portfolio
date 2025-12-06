@@ -33,7 +33,7 @@ services:
       TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
       TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
     healthcheck:
-        test: [ "CMD-SHELL", "php artisan migrate --force && php artisan key:generate && php artisan optimize:clear&&php artisan cache:clear&&php artisan config:cache"  ]
+        test: [ "CMD-SHELL", "php artisan migrate --force && php artisan key:generate && php artisan optimize:clear&&php artisan cache:clear&&php artisan db:seed"  ]
     ports:
       - "9000:80"
     restart: unless-stopped
