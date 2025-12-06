@@ -78,7 +78,7 @@
             </li>
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="form/">
+                <a itemprop="item" href="form">
                     <span itemprop="name">Заполнить форму</span></a>
                 <meta itemprop="position" content="1" />
                 </a>
