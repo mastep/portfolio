@@ -1,6 +1,8 @@
 <?php
 
 // Telegram Bot routes
+use App\Models\QA;
+
 Route::post('/telegram/webhook', [App\Http\Controllers\TelegramController::class, 'webhook']);
 Route::get('/webapp', [App\Http\Controllers\WebAppController::class, 'index']);
 Route::get('/api/products', [App\Http\Controllers\WebAppController::class, 'api']);
