@@ -25,13 +25,15 @@ class TelegramController extends Controller
     public function webhook(Request $request)
     {
         $update = $request->all();
-        
+
         // Отправляем сообщение в Kafka для асинхронной обработки
+        /*
         $this->kafkaService->produceMessage([
             'type' => 'telegram_update',
             'data' => $update,
             'timestamp' => now()->toDateTimeString(),
         ]);
+        */
 
         // Обрабатываем синхронно для быстрого ответа
         $this->handleUpdate($update);
@@ -66,7 +68,7 @@ class TelegramController extends Controller
         // Обработка обычных вопросов
         if (!empty($text)) {
             $answer = QA::findAnswer($text);
-            
+
             if ($answer) {
                 $this->telegramService->sendMessage($chatId, $answer);
             } else {
