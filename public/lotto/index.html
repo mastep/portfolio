@@ -763,6 +763,9 @@
         max-width: 150px;
         aspect-ratio: 1 / 1 !important;
       }
+        .lottery__pre-timer-label{
+            display: none;
+        }
     }
 
 
@@ -1180,7 +1183,7 @@
       if (!grid) return;
 
       employeesList = [];
-      const TOTAL = 77;
+      const TOTAL = 12;
 
       for (let i = 0; i < TOTAL; i++) {
         const el = createEmployeeElement(i);
@@ -1284,7 +1287,7 @@
 
       const img = document.createElement("img");
       img.className = "employee__img";
-      img.src = EMPLOYEE_AVATAR_DATA_URIS[Math.floor(Math.random() * EMPLOYEE_AVATAR_DATA_URIS.length)];
+      img.src = EMPLOYEE_AVATAR_DATA_URIS[index];
       img.alt = "Сотрудник " + (index + 1);
 
       wrapper.appendChild(img);
@@ -1309,21 +1312,9 @@
       const startSound = document.getElementById("startSound");
 
       // Используем уже созданных участников, если они есть
-      let employees = [];
-      const TOTAL = 35;
-
       if (employeesCreated && employeesList.length > 0) {
         // Используем уже созданных участников
         employees = Array.from(employeesList);
-      } else {
-        // Создаем новых участников
-        for (let i = 0; i < TOTAL; i++) {
-          const el = createEmployeeElement(i);
-          employees.push(el);
-          grid.appendChild(el);
-        }
-        employeesList = employees;
-        employeesCreated = true;
       }
 
       updateCountAttribute();
