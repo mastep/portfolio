@@ -54,7 +54,7 @@ class TelegramService
                     [
                         [
                             'text' => 'Открыть магазин',
-                            'web_app' => ['url' => $webAppUrl],
+                            'url' => $webAppUrl,
                         ],
                     ],
                 ],
