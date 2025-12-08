@@ -5,7 +5,7 @@ use App\Models\QA;
 
 Route::post('/telegram/webhook', [App\Http\Controllers\TelegramController::class, 'webhook']);
 Route::get('/webapp', [App\Http\Controllers\WebAppController::class, 'index']);
-Route::get('/api/products', [App\Http\Controllers\WebAppController::class, 'api']);
+Route::get('/products', [App\Http\Controllers\WebAppController::class, 'api']);
 
 
 /*Proxy для обхода CSRF - удалить d PROD*/
