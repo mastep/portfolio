@@ -18,7 +18,7 @@ WORKDIR /var/www/html
 #COPY --from=git_downloader /app/portfolio /var/www/html
 
 
-#Не для production
+
 COPY . /var/www/html
 
 
