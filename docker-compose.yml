@@ -1,60 +1,155 @@
 services:
-  # Laravel приложение с PHP 8.3 и Nginx
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: telegram_bot_web
-    depends_on:
-        mysql:
-            condition: service_healthy
-    working_dir: /var/www/html
-    networks:
-      - telegram_bot_network
-    environment:
-      APP_NAME: "${APP_NAME}"
-      APP_ENV: "${APP_ENV}"
-      APP_DEBUG: "${APP_DEBUG}"
-      APP_URL: "${APP_URL}"
-      DB_CONNECTION: "${DB_CONNECTION}"
-      DB_HOST: "${DB_HOST}"
-      DB_PORT: "${DB_PORT}"
-      DB_DATABASE: "${DB_DATABASE}"
-      DB_USERNAME: "${DB_USERNAME}"
-      DB_PASSWORD: "${DB_PASSWORD}"
-      KAFKA_BROKERS: kafka:29092
-      SMTP_HOST: "${SMTP_HOST}"
-      SMTP_PORT: "${SMTP_PORT}"
-      SMTP_USERNAME: "${SMTP_USERNAME}"
-      SMTP_PASSWORD: "${SMTP_PASSWORD}"
-      TELEGRAM: "${TELEGRAM}"
-      PHONE: "${PHONE}"
-      EMAIL: "${EMAIL}"
-      TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
-      TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
-    healthcheck:
-        test: [ "CMD-SHELL", "php artisan migrate --force && php artisan key:generate && php artisan optimize:clear&&php artisan cache:clear && php artisan db:seed"  ]
-    ports:
-      - "9000:80"
-    restart: unless-stopped
+    # Laravel приложение с PHP 8.3 и Nginx
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: telegram_bot_web
+        depends_on:
+            mysql:
+                condition: service_healthy
+            app_setup:
+                condition: service_completed_successfully
+        working_dir: /var/www/html
+        networks:
+            - telegram_bot_network
+        environment:
+            APP_NAME: "${APP_NAME}"
+            APP_ENV: "${APP_ENV}"
+            APP_DEBUG: "${APP_DEBUG}"
+            APP_URL: "${APP_URL}"
+            DB_CONNECTION: "${DB_CONNECTION}"
+            DB_HOST: "${DB_HOST}"
+            DB_PORT: "${DB_PORT}"
+            DB_DATABASE: "${DB_DATABASE}"
+            DB_USERNAME: "${DB_USERNAME}"
+            DB_PASSWORD: "${DB_PASSWORD}"
+            KAFKA_BROKERS: kafka:9092
+            SMTP_HOST: "${SMTP_HOST}"
+            SMTP_PORT: "${SMTP_PORT}"
+            SMTP_USERNAME: "${SMTP_USERNAME}"
+            SMTP_PASSWORD: "${SMTP_PASSWORD}"
+            TELEGRAM: "${TELEGRAM}"
+            PHONE: "${PHONE}"
+            EMAIL: "${EMAIL}"
+            TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
+            TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
+        volumes:
+            - .:/var/www/html
+        ports:
+            - "9000:80"
+        restart: unless-stopped
 
-  # MySQL база данных
-  mysql:
-    image: mysql:8.0
-    container_name: telegram_bot_mysql
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
-      MYSQL_DATABASE: "${DB_DATABASE}"
-      MYSQL_USER: "${DB_USERNAME}"
-      MYSQL_PASSWORD: "${DB_PASSWORD}"
-    networks:
-      - telegram_bot_network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
-    restart: unless-stopped
+    # MySQL база данных
+    mysql:
+        image: mysql:8.0
+        container_name: telegram_bot_mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+            MYSQL_DATABASE: "${DB_DATABASE}"
+            MYSQL_USER: "${DB_USERNAME}"
+            MYSQL_PASSWORD: "${DB_PASSWORD}"
+        networks:
+            - telegram_bot_network
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
+        restart: unless-stopped
+
+    kafka:
+        image: bitnami/kafka:latest
+        container_name: kafka
+        ports:
+            # Мапим оба порта на хост-машину Windows
+            - "9092:9092"
+            - "9094:9094"
+        environment:
+            # Используем один слушатель PLAINTEXT, который рекламирует себя по-разному
+            KAFKA_CFG_LISTENERS: CLIENT://:9092,EXTERNAL://:9094,CONTROLLER://:9093
+            KAFKA_CFG_ADVERTISED_LISTENERS: CLIENT://kafka:9092,EXTERNAL://host.docker.internal:9094
+            KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+            KAFKA_CFG_INTER_BROKER_LISTENER_NAME: CLIENT # Используем CLIENT для внутреннего общения
+
+            # Остальные настройки KRAFT
+            KAFKA_CFG_NODE_ID: 1
+            KAFKA_CFG_PROCESS_ROLES: "broker,controller"
+            KAFKA_CFG_CONTROLLER_LISTENER_NAMES: CONTROLLER
+            KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+            ALLOW_PLAINTEXT_LISTENER: "yes"
+            KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+            KAFKA_ENABLE_KRAFT: "yes"
+        volumes:
+            - kafka_data:/opt/bitnami/kafka/data
+        networks:
+            - telegram_bot_network
+    worker:
+        build:
+            context: .
+            dockerfile: Dockerfile # Использует тот же Dockerfile, что и сервис web
+        container_name: telegram_bot_worker
+        working_dir: /var/www/html
+        networks:
+            - telegram_bot_network
+        depends_on:
+            mysql:
+                condition: service_healthy # Ждет, пока MySQL не станет healthy
+            kafka:
+                condition: service_started # Ждет запуска Kafka
+        volumes:
+            - .:/var/www/html
+        environment:
+            # Скопируйте сюда все нужные переменные окружения из сервиса web
+            KAFKA_BROKERS: kafka:9092
+            # ...
+        # !!! Здесь ваша команда становится основной командой контейнера !!!
+        command: php artisan app:consume-telegram-updates
+        restart: unless-stopped
+
+    app_setup:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            mysql:
+                condition: service_healthy
+        working_dir: /var/www/html
+        environment:
+            APP_NAME: "${APP_NAME}"
+            APP_ENV: "${APP_ENV}"
+            APP_DEBUG: "${APP_DEBUG}"
+            APP_URL: "${APP_URL}"
+            DB_CONNECTION: "${DB_CONNECTION}"
+            DB_HOST: "${DB_HOST}"
+            DB_PORT: "${DB_PORT}"
+            DB_DATABASE: "${DB_DATABASE}"
+            DB_USERNAME: "${DB_USERNAME}"
+            DB_PASSWORD: "${DB_PASSWORD}"
+            KAFKA_BROKERS: kafka:9092
+            SMTP_HOST: "${SMTP_HOST}"
+            SMTP_PORT: "${SMTP_PORT}"
+            SMTP_USERNAME: "${SMTP_USERNAME}"
+            SMTP_PASSWORD: "${SMTP_PASSWORD}"
+            TELEGRAM: "${TELEGRAM}"
+            PHONE: "${PHONE}"
+            EMAIL: "${EMAIL}"
+            TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
+            TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
+        volumes:
+            - .:/var/www/html
+
+        # !!! ПРАВИЛЬНАЯ КОМАНДА (без 'docker compose exec web') !!!
+        command: >
+            /bin/sh -c "
+            php artisan migrate --force &&
+            php artisan optimize:clear &&
+            php artisan db:seed --force
+            "
+        networks:
+            - telegram_bot_network
+volumes:
+    kafka_data:
 
 networks:
-  telegram_bot_network:
-    driver: bridge
+    telegram_bot_network:
+        driver: bridge
