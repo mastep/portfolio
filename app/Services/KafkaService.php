@@ -3,9 +3,13 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Log;
+use Junges\Kafka\Facades\Kafka;
+// Если класс Message использовался, его нужно импортировать
+// use Junges\Kafka\Message\Message; // Хотя этот класс может быть не нужен с этим синтаксисом
 
 class KafkaService
 {
+    // ... (конструктор и свойства остаются прежними) ...
     private string $brokers;
     private string $topic;
     private string $groupId;
@@ -13,24 +17,39 @@ class KafkaService
     public function __construct()
     {
         $this->brokers = config('kafka.brokers');
-        $this->topic = config('kafka.topic');
+        $this->topic = config('kafka.topic_telegram_updates', 'telegram_update');
         $this->groupId = config('kafka.group_id');
     }
 
     /**
-     * Отправка сообщения в Kafka
-     * Упрощенная реализация - в продакшене используйте rdkafka или enqueue
+     * Отправка сообщения в Kafka с использованием альтернативного синтаксиса
      */
-    public function produceMessage(array $message): bool
+    public function produceMessage(array $payload, string $key = null): bool
     {
         try {
-            // Упрощенная реализация - логируем сообщение
-            // В продакшене здесь должна быть интеграция с Kafka через rdkafka или HTTP API
-            Log::info('Kafka message produced', [
+            // Используем метод publish(), передавая ему список брокеров
+            $producerBuilder = Kafka::publish($this->brokers)
+                // Затем указываем топик через onTopic()
+                ->onTopic($this->topic);
+
+            // 1. Устанавливаем тело сообщения (преобразуем массив в JSON строку)
+            $producerBuilder->withBody(json_encode($payload));
+
+            // 2. Если передан ключ, устанавливаем его
+            if ($key !== null) {
+                // withKafkaKey должен работать
+                $producerBuilder->withKafkaKey($key);
+            }
+
+            // Отправляем сообщение
+            $producerBuilder->send();
+
+            Log::info('Kafka message produced successfully', [
                 'topic' => $this->topic,
-                'message' => $message,
+                'key' => $key,
+                'payload' => $payload,
             ]);
-            
+
             return true;
         } catch (\Exception $e) {
             Log::error('Kafka produce error: ' . $e->getMessage());
@@ -39,22 +58,10 @@ class KafkaService
     }
 
     /**
-     * Потребление сообщений из Kafka
-     * Упрощенная реализация - в продакшене используйте rdkafka или enqueue
+     * Потребление сообщений из Kafka (заглушка/пример)
      */
     public function consumeMessages(callable $callback): void
     {
-        try {
-            // Упрощенная реализация - в продакшене здесь должен быть реальный Kafka consumer
-            Log::info('Kafka consumer started', [
-                'topic' => $this->topic,
-                'group_id' => $this->groupId,
-            ]);
-            
-            // В реальной реализации здесь будет цикл чтения сообщений из Kafka
-        } catch (\Exception $e) {
-            Log::error('Kafka consume error: ' . $e->getMessage());
-        }
+        Log::info('Kafka consumer logic should be implemented in an Artisan Command Handler.');
     }
 }
-
