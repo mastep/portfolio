@@ -38,4 +38,6 @@ RUN pecl install rdkafka \
 
 RUN composer update
 
+RUN sleep 40 && echo "40 seconds have passed, continuing build..."
+
 RUN php artisan key:generate
