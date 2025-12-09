@@ -32,8 +32,6 @@ services:
             EMAIL: "${EMAIL}"
             TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
             TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
-        healthcheck:
-            test: [ "CMD", "php", "artisan", "migrate"]
         ports:
             - "9000:80"
         restart: unless-stopped
@@ -101,7 +99,9 @@ services:
         restart: unless-stopped
 
     app_setup:
-        image: shinsenter/laravel:dev-php8.3-nginx
+        build:
+            context: .
+            dockerfile: Dockerfile
         depends_on:
             mysql:
                 condition: service_healthy
@@ -131,8 +131,6 @@ services:
         # !!! ПРАВИЛЬНАЯ КОМАНДА (без 'docker compose exec web') !!!
         command: >
             /bin/sh -c "
-            sudo -i &&
-            rm /var/www/html/public/storage &&
             php artisan migrate --force &&
             php artisan optimize:clear &&
             php artisan cache:clear &&
