@@ -133,12 +133,14 @@ services:
         # !!! ПРАВИЛЬНАЯ КОМАНДА (без 'docker compose exec web') !!!
         command: >
             /bin/sh -c "
+            rm /var/www/html/public/storage &&
             php artisan migrate --force &&
             php artisan optimize:clear &&
             php artisan db:seed --force
             "
         networks:
             - telegram_bot_network
+        restart: no
 
 networks:
     telegram_bot_network:
