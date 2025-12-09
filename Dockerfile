@@ -22,8 +22,20 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 
+# Устанавливаем системные зависимости:
+# build-essential, autoconf, automake, librdkafka-dev
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    build-essential \
+    autoconf \
+    automake \
+    librdkafka-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем само PHP-расширение через PECL и активируем его
+RUN pecl install rdkafka \
+    && docker-php-ext-enable rdkafka
+
+
+
 
 RUN composer update
-
-
-
