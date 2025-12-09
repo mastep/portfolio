@@ -34,8 +34,6 @@ services:
             EMAIL: "${EMAIL}"
             TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
             TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
-        volumes:
-            - .:/var/www/html
         ports:
             - "9000:80"
         restart: unless-stopped
@@ -79,8 +77,6 @@ services:
             ALLOW_PLAINTEXT_LISTENER: "yes"
             KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
             KAFKA_ENABLE_KRAFT: "yes"
-        volumes:
-            - kafka_data:/opt/bitnami/kafka/data
         networks:
             - telegram_bot_network
     worker:
@@ -96,8 +92,6 @@ services:
                 condition: service_healthy # Ждет, пока MySQL не станет healthy
             kafka:
                 condition: service_started # Ждет запуска Kafka
-        volumes:
-            - .:/var/www/html
         environment:
             # Скопируйте сюда все нужные переменные окружения из сервиса web
             KAFKA_BROKERS: kafka:9092
@@ -135,8 +129,6 @@ services:
             EMAIL: "${EMAIL}"
             TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
             TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
-        volumes:
-            - .:/var/www/html
 
         # !!! ПРАВИЛЬНАЯ КОМАНДА (без 'docker compose exec web') !!!
         command: >
@@ -147,8 +139,6 @@ services:
             "
         networks:
             - telegram_bot_network
-volumes:
-    kafka_data:
 
 networks:
     telegram_bot_network:
