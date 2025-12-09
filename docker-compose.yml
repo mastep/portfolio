@@ -140,7 +140,7 @@ services:
             "
         networks:
             - telegram_bot_network
-        restart: no
+        restart: "no"
 
 networks:
     telegram_bot_network:
