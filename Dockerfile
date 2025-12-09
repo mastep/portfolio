@@ -36,6 +36,6 @@ RUN pecl install rdkafka \
     && docker-php-ext-enable rdkafka
 
 
-
-
 RUN composer update
+
+RUN php artisan key:generate
