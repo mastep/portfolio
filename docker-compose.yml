@@ -133,6 +133,8 @@ services:
             rm /var/www/html/public/storage &&
             php artisan migrate --force &&
             php artisan optimize:clear &&
+            php artisan cache:clear &&
+            php artisan config:cache &&
             php artisan db:seed --force
             "
         networks:
