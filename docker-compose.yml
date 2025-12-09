@@ -32,6 +32,8 @@ services:
             EMAIL: "${EMAIL}"
             TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
             TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
+        healthcheck:
+            test: [ "CMD", "php", "artisan", "cache:clear"]
         ports:
             - "9000:80"
         restart: unless-stopped
