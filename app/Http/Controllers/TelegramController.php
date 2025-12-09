@@ -27,57 +27,15 @@ class TelegramController extends Controller
         $update = $request->all();
 
         // Отправляем сообщение в Kafka для асинхронной обработки
-        /*
+
         $this->kafkaService->produceMessage([
             'type' => 'telegram_update',
             'data' => $update,
             'timestamp' => now()->toDateTimeString(),
-        ]);
-        */
+        ], $update['message']['message_id']);
 
-        // Обрабатываем синхронно для быстрого ответа
-        $this->handleUpdate($update);
 
         return response()->json(['ok' => true]);
-    }
-
-    /**
-     * Обработка обновления от Telegram
-     */
-    private function handleUpdate(array $update): void
-    {
-        if (!isset($update['message'])) {
-            return;
-        }
-
-        $message = $update['message'];
-        $chatId = $message['chat']['id'];
-        $text = $message['text'] ?? '';
-
-        // Обработка команды /shop
-        if ($text === '/shop' || str_starts_with($text, '/shop')) {
-            $webAppUrl = config('telegram.web_app_url');
-            $this->telegramService->sendWebAppButton(
-                $chatId,
-                '🍵 Добро пожаловать в наш магазин чая! Нажмите на кнопку ниже, чтобы открыть каталог.',
-                $webAppUrl
-            );
-            return;
-        }
-
-        // Обработка обычных вопросов
-        if (!empty($text)) {
-            $answer = QA::findAnswer($text);
-
-            if ($answer) {
-                $this->telegramService->sendMessage($chatId, $answer);
-            } else {
-                $this->telegramService->sendMessage(
-                    $chatId,
-                    'Извините, я не нашел ответ на ваш вопрос. Попробуйте переформулировать вопрос или обратитесь к администратору.'
-                );
-            }
-        }
     }
 }
 
