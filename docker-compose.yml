@@ -8,8 +8,6 @@ services:
         depends_on:
             mysql:
                 condition: service_healthy
-            app_setup:
-                condition: service_completed_successfully
         working_dir: /var/www/html
         networks:
             - telegram_bot_network
@@ -101,9 +99,7 @@ services:
         restart: unless-stopped
 
     app_setup:
-        build:
-            context: .
-            dockerfile: Dockerfile
+        image: shinsenter/laravel:dev-php8.3-nginx
         depends_on:
             mysql:
                 condition: service_healthy
@@ -133,6 +129,7 @@ services:
         # !!! ПРАВИЛЬНАЯ КОМАНДА (без 'docker compose exec web') !!!
         command: >
             /bin/sh -c "
+            sudo -i &&
             rm /var/www/html/public/storage &&
             php artisan migrate --force &&
             php artisan optimize:clear &&
