@@ -791,7 +791,7 @@
             z-index: 1000;
         }
 
-        .lottery__winner-panel::before {
+        .lottery__winner-title::before {
             top: -240px !important;
             left: 130% !important;
             width: 420px !important;
@@ -865,11 +865,11 @@
       position: relative;
     }
 
-    .lottery__winner-panel::before {
+    .lottery__winner-title::before {
       content: "";
       position: absolute;
-      top: -300px;
-      left: 50%;
+      top: -225px;
+      left: 76%;
       transform: translateX(-50%);
       width: 220px;
       height: 220px;
@@ -1220,7 +1220,7 @@
       if (!grid) return;
 
       employeesList = [];
-      const TOTAL = 40;
+      const TOTAL = 12;
 
       for (let i = 0; i < TOTAL; i++) {
         const el = createEmployeeElement(i);
