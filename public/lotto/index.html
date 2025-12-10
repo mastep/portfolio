@@ -68,6 +68,11 @@
       visibility: hidden;
       pointer-events: none;
     }
+    .preloader__icon {
+        width: 70%;
+        padding-left: 10%;
+        text-align: center;
+    }
 
     .preloader__spinner {
       width: 60px;
@@ -729,6 +734,87 @@
     }
 
     /* ---------- АДАПТИВ ---------- */
+    @media (min-width: 960px) {
+
+        .lottery__grid[data-count-children="55"] .employee{
+            flex: 0 0 160px;
+            width: 160px !important;
+            height: 160px !important;
+            min-width: 160px;
+            max-width: 160px;
+        }
+
+
+
+
+        .lottery__grid[data-count-children="40"] .employee{
+            flex: 0 0 190px;
+            width: 190px !important;
+            height: 190px !important;
+            min-width: 190px;
+            max-width: 190px;
+        }
+
+        .lottery__grid[data-count-children="20"] .employee{
+            flex: 0 0 280px;
+            width: 280px !important;
+            height: 280px !important;
+            min-width: 280px;
+            max-width: 280px;
+        }
+
+
+
+        .lottery__grid[data-count-children="10"] .employee{
+            flex: 0 0 400px;
+            width: 400px !important;
+            height: 400px !important;
+            min-width: 400px;
+            max-width: 400px;
+        }
+
+        .lottery__grid[data-count-children="3"] .employee{
+            flex: 0 0 550px;
+            width: 550px !important;
+            height: 550px !important;
+            min-width: 550px;
+            max-width: 550px;
+        }
+        .employee--winner {
+            margin-top: 40px;
+            flex: 0 0 600px !important;
+            width: 600px !important;
+            height: 600px !important;
+            min-width: 600px !important;
+            max-width: 600px !important;
+            max-height: 600px !important;
+            z-index: 1000;
+        }
+
+        .lottery__winner-panel::before {
+            top: -240px !important;
+            left: 130% !important;
+            width: 420px !important;
+            height: 420px !important;
+        }
+
+        /* Поздравительный текст */
+        .lottery__winner-panel {;
+            top: 80% !important;
+            left: 50% !important;
+        }
+
+        .lottery__winner-title {
+            font-size: clamp(2rem, 8vw, 5rem) !important;
+            font-weight: 900 !important;
+        }
+
+        .lottery__winner-subtitle {
+            font-size: clamp(1.2rem, 4vw, 2.5rem) !important;
+            font-weight: 700 !important;
+        }
+
+    }
     @media (max-width: 960px) {
       .intro__content {
         padding: 4.5vh 6vw;
@@ -770,62 +856,11 @@
 
 
 
-    .lottery__grid[data-count-children="55"] .employee{
-        flex: 0 0 160px;
-        width: 160px !important;
-        height: 160px !important;
-        min-width: 160px;
-        max-width: 160px;
-      }
-
-
-
-
-    .lottery__grid[data-count-children="40"] .employee{
-        flex: 0 0 190px;
-        width: 190px !important;
-        height: 190px !important;
-        min-width: 190px;
-        max-width: 190px;
-      }
-
-      .lottery__grid[data-count-children="20"] .employee{
-        flex: 0 0 280px;
-        width: 280px !important;
-        height: 280px !important;
-        min-width: 280px;
-        max-width: 280px;
-      }
-
-
-
-      .lottery__grid[data-count-children="10"] .employee{
-        flex: 0 0 400px;
-        width: 400px !important;
-        height: 400px !important;
-        min-width: 400px;
-        max-width: 400px;
-      }
-
-      .lottery__grid[data-count-children="3"] .employee{
-        flex: 0 0 550px;
-        width: 550px !important;
-        height: 550px !important;
-        min-width: 550px;
-        max-width: 550px;
-      }
 
 
     /* Стили для победителя */
     .employee--winner {
       margin-top: 40px;
-      flex: 0 0 600px !important;
-      width: 600px !important;
-      height: 600px !important;
-      min-width: 600px !important;
-      max-width: 600px !important;
-      max-height: 600px !important;
-      z-index: 1000;
       animation: winnerPulse 2s ease-in-out infinite;
       position: relative;
     }
@@ -833,11 +868,11 @@
     .lottery__winner-panel::before {
       content: "";
       position: absolute;
-      top: -240px;
-      left: 130%;
+      top: -300px;
+      left: 50%;
       transform: translateX(-50%);
-      width: 420px;
-      height: 420px;
+      width: 220px;
+      height: 220px;
       background-image: url('lib/images/gift-open.png');
       background-size: contain;
       background-position: center;
@@ -1056,6 +1091,7 @@
   <!-- Preloader -->
   <div class="preloader" id="preloader">
     <div class="preloader__content">
+      <div class="preloader__icon"><img src="lib/images/icon-projector.png" width="100%"></div>
       <div class="preloader__spinner"></div>
       <p class="preloader__fullscreen-hint">Рекомендуем включить полноэкранный режим.</p>
       <button class="fullscreen-btn" id="preloaderFullscreenBtn" aria-label="Полноэкранный режим">
@@ -1093,6 +1129,7 @@
       <p class="intro__subtitle">
         Среди сотрудников мы прямо сейчас разыгрываем праздничный сюрприз.
         Смотрите, как один из сотни улыбающихся коллег станет главным победителем вечера.
+        <br>Подключите ноутбук к проектору и транслируйте розыгрыш на широкоформатных экранах!
       </p>
 
       <div class="intro__meta">
@@ -1183,7 +1220,7 @@
       if (!grid) return;
 
       employeesList = [];
-      const TOTAL = 12;
+      const TOTAL = 40;
 
       for (let i = 0; i < TOTAL; i++) {
         const el = createEmployeeElement(i);
