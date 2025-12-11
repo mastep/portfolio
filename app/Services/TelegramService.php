@@ -53,7 +53,7 @@ class TelegramService
                 'inline_keyboard' => [
                     [
                         [
-                            'text' => 'Открыть магазин',
+                            'text' => 'Открыть',
                             'url' => $webAppUrl,
                         ],
                     ],

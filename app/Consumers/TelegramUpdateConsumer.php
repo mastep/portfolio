@@ -2,6 +2,7 @@
 
 namespace App\Consumers;
 
+use App\Http\Controllers\OpenAIController;
 use Illuminate\Support\Facades\Log;
 use Junges\Kafka\Contracts\ConsumerMessage;
 use Exception;
@@ -39,11 +40,11 @@ class TelegramUpdateConsumer
             $text = $msg['text'] ?? '';
 
             // Обработка команды /shop
-            if ($text === '/shop' || str_starts_with($text, '/shop')) {
+            if ($text === '/hello' || str_starts_with($text, '/shop')) {
                 $webAppUrl = config('telegram.web_app_url');
                 $this->telegramService->sendWebAppButton(
                     $chatId,
-                    '🍵 Добро пожаловать в наш магазин чая! Нажмите на кнопку ниже, чтобы открыть каталог.',
+                    '🍵 Посмотри как выглядит онлайн витрина для telegram',
                     $webAppUrl
                 );
                 return;
@@ -57,13 +58,19 @@ class TelegramUpdateConsumer
                 if ($answer) {
                     $this->telegramService->sendMessage($chatId, $answer);
                 } else {
-                    $this->telegramService->sendMessage(
-                        $chatId,
-                        'Извините, я не нашел ответ на ваш вопрос. Попробуйте переформулировать вопрос или обратитесь к администратору.'
-                    );
+
+                    try{
+                        $openAI=new OpenAIController();
+                        $response=$openAI->generateText($text);
+                    } finally{
+                        $answer=$response['message']?? 'Извините, я не нашел ответ на ваш вопрос. Попробуйте переформулировать вопрос или обратитесь к администратору @pro_7lab.';
+                        $this->telegramService->sendMessage(
+                            $chatId,
+                            $answer
+                        );
+                    }
                 }
             }
-
             // --- Конец скопированной логики ---
 
         } catch (Exception $e) {

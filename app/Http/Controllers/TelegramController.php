@@ -35,7 +35,8 @@ class TelegramController extends Controller
         ], $update['message']['message_id']);
 
 
-        return response()->json(['ok' => true]);
+
+        return response()->json(['ok_ai' => true]);
     }
 }
 
