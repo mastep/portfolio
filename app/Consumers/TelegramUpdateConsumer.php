@@ -63,7 +63,7 @@ class TelegramUpdateConsumer
                         $openAI=new OpenAIController();
                         $response=$openAI->generateText($text);
                     } finally{
-                        $answer=$response['message']?? 'Извините, я не нашел ответ на ваш вопрос. Попробуйте переформулировать вопрос или обратитесь к администратору @pro_7lab.';
+                        $answer=$response['message']?? '😢 Извини, не нашел ответ на вопрос. Попробуй задать вопрос более кратко или обратитесь к администратору @pro_7lab.';
                         $this->telegramService->sendMessage(
                             $chatId,
                             $answer
