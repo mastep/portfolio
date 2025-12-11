@@ -39,5 +39,3 @@ RUN pecl install rdkafka \
 RUN composer update
 
 RUN cp .env.example .env
-
-RUN php artisan key:generate
