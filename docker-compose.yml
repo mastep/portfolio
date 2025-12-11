@@ -83,16 +83,34 @@ services:
             dockerfile: Dockerfile # Использует тот же Dockerfile, что и сервис web
         container_name: telegram_bot_worker
         working_dir: /var/www/html
+        environment:
+            APP_NAME: "${APP_NAME}"
+            APP_ENV: "${APP_ENV}"
+            APP_DEBUG: "${APP_DEBUG}"
+            APP_URL: "${APP_URL}"
+            DB_CONNECTION: "${DB_CONNECTION}"
+            DB_HOST: "${DB_HOST}"
+            DB_PORT: "${DB_PORT}"
+            DB_DATABASE: "${DB_DATABASE}"
+            DB_USERNAME: "${DB_USERNAME}"
+            DB_PASSWORD: "${DB_PASSWORD}"
+            KAFKA_BROKERS: kafka:9092
+            SMTP_HOST: "${SMTP_HOST}"
+            SMTP_PORT: "${SMTP_PORT}"
+            SMTP_USERNAME: "${SMTP_USERNAME}"
+            SMTP_PASSWORD: "${SMTP_PASSWORD}"
+            TELEGRAM: "${TELEGRAM}"
+            PHONE: "${PHONE}"
+            EMAIL: "${EMAIL}"
+            TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
+            TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
         networks:
             - telegram_bot_network
         depends_on:
-            mysql:
-                condition: service_healthy # Ждет, пока MySQL не станет healthy
+            app_setup:
+                condition: service_started
             kafka:
                 condition: service_started # Ждет запуска Kafka
-        environment:
-            # Скопируйте сюда все нужные переменные окружения из сервиса web
-            KAFKA_BROKERS: kafka:9092
             # ...
         # !!! Здесь ваша команда становится основной командой контейнера !!!
         command: php artisan app:consume-telegram-updates
@@ -103,8 +121,8 @@ services:
             context: .
             dockerfile: Dockerfile
         depends_on:
-            mysql:
-                condition: service_healthy
+            web:
+                condition: service_started
         working_dir: /var/www/html
         environment:
             APP_NAME: "${APP_NAME}"
