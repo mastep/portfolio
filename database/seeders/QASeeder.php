@@ -7,13 +7,14 @@ use Illuminate\Database\Seeder;
 
 class QASeeder extends Seeder
 {
-    public function run(): void
+
+    public static function getData(): array
     {
-        $qa = [
+        return [
             [
                 'question' => '/start /hello',
                 'answer' =>
-'Привет! Я чат бот 7lab.pro 👩‍🚀
+                    'Привет! Я чат бот 7lab.pro 👩‍🚀
 Могу помочь тебе с различными вопросами. При очень сложных вопросах ищу информацию в интернете. 🌍',
             ],
             [
@@ -41,15 +42,33 @@ class QASeeder extends Seeder
                 'answer' => 'Все отлично! Работаю! Как у тебя? 🧁',
             ],
             [
-                'question' => 'и у меня у меня тоже дела хорошо дела гут дела плохо сойдет неплохо',
-                'answer' => 'Рад за тебя! 😘',
+                'question' => 'у меня дела хорошо',
+                'answer' => 'Рад за тебя! Ты молодец что смотришь на мир позитивно. 😘',
+            ],
+            [
+                'question' => 'у меня дела плохо',
+                'answer' => '😔 Печально это слышать, но не вешай нос!
+Все очень быстро в этом мире меняется.
+Вот держи тебе цветочек на удачу! 🍀',
             ],
             [
                 'question' => 'витрина витрину webapp покажи витрину',
                 'answer' => 'напиши /shop и пришлю тебе кнопку',
             ],
+            [
+                'question' => 'что такое Apache Kafka?',
+                'answer' => 'Посмотри в Яндексе или Гугул',
+            ],
+            [
+                'question' => 'что такое интернет магазин|ecom|ecommerce|API|landing|Telegram бот|Корпоративные порталы|сайт визитка|it sharing, шеринг',
+                'answer' => 'Отличный вопрос! Вся подробная информация на нашем сайте 7lab.pro 😊',
+            ],
 
         ];
+    }
+    public function run(): void
+    {
+        $qa =self::getData() ;
 
         foreach ($qa as $item) {
             QA::create($item);
