@@ -32,6 +32,10 @@ services:
             EMAIL: "${EMAIL}"
             TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
             TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
+            TELEGRAM_WEB_APP_URL: "${TELEGRAM_WEB_APP_URL}"
+            AI_TIMEWEB_API_KEY: "${AI_TIMEWEB_API_KEY}"
+            AI_TIMEWEB_API_URL: "${AI_TIMEWEB_API_URL}"
+            AI_TIMEWEB_API_TOKEN: "${AI_TIMEWEB_API_TOKEN}"
         ports:
             - "9000:80"
         restart: unless-stopped
@@ -104,6 +108,10 @@ services:
             EMAIL: "${EMAIL}"
             TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
             TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
+            TELEGRAM_WEB_APP_URL: "${TELEGRAM_WEB_APP_URL}"
+            AI_TIMEWEB_API_KEY: "${AI_TIMEWEB_API_KEY}"
+            AI_TIMEWEB_API_URL: "${AI_TIMEWEB_API_URL}"
+            AI_TIMEWEB_API_TOKEN: "${AI_TIMEWEB_API_TOKEN}"
         networks:
             - telegram_bot_network
         depends_on:
@@ -145,6 +153,10 @@ services:
             EMAIL: "${EMAIL}"
             TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
             TELEGRAM_TOKEN_CHAT_ID: "${TELEGRAM_TOKEN_CHAT_ID}"
+            TELEGRAM_WEB_APP_URL: "${TELEGRAM_WEB_APP_URL}"
+            AI_TIMEWEB_API_KEY: "${AI_TIMEWEB_API_KEY}"
+            AI_TIMEWEB_API_URL: "${AI_TIMEWEB_API_URL}"
+            AI_TIMEWEB_API_TOKEN: "${AI_TIMEWEB_API_TOKEN}"
 
         # !!! ПРАВИЛЬНАЯ КОМАНДА (без 'docker compose exec web') !!!
         command: >
