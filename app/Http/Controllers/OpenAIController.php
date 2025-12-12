@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class OpenAIController extends Controller
 {
-    public function generateText($prompt="")
+    public function generateText($prompt="", $data=false)
     {
+        if(is_array($data)&&!empty($data)){
+            $prompt='Представь, что ты чат бот. Ответь на вопрос пользователя исходя из текстовой базы знаний. Если не удается найти ответ в базе знаний ничего не отвечай.
+Вопрос:'.$prompt.'
+База знаний:'.print_r($data,true);
+        }
         $client = new Client();
         $response = $client->post(config('open_ai.url'), [
             'headers' => [
