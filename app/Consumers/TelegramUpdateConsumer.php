@@ -60,25 +60,17 @@ class TelegramUpdateConsumer
                     $this->telegramService->sendMessage($chatId, $answer);
                 } else {
                     $response="";
-                    try{
-                        $openAI=new OpenAIController();
-                        $data=QASeeder::getData();
-                        $response=$openAI->generateText($text, $data);
-                    }
-                    catch (Exception $e){ //todo убрать после отладки
-                        $errorMessage = "Ошибка обработки сообщения Kafka: " . $e->getMessage();
-                        $this->telegramService->sendMessage(
-                            $chatId,
-                            $errorMessage
-                        );
-                    }
-                    finally{
-                        $answer=$response['message']?? '😢 Извини, не нашел ответ на вопрос. Попробуй задать вопрос более кратко или обратитесь к администратору @pro_7lab.';
-                        $this->telegramService->sendMessage(
-                            $chatId,
-                            $answer
-                        );
-                    }
+
+                    $openAI=new OpenAIController();
+                    $data=QASeeder::getData();
+                    $response=$openAI->generateText($text, $data);
+
+                    $answer=$response['message']?? '😢 Извини, не нашел ответ на вопрос. Попробуй задать вопрос более кратко или обратитесь к администратору @pro_7lab.';
+                    $this->telegramService->sendMessage(
+                        $chatId,
+                        $answer
+                    );
+
                 }
             }
             // --- Конец скопированной логики ---
