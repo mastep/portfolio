@@ -3,6 +3,7 @@
 namespace App\Consumers;
 
 use App\Http\Controllers\OpenAIController;
+use Database\Seeders\QASeeder;
 use Illuminate\Support\Facades\Log;
 use Junges\Kafka\Contracts\ConsumerMessage;
 use Exception;
@@ -58,11 +59,12 @@ class TelegramUpdateConsumer
                 if ($answer) {
                     $this->telegramService->sendMessage($chatId, $answer);
                 } else {
-
+                    $response="";
                     try{
                         $openAI=new OpenAIController();
-                        $response=$openAI->generateText($text);
-                    } finally{
+                        $data=QASeeder::getData();
+                        $response=$openAI->generateText($text, $data);
+                    }finally{
                         $answer=$response['message']?? '😢 Извини, не нашел ответ на вопрос. Попробуй задать вопрос более кратко или обратитесь к администратору @pro_7lab.';
                         $this->telegramService->sendMessage(
                             $chatId,
