@@ -22,10 +22,11 @@
             <section>
                 <div class="stg-row stg-bottom-gap-l stg-tp-bottom-gap">
                     <div class="stg-col-6 stg-tp-bottom-gap">
-                        <h1 class="bringer-post-title" data-appear="fade-up" data-unload="fade-left">Простота и легкость</h1>
+                        <h1 class="bringer-post-title" data-appear="fade-up" data-unload="fade-left">Как пёрышко </h1>
                     </div>
+
                     <div class="stg-col-6 stg-tp-col-9 stg-tp-offset-3 align-right" data-appear="fade-up" data-delay="100" data-unload="fade-right">
-                        <p>... именно  это главное правило балета! Только простота и легкость. Никаких мыслей о титанических усилиях и ежедневных тренировках, скрытых за кулисами сцены...</p>
+                        <p><img class="align-left" src="/img/feather.svg" style="position: absolute; max-width: 70px; margin:-40px 0 0 -20px; ">... именно в этом кроется величайшая тайна балетного искусства, его незыблемый закон!</p><p style="text-align: justify">Лишь чарующая легкость и абсолютная простота должны предстать взору зрителя. Ни тени мысли о титанических усилиях, о поте ежедневных экзерсисов, о той тяжкой работе, что навсегда останется скрытой от публики за бархатным занавесом сцены, не должно закрасться в его воображение...</p>
                         <p>Далее мы расскажем при чем тут Telegram Bot...</p>
                     </div>
                 </div>
@@ -43,11 +44,8 @@
                                 <img src="img/portfolio/portfolio-telegram-bot/main1.jpg" alt="Telegram Bot Balet" width="1920" height="1080">
                             </div>
                             <!-- Slider Item -->
-                            <div class="swiper-slide">
-                                <img src="img/portfolio/portfolio-telegram-bot/main22.png" alt="Telegram Bot Balet" width="1920" height="1080">
-                            </div>
-                            <!-- Slider Item -->
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="position: relative">
+                                <img src="img/portfolio/portfolio-telegram-bot/main22.png" alt="Telegram Bot Balet" width="1920" height="1080" style="position: absolute; z-index: 300; opacity: 0.3">
                                 <img src="img/portfolio/portfolio-telegram-bot/main2.jpg" alt="Telegram Bot Balet" width="1920" height="1080">
                             </div>
                             <!-- Slider Item -->
@@ -88,10 +86,12 @@
                         <h2>Большой танец технологий</h2>
                     </div>
                     <div class="stg-col-6 stg-tp-col-10 stg-tp-offset-2" data-appear="fade-left" data-unload="fade-right">
-                        <p class="bringer-large-text">Наша команда подошла к разработке Telegram-бота как к постановке сложного, захватывающего танца. Каждый модуль, от обработчика команд до интеграции с внешними API, изначально представлял собой отдельного, независимого танцора, который разучивал свою партию в изоляции. Разрешите представить эти заслуженные имена: Laravel, Telegram, Kafka, Deep Seek.</p>
+                        <p class="bringer-large-text">Наша команда подошла к разработке Telegram-бота как к постановке сложного, захватывающего танца. Каждый модуль, от обработчика команд до интеграции с внешними API, изначально представлял собой отдельного, независимого танцора, который разучивал свою партию в изоляции. Эти ребята с характером, малейшее несоблюдение прописанных манифестов и они отказываются танцевать! Да они могут себе это позволить, так как являются всемирно признаными мэтрами своего дела!
+                        </p>
                     </div>
                 </div>
             </section>
+            <h2>Разрешите представить<br> Laravel,  Telegram, Apache Kafka и Deep Seek.</h2>
             <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                 <!-- Masked Media -->
                 <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
@@ -140,8 +140,8 @@
                     <div class="stg-col-6 stg-tp-col-6" data-appear="fade-left" data-delay="100">
                         <span class="bringer-label">Telegram API</span>
                         <h4>Telegram API: Зеркало Сцены</h4>
-                        <p>Telegram API стало нашим зеркалом сцены, через которое пользователи видят результат выступления. Это интерфейс, который мы выбрали за его простоту и широкую аудиторию. Он позволил нам быстро наладить канал связи, получая мгновенный фидбэк и отправляя ответы.
-                            /start"), предоставляя заранее подготовленную информацию без участия человека. Это обеспечивает круглосуточную поддержку и экономит время администраторов.</p>
+                        <p>Telegram API стало нашим зеркалом сцены, через которое пользователи видят результат выступления. Это интерфейс, который мы выбрали за его простоту и широкую аудиторию. Он позволил нам быстро наладить канал связи, получая мгновенный фидбэк.
+                           Основное преимущество чат бота Telegram, что он постоянно учится, а это позволяет ему предоставлять более качественные сервисы без участия человека! Круглосуточная качественная оперативная поддержка - вот основная задача Telegram помощника.</p>
                     </div>
                     <div class="stg-col-3"><!-- Empty Column --></div>
                 </div>
@@ -155,7 +155,7 @@
                     <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
                         <span class="bringer-label">Apache Kafka</span>
                         <h4>Kafka: Закулисная Механика</h4>
-                        <p>Kafka была внедрена для управления потоком событий, как сложная закулисная механика, которая позволяет спектаклю идти без заминок. Когда пользователь просит сгенерировать что-то сложное (например, код или объемный текст), мы не заставляем его ждать. Laravel "отправляет сигнал" в Kafka, и процесс обработки уходит на другой, независимый поток. Эта асинхронность критически важна: она позволяет боту обрабатывать тысячи запросов одновременно, поддерживая безупречную отзывчивость.</p>
+                        <p>Kafka была внедрена для управления потоком событий, как сложная закулисная механика, которая позволяет спектаклю идти без заминок. Когда пользователь задает вопрос на его анализ может потребоваться время. А теперь предствьте, что таких пользователей и вопросов несколько сотен. И чтобы это все обработать на сцену выходит Apache Kafka, основная задача которого получить и доставить кореспонденцию в прамом смысле при любых катаклизмах. Laravel "отправляет сигнал" в Kafka, и процесс обработки уходит на другой, независимый поток. Эта асинхронность критически важна: она позволяет боту обрабатывать тысячи запросов одновременно, поддерживая безупречную отзывчивость.</p>
                     </div>
                 </div>
                 <!-- Details 04 Row -->
@@ -182,7 +182,7 @@
                 </div>
                 <div class="stg-row stg-bottom-gap-l" data-appear="fade-up" data-delay="100" data-unload="fade-right">
                     <div class="stg-col-9 stg-offset-3 stg-tp-col-10 stg-tp-offset-2">
-                        <p class="bringer-large-text">Истинное волшебство началось на этапе их сведения: мы потратили бесчисленные часы на отладку их взаимодействия, синхронизируя каждый шаг и каждое движение данных, чтобы исключить фальшь и рассинхрон. В результате этого кропотливого процесса переплетение систем превратилось в единый, грациозный балет.</p>
+                        <p class="bringer-large-text">Как мы говорили ребята своенравные и мы реально намучались с ними. Где-то грозили, где-то уговаривали, где-то посылали всю постановку в тартарары. Мы практически сдались, так как потратили бесчисленные часы на отладку их взаимодействия, синхронизируя каждый шаг и каждое движение данных, чтобы исключить фальшь и рассинхрон. Было сложно,но мы добились! В результате кропотливого процесса переплетение систем превратилось в единый, грациозный балет!</p>
                     </div>
                 </div>
                 <div class="stg-row" data-appear="fade-left" data-unload="fade-left">
@@ -200,13 +200,20 @@
                 </div>
                 <div class="stg-row stg-bottom-gap-l" data-appear="fade-up" data-delay="100" data-unload="fade-right">
                     <div class="stg-col-9 stg-offset-3 stg-tp-col-10 stg-tp-offset-2">
-                        <p class="bringer-large-text">У нас получилось! Нам показалось, что в этой осязаемой простоте, кроется истинное искусство инженерной мысли. Переплетение систем подобно тщательно срежиссированному танцу, где каждый участник (микросервис или компонент) движется в идеальном ритме и гармонии с остальными. Этот незримый балет данных и команд, подчиняющийся строгим правилам протоколов, обеспечивает грацию и безошибочность всего представления — от запроса пользователя до конечного результата.
-                        </p>
-                        <h4 data-appear="fade-up" data-unload="fade-left">Теперь и Вы знаете, что скрывается за "Привет!" с Telegram ботом.</h4>
+                        <p class="bringer-large-text">У нас получилось! Премьера состоялась! Нам кажется, что это было невероятный режиссерский опыт! За этой внешней простотой реально скрывается настоящее искусство инженерной мысли. Внутреннее переплетение систем напоминает тщательно срежиссированный танец, где каждый участник — будь то микросервис или компонент — движется в идеальном ритме и гармонии с остальными. Этот незримый балет данных и команд, подчиняющийся строгим правилам протоколов, обеспечивает грацию и безошибочность всего процесса — от запроса пользователя до конечного результата.</p>
+                    </div>
+                </div>
+                <div class="stg-row" data-appear="fade-left" data-unload="fade-left">
+
+                    <div class="stg-col-6">
+                        <h2 data-appear="fade-up" data-unload="fade-left" class="stg-top-gap-l">Теперь и Вы знаете, что скрывается за этой маленькой кнопкой</h2>
+                    </div>
+                    <div class="stg-col-7 ">
+                        <img src="/img/telegram_button.png" class="stg-top-gap-m">
                     </div>
                 </div>
                 @include("link-content",['link_href'=>'https://t.me/pro_7lab_bot', 'link_title1'=>'Наш чат бот', 'link_title2'=>'ждет Вашего "Привет!"'])
-                <div class="stg-row stg-top-gap-l" data-appear="fade-left" data-unload="fade-left">
+                <div class="stg-row stg-top-gap-l" data-appear="fade-left" data-unload="fade-right">
                     <div class="stg-col-9">
                         <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio-telegram-bot/image2.jpg" alt="Curology" width="1200" height="1200">
                     </div>
