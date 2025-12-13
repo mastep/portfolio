@@ -1537,6 +1537,7 @@ ul.bringer-socials-list.stg-xl-gap {
     border-radius: 50%;
     margin-left: -32px;
     border: 4px solid var(--bringer-s-body-bg);
+    max-width: none;
 }
 .bringer-hero-type01 .bringer-hero-social-proof a {
     justify-content: center;
