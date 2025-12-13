@@ -24,6 +24,10 @@ Route::get('project_lotto_app', function () {
     return view('project-lotto');
 });
 
+Route::get('project_telegram_bot', function () {
+    return view('project-telegram-bot');
+});
+
 Route::get('landing-page', function () {
     return view('service-1');
 });
