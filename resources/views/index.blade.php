@@ -39,16 +39,15 @@
                             <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">Решения</a> для бизнеса
                             <a href="./e-commerce" title="Разработка E-commerce, интернет магазина">E-com</a>,
                             <a href="./telegram-bot" title="Разработка Telegram ботов" style="color:#fff">telegram боты</a>,
-                            <a href="./api" title="Разработка API">API</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">web support</a>
-                        </h1>
+                            <a href="./api" title="Разработка API">API</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">web support</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
                         <div class="bringer-hero-social-proof">
                             <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
-                                <a href="#ourPortfolio"><img src="img/portfolio/portfolio01.jpg" alt="Client 02"></a>
-                                <a href="#ourPortfolio"><img src="img/portfolio/portfolio05.jpg" alt="Client 03"></a>
+                                <a href="#ourPortfolio"><img src="img/home/social-proof01.jpg" alt="Client 01"></a>
                                 <a href="#ourPortfolio"><img src="img/portfolio/portfolio-telegram-bot/main_0.jpg" alt="Client 01"></a>
+                                <a href="#ourPortfolio"><img src="img/home/social-proof03.jpg" alt="Client 03"></a>
                                 @if(in_array(date('d.m'),['11.11','10.11']))
                                     @php $sale='65%'; @endphp
                                     <a href="/form" title="Только 11.11: Скидка {{$sale}}. Заказать сайт.">-{{$sale}}</a>
