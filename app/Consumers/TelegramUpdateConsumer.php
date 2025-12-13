@@ -46,7 +46,8 @@ class TelegramUpdateConsumer
                 $this->telegramService->sendWebAppButton(
                     $chatId,
                     '🍵 Посмотри как выглядит онлайн витрина для telegram',
-                    $webAppUrl
+                    $webAppUrl,
+                    adminOptions:$update
                 );
                 return;
             }
@@ -57,7 +58,7 @@ class TelegramUpdateConsumer
                 $answer = QA::findAnswer($text);
 
                 if ($answer) {
-                    $this->telegramService->sendMessage($chatId, $answer);
+                    $this->telegramService->sendMessage($chatId, $answer, adminOptions:$update);
                 } else {
                     $response="";
 
@@ -68,7 +69,8 @@ class TelegramUpdateConsumer
                     $answer=$response['message']?? '😢 Извини, не нашел ответ на вопрос. Попробуй задать вопрос более кратко или обратитесь к администратору @pro_7lab.';
                     $this->telegramService->sendMessage(
                         $chatId,
-                        $answer
+                        $answer,
+                        adminOptions:$update
                     );
 
                 }
