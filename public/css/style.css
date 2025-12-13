@@ -1536,7 +1536,7 @@ ul.bringer-socials-list.stg-xl-gap {
     height: 64px;
     border-radius: 50%;
     margin-left: -32px;
-    border: 4px solid var(--bringer-s-body-bg);
+
     max-width: none;
 }
 .bringer-hero-type01 .bringer-hero-social-proof a {
@@ -1548,6 +1548,7 @@ ul.bringer-socials-list.stg-xl-gap {
 }
 .bringer-hero-type01 .bringer-hero-social-proof a[href="/form"] {
     background: var(--bringer-s-accent);
+    border: 4px solid var(--bringer-s-body-bg);
 }
 
 /* === Layout 02 === */
