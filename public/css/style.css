@@ -1543,6 +1543,9 @@ ul.bringer-socials-list.stg-xl-gap {
     align-items: center;
     text-align: center;
     color: var(--bringer-s-accented-text);
+
+}
+.bringer-hero-type01 .bringer-hero-social-proof a[href="/form"] {
     background: var(--bringer-s-accent);
 }
 
