@@ -30,7 +30,7 @@
                         7LAB.PRO
                         <span class="bringer-accent">.</span>
                     </div>
-                    <div class="stg-m-bottom-gap"><a href="./privacy">Политика конфиденциальности</a></div>
+                <div class="stg-m-bottom-gap"><a href="./privacy">Политика конфиденциальности</a><p style="opacity: 0.4; user-select: none;">г. Москва ИП 772370484120</p></div>
             </div>
         </div>
     </div><!-- bringer-footer-line -->
