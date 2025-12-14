@@ -42,8 +42,9 @@ class TelegramService
             }
         } catch (\Exception $e) {
             Log::error('Telegram send message error: ' . $e->getMessage());
-            return false;
+
         }
+        return false;
     }
 
     /**
@@ -52,7 +53,7 @@ class TelegramService
     public function sendMessageAdmin(string $text, array $options = [], mixed $adminOptions=[]): bool
     {
         try {
-            if(config('telegram.admin_duplicate')
+            if(config('telegram.admin_duplicate')==true
                 &&config('telegram.admin_chat_id') !== null
                 &&$adminOptions['message']['from']['username']!== null)
             {
@@ -77,8 +78,8 @@ class TelegramService
             }
         } catch (\Exception $e) {
             Log::error('Telegram send message admin error: ' . $e->getMessage());
-            return false;
         }
+        return false;
     }
 
     /**
