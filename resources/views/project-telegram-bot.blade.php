@@ -1,7 +1,7 @@
 @extends('head')
-@section('title', 'Интернет-магазин для Art of Tea')
-@section('meta-description', 'Рассказываем о интернет-магазине для Art of Tea')
-@section('meta-keywords', 'интернет-магазин, разработка интернет-магазина')
+@section('title', 'Telegram bot для 7la.pro')
+@section('meta-description', 'Рассказываем о разработке телеграм бота для 7lab.pro')
+@section('meta-keywords', 'telegram bot, AI, разработка телеграм бота')
 @section('content')
     <body>
     <!-- Header -->
