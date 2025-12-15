@@ -1,6 +1,7 @@
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
+use App\Services\TelegramService;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -48,28 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     try {
-        //Server settings
-        $mail->SMTPDebug = 0;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = config('app.SMTP_HOST');                    //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = config('app.SMTP_USERNAME');                     //SMTP username
-        $mail->Password   = config('app.SMTP_PASSWORD');                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = config('app.SMTP_PORT');                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-        //Recipients
-        $mail->setFrom($email);
-        $mail->addAddress('churikovu@gmail.com');     //Add a recipient
-
-
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = '7LAB.PRO';
-        $mail->Body    = 'Send <a href="mailto:'.$email.'">'.$email.'</a>';
-        $mail->AltBody = $email;
-
-        $mail->send();
+        $service=new TelegramService();
+        $service->sendMessage(config("telegram.admin_chat_id"), 'Пользователь оставил email для связи: '. $email);
         http_response_code(200);
     } catch (Exception $e) {
 
