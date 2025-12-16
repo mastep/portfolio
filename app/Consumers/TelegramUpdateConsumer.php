@@ -41,11 +41,11 @@ class TelegramUpdateConsumer
             $text = $msg['text'] ?? '';
 
             // Обработка команды /shop
-            if ($text === '/hello' || str_starts_with($text, '/shop')) {
+            if ($text === '/app' || str_starts_with($text, '/shop') || $text === '/webapp') {
                 $webAppUrl = config('telegram.web_app_url');
                 $this->telegramService->sendWebAppButton(
                     $chatId,
-                    '🍵 Посмотри как выглядит онлайн витрина для telegram',
+                    '🍵 Посмотри как выглядит онлайн витрина для telegram. Обрати внимание, что приложение открывается внутри самого Telegram!',
                     $webAppUrl,
                     adminOptions:$update
                 );

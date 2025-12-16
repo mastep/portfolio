@@ -53,7 +53,7 @@ class QASeeder extends Seeder
             ],
             [
                 'question' => 'витрина витрину webapp покажи витрину',
-                'answer' => 'напиши /shop и пришлю тебе кнопку',
+                'answer' => 'напиши /app и пришлю тебе кнопку',
             ],
             [
                 'question' => 'что такое Apache Kafka?',
