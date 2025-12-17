@@ -41,7 +41,7 @@ class TelegramUpdateConsumer
             $text = $msg['text'] ?? '';
 
             // Обработка команды /shop
-            if ($text === '/app' || str_starts_with($text, '/shop') || $text === '/webapp') {
+            /*if ($text === '/app' || str_starts_with($text, '/shop') || $text === '/webapp') {
                 $webAppUrl = config('telegram.web_app_url');
                 $this->telegramService->sendWebAppButton(
                     $chatId,
@@ -50,7 +50,7 @@ class TelegramUpdateConsumer
                     adminOptions:$update
                 );
                 return;
-            }
+            }*/
 
             // Обработка обычных вопросов
             if (!empty($text)) {
