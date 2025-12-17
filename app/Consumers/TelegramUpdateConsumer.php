@@ -45,7 +45,7 @@ class TelegramUpdateConsumer
                 $webAppUrl = config('telegram.web_app_url');
                 $this->telegramService->sendWebAppButton(
                     $chatId,
-                    '🍵 Посмотри как выглядит онлайн витрина для telegram. Обрати внимание, что приложение открывается внутри самого Telegram!',
+                    '🍵 Посмотри как выглядит онлайн витрина для telegram. Обрати внимание, что это демо вариант, который показывает исключительно интерфейс без реализации функций!',
                     $webAppUrl,
                     adminOptions:$update
                 );
