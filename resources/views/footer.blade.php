@@ -13,7 +13,7 @@
                                 <img class="footer-logo" src="img/logo.png" alt="bringer." width="176" height="48">
                             @endif
                         </a>
-                        <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Мы помогаем творческим людям создать сильную онлайн-аудиторию, которая демонстрирует их работы и рассказывает историю.
+                        <div class="bringer-info-description">Мы - команда увлеченных разработчиков и дизайнеров, которые верят в силу креативности. Создаем it решения для бизнеса. Помогаем с автоматизацией процессов.
                         </div>
                     </div>
                 </div>
@@ -30,10 +30,17 @@
                         7LAB.PRO
                         <span class="bringer-accent">.</span>
                     </div>
-                <div class="stg-m-bottom-gap"><a href="./privacy">Политика конфиденциальности</a><p style="opacity: 0.4; user-select: none;">г. Москва ИП 772370484120</p></div>
+                <div class="stg-m-bottom-gap">2013 - {{date("Y")}}</div>
             </div>
         </div>
     </div><!-- bringer-footer-line -->
+    <div class=" stg-container">
+        <div class="stg-row">
+            <div class="stg-col-12" style="opacity: 0.4; user-select: none; align-items: center; font-size: 12px; padding-bottom: 10px">
+                <a href="./privacy">Политика конфиденциальности, г. Москва ИП 772370484120</a>
+            </div>
+        </div>
+    </div>
 </footer>
 @if(!isset($_COOKIE['cookies-info']))
 <div id="cookies-info">

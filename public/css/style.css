@@ -1527,7 +1527,7 @@ ul.bringer-socials-list.stg-xl-gap {
     text-align: right;
     text-transform: uppercase;
     color: var(--bringer-s-heading);
-    max-width: 110px;
+    max-width: 140px;
 }
 .bringer-hero-type01 .bringer-hero-social-proof img,
 .bringer-hero-type01 .bringer-hero-social-proof a {
@@ -1546,9 +1546,11 @@ ul.bringer-socials-list.stg-xl-gap {
     color: var(--bringer-s-accented-text);
 
 }
-.bringer-hero-type01 .bringer-hero-social-proof a[href="/form"] {
+.bringer-hero-type01 .bringer-hero-social-proof a.saleround {
     background: var(--bringer-s-accent);
     border: 4px solid var(--bringer-s-body-bg);
+    width: 68px;
+    height: 68px;
 }
 
 /* === Layout 02 === */

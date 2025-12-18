@@ -46,26 +46,22 @@
                         <div class="bringer-hero-social-proof">
                             <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
                                 <a href="#ourPortfolio"><img src="img/home/social-proof01.jpg" alt="Client 01"></a>
-                                <a href="#ourPortfolio"><img src="img/portfolio/portfolio-telegram-bot/main_0.jpg" alt="Client 01"></a>
                                 <a href="#ourPortfolio"><img src="img/home/social-proof03.jpg" alt="Client 03"></a>
+                                <a href="#ourPortfolio"><img src="img/portfolio/portfolio-telegram-bot/main_0.jpg" alt="Client 01" title="Наши работы"></a>
                                 @if(in_array(date('d.m'),['11.11','10.11']))
                                     @php $sale='65%'; @endphp
-                                    <a href="/form" title="Только 11.11: Скидка {{$sale}}. Заказать сайт.">-{{$sale}}</a>
-                                </div>
-                                <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}} только 11.11">
+                                    <a href="/form" title="Только 11.11: Скидка {{$sale}} для подписчиков. Заказать сайт.">-{{$sale}}</a>
+                            </div>
+                                <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}} только 11.11 для подписчиков">
                                     Скидка {{$sale}} только 11.11
                                 </p>
                                 @else
-                                    <a href="/form" title="Гарантия лучшей цены. Скидка {{$sale}}. Заказать сайт.">-{{$sale}}</a>
-                                </div>
-                                <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}}">
-                                    Скидка {{$month}} {{$sale}}
+                                    <a href="https://t.me/svnlab" title="Гарантия лучшей цены. Скидка {{$sale}} для подписчиков." class="saleround">-{{$sale}}</a>
+                            </div>
+                                <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}} для подписчиков">
+                                    <a class="l-align-center" href="https://t.me/svnlab" style="width:auto; margin: 0; font-size: 0.7em">Скидка {{$month}} {{$sale}} для подписчиков</a>
                                 </p>
                                 @endif
-
-
-
-
                         </div>
                     </div>
                 </div><!-- .stg-row -->
@@ -153,7 +149,7 @@
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-12" data-appear="fade-right">
                     <div>
                         <a href="/landing-page" title="Создать сайт визитку">
-                            <video data-video-src="./video/service05.mp4" width="960" height="960" muted playsinline onmouseover="this.play();"></video>
+                            <video data-video-src="./video/service05.mp4" width="960" height="960" autoplay muted playsinline onmouseover="this.play();"></video>
                         </a>
                     </div>
                 </div>
@@ -331,14 +327,15 @@
                 <form action="mail-short.php" method="post" data-fill-error="Пожалуйста заполните форму" class="bringer-contact-form is-short bringer-masked-media" data-appear="fade-up">
                     <div class="bringer-form-content bringer-cta-form">
                         <div class="bringer-cta-form-content" data-appear="fade-up" data-delay="100">
-                            <div class="bringer-cta-title">Пишите свою почту. Далее работать будем мы!</div>
+                            <div class="bringer-cta-title">Пиши свою почту. Далее работать будем мы!</div>
                             <input type="email" id="subscribe_email" name="subscribe_email" placeholder="@" required>
+                            <div style="height: 45px; overflow: auto"><input type="checkbox" checked disabled style="display: block; width: 20px; float: left"> Я даю <a href="https://www.consultant.ru/document/cons_doc_LAW_61801/6c94959bc017ac80140621762d2ac59f6006b08c/" target="_blank">согласие на обработку персональных данных</a> в соответствии с <a href="https://7lab.pro/privacy" target="_blank">политикой конфиденциальности</a> </div>
                         </div>
                         <div class="bringer-cta-form-button" data-appear="fade-up" data-delay="200">
                             <div id="button_submit"></div>
                             <!--AntiSPAM-->
                             <script type="text/javascript">
-                                document.getElementById("button_submit").innerHTML='<button type="submit" title="Отправить запрос"><span class="bringer-icon bringer-icon-arrow-submit"></span> </button>';
+                                document.getElementById("button_submit").innerHTML='<button type="submit" title="Отправить запрос" style="margin-bottom:66px;"><span class="bringer-icon bringer-icon-arrow-submit"></span> </button>';
                             </script>
                             <!--AntiSPAM END-->
                         </div>

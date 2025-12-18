@@ -1629,3 +1629,14 @@
         display: flex;
     }
 }
+
+@media only screen and (min-width: 1366px){
+    .stg-row > div.stg-xl-hide,
+    .stg-xl-hide {
+        display: none!important;
+    }
+    .stg-row > div.stg-xl-show,
+    .stg-xl-show {
+        display: flex;
+    }
+}

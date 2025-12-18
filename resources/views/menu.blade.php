@@ -76,7 +76,7 @@
                     </li>
                 </ul>
             </li>
-            <li itemprop="itemListElement" itemscope
+            <li class="stg-xl-hide" itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="form">
                     <span itemprop="name">Заполнить форму</span></a>
