@@ -38,7 +38,7 @@ class TelegramUpdateConsumer
 
             $msg = $update['message'];
             $chatId = $msg['chat']['id'];
-            $text = $msg['text']??$msg['photo']['caption']?? '';
+            $text = $msg['text']??$msg['caption']?? '';
 
             // Обработка команды /shop
             /*if ($text === '/app' || str_starts_with($text, '/shop') || $text === '/webapp') {
