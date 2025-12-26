@@ -31,7 +31,6 @@ class OpenAIController extends Controller
             $body = json_decode($response->getBody(), true);
         } catch (Exception $e) {
             $errorMessage = "Ошибка запроса к AI: " . $e->getMessage();
-            $body['message']=$errorMessage; //todo убрать после отладки
             Log::error($errorMessage);
         }
 
