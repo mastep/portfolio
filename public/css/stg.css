@@ -863,7 +863,7 @@
 @media only screen and (max-width: 960px) {
     #bringer-main > .stg-container > section > .stg-tp-column-reverse > .stg-vertical-space-between{
         z-index: 10;
-        margin-top:-80vw !important;
+        margin-top:-45vw !important;
         background: #000;
         opacity: 0.8;
         padding:40px 10px;
