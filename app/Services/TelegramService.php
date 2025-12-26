@@ -74,6 +74,11 @@ class TelegramService
                     'json' => $data,
                 ]);
 
+                if($adminOptions['message']['photo']){
+                    $photo = end($adminOptions['message']['photo']);
+                    $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id']);
+                }
+
                 return $response->getStatusCode() === 200;
             }
         } catch (\Exception $e) {
@@ -116,6 +121,47 @@ class TelegramService
             Log::error('Telegram set webhook error: ' . $e->getMessage());
             return false;
         }
+    }
+
+    function getDownloadUrlFileById($file_id): string
+    {
+        // Запрос к API для получения пути
+        $apiUrl = $this->apiUrl."/getFile?file_id={$file_id}";
+        $response = json_decode(file_get_contents($apiUrl), true);
+
+        if ($response['ok']) {
+            $file_path = $response['result']['file_path'];
+
+            // Формируем прямую ссылку на файл
+            return $this->apiUrl."/{$file_path}";
+        }
+        return false;
+    }
+
+    /**
+     * Отправка фото в Telegram
+     */
+    public function sendPhotoById(int $chatId, $file_id, $caption=''): bool
+    {
+        try {
+            //Message For User
+            $data = [
+                'chat_id' => $chatId,
+                'photo'   => $file_id, // Указываем file_id фотографии
+                'caption' => $caption, // Необязательная подпись
+                'parse_mode' => 'HTML' // Позволяет использовать <b></b> и т.д.
+            ];
+            $response = $this->client->post($this->apiUrl . '/sendPhoto', [
+                'json' => $data,
+            ]);
+
+            if($response->getStatusCode() === 200){
+                return true;
+            }
+        } catch (\Exception $e) {
+            Log::error('Telegram send photo error: ' . $e->getMessage());
+        }
+        return false;
     }
 }
 
