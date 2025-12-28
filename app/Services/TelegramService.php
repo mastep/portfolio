@@ -58,12 +58,13 @@ class TelegramService
                 &&$adminOptions['message']['from']['username']!== null)
             {
                 $bot=$adminOptions['message']['from']['is_bot']?' (бот)':'';
+                $userText=$adminOptions['message']['text']??$adminOptions['message']['caption']??$adminOptions['caption']??'';
                 $data = array_merge([
                     'chat_id' => config('telegram.admin_chat_id'),
                     'text' => '
-@' . $adminOptions['message']['from']['username'] .$bot. '
+@' . $adminOptions['message']['from']['username']?? 'User'.$bot. '
 ----
-🗣' . $adminOptions['message']['text']??$adminOptions['message']['caption'] . '
+🗣' .$userText. '
 ----
 🤖: ' . $text.'
 #############################
@@ -74,8 +75,10 @@ class TelegramService
                     'json' => $data,
                 ]);
 
-                if(!empty($adminOptions['message']['photo'])){
-                    $photo = end($adminOptions['message']['photo']);
+                $photoData = $adminOptions['message']['photo'] ?? $adminOptions['photo'] ?? null;
+
+                if(!empty($photoData)){
+                    $photo = end($photoData);
                     $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id']);
                 }
 
