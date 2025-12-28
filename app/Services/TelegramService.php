@@ -59,10 +59,13 @@ class TelegramService
             {
                 $bot=$adminOptions['message']['from']['is_bot']?' (бот)':'';
                 $userText=$adminOptions['message']['text']??$adminOptions['message']['caption']??$adminOptions['caption']??'';
+                $from = $adminOptions['message']['from'];
+                $username = $from['username'] ?? null;
+                $user = $username ? "@{$username}" : ($from['first_name'] ?? '');
                 $data = array_merge([
                     'chat_id' => config('telegram.admin_chat_id'),
                     'text' => '
-@' . $adminOptions['message']['from']['username']?? 'User'.$bot. '
+@' .$user.$bot. '
 ----
 🗣' .$userText. '
 ----
