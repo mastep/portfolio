@@ -36,25 +36,15 @@ class TelegramUpdateConsumer
 
             // --- Скопированная логика из handleUpdate контроллера ---
 
+            $photoData = $adminOptions['message']['photo'] ?? $adminOptions['photo'] ?? null;
+
             $msg = $update['message'];
             $chatId = $msg['chat']['id'];
-            $text = $msg['text']??$msg['caption']?? '';
+            $text = (!empty($photoData))?'/youarein':($msg['text']??'');
 
-            // Обработка команды /shop
-            /*if ($text === '/app' || str_starts_with($text, '/shop') || $text === '/webapp') {
-                $webAppUrl = config('telegram.web_app_url');
-                $this->telegramService->sendWebAppButton(
-                    $chatId,
-                    '🍵 Посмотри как выглядит онлайн витрина для telegram. Обрати внимание, что это демо вариант, который показывает исключительно интерфейс без реализации функций!',
-                    $webAppUrl,
-                    adminOptions:$update
-                );
-                return;
-            }*/
 
             // Обработка обычных вопросов
             if (!empty($text)) {
-                // QA::findAnswer($text) - предполагается, что это статический метод
                 $answer = QA::findAnswer($text);
 
                 if ($answer) {
@@ -75,7 +65,6 @@ class TelegramUpdateConsumer
 
                 }
             }
-            // --- Конец скопированной логики ---
 
         } catch (Exception $e) {
             $errorMessage = "Ошибка обработки сообщения Kafka: " . $e->getMessage();
