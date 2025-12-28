@@ -165,15 +165,6 @@ class TelegramService
                 return true;
             }
         } catch (\Exception $e) {
-
-            //todo поле отладки убрать
-            $response = $this->client->post($this->apiUrl . '/sendMessage', [
-                'json' => [
-                    'chat_id' => config('telegram.admin_chat_id'),
-                    'text' => $e->getMessage()
-                ],
-            ]);
-
             Log::error('Telegram send photo error: ' . $e->getMessage());
         }
         return false;
