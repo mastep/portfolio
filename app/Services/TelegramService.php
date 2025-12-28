@@ -63,7 +63,7 @@ class TelegramService
                     'text' => '
 @' . $adminOptions['message']['from']['username'] .$bot. '
 ----
-🗣' . $adminOptions['message']['text'] . '
+🗣' . $adminOptions['message']['text']??$adminOptions['message']['caption'] . '
 ----
 🤖: ' . $text.'
 #############################
