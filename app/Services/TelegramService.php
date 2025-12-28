@@ -74,7 +74,7 @@ class TelegramService
                     'json' => $data,
                 ]);
 
-                if($adminOptions['message']['photo']){
+                if(!empty($adminOptions['message']['photo'])){
                     $photo = end($adminOptions['message']['photo']);
                     $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id']);
                 }
