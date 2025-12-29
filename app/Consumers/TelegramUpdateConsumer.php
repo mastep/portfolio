@@ -36,7 +36,7 @@ class TelegramUpdateConsumer
 
             // --- Скопированная логика из handleUpdate контроллера ---
 
-            $photoData = $adminOptions['message']['photo'] ?? $adminOptions['photo'] ?? null;
+            $photoData = $update['message']['photo'] ?? $update['photo'] ?? null;
 
             $msg = $update['message'];
             $chatId = $msg['chat']['id'];
@@ -47,23 +47,17 @@ class TelegramUpdateConsumer
             if (!empty($text)) {
                 $answer = QA::findAnswer($text);
 
-                if ($answer) {
-                    $this->telegramService->sendMessage($chatId, $answer, adminOptions:$update);
-                } else {
-                    $response="";
+                if (!$answer) {
+                    $response = "";
 
-                    $openAI=new OpenAIController();
-                    $data=QASeeder::getData();
-                    $response=$openAI->generateText($text, $data);
+                    $openAI = new OpenAIController();
+                    $data = QASeeder::getData();
+                    $response = $openAI->generateText($text, $data);
 
-                    $answer=$response['message']?? '😢 Извини, не нашел ответ на вопрос. Попробуй задать вопрос более кратко или обратитесь к администратору @pro_7lab.';
-                    $this->telegramService->sendMessage(
-                        $chatId,
-                        $answer,
-                        adminOptions:$update
-                    );
+                    $answer = $response['message'] ?? '😢 Извини, не нашел ответ на вопрос. Попробуй задать вопрос более кратко или обратитесь к администратору @pro_7lab.';
 
                 }
+                $this->telegramService->sendMessage($chatId, $answer, adminOptions:$update);
             }
 
         } catch (Exception $e) {
