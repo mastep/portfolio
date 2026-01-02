@@ -153,7 +153,7 @@ class TelegramService
 
     function savePhotoByFileID($file_id): bool
     {
-        $downLoadUrl=$this->getDownloadUrlFileById($file_id);
+        echo $downLoadUrl=$this->getDownloadUrlFileById($file_id); //todo rm echo
         if($downLoadUrl){
             return $this->savePhotoByUrl($downLoadUrl);
         }
@@ -164,7 +164,7 @@ class TelegramService
     {
         if(!empty($fileUrl)){
             $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
-            $fileName = uniqid() . '.' . $extension;
+            echo $fileName = uniqid() . '.' . $extension; //todo rm echo
 
             if (copy($fileUrl, $uploadDir . $fileName)) {
                return true;
