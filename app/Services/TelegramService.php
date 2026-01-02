@@ -145,8 +145,8 @@ class TelegramService
         if ($response['ok']) {
             $file_path = $response['result']['file_path'];
 
-            // Формируем прямую ссылку на файл
-            return str_replace('/bot', '/file/bot',$this->apiUrl)."/{$file_path}";
+            // Формируем прямую ссылку на файл https://api.telegram.org/file/bot67675677
+            return str_replace('/bot', '/file/bot',$this->apiUrl)."/$file_path";
         }
         return false;
     }
@@ -162,11 +162,13 @@ class TelegramService
 
     function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff/"): bool
     {
-        $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
-        $fileName = uniqid() . '.' . $extension;
+        if(!empty($fileUrl)){
+            $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
+            $fileName = uniqid() . '.' . $extension;
 
-        if (copy($fileUrl, $uploadDir . $fileName)) {
-           return true;
+            if (copy($fileUrl, $uploadDir . $fileName)) {
+               return true;
+            }
         }
         return false;
     }
