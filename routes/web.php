@@ -58,10 +58,6 @@ Route::get('telegram-bot', function () {
     return view('service-telegram-bot');
 });
 
-Route::get('save_img_test', function () {
-    $service=new TelegramService();
-    dd($service->savePhotoByUrl("https://7lab.pro/giveaway/lib/images/staff/1.svg"));
-});
 
 
 
