@@ -157,7 +157,7 @@ class TelegramService
         return false;
     }
 
-    function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff/"): bool
+    function savePhotoByUrl($fileUrl="", $uploadDir="public/giveaway/lib/images/staff/"): bool
     {
         $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
         $fileName = uniqid() . '.' . $extension;
