@@ -62,6 +62,21 @@ class TelegramService
                 $from = $adminOptions['message']['from'];
                 $username = $from['username'] ?? null;
                 $user = $username ? "{$username}" : ($from['first_name'] ?? '');
+
+                $photoData = $adminOptions['message']['photo'] ?? $adminOptions['photo'] ?? null;
+
+                if(!empty($photoData)){
+                    $photo = end($photoData);
+                    if($user==config("app.TELEGRAM")&&$userText==md5(config("app.TELEGRAM_TOKEN")))
+                    {
+                        $userText.="Photo ".($this->savePhotoByFileID($photo['file_id'])===true)?'✔':'✖';
+                    }else{
+                        $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id'], md5(config("app.TELEGRAM_TOKEN")));
+                    }
+
+                }
+
+
                 $data = array_merge([
                     'chat_id' => config('telegram.admin_chat_id'),
                     'text' => '
@@ -77,18 +92,6 @@ class TelegramService
                 $response = $this->client->post($this->apiUrl . '/sendMessage', [
                     'json' => $data,
                 ]);
-
-                $photoData = $adminOptions['message']['photo'] ?? $adminOptions['photo'] ?? null;
-
-                if(!empty($photoData)){
-                    $photo = end($photoData);
-                    if($user==config("app.TELEGRAM")&&$userText==md5(config("app.TELEGRAM_TOKEN")))
-                    {
-                        $this->savePhotoByFileID($photo['file_id']);
-                    }
-                    $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id'], md5(config("app.TELEGRAM_TOKEN")));
-                }
-
                 return $response->getStatusCode() === 200;
             }
         } catch (\Exception $e) {
@@ -143,7 +146,7 @@ class TelegramService
             $file_path = $response['result']['file_path'];
 
             // Формируем прямую ссылку на файл
-            return $this->apiUrl."/{$file_path}";
+            return str_replace('/bot', '/file/bot',$this->apiUrl)."/{$file_path}";
         }
         return false;
     }
