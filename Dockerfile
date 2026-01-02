@@ -41,3 +41,5 @@ RUN composer install
 RUN cp .env.example .env
 
 RUN php artisan key:generate
+
+RUN chown www-data:www-data /var/www/html/public/giveaway/lib/images/staff
