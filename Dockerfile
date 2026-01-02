@@ -36,7 +36,7 @@ RUN pecl install rdkafka \
     && docker-php-ext-enable rdkafka
 
 
-RUN composer update
+RUN composer install
 
 RUN cp .env.example .env
 

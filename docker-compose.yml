@@ -191,7 +191,6 @@ services:
         restart: always
         environment:
             - AUTOHEAL_CONTAINER_LABEL=all
-
 networks:
     telegram_bot_network:
         driver: bridge
