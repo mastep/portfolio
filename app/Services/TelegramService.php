@@ -61,7 +61,7 @@ class TelegramService
                 $userText=$adminOptions['message']['text']??$adminOptions['message']['caption']??$adminOptions['caption']??'';
                 $from = $adminOptions['message']['from'];
                 $username = $from['username'] ?? null;
-                $user = $username ? "@{$username}" : ($from['first_name'] ?? '');
+                $user = $username ? "{$username}" : ($from['first_name'] ?? '');
                 $data = array_merge([
                     'chat_id' => config('telegram.admin_chat_id'),
                     'text' => '
