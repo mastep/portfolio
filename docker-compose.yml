@@ -62,10 +62,18 @@ services:
     kafka:
         image: bitnami/kafka:latest
         container_name: kafka
+        restart: always # Перезапускать, если упадет сам процесс
         ports:
             # Мапим оба порта на хост-машину Windows
             - "9092:9092"
             - "9094:9094"
+        healthcheck:
+            # Проверяем доступность через внутренний слушатель CLIENT (порт 9092)
+            test: [ "CMD-SHELL", "/opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list || exit 1" ]
+            interval: 30s    # Как часто проверять
+            timeout: 10s     # Сколько ждать ответа
+            retries: 3       # После скольких неудач подряд считать контейнер "нездоровым"
+            start_period: 40s # Сколько времени дать на запуск (JVM и Kafka грузятся долго)
         environment:
             # Используем один слушатель PLAINTEXT, который рекламирует себя по-разному
             KAFKA_CFG_LISTENERS: CLIENT://:9092,EXTERNAL://:9094,CONTROLLER://:9093
@@ -176,6 +184,15 @@ services:
         networks:
             - telegram_bot_network
         restart: "no"
+
+    autoheal:
+        image: willfarrell/autoheal:latest
+        container_name: autoheal
+        restart: always
+        environment:
+            - AUTOHEAL_CONTAINER_LABEL=all
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
     telegram_bot_network:
