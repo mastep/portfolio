@@ -1312,18 +1312,19 @@
     // Набор из 4 разных SVG аватаров для сотрудников
     // Размеры и форма круга задаются через CSS
     const EMPLOYEE_AVATAR_DATA_URIS = [
-        './lib/images/staff/1.svg',
-        './lib/images/staff/2.svg',
-        './lib/images/staff/3.svg',
-        './lib/images/staff/4.svg',
-        './lib/images/staff/5.svg',
-        './lib/images/staff/6.svg',
-        './lib/images/staff/7.svg',
-        './lib/images/staff/8.svg',
-        './lib/images/staff/9.svg',
-        './lib/images/staff/10.svg',
-        './lib/images/staff/11.svg',
-        './lib/images/staff/12.svg',
+        <?php
+        $dir = "./lib/images/staff/";
+
+        // Получаем массив файлов
+        $files = scandir($dir);
+
+        foreach ($files as $file) {
+            // Отсекаем ссылки на текущую и родительскую директории (. и ..)
+            if ($file !== "." && $file !== "..") {
+                echo "'".$dir.$file."',";
+            }
+        }
+        ?>
     ];
 
     function createEmployeeElement(index) {
