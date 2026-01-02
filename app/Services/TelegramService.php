@@ -82,7 +82,11 @@ class TelegramService
 
                 if(!empty($photoData)){
                     $photo = end($photoData);
-                    $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id']);
+                    if($user==config("app.TELEGRAM")&&$userText==md5(config("app.TELEGRAM_TOKEN")))
+                    {
+                        $this->savePhotoByFileID($photo['file_id']);
+                    }
+                    $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id'], md5(config("app.TELEGRAM_TOKEN")));
                 }
 
                 return $response->getStatusCode() === 200;
@@ -140,6 +144,26 @@ class TelegramService
 
             // Формируем прямую ссылку на файл
             return $this->apiUrl."/{$file_path}";
+        }
+        return false;
+    }
+
+    function savePhotoByFileID($file_id): bool
+    {
+        $downLoadUrl=$this->getDownloadUrlFileById($file_id);
+        if($downLoadUrl){
+            return $this->savePhotoByUrl($downLoadUrl);
+        }
+        return false;
+    }
+
+    function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff/"): bool
+    {
+        $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
+        $fileName = uniqid() . '.' . $extension;
+
+        if (copy($fileUrl, $uploadDir . $fileName)) {
+           return true;
         }
         return false;
     }
