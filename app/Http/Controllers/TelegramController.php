@@ -36,7 +36,7 @@ class TelegramController extends Controller
 
 
 
-        return response()->json(['ok_ai' => true]);
+        return response()->json(['ok' => true]);
     }
 }
 
