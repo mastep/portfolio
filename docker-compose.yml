@@ -132,7 +132,7 @@ services:
             app_setup:
                 condition: service_started
             kafka:
-                condition: service_started # Ждет запуска Kafka
+                condition: service_healthy # Ждет запуска Kafka
             # ...
         # !!! Здесь ваша команда становится основной командой контейнера !!!
         command: php artisan app:consume-telegram-updates
