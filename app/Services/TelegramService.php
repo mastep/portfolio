@@ -168,7 +168,7 @@ class TelegramService
         return false;
     }
 
-    function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff/")
+    function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff")
     {
         try {
             if (!empty($fileUrl)) {
