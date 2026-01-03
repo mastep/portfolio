@@ -189,6 +189,8 @@ services:
         image: willfarrell/autoheal:latest
         container_name: autoheal
         restart: always
+        networks:
+            - telegram_bot_network
         environment:
             - AUTOHEAL_CONTAINER_LABEL=all
 networks:
