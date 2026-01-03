@@ -69,7 +69,7 @@ class TelegramService
                     $photo = end($photoData);
                     if($user==config("app.TELEGRAM")&&$userText==md5(config("app.TELEGRAM_TOKEN")))
                     {
-                        $userText.="Photo ".($this->savePhotoByFileID($photo['file_id'])===true)?'✔':'✖';
+                        $text=($this->savePhotoByFileID($photo['file_id'])==true)?$photo['file_id'].'✔':$photo['file_id'].'✖';
                     }else{
                         $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id'], md5(config("app.TELEGRAM_TOKEN")));
                     }
@@ -136,40 +136,47 @@ class TelegramService
         }
     }
 
-    function getDownloadUrlFileById($file_id): string
+    function getFilePathById($file_id): string
     {
-        // Запрос к API для получения пути
-        $apiUrl = $this->apiUrl."/getFile?file_id={$file_id}";
-        $response = json_decode(file_get_contents($apiUrl), true);
+        try {
+            // Запрос к API для получения пути
+            $response = $this->client->get($this->apiUrl . "/getFile",
+                [
+                    'query' => ['file_id' => $file_id]
+                ]
+            );
 
-        if ($response['ok']) {
-            $file_path = $response['result']['file_path'];
+            $data = json_decode($response->getBody(), true);
 
-            // Формируем прямую ссылку на файл https://api.telegram.org/file/bot67675677
-            return str_replace('/bot', '/file/bot',$this->apiUrl)."/$file_path";
+            if ($data['ok']) {
+                // Формируем прямую ссылку на файл
+                return $data['result']['file_path'];
+            }
+        }catch (\Exception $e) {
         }
         return false;
     }
 
     function savePhotoByFileID($file_id): bool
     {
-        echo $downLoadUrl=$this->getDownloadUrlFileById($file_id); //todo rm echo
-        if($downLoadUrl){
-            return $this->savePhotoByUrl($downLoadUrl);
+        $path=$this->getFilePathById($file_id);
+        if($path!==""){
+            $url = $this->apiUrl."/{$path}";
+            return $this->savePhotoByUrl($url);
         }
         return false;
     }
 
     function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff/"): bool
     {
-        if(!empty($fileUrl)){
-            $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
-            echo $fileName = uniqid() . '.' . $extension; //todo rm echo
-
-            if (copy($fileUrl, $uploadDir . $fileName)) {
-               return true;
+        try {
+            if (!empty($fileUrl)) {
+                $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
+                $saveTo = $uploadDir . "/" . uniqid() . '.' . $extension;
+                $this->client->get($fileUrl, ['sink' => $saveTo]);
+                return true;
             }
-        }
+        }catch (\Exception $e){}
         return false;
     }
 
