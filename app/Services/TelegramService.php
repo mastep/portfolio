@@ -161,7 +161,8 @@ class TelegramService
     {
         $path=$this->getFilePathById($file_id);
         if($path!==""){
-            $url = $this->apiUrl."/{$path}";
+            //https://api.telegram.org/file/bot<token>/photos/file_1.jpg
+            $url = str_replace('/bot', '/file/bot',$this->apiUrl)."/".$path;
             return $this->savePhotoByUrl($url);
         }
         return false;
