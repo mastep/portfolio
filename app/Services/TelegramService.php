@@ -157,7 +157,7 @@ class TelegramService
         return false;
     }
 
-    function savePhotoByFileID($file_id): bool
+    function savePhotoByFileID($file_id)
     {
         $path=$this->getFilePathById($file_id);
         if($path!==""){
@@ -168,7 +168,7 @@ class TelegramService
         return false;
     }
 
-    function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff/"): bool
+    function savePhotoByUrl($fileUrl="", $uploadDir="/var/www/html/public/giveaway/lib/images/staff/")
     {
         try {
             if (!empty($fileUrl)) {
