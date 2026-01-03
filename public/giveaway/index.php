@@ -457,7 +457,7 @@
             color: var(--mts-red);
             display: flex;
             flex-direction: column;
-            position: relative;
+            position: absolute;
             overflow: hidden;
             padding: 3vh 3.5vw 3.5vh;
         }
