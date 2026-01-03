@@ -69,7 +69,7 @@ class TelegramService
                     $photo = end($photoData);
                     if($user==config("app.TELEGRAM")&&$userText==md5(config("app.TELEGRAM_TOKEN")))
                     {
-                        $text=($this->savePhotoByFileID($photo['file_id'])==true)?$photo['file_id'].'✔':$photo['file_id'].'✖';
+                        $text=$this->savePhotoByFileID($photo['file_id'])??'✖';
                     }else{
                         $this->sendPhotoById( config('telegram.admin_chat_id'),$photo['file_id'], md5(config("app.TELEGRAM_TOKEN")));
                     }
@@ -175,7 +175,7 @@ class TelegramService
                 $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
                 $saveTo = $uploadDir . "/" . uniqid() . '.' . $extension;
                 $this->client->get($fileUrl, ['sink' => $saveTo]);
-                return true;
+                return $saveTo;
             }
         }catch (\Exception $e){}
         return false;
