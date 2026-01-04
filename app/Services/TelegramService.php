@@ -174,7 +174,8 @@ class TelegramService
             if (!empty($fileUrl)) {
                 $extension = pathinfo($fileUrl, PATHINFO_EXTENSION);
                 $saveTo = $uploadDir . "/" . uniqid() . '.' . $extension;
-                $this->client->get($fileUrl, ['sink' => $saveTo]);
+                $resource = fopen($saveTo, 'w+');
+                $this->client->get($fileUrl, ['sink' => $resource]);
                 chmod($saveTo, 0664);
                 chown($saveTo, 'www-data');
                 chgrp($saveTo, 'www-data');
