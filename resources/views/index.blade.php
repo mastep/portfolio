@@ -45,9 +45,9 @@
                         <!-- Social Proof -->
                         <div class="bringer-hero-social-proof">
                             <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
+                                <a href="#ourPortfolio" class="saleround" style="overflow: hidden; left:-25px"><video src="./video/promo/intro7.mp4" class="data-poster stg-col-25" loop="" muted="" autoplay="" playsinline=""></video></a>
                                 <a href="#ourPortfolio"><img src="img/home/social-proof01.jpg" alt="Client 01"></a>
                                 <a href="#ourPortfolio"><img src="img/home/social-proof03.jpg" alt="Client 03"></a>
-                                <a href="#ourPortfolio"><img src="img/portfolio/portfolio-telegram-bot/main_0.jpg" alt="Client 01" title="Наши работы"></a>
                                 @if(in_array(date('d.m'),['11.11','10.11']))
                                     @php $sale='65%'; @endphp
                                     <a href="/form" title="Только 11.11: Скидка {{$sale}} для подписчиков. Заказать сайт.">-{{$sale}}</a>
@@ -194,6 +194,20 @@
             <!-- Portfolio Carousel -->
             <div class="swiper bringer-carousel stg-bottom-gap-l" data-appear="fade-up" data-unload="fade-up" data-delay="200" data-count="4" data-m-count="1.5">
                 <div class="swiper-wrapper">
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <video src="./video/promo/intro7.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Video Production</span>
+                                <h6>Промо ролики</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="/project_video_production"></a>
+                    </div><!-- .bringer-portfolio-card -->
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
