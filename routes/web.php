@@ -58,6 +58,10 @@ Route::get('telegram-bot', function () {
     return view('service-telegram-bot');
 });
 
+Route::get('project_video_production', function () {
+    return view('project-promo-video');
+});
+
 
 
 
