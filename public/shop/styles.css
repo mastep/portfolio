@@ -235,18 +235,23 @@ body {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    background-size: 190% !important;
+
+    background-position-y: -131px !important;
 }
 
 .slide-item[data-slide="0"] .buy-btn {
-    background: #56611d;
+    background: #56611d url('./images/bg-green.jpg');
 }
 
 .slide-item[data-slide="1"] .buy-btn {
     background: #f25693;
+    background: #56611d url('./images/bg-pink.jpg');
 }
 
 .slide-item[data-slide="2"] .buy-btn {
     background: #fbf406;
+    background: #56611d url('./images/bg-yellow.jpg');
 }
 
 .buy-btn:hover {
@@ -331,6 +336,33 @@ body {
 
 .carousel-item.active .carousel-image {
     transform: scale(1);
+}
+.smoothie-bg {
+    width: 100%;
+    height: 400px;
+    /* Смешивание нескольких слоев градиента для эффекта густоты */
+    background:
+        /* Эффект зернистости/мякоти через SVG фильтр или мелкий повторяющийся градиент */
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 80%),
+            /* Основные оттенки зеленого: шпинат, лайм, яблоко */
+        linear-gradient(135deg, #7db343 0%, #a2d149 25%, #5e8c31 50%, #8ebf42 75%, #4b7326 100%);
+
+    /* Наложение текстуры шума для имитации мелких частиц */
+    position: relative;
+    overflow: hidden;
+}
+
+.smoothie-bg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.15;
+    /* Генерация «семечек» и пузырьков */
+    background-image:
+        radial-gradient(#2d4a14 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 20px 20px, 35px 35px;
+    background-position: 0 0, 10px 10px;
 }
 
 /* Адаптивная верстка - Планшеты */
