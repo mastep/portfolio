@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce - Главная</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Вертикальное меню / Бургер меню -->
+    <nav class="menu" id="menu">
+        <button class="burger-btn" id="burgerBtn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="menu-list" id="menuList">
+            <li><a href="#products">Главная</a></li>
+            <li><a href="#products">Каталог</a></li>
+            <li><a href="#about">Магазины</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Слайдер -->
+    <div class="slider-container" id="slider">
+        <!-- Слайд 1 -->
+        <div class="slide-item active" data-slide="0">
+            <video class="slide-video" autoplay muted playsinline>
+                <source src="./videos/desktop/slide1-start.mp4" type="video/mp4">
+            </video>
+
+            <div class="product-info">
+                <div class="preview-container">
+                    <img src="./images/preview-1.png" alt="Товар 1" class="product-preview">
+                </div>
+                <div class="product-description">
+                    <h3>Green Apple</h3>
+                    <p>Витаминизированный смузи-коктейль из сочных молодых яблок — настоящий эликсир свежести, богатый железом и клетчаткой для легкого и энергичного начала дня.
+                    </p>
+                    <div class="product-price">790 ₽</div>
+                    <div class="buy-container">
+                        <button class="buy-btn">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Слайд 2 -->
+        <div class="slide-item" data-slide="1">
+            <video class="slide-video"  muted  playsinline>
+                <source src="./videos/desktop/slide2-start.mp4" type="video/mp4">
+            </video>
+            <div class="product-info">
+                <div class="preview-container">
+                    <img src="./images/preview-2.png" alt="Товар 2" class="product-preview">
+                </div>
+                <div class="product-description">
+                    <h3>Ягодное удовольствие</h3>
+                    <p>Освежающий густой напиток из смеси лесных или садовых ягод, который дарит мощный заряд витаминов и антиоксидантов в каждом глотке</p>
+                    <div class="product-price">990 ₽</div>
+                    <div class="buy-container">
+                        <button class="buy-btn">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Слайд 3 -->
+        <div class="slide-item" data-slide="2">
+            <video class="slide-video" autoplay muted playsinline>
+                <source src="./videos/desktop/slide3-start.mp4" type="video/mp4">
+            </video>
+            <div class="product-info">
+                <div class="preview-container">
+                    <img src="./images/preview-3.png" alt="Товар 3" class="product-preview">
+                </div>
+                <div class="product-description">
+                    <h3>Energy Sun</h3>
+                    <p>Бодрящий солнечный смузи из спелых апельсинов — это концентрированный заряд витамина С и тропического настроения, который мгновенно освежает и наполняет энергией.</p>
+                    <div class="product-price">789 ₽</div>
+                    <div class="buy-container">
+                        <button class="buy-btn">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карусель навигации слайдера -->
+        <div class="carousel-nav">
+            <div class="carousel-item active" data-slide="0">
+                <img src="https://via.placeholder.com/150x150?text=Product+1" alt="Слайд 1" class="carousel-image">
+            </div>
+            <div class="carousel-item" data-slide="1">
+                <img src="https://via.placeholder.com/150x150?text=Product+2" alt="Слайд 2" class="carousel-image">
+            </div>
+            <div class="carousel-item" data-slide="2">
+                <img src="https://via.placeholder.com/150x150?text=Product+3" alt="Слайд 3" class="carousel-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
