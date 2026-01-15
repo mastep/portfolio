@@ -236,8 +236,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     background-size: 190% !important;
-
-    background-position-y: -131px !important;
 }
 
 .slide-item[data-slide="0"] .buy-btn {
