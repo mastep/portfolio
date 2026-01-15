@@ -192,9 +192,13 @@ body {
     .product-info{
         top:15px;
         left:15px;
+        padding-right: 50px;
     }
     .product-preview {
-        width: 25%;
+        width: 40%;
+        position: absolute;
+        z-index: -1;
+        right: -34px;
     }
 }
 
