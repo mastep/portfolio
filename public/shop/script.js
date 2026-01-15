@@ -224,3 +224,44 @@ document.addEventListener('DOMContentLoaded', () => {
     new BurgerMenu();
 });
 
+
+const track = document.getElementById('slider');
+let startX = 0;
+let currentIndex = 0;
+let isDragging = false;
+
+// Начало касания
+track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+
+// Движение пальца
+track.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = startX - currentX;
+
+    // Предотвращаем стандартное поведение (скролл), если свайпаем
+    if (Math.abs(diff) > 10) e.preventDefault();
+});
+
+// Завершение касания
+track.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    // Порог свайпа — 50 пикселей
+    if (diff > 50 && currentIndex < 2) {
+        currentIndex++;
+        this.currentSlide=currentIndex;
+    } else if (diff < -50 && currentIndex > 0) {
+        currentIndex--;
+        this.currentSlide=currentIndex;
+    }
+    document.querySelector('.carousel-item[data-slide="'+this.currentSlide+'"]').click();
+
+    isDragging = false;
+});
+

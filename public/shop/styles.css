@@ -239,17 +239,16 @@ body {
 }
 
 .slide-item[data-slide="0"] .buy-btn {
-    background: #56611d url('./images/bg-green.jpg');
+    background: #56611d;
 }
 
 .slide-item[data-slide="1"] .buy-btn {
     background: #f25693;
-    background: #56611d url('./images/bg-pink.jpg');
 }
 
 .slide-item[data-slide="2"] .buy-btn {
     background: #fbf406;
-    background: #56611d url('./images/bg-yellow.jpg');
+    color:#fff;
 }
 
 .buy-btn:hover {
@@ -467,7 +466,7 @@ body {
 /* Адаптивная верстка - Маленькие мобильные устройства */
 @media (max-width: 480px) {
     .product-info {
-        max-width: 250px;
+        max-width: 322px;
         padding: 30px;
         top: 23%;
 		left:7%;
@@ -491,12 +490,12 @@ body {
     }
 
     .buy-btn {
-        padding: 8px 16px;
+        padding: 15px 16px;
         font-size: 12px;
     }
 
     .carousel-nav {
-        bottom: 50px;
+        bottom: 80px;
         gap: 10px;
         padding: 10px;
     }
