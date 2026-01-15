@@ -54,7 +54,7 @@ body {
 }
 
 .burger-btn {
-    display: block;
+    display: none;
     position: fixed;
     top: 36px;
     right: 0px;
@@ -178,6 +178,9 @@ body {
 }
 
 @media (max-height: 430px) {
+    .burger-btn {
+        top: 236px;
+    }
     .carousel-nav
     {
         left: 80% !important;
@@ -331,7 +334,7 @@ body {
 }
 
 /* Адаптивная верстка - Планшеты */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .menu {
         transform: translateY(-100%);
         background: rgba(0, 0, 0, 0.85);
@@ -398,7 +401,7 @@ body {
 	.slide-video, .slide-video-start {
 		margin-left:-80%;
 	}
-	
+
     .product-info {
         max-width: 200px;
         padding: 12px;
