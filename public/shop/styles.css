@@ -243,7 +243,7 @@ body {
 }
 
 .slide-item[data-slide="0"] .buy-btn {
-    background: #56611d;
+    background: #75fd05;
 }
 
 .slide-item[data-slide="1"] .buy-btn {
@@ -392,9 +392,11 @@ body {
     .burger-btn {
         margin: 10px 10px;
         display: flex;
+        padding: 8px;
     }
     .menu.active .burger-btn{
         top:0;
+        padding: 4px;
     }
 
 
@@ -469,11 +471,17 @@ body {
 
 /* Адаптивная верстка - Маленькие мобильные устройства */
 @media (max-width: 480px) {
+    .slide-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .product-info {
-        max-width: 322px;
         padding: 30px;
-        top: 23%;
-		left:7%;
+        top:unset;
+        right: unset;
+        margin-bottom: 60px;
+        max-width: 90%;
     }
 
     .product-preview {
