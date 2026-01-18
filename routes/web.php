@@ -62,6 +62,10 @@ Route::get('project_video_production', function () {
     return view('project-promo-video');
 });
 
+Route::get('project_golden_ration', function () {
+    return view('project_golden_ration');
+});
+
 
 
 

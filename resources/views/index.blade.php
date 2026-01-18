@@ -208,6 +208,21 @@
                         </div>
                         <a href="/shop"></a>
                     </div><!-- .bringer-portfolio-card -->
+                    <!-- Card Item 01 -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio_golden_ration/img1.jpg" alt="" width="1200" height="1200" alt="E-com">
+
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">E-com</span>
+                                <h6>NFT Gallery</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="/project_golden_ration"></a>
+                    </div>
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
                             <video src="./video/promo/intro7.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
