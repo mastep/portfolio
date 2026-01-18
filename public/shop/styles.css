@@ -170,7 +170,7 @@ body {
 }
 
 .product-preview {
-    width: 70%;
+    width: 50%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -434,14 +434,11 @@ body {
 
 
 	.slide-video, .slide-video-start {
-		margin-left:-80%;
+		margin-left:-20%;
 	}
 
     .product-info {
-        max-width: 200px;
         padding: 12px;
-        top: 10px;
-        right: 10px;
     }
 
     .product-preview {
@@ -471,6 +468,9 @@ body {
 
 /* Адаптивная верстка - Маленькие мобильные устройства */
 @media (max-width: 480px) {
+    .slide-video, .slide-video-start {
+        margin-left:-20%;
+    }
     .slide-item{
         display: flex;
         align-items: center;
@@ -485,6 +485,7 @@ body {
     }
 
     .product-preview {
+        width: 30%;
         margin-bottom: 8px;
     }
 
@@ -507,7 +508,7 @@ body {
     }
 
     .carousel-nav {
-        bottom: 80px;
+        bottom: 70px;
         gap: 10px;
         padding: 10px;
     }
