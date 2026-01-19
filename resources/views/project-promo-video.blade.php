@@ -1,5 +1,5 @@
 @extends('head')
-@section('title', 'Промо видео-ролики для 7la.pro')
+@section('title', 'Промо видео-ролики для 7lab.pro')
 @section('meta-description', 'Рассказываем о разработке промо роликов для 7lab.pro')
 @section('meta-keywords', 'video promo разработка видео')
 @section('content')
