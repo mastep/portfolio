@@ -178,13 +178,8 @@ body {
 }
 
 @media (max-height: 770px) {
-    .burger-btn {
-        top: 236px;
-    }
-    .carousel-nav
-    {
-        left: 80% !important;
-    }
+
+
 
     .product-info{
         top:unset;
@@ -476,7 +471,6 @@ body {
         top:unset;
         right: unset;
         margin-bottom: 120px;
-        max-width: 90%;
     }
 
     .product-preview {
