@@ -177,7 +177,7 @@ body {
     object-fit: cover;
 }
 
-@media (max-height: 430px) {
+@media (max-height: 770px) {
     .burger-btn {
         top: 236px;
     }
@@ -185,13 +185,10 @@ body {
     {
         left: 80% !important;
     }
-    .carousel-item{
-        width: 70px !important;;
-        height: 70px !important;
-    }
+
     .product-info{
-        top:15px;
-        left:15px;
+        top:unset;
+        left: 10% !important;
         padding-right: 50px;
     }
     .product-preview {
@@ -433,9 +430,7 @@ body {
     }
 
 
-	.slide-video, .slide-video-start {
-		margin-left:-20%;
-	}
+
 
     .product-info {
         padding: 12px;
@@ -469,7 +464,7 @@ body {
 /* Адаптивная верстка - Маленькие мобильные устройства */
 @media (max-width: 480px) {
     .slide-video, .slide-video-start {
-        margin-left:-20%;
+        transform: translate(-70%, -50%);
     }
     .slide-item{
         display: flex;
