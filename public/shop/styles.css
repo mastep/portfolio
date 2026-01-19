@@ -183,7 +183,6 @@ body {
 
     .product-info{
         top:unset;
-        left: 10% !important;
         padding-right: 50px;
     }
     .product-preview {
@@ -484,6 +483,7 @@ body {
 
     .product-description p {
         font-size: 11px;
+        margin-right: 20px;
     }
 
     .product-price {
