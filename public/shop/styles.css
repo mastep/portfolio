@@ -189,7 +189,7 @@ body {
         width: 40%;
         position: absolute;
         z-index: -1;
-        right: -34px;
+        right: -29px;
     }
 }
 
@@ -204,6 +204,7 @@ body {
     color: #fff;
     line-height: 1.5;
     margin-bottom: 15px;
+    margin-right: 20px;
 }
 
 .product-price {
@@ -470,6 +471,8 @@ body {
         top:unset;
         right: unset;
         margin-bottom: 120px;
+        overflow: hidden;
+        width: 90%;
     }
 
     .product-preview {
