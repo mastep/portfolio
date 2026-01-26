@@ -450,6 +450,7 @@ body {
     }
 
     .buy-btn {
+        max-width: 145px;
         padding: 10px 20px;
         font-size: 14px;
     }
@@ -511,3 +512,21 @@ body {
     }
 }
 
+@media (max-height: 600px) {
+
+    .carousel-nav{
+        gap:3px;
+        bottom: 7%;
+    }
+
+    .carousel-item {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+@media (max-height: 400px) {
+    .carousel-nav{
+        bottom: 3%;
+    }
+}
