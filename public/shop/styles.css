@@ -370,7 +370,12 @@ body {
         transform: translateX(0) translateY(0);
     }
 
+    .active .menu-list {
+        display: block;
+    }
+
     .menu-list {
+        display: none;
         flex-direction: column;
         gap: 5px;
     }
@@ -409,14 +414,6 @@ body {
         padding: 15px;
     }
 
-    .menu-list
-    {
-        display: none;
-    }
-    .active .menu-list
-    {
-        display: block;
-    }
 
     .active .menu {
         transform: translateY(0);
@@ -527,6 +524,14 @@ body {
 
 @media (max-height: 400px) {
     .carousel-nav{
-        bottom: 3%;
+        flex-direction: column;
+        justify-content:center;
+        left:unset;
+        transform:unset;
+        height: 100vh;
     }
+    .carousel-item {
+        transform-origin: center center !important;
+    }
+
 }
