@@ -5,7 +5,7 @@
         return $months[date('n')-1];
     }
     function getSale():string  {
-        $data=["11"=>25];
+        $data=["11"=>25, "2"=>7, "3"=>5];
         $result=$data[date('n')]??30;
         return $result."%";
     }
