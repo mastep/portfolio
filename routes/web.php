@@ -66,6 +66,10 @@ Route::get('project_golden_ration', function () {
     return view('project_golden_ration');
 });
 
+Route::get('faq', function () {
+    return view('faq');
+});
+
 
 
 

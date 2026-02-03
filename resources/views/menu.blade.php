@@ -76,6 +76,10 @@
                     </li>
                 </ul>
             </li>
+            <li itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a href="/faq">FAQ</a>
+            </li>
             <li class="stg-xl-hide" itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="form">
