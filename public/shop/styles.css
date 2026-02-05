@@ -186,10 +186,11 @@ body {
         padding-right: 50px;
     }
     .product-preview {
-        width: 40%;
+        width: 30%;
         position: absolute;
         z-index: -1;
-        right: -29px;
+        right: 0;
+        opacity: 0.6;
     }
 }
 
