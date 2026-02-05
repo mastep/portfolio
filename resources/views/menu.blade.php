@@ -60,7 +60,10 @@
                     <meta itemprop="position" content="6" />
                 </a>
             </li>
-
+            <li itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a href="/faq">FAQ</a>
+            </li>
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
                 <a href="#">Контакты</a>
@@ -75,10 +78,6 @@
                         <a itemprop="item" class="ptb_link"></a>
                     </li>
                 </ul>
-            </li>
-            <li itemprop="itemListElement" itemscope
-                itemtype="https://schema.org/ListItem">
-                <a href="/faq">FAQ</a>
             </li>
             <li class="stg-xl-hide" itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
