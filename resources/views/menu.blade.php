@@ -17,13 +17,13 @@
                 <ul class="sub-menu">
                     <li>
                         <a itemprop="item" href="/api">
-                            <span itemprop="name">API</span>
+                            <span itemprop="name">АПИ (API)</span>
                             <meta itemprop="position" content="1" />
                         </a>
                     </li>
                     <li>
                         <a itemprop="item" href="/telegram-bot">
-                            <span itemprop="name">Telegram боты</span>
+                            <span itemprop="name">Телеграм боты</span>
                             <meta itemprop="position" content="1" />
                         </a>
                     </li>
@@ -62,7 +62,7 @@
             </li>
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a href="/faq">FAQ</a>
+                <a href="/faq">Вопрос / Ответ</a>
             </li>
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">

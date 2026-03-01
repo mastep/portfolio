@@ -27,7 +27,7 @@
         <div id="footer-text" class="stg-row">
             <div class="bringer-toggles-item--title stg-col-5 stg-m-col-6">
                     <div class="bringer-label">&copy;
-                        7LAB.PRO
+                        7ЛАБ.ПРО
                         <span class="bringer-accent">.</span>
                     </div>
                 <div class="stg-m-bottom-gap">2013 - {{date("Y")}}</div>

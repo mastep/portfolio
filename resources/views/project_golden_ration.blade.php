@@ -1,5 +1,5 @@
 @extends('head')
-@section('title', 'NFT - Golden Ratio Art & Tea Room')
+@section('title', 'Галерея - Golden Ratio Art & Tea Room')
 @section('meta-description', 'Рассказываем о e-com для Golden Ratio Art & Tea Room')
 @section('meta-keywords', 'сайт, ecom, разработка интернет-магазина')
 @section('content')
@@ -22,7 +22,7 @@
             <section>
                 <div class="stg-row stg-bottom-gap-l stg-tp-bottom-gap">
                     <div class="stg-col-6 stg-tp-bottom-gap">
-                        <h1 class="bringer-post-title" data-appear="fade-up" data-unload="fade-left">Ecom NFT Gallery</h1>
+                        <h1 class="bringer-post-title" data-appear="fade-up" data-unload="fade-left">Галерея NFT </h1>
                     </div>
 
                     <div class="stg-col-6 stg-tp-col-9 stg-tp-offset-3 align-right" data-appear="fade-up" data-delay="100" data-unload="fade-right">
@@ -50,13 +50,13 @@
                 <!-- Meta -->
                 <div class="bringer-hero-info-line" data-stagger-appear="fade-up" data-delay="200" data-stager-delay="100" data-unload="fade-up">
                     <div class="bringer-meta">
-                        Client: <span>Golden Ratio Art & Tea Room</span>
+                        Клиент: <span>Golden Ratio Art & Tea Room</span>
                     </div>
                     <div class="bringer-meta">
-                        Service: <span>E-com</span>
+                        Сервис: <span>E-com</span>
                     </div>
                     <div class="bringer-meta">
-                        Date: <span>Dec '2025</span>
+                        Дата: <span>Dec '2025</span>
                     </div>
                 </div><!-- .bringer-hero-info-line -->
             </section>

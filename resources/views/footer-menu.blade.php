@@ -3,11 +3,11 @@
         <h6>Наш cтек</h6>
         <div class="bringer-menu-widget">
             <ul>
-                <li><a href="#">OpenClaw, Cursor, Nginx, PHP</a></li>
-                <li><a href="#">Javascript, Vue</a></li>
-                <li><a href="#">Kubernetes, Docker, GitHub</a></li>
-                <li><a href="#">Memcached, Redis, Elasticsearch</a></li>
-                <li><a href="">Postgresql, MySQL</a></li>
+                <li><a href="#">ОпенКлоу OpenClaw, Крусор Cursor, Нджинск Nginx, ПИЧПИ PHP</a></li>
+                <li><a href="#">Джаваскрипт Javascript, Вью Vue</a></li>
+                <li><a href="#">Кюбернетис Kubernetes, Докер Docker, Гитхаб GitHub</a></li>
+                <li><a href="#">Мемкешт Memcached, Редис Redis, ЭластикСерч Elasticsearch</a></li>
+                <li><a href="">Постгрескуэль Postgresql, Майскуэль MySQL</a></li>
             </ul>
         </div>
     </div><!-- .bringer-widget -->
@@ -17,11 +17,11 @@
         <h6>Framework / CMS</h6>
         <div class="bringer-menu-widget">
             <ul>
-                <li><a href="#">E-commerce OmniMart</a></li>
+                <li><a href="#">Интернем магазин Омнимаркет E-commerce OmniMart</a></li>
                 <li><a href="#">1С-Битрикс</a></li>
-                <li><a href="#">Laravel</a></li>
-                <li><a href="#">Tilda</a></li>
-                <li><a href="#">Wordpress</a></li>
+                <li><a href="#">Ларавель Laravel</a></li>
+                <li><a href="#">Тильда Tilda</a></li>
+                <li><a href="#">Вордпресс Wordpress</a></li>
             </ul>
         </div>
     </div><!-- .bringer-widget -->

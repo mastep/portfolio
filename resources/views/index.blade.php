@@ -36,10 +36,8 @@
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
                         <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">
-                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">AI решения</a> для бизнеса
-                            <a href="./e-commerce" title="Разработка E-commerce, интернет магазина">E-com</a>,
-                            <a href="./telegram-bot" title="Разработка Telegram ботов" style="color:#fff">telegram боты</a>,
-                            <a href="./api" title="Разработка API">API</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">web support</a></h1>
+                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">ИИ решения</a> для бизнеса,
+                            <a href="./telegram-bot" title="Разработка Telegram ботов" >телеграм боты</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">тех. поддержка</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
@@ -70,7 +68,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <video src="./video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay playsinline></video>
+                        <video id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay playsinline></video>
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
@@ -84,7 +82,7 @@
                 <div class="stg-row stg-valign-bottom">
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div><h3>AI</h3></div>
+                            <div><h3>ИИ</h3></div>
                             <div class="bringer-counter-label">Применяем в разработке ИИ. Запускаем сайты быстрее других! </div>
                         </div><!-- .bringer-counter -->
                     </div>
@@ -201,8 +199,8 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">E-com</span>
-                                <h6>Прототип главной страницы e-com</h6>
+                                <span class="bringer-meta">инетрнет-магазин</span>
+                                <h6>Прототип главной страницы</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
@@ -216,8 +214,8 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">E-com</span>
-                                <h6>NFT Gallery</h6>
+                                <span class="bringer-meta">интернет-магазин</span>
+                                <h6>Галерея</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
@@ -230,7 +228,7 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Video Production</span>
+                                <span class="bringer-meta">Видео</span>
                                 <h6>Промо ролики</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
@@ -269,11 +267,11 @@
                     </div><!-- .bringer-portfolio-card -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01.jpg" alt="" width="1200" height="1200" alt="E-commerce для Art of Tea. Разработка интернет магазина.">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01.jpg" alt="" width="1200" height="1200" alt="интернет-магазинmerce для Art of Tea. Разработка интернет магазина.">
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">E-com</span>
+                                <span class="bringer-meta">интернет-магазин</span>
                                 <h6>Art of Tea</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
@@ -287,7 +285,7 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Landing page</span>
+                                <span class="bringer-meta">Промо страница</span>
                                 <h6>Vasiliev Groove</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
@@ -302,7 +300,7 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Corporate portal</span>
+                                <span class="bringer-meta">Корп. портал</span>
                                 <h6>Корпоративный портал</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
@@ -317,7 +315,7 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">E-com</span>
+                                <span class="bringer-meta">интернет-магазин</span>
                                 <h6>Интернет магазин одежды</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
@@ -331,7 +329,7 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">E-com</span>
+                                <span class="bringer-meta">интернет-магазин</span>
                                 <h6>Тонер маркет - магазин катриджей</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
@@ -346,7 +344,7 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Landing page</span>
+                                <span class="bringer-meta">Промо страница</span>
                                 <h6>Burton.team</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>

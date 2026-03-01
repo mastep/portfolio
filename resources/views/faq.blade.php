@@ -1,6 +1,6 @@
 @extends('head')
 @section('html', 'itemscope itemtype=https://schema.org/FAQPage')
-@section('title', 'FAQ - часто задаваемые вопросы')
+@section('title', 'Вопрос / Ответ - часто задаваемые вопросы')
 @section('content')
     <body>
     <!-- Header -->
@@ -23,7 +23,7 @@
                 <div class="stg-row stg-bottom-gap-l stg-tp-bottom-gap">
 
                     <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
-                        <h1 class="stg-bottom-gap-xl" data-appear="fade-up" data-unload="fade-left">FAQ</h1>
+                        <h1 class="stg-bottom-gap-xl" data-appear="fade-up" data-unload="fade-left">Вопрос / Ответ</h1>
                         <div class="stg-col-12" data-appear="fade-right" data-delay="100">
 
                             <div class="faq-container">

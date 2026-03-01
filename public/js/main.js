@@ -81,8 +81,8 @@ jQuery(function ($) {
 
         $("#footer-text").append(
             "<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Телефон<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+phb+"</h9></div>"
-            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Email<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+pmb+"</h9></div>"
-            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Telegram<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+ptb+"</h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Почта<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+pmb+"</h9></div>"
+            +"<div class=\"bringer-toggles-item--title stg-col-5 stg-m-col-6\"><span class=\"bringer-label\">Телеграм<span class=\"bringer-accent\">.</span></span><h9 class='stg-m-bottom-gap'>"+ptb+"</h9></div>"
         );
 
 
