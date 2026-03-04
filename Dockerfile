@@ -29,7 +29,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     autoconf \
     automake \
     librdkafka-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Устанавливаем само PHP-расширение через PECL и активируем его
 RUN pecl install rdkafka \
