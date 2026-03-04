@@ -62,35 +62,31 @@ services:
     kafka:
         image: apache/kafka:latest
         container_name: kafka
-        restart: always # Перезапускать, если упадет сам процесс
+        restart: always
         ports:
-            # Мапим оба порта на хост-машину Windows
             - "9092:9092"
             - "9094:9094"
         healthcheck:
-            # Проверяем доступность через внутренний слушатель CLIENT (порт 9092)
-            test: [ "CMD-SHELL", "/opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list || exit 1" ]
-            interval: 30s    # Как часто проверять
-            timeout: 10s     # Сколько ждать ответа
-            retries: 3       # После скольких неудач подряд считать контейнер "нездоровым"
-            start_period: 40s # Сколько времени дать на запуск (JVM и Kafka грузятся долго)
+            # Исправлен путь к скриптам
+            test: [ "CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list || exit 1" ]
+            interval: 30s
+            timeout: 10s
+            retries: 3
+            start_period: 40s
         environment:
-            # Используем один слушатель PLAINTEXT, который рекламирует себя по-разному
-            KAFKA_CFG_LISTENERS: CLIENT://:9092,EXTERNAL://:9094,CONTROLLER://:9093
-            KAFKA_CFG_ADVERTISED_LISTENERS: CLIENT://kafka:9092,EXTERNAL://host.docker.internal:9094
-            KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
-            KAFKA_CFG_INTER_BROKER_LISTENER_NAME: CLIENT # Используем CLIENT для внутреннего общения
-            KAFKA_REQUEST_TIMEOUT_MS: 60000
-            KAFKA_BROKER_SESSION_TIMEOUT_MS: 30000
-            KAFKA_CONTROLLER_QUORUM_REQUEST_TIMEOUT_MS: 60000
-            # Остальные настройки KRAFT
-            KAFKA_CFG_NODE_ID: 1
-            KAFKA_CFG_PROCESS_ROLES: "broker,controller"
-            KAFKA_CFG_CONTROLLER_LISTENER_NAMES: CONTROLLER
-            KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
-            ALLOW_PLAINTEXT_LISTENER: "yes"
+            # Убраны префиксы _CFG_
+            KAFKA_NODE_ID: 1
+            KAFKA_PROCESS_ROLES: broker,controller
+            KAFKA_LISTENERS: CLIENT://:9092,EXTERNAL://:9094,CONTROLLER://:9093
+            KAFKA_ADVERTISED_LISTENERS: CLIENT://kafka:9092,EXTERNAL://host.docker.internal:9094
+            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+            KAFKA_INTER_BROKER_LISTENER_NAME: CLIENT
+            KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+            KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
             KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
-            KAFKA_ENABLE_KRAFT: "yes"
+            # Тайм-ауты (опционально)
+            KAFKA_REQUEST_TIMEOUT_MS: 60000
+            KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
         networks:
             - telegram_bot_network
     worker:
