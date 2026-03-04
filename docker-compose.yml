@@ -64,31 +64,41 @@ services:
         container_name: kafka
         restart: always
         ports:
-            - "9092:9092"
-            - "9094:9094"
+            - "9092:9092"   # Внутренний порт (для контейнеров)
+            - "9094:9094"   # Внешний порт (для Windows/хоста)
         healthcheck:
-            # Исправлен путь к скриптам
+            # Путь для официального образа apache/kafka
             test: [ "CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list || exit 1" ]
             interval: 30s
             timeout: 10s
             retries: 3
             start_period: 40s
         environment:
-            # Убраны префиксы _CFG_
+            # Базовые настройки KRaft
             KAFKA_NODE_ID: 1
-            KAFKA_PROCESS_ROLES: broker,controller
-            # Добавьте это, чтобы ID кластера был статичным
-            CLUSTER_ID: "5L6g3nShT-eMCtK--X86sw"
-            KAFKA_LISTENERS: CLIENT://:9092,EXTERNAL://:9094,CONTROLLER://:9093
-            KAFKA_ADVERTISED_LISTENERS: CLIENT://kafka:9092,EXTERNAL://host.docker.internal:9094
-            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
-            KAFKA_INTER_BROKER_LISTENER_NAME: CLIENT
-            KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
-            KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
-            KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
-            # Тайм-ауты (опционально)
-            KAFKA_REQUEST_TIMEOUT_MS: 60000
+            KAFKA_PROCESS_ROLES: 'broker,controller'
+            KAFKA_CONTROLLER_QUORUM_VOTERS: '1@kafka:9093'
+            CLUSTER_ID: '5L6g3nShT-eMCtK--X86sw'
+
+            # Настройка слушателей
+            # CLIENT — внутри Docker сети, EXTERNAL — для доступа извне (Windows)
+            KAFKA_LISTENERS: 'CLIENT://:9092,EXTERNAL://:9094,CONTROLLER://:9093'
+            KAFKA_ADVERTISED_LISTENERS: 'CLIENT://kafka:9092,EXTERNAL://host.docker.internal:9094'
+            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT'
+            KAFKA_INTER_BROKER_LISTENER_NAME: 'CLIENT'
+            KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+
+            # Настройки для одиночного брокера (чтобы не было ошибок репликации)
+            KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+            KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+            KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+            KAFKA_MIN_INSYNC_REPLICAS: 1
+
+            # Дополнительные параметры
+            KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
             KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+            KAFKA_REQUEST_TIMEOUT_MS: 60000
+
         networks:
             - telegram_bot_network
     worker:
