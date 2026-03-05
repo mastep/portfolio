@@ -3,7 +3,7 @@
         <h6>Наш cтек</h6>
         <div class="bringer-menu-widget">
             <ul>
-                <li><a href="#">ОпенКлоу OpenClaw, Крусор Cursor, Нджинск Nginx, ПИЧПИ PHP</a></li>
+                <li><a href="#">ОпенКлоу OpenClaw, Курсор Cursor, Нджинкс Nginx, ПИЧПИ PHP</a></li>
                 <li><a href="#">Джаваскрипт Javascript, Вью Vue</a></li>
                 <li><a href="#">Кюбернетис Kubernetes, Докер Docker, Гитхаб GitHub</a></li>
                 <li><a href="#">Мемкешт Memcached, Редис Redis, ЭластикСерч Elasticsearch</a></li>
