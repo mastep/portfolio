@@ -246,7 +246,7 @@
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">App</span>
+                                <span class="bringer-meta">Приложение</span>
                                 <h6>Корпоратив 2.0</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
