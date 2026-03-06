@@ -36,8 +36,8 @@
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
                         <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">
-                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">ИИ решения</a> для бизнеса,
-                            <a href="./telegram-bot" title="Разработка Telegram ботов" >телеграм боты</a> <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">тех. поддержка</a></h1>
+                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">ИИ итегратор</a> Бизнес решения
+                            <a href="./telegram-bot" title="Разработка Telegram ботов" >Телеграм AI</a> <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">Поддержка 24/7</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
@@ -192,20 +192,22 @@
             <!-- Portfolio Carousel -->
             <div class="swiper bringer-carousel stg-bottom-gap-l" data-appear="fade-up" data-unload="fade-up" data-delay="200" data-count="4" data-m-count="1.5">
                 <div class="swiper-wrapper">
+
+                    <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video src="/shop/videos/desktop/slide1-start.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
-
+                            <video src="./video/telegram-bot2.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">инетрнет-магазин</span>
-                                <h6>Прототип главной страницы</h6>
+                                <span class="bringer-meta">ИИ</span>
+                                <h6>Telegram ИИ / AI</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
-                        <a href="/shop"></a>
-                    </div><!-- .bringer-portfolio-card -->
+                        <a href="/project_telegram_bot"></a>
+                    </div>
+
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
@@ -235,21 +237,7 @@
                         </div>
                         <a href="/project_video_production"></a>
                     </div><!-- .bringer-portfolio-card -->
-                    <!-- Card Item 01 -->
-                    <div class="bringer-block bringer-portfolio-card swiper-slide">
-                        <div class="bringer-portfolio-card-image">
-                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio-telegram-bot/main_0.jpg" alt="" width="1200" height="1200" alt="Telegram. Разработка телеграм ботов.">
 
-                        </div>
-                        <div class="bringer-portfolio-card-footer">
-                            <div class="bringer-portfolio-card-title">
-                                <span class="bringer-meta">Bot</span>
-                                <h6>Telegram как балет</h6>
-                            </div>
-                            <span class="bringer-icon bringer-icon-explore"></span>
-                        </div>
-                        <a href="/project_telegram_bot"></a>
-                    </div>
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
@@ -351,7 +339,20 @@
                         </div>
                         <a href="/project-landing-page"></a>
                     </div><!-- .bringer-portfolio-card -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <video src="/shop/videos/desktop/slide1-start.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
 
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">инетрнет-магазин</span>
+                                <h6>Прототип главной страницы</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="/shop"></a>
+                    </div><!-- .bringer-portfolio-card -->
 
 
 

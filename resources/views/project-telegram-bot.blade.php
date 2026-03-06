@@ -22,12 +22,14 @@
             <section>
                 <div class="stg-row stg-bottom-gap-l stg-tp-bottom-gap">
                     <div class="stg-col-6 stg-tp-bottom-gap">
-                        <h1 class="bringer-post-title" data-appear="fade-up" data-unload="fade-left">Как пёрышко </h1>
+                        <h1 class="bringer-post-title" data-appear="fade-up" data-unload="fade-left">Телеграм ИИ как пёрышко </h1>
                     </div>
 
                     <div class="stg-col-6 stg-tp-col-9 stg-tp-offset-3 align-right" data-appear="fade-up" data-delay="100" data-unload="fade-right">
-                        <p><img class="align-left" src="/img/feather.svg" style="position: absolute; max-width: 70px; margin:-40px 0 0 -20px; ">... именно в этом кроется величайшая тайна балетного искусства, его незыблемый закон!</p><p style="text-align: justify">Лишь чарующая легкость и абсолютная простота должны предстать взору зрителя. Ни тени мысли о титанических усилиях, о поте ежедневных экзерсисов, о той тяжкой работе, что навсегда останется скрытой от публики за бархатным занавесом сцены, не должно закрасться в его воображение...</p>
-                        <p>Далее мы расскажем при чем тут Telegram Bot...</p>
+                        <p><img class="align-left" src="/img/feather.svg" style="position: absolute; max-width: 70px; margin:-40px 0 0 -20px; ">..."Как перышко" именно в этом кроется величайшая тайна балетного искусства, его незыблемый закон!</p>
+                        <p>Далее мы расскажем при чем тут ИИ Telegram Bot...</p>
+                        <p style="text-align: justify">Лишь чарующая легкость и абсолютная простота должны предстать взору зрителя. Ни тени мысли о титанических усилиях, о поте ежедневных экзерсисов, о той тяжкой работе, что навсегда останется скрытой от публики за бархатным занавесом сцены, не должно закрасться в его воображение...</p>
+
                     </div>
                 </div>
 
@@ -36,17 +38,17 @@
                     <div class="swiper bringer-slider" data-autoplay="12000" data-duration="300" data-effect="slide">
                         <div class="swiper-wrapper">
                             <!-- Slider Item -->
+                            <div class="swiper-slide" style="position: relative">
+                                <img src="img/portfolio/portfolio-telegram-bot/main22.png" alt="Telegram Bot Balet" width="1920" height="1080" style="position: absolute; z-index: 300; opacity: 0.7">
+                                <img src="img/portfolio/portfolio-telegram-bot/main2.jpg" alt="Telegram Bot Balet" width="1920" height="1080">
+                            </div>
+                            <!-- Slider Item -->
                             <div class="swiper-slide">
                                 <img src="img/portfolio/portfolio-telegram-bot/main.jpg" alt="Telegram Bot Balet" width="1920" height="1080">
                             </div>
                             <!-- Slider Item -->
                             <div class="swiper-slide">
                                 <img src="img/portfolio/portfolio-telegram-bot/main1.jpg" alt="Telegram Bot Balet" width="1920" height="1080">
-                            </div>
-                            <!-- Slider Item -->
-                            <div class="swiper-slide" style="position: relative">
-                                <img src="img/portfolio/portfolio-telegram-bot/main22.png" alt="Telegram Bot Balet" width="1920" height="1080" style="position: absolute; z-index: 300; opacity: 0.3">
-                                <img src="img/portfolio/portfolio-telegram-bot/main2.jpg" alt="Telegram Bot Balet" width="1920" height="1080">
                             </div>
                             <!-- Slider Item -->
                             <div class="swiper-slide">
