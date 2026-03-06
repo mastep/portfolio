@@ -36,7 +36,7 @@
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
                         <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">
-                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">ИИ итегратор</a> Бизнес решения
+                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">ИИ интегратор</a> Бизнес решения
                             <a href="./telegram-bot" title="Разработка Telegram ботов" >Телеграм AI</a> <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">Поддержка 24/7</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
