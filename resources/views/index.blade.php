@@ -37,7 +37,7 @@
                         <!-- Title -->
                         <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">
                             <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">ИИ решения</a> для бизнеса,
-                            <a href="./telegram-bot" title="Разработка Telegram ботов" >телеграм боты</a>, <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">тех. поддержка</a></h1>
+                            <a href="./telegram-bot" title="Разработка Telegram ботов" >телеграм боты</a> <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">тех. поддержка</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
@@ -68,7 +68,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <video id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay playsinline></video>
+                        <video src="./video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay playsinline></video>
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
