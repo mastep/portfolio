@@ -14,25 +14,7 @@
 @endphp
 @include('head')
 <body>
-<!-- Intro -->
-<div class="video-wrapper">
-    <video id="introVideo"
-           class="bg-video"
-           autoplay
-           muted
-           playsinline
-           preload="auto" class="bg-video">
-        <source src="./video/project-video5.mp4" type="video/mp4">
-    </video>
-</div>
-
-<script>
-    const video = document.getElementById('introVideo');
-
-    video.addEventListener('ended', () => {
-        document.querySelector(".video-wrapper").classList.add('is-hidden');
-    });
-</script>
+@include('intro')
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
     <!-- Desktop Header -->
@@ -43,7 +25,6 @@
     </div>
     @include('mobileheader')
 </header>
-
 <!-- Page Main -->
 <main id="bringer-main">
     <div class="stg-container">

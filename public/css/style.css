@@ -4455,6 +4455,7 @@ button.pswp__button.bringer-pswp-next::after {
     height: 100%;
     z-index: 10100;
     transition: opacity 0.6s ease;
+    background-color:var(--bringer-s-body-bg);
 }
 
 /* Ваше исходное видео */
@@ -4470,7 +4471,7 @@ button.pswp__button.bringer-pswp-next::after {
     color:#fff;
     text-align: center;
     font-size: 1.5em;
-    content: "Мы верим в силу творчества";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
