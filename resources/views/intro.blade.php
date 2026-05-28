@@ -1,17 +1,11 @@
 <!-- Intro -->
 <div class="video-wrapper">
-    <video id="introVideo"
-           class="bg-video"
-           autoplay
-           muted
-           playsinline
-           preload="auto">
+    <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="auto">
         <source src="./video/project-video5.mp4" type="video/mp4">
     </video>
-
 </div>
 
-<script defer>
+<script>
     const video = document.getElementById('introVideo');
     const bringer_header = document.getElementById('bringer-header');
     const bringer_main = document.getElementById('bringer-main');
@@ -29,7 +23,7 @@
     video.addEventListener('ended', hideVideo);
 
     // 2. Скрытие ровно через 8 секунд (8000 миллисекунд)
-    const videoTimeout = setTimeout(hideVideo, 8000);
+    const videoTimeout = setTimeout(hideVideo, 4000);
 </script>
 
 <style>
@@ -46,7 +40,7 @@
         inset: 0;
         width: 100%;
         height: 100%;
-        z-index: 10100;
+        z-index: 10000;
         transition: opacity 0.6s ease;
         background-color:var(--bringer-s-body-bg);
     }
@@ -64,8 +58,8 @@
     .video-wrapper::after {
         color:#fff;
         text-align: center;
-        font-size: 1.2em;
-        content: 'Экспертная инженерия цифрового стиля';
+        font-size: 1em;
+        content: 'Экспертная инженерия цифровых решений';
         position: absolute;
         top: 50%;
         left: 50%;
