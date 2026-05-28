@@ -14,6 +14,25 @@
 @endphp
 @include('head')
 <body>
+<!-- Intro -->
+<div class="video-wrapper">
+    <video id="introVideo"
+           class="bg-video"
+           autoplay
+           muted
+           playsinline
+           preload="auto" class="bg-video">
+        <source src="./video/project-video5.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+    const video = document.getElementById('introVideo');
+
+    video.addEventListener('ended', () => {
+        document.querySelector(".video-wrapper").classList.add('is-hidden');
+    });
+</script>
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
     <!-- Desktop Header -->
@@ -36,8 +55,8 @@
                     <div class="stg-col-9 stg-tp-col-8 stg-m-col-12">
                         <!-- Title -->
                         <h1 class="bringer-page-title" data-split-appear="fade-up" data-split-unload="fade-up">
-                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">ИИ интегратор</a> Бизнес решения
-                            <a href="./telegram-bot" title="Разработка Telegram ботов" >Телеграм AI</a> <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">Поддержка 24/7</a></h1>
+                            <a href="#page01" title="API, e-commerce, support, telegram боты, сайты">Интегрируем ИИ</a> в бизнес
+                            <a href="./e-commerce" title="Разработка e-commerce" >Создаем e-com</a> <a href="./it-sharing" title="Тех. поддержка и сопровождение проектов" style="color:#fff">Тех. поддержка 24/7</a></h1>
                     </div>
                     <div class="stg-col-3 stg-tp-col-4 stg-m-col-12">
                         <!-- Social Proof -->
