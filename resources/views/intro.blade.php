@@ -7,15 +7,11 @@
 
 <script>
     const video = document.getElementById('introVideo');
-    const bringer_header = document.getElementById('bringer-header');
-    const bringer_main = document.getElementById('bringer-main');
     const videoWrapper = document.querySelector('.video-wrapper');
     let videoTimeout;
 
     function hideVideo() {
         videoWrapper.classList.add('is-hidden');
-        bringer_header.style.display = 'block';
-        bringer_main.style.display = 'block';
         clearTimeout(videoTimeout);
     }
 

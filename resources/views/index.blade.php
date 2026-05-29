@@ -14,6 +14,7 @@
 @endphp
 @include('head')
 <body>
+@include('intro')
 <!-- Header -->
 <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
     <!-- Desktop Header -->
@@ -396,6 +397,5 @@
 @include('show-message')
 @include('backlight')
 @include('scripts')
-@include('intro')
 </body>
 </html>

@@ -1334,9 +1334,12 @@ jQuery(function ($) {
         ContactForm();
 
         // Custom Features
-        CustomFunction();
-
         // Loading and Unloading Animation
+        setTimeout(function() {
+                CustomFunction();
+            },5000);
+
+            // Loading and Unloading Animation
         setTimeout(function() {
             InitAnimation();
         }, 300);
