@@ -1,7 +1,7 @@
 <!-- Intro -->
 <div class="video-wrapper">
     <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="auto">
-        <source src="./video/project-video5.mp4" type="video/mp4">
+        <source src="/video/project-video5.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -10,20 +10,28 @@
     const bringer_header = document.getElementById('bringer-header');
     const bringer_main = document.getElementById('bringer-main');
     const videoWrapper = document.querySelector('.video-wrapper');
+    let videoTimeout;
 
-    // Функция, которая скрывает плеер
     function hideVideo() {
         videoWrapper.classList.add('is-hidden');
         bringer_header.style.display = 'block';
         bringer_main.style.display = 'block';
-        clearTimeout(videoTimeout); // Отменяем таймер, если видео закончилось раньше
+        clearTimeout(videoTimeout);
     }
 
-    // 1. Скрытие по окончании видео
-    video.addEventListener('ended', hideVideo);
+    // Запускаем таймер только ПОСЛЕ реального старта видео
+    video.addEventListener('playing', () => {
+        videoTimeout = setTimeout(hideVideo, 4000); // 4 секунды показа
+    });
 
-    // 2. Скрытие ровно через 8 секунд (8000 миллисекунд)
-    const videoTimeout = setTimeout(hideVideo, 4000);
+    // Резервный скрыватель на случай, если видео заблокировано браузером или не грузится вообще
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            if (!videoWrapper.classList.contains('is-hidden')) {
+                hideVideo();
+            }
+        }, 6000); // Скроет интро в любом случае через 6 сек после полной загрузки страницы
+    });
 </script>
 
 <style>
@@ -89,7 +97,7 @@
 
     .video-wrapper.is-hidden {
         opacity: 0;
-        pointer-events: none;
-        transition: opacity 3s ease;
+        visibility: hidden; /* Заменяет display:none, ждет окончания transition */
+        transition: opacity 3s ease, visibility 3s ease;
     }
 </style>
