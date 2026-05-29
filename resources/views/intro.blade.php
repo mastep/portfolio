@@ -1,6 +1,6 @@
 <!-- Intro -->
 <div class="video-wrapper">
-    <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="auto">
+    <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="metadata">
         <source src="/video/project-video5.mp4" type="video/mp4">
     </video>
 </div>
@@ -38,9 +38,6 @@
     /*Intro*/
     body {
         overflow-y: scroll;
-    }
-    #bringer-header, #bringer-main {
-        display: none;
     }
     /* Контейнер-обертка на весь экран */
     .video-wrapper {

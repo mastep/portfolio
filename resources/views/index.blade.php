@@ -67,7 +67,7 @@
                 <div class="bringer-hero-media-wrap bringer-masked-bottom-right bringer-masked-block stg-bottom-gap-l" data-appear="zoom-out" data-unload="zoom-out">
                     <!-- Masked Media -->
                     <div class="bringer-masked-media bringer-masked-media bringer-parallax-media">
-                        <video src="./video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay playsinline></video>
+                        <video data-video-src="/video/intro.mp4" id="main_video" class="data-poster" poster="/img/home/home01-hero.jpg" loop muted autoplay playsinline></video>
                     </div>
                     <!-- Content -->
                     <div class="bringer-masked-content at-bottom-right">
@@ -100,7 +100,7 @@
 
         <!-- Section: Steps -->
         <section class="backlight-top" id="page01">
-            <video id="StepsVideo" data-video-src="./video/main_video_01.mp4" autoplay loop muted playsinline></video>
+            <video id="StepsVideo" data-video-src="/video/main_video_01.mp4" autoplay loop muted playsinline></video>
             <div class="stg-bottom-gap-l">
                 <h2 data-appear="fade-up" data-unload="fade-up">Что мы делаем?</h2>
             </div>
@@ -109,7 +109,7 @@
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-12" data-appear="fade-right">
                     <div>
                         <a href="/telegram-bot" title="Создать Telegram бота">
-                            <video data-video-src="./video/telegram-bot.mp4" width="960" height="960" muted loop autoplay playsinline onmouseover="this.play();"></video>
+                            <video data-video-src="/video/telegram-bot.mp4" width="960" height="960" muted loop autoplay playsinline onmouseover="this.play();"></video>
                         </a>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="stg-col-3  stg-tp-col-6 stg-m-col-12 stg-m-bottom-gap" data-appear="fade-left">
                     <div>
                         <a href="/e-commerce" title="Создать интернет магазин">
-                            <video data-video-src="./video/service01.mp4" width="960" height="960" muted autoplay playsinline onmouseover="this.play();" ></video>
+                            <video data-video-src="/video/service01.mp4" width="960" height="960" muted autoplay playsinline onmouseover="this.play();" ></video>
                         </a>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap stg-m-col-12" data-appear="fade-right">
                     <div>
                         <a href="/landing-page" title="Создать сайт визитку">
-                            <video data-video-src="./video/service05.mp4" width="960" height="960" autoplay muted playsinline onmouseover="this.play();"></video>
+                            <video data-video-src="/video/service05.mp4" width="960" height="960" autoplay muted playsinline onmouseover="this.play();"></video>
                         </a>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap" data-unload="fade-right" data-appear="fade-left">
                     <div class="bringer-parallax-media">
-                        <video data-video-src="./video/main-team.mp4" width="960" height="960" class="data-poster" poster="img/home/about03.jpg" loop muted autoplay playsinline></video>
+                        <video data-video-src="/video/main-team.mp4" width="960" height="960" class="data-poster" poster="img/home/about03.jpg" loop muted autoplay playsinline></video>
                     </div>
                 </div>
             </div><!-- .stg-row -->
