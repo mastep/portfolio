@@ -21,13 +21,11 @@
     });
 
     // Резервный скрыватель на случай, если видео заблокировано браузером или не грузится вообще
-    window.addEventListener('load', () => {
         setTimeout(() => {
             if (!videoWrapper.classList.contains('is-hidden')) {
                 hideVideo();
             }
         }, 6000); // Скроет интро в любом случае через 6 сек после полной загрузки страницы
-    });
 </script>
 
 <style>
