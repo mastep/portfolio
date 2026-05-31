@@ -46,7 +46,6 @@
     .iconScroll {
         position: absolute;
         border-radius: 30px;
-        background-color: #fff;
         width: 30px;
         top: 60%;
         left: 50%;
@@ -105,7 +104,7 @@
         color: #fff;
         text-align: center;
         font-size: 1em;
-        content: 'Инженерная лаборатория №7 цифровых решений';
+        content: 'Лаборатория №7: Инженерия цифровых решений';
         position: absolute;
         top: 50%;
         left: 50%;

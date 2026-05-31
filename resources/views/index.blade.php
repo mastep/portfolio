@@ -225,7 +225,7 @@
                     </div>
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video data-video-src="/video/promo/intro7.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+                            <video data-video-src="/video/project-promo.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
 
                         </div>
                         <div class="bringer-portfolio-card-footer">
@@ -241,7 +241,7 @@
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video data-video-src="/lotto/lib/videos/team-laughing.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+                            <video data-video-src="/video/project-lotto.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
 
                         </div>
                         <div class="bringer-portfolio-card-footer">
@@ -341,7 +341,7 @@
                     </div><!-- .bringer-portfolio-card -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video data-video-src="/shop/videos/desktop/slide1-start.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+                            <video data-video-src="/video/project-shop.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
 
                         </div>
                         <div class="bringer-portfolio-card-footer">
