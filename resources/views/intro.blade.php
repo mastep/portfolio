@@ -1,34 +1,65 @@
 <!-- Intro -->
 <div class="video-wrapper">
+    <img class="iconScroll" src="/img/icon-scroll.png">
     <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="metadata">
         <source src="/video/project-video5.mp4" type="video/mp4">
     </video>
 </div>
 
 <script>
-    const video = document.getElementById('introVideo');
     const videoWrapper = document.querySelector('.video-wrapper');
-    let videoTimeout;
+    const maxScroll = 100; // Дистанция скролла в пикселях, за которую видео полностью исчезнет
 
-    function hideVideo() {
-        videoWrapper.classList.add('is-hidden');
-        clearTimeout(videoTimeout);
-    }
+    // Плавное исчезновение при скролле
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    // Запускаем таймер только ПОСЛЕ реального старта видео
-    video.addEventListener('playing', () => {
-        videoTimeout = setTimeout(hideVideo, 4000); // 4 секунды показа
+        // Вычисляем прозрачность (от 1 до 0)
+        let opacity = 1 - (scrollTop / maxScroll);
+
+        // Ограничиваем значения в диапазоне [0, 1]
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+
+        videoWrapper.style.opacity = opacity;
+
+        // Полностью отключаем видимость и интерактивность, когда видео прозрачно
+        if (opacity === 0) {
+            videoWrapper.style.visibility = 'hidden';
+            videoWrapper.style.pointerEvents = 'none';
+        } else {
+            videoWrapper.style.visibility = 'visible';
+            videoWrapper.style.pointerEvents = 'auto';
+        }
     });
-
-    // Резервный скрыватель на случай, если видео заблокировано браузером или не грузится вообще
-        setTimeout(() => {
-            if (!videoWrapper.classList.contains('is-hidden')) {
-                hideVideo();
-            }
-        }, 6000); // Скроет интро в любом случае через 6 сек после полной загрузки страницы
 </script>
 
 <style>
+    .iconScroll{
+        position: absolute;
+        width: 40px;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: auto;
+        width: 30px;
+        top:60%;
+        left: 50%;
+        margin-left: -30px;
+        animation: floatAnimation 2s ease-in-out infinite;
+
+    }
+
+    @keyframes floatAnimation {
+        0% {
+            transform: translateY(0); /* Исходное положение вверху */
+        }
+        50% {
+            transform: translateY(30px); /* Смещение вниз на 50 пикселей в середине цикла */
+        }
+        100% {
+            transform: translateY(0); /* Возврат в исходное положение вверху */
+        }
+    }
     /*Intro*/
     body {
         overflow-y: scroll;
@@ -40,8 +71,10 @@
         width: 100%;
         height: 100%;
         z-index: 10000;
-        transition: opacity 0.6s ease;
-        background-color:var(--bringer-s-body-bg);
+        /* Убрали transition для opacity, чтобы скролл не "тормозил" */
+        transition: visibility 0.3s ease;
+        background-color: var(--bringer-s-body-bg);
+        will-change: opacity; /* Оптимизация производительности при скролле */
     }
 
     /* Ваше исходное видео */
@@ -50,45 +83,29 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: opacity 3s ease;
     }
 
     /* Логотип строго по центру поверх видео */
     .video-wrapper::after {
-        color:#fff;
+        color: #fff;
         text-align: center;
         font-size: 1em;
-        content: 'Экспертная инженерия цифровых решений';
+        content: 'Иженерная лаборатория цифровых решений';
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        /* Размеры вашего логотипа */
         width: 50%;
         height: 250px;
         max-width: 400px;
-
-        /* Путь к картинке логотипа */
         background: url('/img/logo-7lab.svg') center/contain no-repeat;
-
-        /* Чтобы клики проходили сквозь логотип к видео (если нужно) */
         pointer-events: none;
         animation: fadeInLogo 3s ease forwards;
     }
+
     /* Настройка анимации появления */
     @keyframes fadeInLogo {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
-    .video-wrapper.is-hidden {
-        opacity: 0;
-        visibility: hidden; /* Заменяет display:none, ждет окончания transition */
-        transition: opacity 3s ease, visibility 3s ease;
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 </style>
