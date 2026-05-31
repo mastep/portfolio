@@ -43,7 +43,7 @@
                         <!-- Social Proof -->
                         <div class="bringer-hero-social-proof">
                             <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
-                                <a href="#ourPortfolio" class="saleround" style="overflow: hidden; left:-25px"><video poster="/shop/images/chameleon.png" src="/shop/videos/desktop/slide1-start.mp4" class="data-poster stg-col-25" loop muted autoplay playsinline style="max-width:250%; margin-left: -30px; margin-top:10px;"></video></a>
+                                <a href="#ourPortfolio" class="saleround" style="overflow: hidden; left:-25px"><video poster="/shop/images/chameleon.png" data-video-src="/shop/videos/desktop/slide1-start.mp4" class="data-poster stg-col-25" loop muted autoplay playsinline style="max-width:250%; margin-left: -30px; margin-top:10px;"></video></a>
                                 <a href="#ourPortfolio"><img src="img/home/social-proof01.jpg" alt="Client 01"></a>
                                 <a href="#ourPortfolio"><img src="img/home/social-proof03.jpg" alt="Client 03"></a>
                                 @if(in_array(date('d.m'),['11.11','10.11']))
@@ -196,7 +196,7 @@
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video src="./video/telegram-bot2.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+                            <video data-video-src="/video/telegram-bot2.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
                         </div>
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
@@ -225,7 +225,7 @@
                     </div>
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video src="./video/promo/intro7.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+                            <video data-video-src="/video/promo/intro7.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
 
                         </div>
                         <div class="bringer-portfolio-card-footer">
@@ -241,7 +241,7 @@
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video src="lotto/lib/videos/team-laughing.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+                            <video data-video-src="/lotto/lib/videos/team-laughing.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
 
                         </div>
                         <div class="bringer-portfolio-card-footer">
@@ -341,7 +341,7 @@
                     </div><!-- .bringer-portfolio-card -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
-                            <video src="/shop/videos/desktop/slide1-start.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
+                            <video data-video-src="/shop/videos/desktop/slide1-start.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
 
                         </div>
                         <div class="bringer-portfolio-card-footer">
