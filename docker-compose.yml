@@ -192,15 +192,6 @@ services:
         networks:
             - telegram_bot_network
         restart: "no"
-
-    autoheal:
-        image: willfarrell/autoheal:latest
-        container_name: autoheal
-        restart: always
-        networks:
-            - telegram_bot_network
-        environment:
-            - AUTOHEAL_CONTAINER_LABEL=all
 networks:
     telegram_bot_network:
         driver: bridge
