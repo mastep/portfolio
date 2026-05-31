@@ -1337,7 +1337,7 @@ jQuery(function ($) {
         // Loading and Unloading Animation
         setTimeout(function() {
                 CustomFunction();
-            },5000);
+            },7000);
 
             // Loading and Unloading Animation
         setTimeout(function() {

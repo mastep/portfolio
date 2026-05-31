@@ -1,6 +1,9 @@
 <!-- Intro -->
 <div class="video-wrapper">
-    <img class="iconScroll" src="/img/icon-scroll.png">
+    <!-- Иконка обернута в ссылку-якорь -->
+    <a href="#main-content" class="iconScroll">
+        <img src="/img/icon-scroll.png" alt="Scroll Down" onclick="document.documentElement.scrollTop=30+document.documentElement.scrollTop">
+    </a>
     <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="metadata">
         <source src="/video/project-video5.mp4" type="video/mp4">
     </video>
@@ -35,18 +38,28 @@
 </script>
 
 <style>
-    .iconScroll{
+    /* Включаем плавную прокрутку для всей страницы при клике на любые якоря */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .iconScroll {
         position: absolute;
-        width: 40px;
         border-radius: 30px;
         background-color: #fff;
-        margin-left: auto;
         width: 30px;
-        top:60%;
+        top: 60%;
         left: 50%;
-        margin-left: -30px;
-        animation: floatAnimation 2s ease-in-out infinite;
+        margin-left: -15px; /* Половина ширины для точного центрирования */
+        z-index: 10001;     /* Выносим ссылку поверх видео, чтобы клик работал */
+        display: block;
+        animation: floatAnimation 3s ease-in-out infinite; /* Ваша анимация */
+    }
 
+    /* Картинка внутри ссылки подстраивается под размеры контейнера */
+    .iconScroll img {
+        width: 100%;
+        display: block;
     }
 
     @keyframes floatAnimation {
@@ -54,16 +67,19 @@
             transform: translateY(0); /* Исходное положение вверху */
         }
         50% {
-            transform: translateY(30px); /* Смещение вниз на 50 пикселей в середине цикла */
+            transform: translateY(10px); /* Смещение вниз на 30 пикселей в середине цикла */
         }
         100% {
             transform: translateY(0); /* Возврат в исходное положение вверху */
         }
     }
-    /*Intro*/
+
+    /* Intro */
     body {
         overflow-y: scroll;
+        min-height: 200vh; /* Странице нужна высота, чтобы было куда скроллить */
     }
+
     /* Контейнер-обертка на весь экран */
     .video-wrapper {
         position: fixed;
@@ -71,7 +87,6 @@
         width: 100%;
         height: 100%;
         z-index: 10000;
-        /* Убрали transition для opacity, чтобы скролл не "тормозил" */
         transition: visibility 0.3s ease;
         background-color: var(--bringer-s-body-bg);
         will-change: opacity; /* Оптимизация производительности при скролле */
@@ -90,7 +105,7 @@
         color: #fff;
         text-align: center;
         font-size: 1em;
-        content: 'Иженерная лаборатория цифровых решений';
+        content: 'Инженерная лаборатория №7 цифровых решений';
         position: absolute;
         top: 50%;
         left: 50%;
