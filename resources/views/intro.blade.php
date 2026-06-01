@@ -1,42 +1,4 @@
 <!-- Intro -->
-<div class="video-wrapper">
-    <!-- Иконка обернута в ссылку-якорь -->
-    <a href="#main-content" class="iconScroll">
-        <img src="/img/icon-scroll.png" alt="Scroll Down" onclick="document.documentElement.scrollTop=30+document.documentElement.scrollTop">
-    </a>
-    <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="metadata">
-        <source src="/video/project-video5.mp4" type="video/mp4">
-    </video>
-</div>
-
-<script>
-    const videoWrapper = document.querySelector('.video-wrapper');
-    const maxScroll = 100; // Дистанция скролла в пикселях, за которую видео полностью исчезнет
-
-    // Плавное исчезновение при скролле
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Вычисляем прозрачность (от 1 до 0)
-        let opacity = 1 - (scrollTop / maxScroll);
-
-        // Ограничиваем значения в диапазоне [0, 1]
-        if (opacity < 0) opacity = 0;
-        if (opacity > 1) opacity = 1;
-
-        videoWrapper.style.opacity = opacity;
-
-        // Полностью отключаем видимость и интерактивность, когда видео прозрачно
-        if (opacity === 0) {
-            videoWrapper.style.visibility = 'hidden';
-            videoWrapper.style.pointerEvents = 'none';
-        } else {
-            videoWrapper.style.visibility = 'visible';
-            videoWrapper.style.pointerEvents = 'auto';
-        }
-    });
-</script>
-
 <style>
     /* Включаем плавную прокрутку для всей страницы при клике на любые якоря */
     html {
@@ -123,3 +85,41 @@
         to { opacity: 1; }
     }
 </style>
+<div class="video-wrapper">
+    <!-- Иконка обернута в ссылку-якорь -->
+    <a href="#main-content" class="iconScroll">
+        <img src="/img/icon-scroll.png" alt="Scroll Down" onclick="document.documentElement.scrollTop=30+document.documentElement.scrollTop">
+    </a>
+    <video id="introVideo" class="bg-video" autoplay muted playsinline loop preload="metadata">
+        <source src="/video/project-video5.mp4" type="video/mp4" media="(min-width: 769px)">
+        <source src="/video/project-video5-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+    </video>
+</div>
+
+<script>
+    const videoWrapper = document.querySelector('.video-wrapper');
+    const maxScroll = 100; // Дистанция скролла в пикселях, за которую видео полностью исчезнет
+
+    // Плавное исчезновение при скролле
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Вычисляем прозрачность (от 1 до 0)
+        let opacity = 1 - (scrollTop / maxScroll);
+
+        // Ограничиваем значения в диапазоне [0, 1]
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+
+        videoWrapper.style.opacity = opacity;
+
+        // Полностью отключаем видимость и интерактивность, когда видео прозрачно
+        if (opacity === 0) {
+            videoWrapper.style.visibility = 'hidden';
+            videoWrapper.style.pointerEvents = 'none';
+        } else {
+            videoWrapper.style.visibility = 'visible';
+            videoWrapper.style.pointerEvents = 'auto';
+        }
+    });
+</script>
