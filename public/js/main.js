@@ -1335,9 +1335,18 @@ jQuery(function ($) {
 
         // Custom Features
         // Loading and Unloading Animation
-        setTimeout(function() {
+        if (document.cookie.split(';').some(item => item.trim().startsWith('custom_function_triggered='))) {
+            CustomFunction();
+        } else {
+            setTimeout(function() {
+                // max-age=2592000 — 30 дней в секундах
+                // domain=.7lab.pro — кука работает на всем домене и его поддоменах
+                // Secure — обязательный флаг для работы по защищенному протоколу HTTPS
+                document.cookie = "custom_function_triggered=true; max-age=2592000; path=/; domain=.7lab.pro; SameSite=Lax; Secure";
+
                 CustomFunction();
-            },7000);
+            }, 7000);
+        }
 
             // Loading and Unloading Animation
         setTimeout(function() {
