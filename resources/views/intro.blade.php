@@ -66,7 +66,7 @@
         color: #fff;
         text-align: center;
         font-size: 1em;
-        content: 'Лаборатория AI инженерии для бизнеса';
+        content: 'Лаборатория AI-инженерии для бизнеса';
         position: absolute;
         top: 50%;
         left: 50%;
