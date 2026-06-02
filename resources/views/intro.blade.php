@@ -100,20 +100,21 @@
     const videoWrapper = document.querySelector('.video-wrapper');
     const maxScroll = 100; // Дистанция скролла в пикселях, за которую видео полностью исчезнет
 
-    // Плавное исчезновение при скролле
-    window.addEventListener('scroll', () => {
 
-
+    window.addEventListener('load', () => {
         if (window.location.hash === '#ourPortfolio') {
             const targetSection = document.getElementById('ourPortfolio');
             if (targetSection) {
                 // Небольшая задержка, чтобы дать загрузиться всем элементам шаблона
                 setTimeout(() => {
                     targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300);
+                }, 100);
             }
-
         }
+    });
+    // Плавное исчезновение при скролле
+    window.addEventListener('scroll', () => {
+
 
 
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
