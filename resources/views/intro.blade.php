@@ -102,6 +102,20 @@
 
     // Плавное исчезновение при скролле
     window.addEventListener('scroll', () => {
+
+
+        if (window.location.hash === '#ourPortfolio') {
+            const targetSection = document.getElementById('ourPortfolio');
+            if (targetSection) {
+                // Небольшая задержка, чтобы дать загрузиться всем элементам шаблона
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+
+        }
+
+
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         // Вычисляем прозрачность (от 1 до 0)
