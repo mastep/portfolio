@@ -366,18 +366,23 @@
         <!-- Section: CTA -->
         <section data-padding="bottom">
             <div class="bringer-masked-cta bringer-masked-block" data-unload="fade-down">
-                <form action="mail-short.php" method="post" data-fill-error="Пожалуйста заполните форму" class="bringer-contact-form is-short bringer-masked-media" data-appear="fade-up">
+                <form id="formSupport" action="" method="get" target="_blank" data-fill-error="Пожалуйста заполните форму" class="is-short bringer-masked-media" data-appear="fade-up">
                     <div class="bringer-form-content bringer-cta-form">
                         <div class="bringer-cta-form-content" data-appear="fade-up" data-delay="100">
-                            <div class="bringer-cta-title">Пиши свою почту. Далее работать будем мы!</div>
-                            <input type="email" id="subscribe_email" name="subscribe_email" placeholder="@" required>
-                            <div style="height: 45px; overflow: auto"><input type="checkbox" checked disabled style="display: block; width: 20px; float: left"> Я даю <a href="https://www.consultant.ru/document/cons_doc_LAW_61801/6c94959bc017ac80140621762d2ac59f6006b08c/" target="_blank">согласие на обработку персональных данных</a> в соответствии с <a href="https://7lab.pro/privacy" target="_blank">политикой конфиденциальности</a> </div>
+                            <div class="bringer-cta-title">Задай вопрос AI боту</div>
+                            <input type="text" id="text" name="text" placeholder="открыть чат..." onclick="(widget)?widget.click():document.getElementById('formSupport').submit();">
                         </div>
                         <div class="bringer-cta-form-button" data-appear="fade-up" data-delay="200">
                             <div id="button_submit"></div>
                             <!--AntiSPAM-->
                             <script type="text/javascript">
-                                document.getElementById("button_submit").innerHTML='<button type="submit" title="Отправить запрос" style="margin-bottom:66px;"><span class="bringer-icon bringer-icon-arrow-submit"></span> </button>';
+                                let widget;
+                                document.getElementById("formSupport").action='https://t.me/'+pt+'_bot';
+                                const interval = setInterval(() => {
+                                    widget = document.querySelector('agent-chat-widget')?.shadowRoot.querySelector('button');
+
+                                }, 500)
+                                document.getElementById("button_submit").innerHTML='<button onclick="(widget)?widget.click():document.getElementById(\'formSupport\').submit();" type="button" title="Отправить запрос"><span class="bringer-icon bringer-icon-arrow-submit"></span> </button>';
                             </script>
                             <!--AntiSPAM END-->
                         </div>
@@ -386,7 +391,7 @@
                     <span class="bringer-form-spinner"></span>
                 </form>
                 <div class="bringer-masked-cta-content bringer-masked-content at-top-right">
-                    <p class="bringer-large-text" data-appear="fade-down">Пора создать свою цифровую резиденцию ✨</p>
+                    <p class="bringer-large-text" data-appear="fade-down">AI-бот консультант. Поддержка 24/7✨</p>
                 </div>
             </div>
         </section>
