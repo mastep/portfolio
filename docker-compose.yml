@@ -61,7 +61,7 @@ services:
         image: apache/kafka:latest
         restart: always
         ports:
-            - "9092:9092"   # Внутренний порт (для контейнеров)
+            #- "9092:9092"   # Внутренний порт (для контейнеров)
             - "9094:9094"   # Внешний порт (для Windows/хоста)
         healthcheck:
             # Путь для официального образа apache/kafka
