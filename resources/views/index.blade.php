@@ -82,14 +82,14 @@
                 <div class="stg-row stg-valign-bottom">
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div><h3>ИИ</h3></div>
-                            <div class="bringer-counter-label">Применяем в разработке ИИ. Запускаем сайты быстрее других! </div>
+                            <div><h3>ИИ / AI</h3></div>
+                            <div class="bringer-counter-label">Применяем в разработке ИИ. Интегрируем AI агентов в бизнес! </div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div><h3>12 лет</h3></div>
-                            <div class="bringer-counter-label">Безупречного опыта в разработке web решений для бизнеса!&nbsp;&nbsp;&nbsp;</div>
+                            <div><h3>15 лет</h3></div>
+                            <div class="bringer-counter-label">Безупречного экспертного опыта в IT инженерии!&nbsp;&nbsp;&nbsp;</div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-6 stg-tp-col-6 stg-m-col-12 stg-m-top-gap" data-appear="fade-up" data-delay="400" data-unload="fade-up">
@@ -116,8 +116,8 @@
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-12" data-appear="fade-left" data-delay="100">
                     <span class="bringer-label">Telegram-bot </span>
-                    <a href="/telegram-bot" title="Создать Telegram бота"><h4>Telegram-боты</h4></a>
-                    <p><span class="bringer-highlight">Мы</span> разрабатываем Telegram-ботов.</p>
+                    <a href="/telegram-bot" title="Создать Telegram бота"><h4>Telegram-боты / Mini Apps</h4></a>
+                    <p><span class="bringer-highlight">Мы</span> разрабатываем Telegram-ботов и Mini Apps.</p>
                     <p>Представьте бизнес-помощника, который круглосуточно, в режиме 24/7, отвечает на вопросы, принимает платежи и записывает клиентов на приём.</p>
                     <p>Современные боты обладают широким функционалом: они способны демонстрировать витрину товаров, формировать корзину заказов, обрабатывать платежи, а также делать рассылки и напоминания. Они грамотно взаимодействуют с клиентами, отвечая на их вопросы, и выполняют множество других задач.</p>
                     <p>Поручив рутинные бизнес-задачи ботам, вы сможете оптимизировать расходы и сэкономить на найме новых сотрудников. <a href="/telegram-bot" class="bringer-arrow-link" title="Создать Telegram бота">Подробнее здесь</a></p>
