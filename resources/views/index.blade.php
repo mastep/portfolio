@@ -83,17 +83,19 @@
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="200" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
                             <div><h3>ИИ / AI</h3></div>
-                            <div class="bringer-counter-label">Применяем в разработке ИИ. Интегрируем AI агентов в бизнес! </div>
+                            <div class="bringer-counter-label">Применяем в разработке ИИ. Интегрируем ИИ-агентов в бизнес! </div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-3 stg-tp-col-3 stg-m-col-6" data-appear="fade-up" data-delay="300" data-unload="fade-up">
                         <div class="bringer-counter bringer-small-counter" data-delay="3000">
-                            <div><h3>15 лет</h3></div>
-                            <div class="bringer-counter-label">Безупречного экспертного опыта в IT инженерии!&nbsp;&nbsp;&nbsp;</div>
+                            <div><h3>120+</h3></div>
+                            <div class="bringer-counter-label">ИИ-агентов уже работают в наших проектах без найма в штат&nbsp;&nbsp;&nbsp;</div>
                         </div><!-- .bringer-counter -->
                     </div>
                     <div class="stg-col-6 stg-tp-col-6 stg-m-col-12 stg-m-top-gap" data-appear="fade-up" data-delay="400" data-unload="fade-up">
-                        <p class="bringer-large-text">Мы действительно любим свое дело!<br>Наше ремесло это создавать современные приложения с уникальным дизайном.</p>
+                        <p class="bringer-large-text">Мы строим ИИ-агентов и e-commerce, которые масштабируются.
+                            Разрабатываем, интегрируем, сопровождаем — полное решение под ключ.
+                            </p>
                     </div>
                 </div><!-- .stg-row -->
             </div><!-- .bringer-hero-block -->
@@ -116,7 +118,7 @@
                 </div>
                 <div class="stg-col-6 stg-tp-col-6 stg-m-col-12" data-appear="fade-left" data-delay="100">
                     <span class="bringer-label">Artificial Intelligence</span>
-                    <a href="/telegram-bot" title="Создать Telegram бота"><h4>AI-боты / Mini Apps</h4></a>
+                    <a href="/telegram-bot" title="Создать Telegram бота"><h4>ИИ-агенты / Mini Apps</h4></a>
                     <p><span class="bringer-highlight">Мы</span> разрабатываем AI-ботов и Mini Apps.</p>
                     <p>Представьте бизнес-помощника, который круглосуточно, в режиме 24/7, отвечает на вопросы, принимает платежи и записывает клиентов на приём.</p>
                     <p>Современные боты обладают широким функционалом: они способны демонстрировать витрину товаров, формировать корзину заказов, обрабатывать платежи, а также делать рассылки и напоминания. Они грамотно взаимодействуют с клиентами, отвечая на их вопросы, и выполняют множество других задач.</p>
@@ -166,13 +168,15 @@
         <section class="backlight-bottom divider-top">
             <div class="stg-row stg-large-gap stg-valign-middle stg-tp-column-reverse">
                 <div class="stg-col-6" data-appear="fade-right" data-unload="fade-left">
-                    <h3>Мы - увлеченная команда дизайнеров и разработчиков</h3>
-                    <p class="bringer-large-text">Команда, которая верит в силу творчества. </p>
-                    <p>Мы специализируемся на оказании помощи предприятиям любого размера в достижении их целей. Мы верим, что креативность - это ключ к успеху, и стремимся помочь полностью раскрыть потенциал проекта.</p>
+                    <h3>Мы разработчики, которые специализируются на e-commerce и ИИ-агентах</h3>
+                    <p class="bringer-large-text">
+                        Строим системы, которые работают за вас: продают, обслуживают,
+                        автоматизируют </p>
+                    <p>Наши клиенты экономят время и деньги</p>
                 </div>
                 <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap" data-unload="fade-right" data-appear="fade-left">
                     <div class="bringer-parallax-media">
-                        <video data-video-src="/video/main-team.mp4" width="960" height="960" class="data-poster" poster="img/home/about03.jpg" loop muted autoplay playsinline></video>
+                        <img src="img/home/about03.jpg" width="960" height="960"/>
                     </div>
                 </div>
             </div><!-- .stg-row -->
@@ -217,7 +221,7 @@
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
                                 <span class="bringer-meta">интернет-магазин</span>
-                                <h6>Галерея</h6>
+                                <h6>Галерея NFT</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>

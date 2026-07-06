@@ -66,7 +66,14 @@
         color: #fff;
         text-align: center;
         font-size: 1em;
-        content: 'Лаборатория AI-инженерии для бизнеса';
+        @php
+            $titles = [
+                'Лаборатория AI-инженерии для бизнеса',
+                'Создаем умных ботов без найма в штат',
+                'Создаем интернет-магазин за 3 недели'
+            ];
+        @endphp
+        content: '{{ Arr::random($titles) }}';
         position: absolute;
         top: 50%;
         left: 50%;
