@@ -141,7 +141,17 @@ services:
         # !!! Здесь ваша команда становится основной командой контейнера !!!
         command: php artisan app:consume-telegram-updates
         restart: unless-stopped
-
+     # Cloudflare туннель для проброса веб-приложения наружу
+    cf-tunnel:
+        image: cloudflare/cloudflared:latest
+        container_name: cf-tunnel
+        restart: unless-stopped
+        networks:
+            - telegram_bot_network
+        command: tunnel --no-autoupdate --protocol http2 run
+        environment:
+            TUNNEL_TOKEN: "${CLOUDFLARE_TOKEN}"
+    
     app_setup:
         build:
             context: .
