@@ -29,6 +29,10 @@ Route::get('project_telegram_bot', function () {
     return view('project-telegram-bot');
 });
 
+Route::get('project_school_access', function () {
+    return view('project-school-access');
+});
+
 Route::get('landing-page', function () {
     return view('service-1');
 });

@@ -3,11 +3,11 @@
         <h6>Наш cтек</h6>
         <div class="bringer-menu-widget">
             <ul>
-                <li><a href="#">ОпенКлоу OpenClaw, Курсор Cursor, Нджинкс Nginx, ПИЧПИ PHP</a></li>
-                <li><a href="#">Джаваскрипт Javascript, Вью Vue</a></li>
+                <li><a href="#">Клаудкод Claude Code, Йо́ло YOLOE, ОпенКлоу OpenClaw, Курсор Cursor, Нджинкс Nginx, Пиэчпи PHP</a></li>
+                <li><a href="#">Кафка Kafka</a></li>
                 <li><a href="#">Кюбернетис Kubernetes, Докер Docker, Гитхаб GitHub</a></li>
-                <li><a href="#">Мемкешт Memcached, Редис Redis, ЭластикСерч Elasticsearch</a></li>
-                <li><a href="">Постгрескуэль Postgresql, Майскуэль MySQL</a></li>
+                <li><a href="#">Мемкешт Memcached, Редис Redis и т.д.</a></li>
+                <li></li>
             </ul>
         </div>
     </div><!-- .bringer-widget -->

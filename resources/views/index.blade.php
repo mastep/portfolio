@@ -43,9 +43,9 @@
                         <!-- Social Proof -->
                         <div class="bringer-hero-social-proof">
                             <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
-                                <a href="#ourPortfolio" class="saleround" style="overflow: hidden; left:-25px"><video poster="/shop/images/chameleon.png" data-video-src="/shop/videos/desktop/slide1-start.mp4" class="data-poster stg-col-25" loop muted autoplay playsinline style="max-width:250%; margin-left: -30px; margin-top:10px;"></video></a>
+                                <a href="#ourPortfolio"><img src="img/portfolio/portfolio-school-access/image-3.jpg"></a>
+                                <a href="#ourPortfolio" class="saleround" style="overflow: hidden; left:-10px"><video poster="/shop/images/chameleon.png" data-video-src="/shop/videos/desktop/slide1-start.mp4" class="data-poster stg-col-25" loop muted autoplay playsinline style="max-width:250%; margin-left: -30px; margin-top:10px;"></video></a>
                                 <a href="#ourPortfolio"><img src="img/home/social-proof01.jpg" alt="Client 01"></a>
-                                <a href="#ourPortfolio"><img src="img/home/social-proof03.jpg" alt="Client 03"></a>
                                 @if(in_array(date('d.m'),['11.11','10.11']))
                                     @php $sale='65%'; @endphp
                                     <a href="/form" title="Только 11.11: Скидка {{$sale}} для подписчиков. Заказать сайт.">-{{$sale}}</a>
@@ -54,7 +54,7 @@
                                     Скидка {{$sale}} только 11.11
                                 </p>
                                 @else
-                                    <a href="https://t.me/svnlab" title="Гарантия лучшей цены. Скидка {{$sale}} для подписчиков." class="saleround">-{{$sale}}</a>
+                                    <a href="https://t.me/svnlab" title="Наши работы" class="saleround">pro</a>
                             </div>
                                 <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}} для подписчиков">
                                     <a class="l-align-center" href="https://t.me/svnlab" style="width:auto; margin: 0; font-size: 0.7em">Скидка {{$month}} {{$sale}} для подписчиков</a>
@@ -196,8 +196,22 @@
             <!-- Portfolio Carousel -->
             <div class="swiper bringer-carousel stg-bottom-gap-l" data-appear="fade-up" data-unload="fade-up" data-delay="200" data-count="4" data-m-count="1.5">
                 <div class="swiper-wrapper">
+                    <!-- Card Item: School Access -->
+                    <div class="bringer-block bringer-portfolio-card swiper-slide">
+                        <div class="bringer-portfolio-card-image">
+                            <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio-school-access/image-3.jpg" alt="" width="1200" height="1200" alt="E-com">
+                        </div>
+                        <div class="bringer-portfolio-card-footer">
+                            <div class="bringer-portfolio-card-title">
+                                <span class="bringer-meta">Computer Vision</span>
+                                <h6>Пропуск в школу по фото</h6>
+                            </div>
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </div>
+                        <a href="/project_school_access"></a>
+                    </div>
 
-                    <!-- Card Item 01 -->
+                    <!-- Card Item -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
                         <div class="bringer-portfolio-card-image">
                             <video data-video-src="/video/telegram-bot2.mp4" type="video/mp4" style="border-radius:unset;  padding:0;" playsinline loop muted reverce autoplay></video>
@@ -211,6 +225,8 @@
                         </div>
                         <a href="/project_telegram_bot"></a>
                     </div>
+
+
 
                     <!-- Card Item 01 -->
                     <div class="bringer-block bringer-portfolio-card swiper-slide">
