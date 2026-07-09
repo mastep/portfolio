@@ -204,7 +204,7 @@
                         <div class="bringer-portfolio-card-footer">
                             <div class="bringer-portfolio-card-title">
                                 <span class="bringer-meta">Computer Vision</span>
-                                <h6>Пропуск в школу по фото</h6>
+                                <h6>Детекция изображения / YOLOE</h6>
                             </div>
                             <span class="bringer-icon bringer-icon-explore"></span>
                         </div>
