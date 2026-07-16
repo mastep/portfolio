@@ -1341,6 +1341,9 @@
 /* XS PHONES
    ============= */
 @media only screen and (max-width: 550px) {
+    .bringer-post-title.in-view{
+        margin-top: 0.4em !important;
+    }
     .logo-mobile-xs{
         display: block;
     }

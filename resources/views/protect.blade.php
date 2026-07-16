@@ -5,3 +5,4 @@
         <h2>Меню отключено.</h2>
     </div>
 </div>
+@include('ai-voice')

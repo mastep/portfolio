@@ -44,8 +44,8 @@
                         <div class="bringer-hero-social-proof">
                             <div data-stagger-appear="fade-up" data-stagger-delay="100" data-stagger-unload="fade-up">
                                 <a href="#ourPortfolio"><img src="img/portfolio/portfolio-school-access/image-3.jpg"></a>
-                                <a href="#ourPortfolio" class="saleround" style="overflow: hidden; left:-10px"><video poster="/shop/images/chameleon.png" data-video-src="/shop/videos/desktop/slide1-start.mp4" class="data-poster stg-col-25" loop muted autoplay playsinline style="max-width:250%; margin-left: -30px; margin-top:10px;"></video></a>
-                                <a href="#ourPortfolio"><img src="img/home/social-proof01.jpg" alt="Client 01"></a>
+                                <a href="#ourPortfolio"><img src="img/portfolio/portfolio01.jpg" data-src="img/portfolio/portfolio01.jpg"></a>
+                                <a href="#ourPortfolio" class="saleround" style="overflow: hidden; left:-10px; border: none"><video poster="/shop/images/chameleon.png" data-video-src="/shop/videos/desktop/slide1-start.mp4" class="data-poster stg-col-25" loop muted autoplay playsinline style="max-width:250%; margin-left: -30px; margin-top:10px;"></video></a>
                                 @if(in_array(date('d.m'),['11.11','10.11']))
                                     @php $sale='65%'; @endphp
                                     <a href="/form" title="Только 11.11: Скидка {{$sale}} для подписчиков. Заказать сайт.">-{{$sale}}</a>
@@ -54,10 +54,9 @@
                                     Скидка {{$sale}} только 11.11
                                 </p>
                                 @else
-                                    <a href="https://t.me/svnlab" title="Наши работы" class="saleround">pro</a>
                             </div>
                                 <p data-appear="fade-up" data-unload="fade-up" data-delay="100" title="Гарантия лучшей цены. Скидка {{$sale}} для подписчиков">
-                                    <a class="l-align-center" href="https://t.me/svnlab" style="width:auto; margin: 0; font-size: 0.7em">Скидка {{$month}} {{$sale}} для подписчиков</a>
+                                    <a class="l-align-center" href="https://t.me/svnlab" style="width:auto; margin: 0; font-size: 0.7em">Наши работы. Скидка {{$month}} {{$sale}} для подписчиков</a>
                                 </p>
                                 @endif
                         </div>

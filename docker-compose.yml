@@ -37,9 +37,14 @@ services:
             AI_TIMEWEB_API_KEY: "${AI_TIMEWEB_API_KEY}"
             AI_TIMEWEB_API_URL: "${AI_TIMEWEB_API_URL}"
             AI_TIMEWEB_API_TOKEN: "${AI_TIMEWEB_API_TOKEN}"
+            AI_DOCKER_BASE_URL: "${AI_DOCKER_BASE_URL}"
+        volumes:
+            - .:/var/www/html
         ports:
             - "9000:80"
         restart: unless-stopped
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     # MySQL база данных
     mysql:
@@ -151,7 +156,7 @@ services:
         command: tunnel --no-autoupdate --protocol http2 run
         environment:
             TUNNEL_TOKEN: "${CLOUDFLARE_TOKEN}"
-    
+
     app_setup:
         build:
             context: .

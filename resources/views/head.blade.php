@@ -9,7 +9,6 @@
     <meta name="description" content="@yield('meta-description', 'Мы - увлеченная команда дизайнеров и разработчиков. Команда, которая верит в силу творчества. Мы специализируемся на разработке веб-решений для бизнеса.') | 7LAB.PRO">
     <meta name="keywords" content="@yield('meta-keywords'), разработка сайтов, веб-разработка, программирование, создание сайтов, интернет-проекты, создать сайт, создать корпоративный портал 1С-Битрикс, создать сайт визитку">
     <meta name="author" content="7LAB.PRO">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
     <!-- Config -->

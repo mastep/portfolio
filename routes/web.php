@@ -2,9 +2,12 @@
 
 use App\Models\QA;
 use App\Services\TelegramService;
+use App\Http\Controllers\AiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    (new AiController())->wakeupModel();
+
     return view('index');
 });
 Route::get('project-art-of-tea', function () {
@@ -73,6 +76,14 @@ Route::get('project_golden_ration', function () {
 Route::get('faq', function () {
     return view('faq');
 });
+
+Route::get('ai', function () {
+    return view('service-ai');
+});
+
+
+Route::post('/voice/chat', [AiController::class, 'handleChat'])->name('voice.chat');
+
 
 
 
