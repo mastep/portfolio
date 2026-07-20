@@ -6,8 +6,6 @@ use App\Http\Controllers\AiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    (new AiController())->wakeupModel();
-
     return view('index');
 });
 Route::get('project-art-of-tea', function () {
@@ -82,9 +80,10 @@ Route::get('ai', function () {
 });
 
 
-Route::post('/voice/chat', [AiController::class, 'handleChat'])->name('voice.chat');
+Route::post('/ai/chat', [AiController::class, 'handleChat'])->name('ai.chat');
 
-
+// Отдельный роут для фонового прогрева
+Route::post('/ai/wakeup', [AiController::class, 'wakeupModel'])->name('ai.wakeup');
 
 
 

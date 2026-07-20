@@ -17,30 +17,41 @@
         border-radius: 30px;
         width: 30px;
         top: 60%;
+        /* ИСПРАВЛЕНО: Современное и легкое центрирование вместо margin-left */
         left: 50%;
-        margin-left: -15px; /* Половина ширины для точного центрирования */
-        z-index: 10001;     /* Выносим ссылку поверх видео, чтобы клик работал */
+        z-index: 10001;
         display: block;
-        animation: floatAnimation 3s ease-in-out infinite; /* Ваша анимация */
+
+        /* ОПТИМИЗАЦИЯ ДЛЯ МОБИЛЬНЫХ: Подсказываем браузеру вынести элемент на GPU */
+        will-change: transform;
+
+        /* Ваша анимация */
+        animation: floatAnimation 3s ease-in-out infinite;
     }
 
     /* Картинка внутри ссылки подстраивается под размеры контейнера */
     .iconScroll img {
         width: 100%;
         display: block;
+        /* Убираем возможные артефакты размытия при анимации на мобильных */
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     @keyframes floatAnimation {
         0% {
-            transform: translateY(0); /* Исходное положение вверху */
+            /* ИСПРАВЛЕНО: Добавлено центрирование (-50%) и translate3d для включения GPU */
+            transform: translate3d(-50%, 0, 0);
         }
         50% {
-            transform: translateY(10px); /* Смещение вниз на 30 пикселей в середине цикла */
+            /* Смещение вниз на 10 пикселей с аппаратным ускорением */
+            transform: translate3d(-50%, 10px, 0);
         }
         100% {
-            transform: translateY(0); /* Возврат в исходное положение вверху */
+            transform: translate3d(-50%, 0, 0);
         }
     }
+
 
     /* Intro */
     body {

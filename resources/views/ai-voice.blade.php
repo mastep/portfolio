@@ -227,11 +227,53 @@
     let isRecording = false;
     let isBusy = false;
 
-    // НОВАЯ СИСТЕМА: Элементы Web Audio API взамен MediaSource [INDEX_4]
-    let audioCtx = null;
-    let nextStartTime = 0; // Таймер очереди воспроизведения чанков
-    let activeSources = []; // Список играющих чанков для экстренной остановки
+    // СОСТОЯНИЕ СЕССИИ — читается из Laravel-сессии при рендере страницы
+    let isNewUserSession = false;
 
+    const csrfToken = '{{ csrf_token() }}';
+    const aiFetchHeaders = {
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': csrfToken,
+        'X-Requested-With': 'XMLHttpRequest'
+    };
+
+    const wakeupPromise = fetch('/ai/wakeup', {
+        method: 'POST',
+        headers: aiFetchHeaders,
+        credentials: 'same-origin'
+    })
+        .then(res => res.json())
+        .then(data => {
+            isNewUserSession = !!data.is_new_session;
+            console.log('Ollama прогрета. Новая сессия:', isNewUserSession);
+            return data;
+        })
+        .catch(err => {
+            console.error('Ошибка прогрева:', err);
+            isNewUserSession = false;
+        });
+
+    // УПРАВЛЕНИЕ ЗВУКОМ (Web Audio API Очередь)
+    let audioCtx = null;
+    let mp3Queue = [];        // Очередь AudioBuffer для последовательного воспроизведения
+    let isAudioPlaying = false;
+    let currentSource = null; // Хранилище текущего аудиоузла для возможности остановки
+
+    /**
+     * Инициализация контекста Web Audio API
+     */
+    function initAudioContext() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+    }
+
+    /**
+     * УПРАВЛЕНИЕ ИНТЕРФЕЙСОМ КНОПКИ (UI кубики)
+     */
     function showMic() {
         voiceStage.classList.remove('is-recording', 'is-loading', 'is-ai');
         voiceStage.setAttribute('aria-label', 'Начать говорить');
@@ -256,19 +298,98 @@
         voiceStage.setAttribute('aria-label', 'Ассистент отвечает');
     }
 
-    // Клик по кнопке микрофона
-    voiceStage.addEventListener('click', () => {
-        if (isBusy) {
-            stopAudioPlayback(); // Если ИИ говорит, по клику мгновенно прерываем его
+    /**
+     * Добавление аудио (URL файла или бинарного чанка) в очередь Web Audio API
+     */
+    async function enqueueAudioChunk(source) {
+        initAudioContext();
+        try {
+            let arrayBuffer;
+            if (typeof source === 'string') {
+                // Если передан URL (для статичного mp3 приветствия)
+                const response = await fetch(source);
+                arrayBuffer = await response.arrayBuffer();
+            } else {
+                // Если передан ArrayBuffer (для динамических чанков из стрима)
+                arrayBuffer = source;
+            }
+
+            // Декодируем MP3 структуру в сырой аудио-буфер
+            const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+            mp3Queue.push(audioBuffer);
+
+            if (!isAudioPlaying) {
+                playNextChunk();
+            }
+        } catch (e) {
+            console.error("Ошибка декодирования MP3 данных:", e);
+        }
+    }
+
+    /**
+     * Последовательное воспроизведение чанков из очереди
+     */
+    function playNextChunk() {
+        if (mp3Queue.length === 0) {
+            isAudioPlaying = false;
+            showMic(); // Возвращаем микрофон в исходное состояние, когда ИИ договорил
             return;
         }
+
+        isAudioPlaying = true;
+        showAi(); // Включаем пульсацию ИИ на кнопке
+
+        const buffer = mp3Queue.shift();
+        currentSource = audioCtx.createBufferSource();
+        currentSource.buffer = buffer;
+        currentSource.connect(audioCtx.destination);
+
+        // Бесшовный переход к следующему звуку строго по окончании текущего
+        currentSource.onended = () => {
+            playNextChunk();
+        };
+
+        currentSource.start(0);
+    }
+
+    /**
+     * Экстренная остановка ИИ (если пользователь перебил бота кликом)
+     */
+    function stopAllAudio() {
+        mp3Queue = [];
+        isAudioPlaying = false;
+        if (currentSource) {
+            try { currentSource.stop(); } catch(e){}
+            currentSource = null;
+        }
+    }
+
+
+
+    /**
+     * 2. ОБРАБОТКА КЛИКА ПО КНОПКЕ
+     */
+    voiceStage.addEventListener('click', () => {
+        if (isBusy) {
+            // Если бот говорит в данный момент, клик сработает как кнопка "Стоп"
+            stopAllAudio();
+            showMic();
+            return;
+        }
+
         if (!isRecording) {
-            recognition.start();
+            initAudioContext();
+            try {
+                recognition.start();
+            } catch (e) {
+                console.error("Не удалось запустить распознавание:", e);
+            }
         } else {
             recognition.stop();
         }
     });
 
+    // События записи голоса
     recognition.onstart = () => {
         isRecording = true;
         showRecording();
@@ -279,125 +400,53 @@
         if (!isBusy) showMic();
     };
 
-    // Получили текст из микрофона
-    recognition.onresult = async (event) => {
-        const userText = event.results[0][0].transcript;
-        if (!userText || !userText.trim()) return;
-
-        isBusy = true;
-        showLoading();
-
-        try {
-            // Создаем чистый аудиоконтекст для новой сессии диалога [INDEX_4]
-            const AudioContext = window.AudioContext || window.webkitAudioContext;
-            audioCtx = new AudioContext();
-            nextStartTime = audioCtx.currentTime;
-            activeSources = [];
-
-            // Запрос к вашему StreamedResponse контроллеру
-            const response = await fetch('/voice/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({ prompt: userText })
-            });
-
-            if (!response.ok) throw new Error('Ошибка сервера ИИ');
-
-            showAi();
-
-            // Читаем бинарный поток ответов [INDEX_4]
-            await handleAudioStream(response.body);
-
-        } catch (error) {
-            console.error(error);
-            alert('Не удалось получить ответ от ассистента.');
-            showMic();
-        }
+    recognition.onerror = (event) => {
+        console.error("Ошибка распознавания речи браузером:", event.error);
+        showMic();
     };
 
     /**
-     * Чтение бинарных чанков от StreamedResponse и передача в Web Audio API [INDEX_4]
+     * 3.ОБРАБОТКА РЕЗУЛЬТАТА И ОТПРАВКА НА СЕРВЕР
      */
-    async function handleAudioStream(streamBody) {
-        const reader = streamBody.getReader();
+    recognition.onresult = async (event) => {
+        const resultText = event.results[0][0].transcript;
+        if (!resultText.trim()) return;
+
+        isBusy = true;
+        showLoading(); // Включаем спиннер загрузки
+
 
         try {
+            if(isNewUserSession){
+                enqueueAudioChunk('/audio/defaultAIspeech.mp3');
+                isNewUserSession=false;
+            }
+            const response = await fetch('/ai/chat', {
+                method: 'POST',
+                headers: aiFetchHeaders,
+                credentials: 'same-origin',
+                body: JSON.stringify({ prompt: resultText })
+            });
+
+            if (!response.ok) throw new Error("Ошибка бэкенда");
+
+            const reader = response.body.getReader();
+
+            // Потоковое чтение MP3-чанков от Laravel по мере их генерации
             while (true) {
                 const { done, value } = await reader.read();
+                if (done) break; // Стрим ответа полностью завершен
 
-                if (value && value.byteLength > 0) {
-                    // Каждый пришедший сетевой чанк (который PHP вытолкнул через flush)
-                    // отправляем напрямую в системный звуковой декодер [INDEX_4]
-                    playAudioChunk(value.buffer);
-                }
+                // Отправляем в очередь — он дождётся, пока доиграет стартовое приветствие
+                const chunkBuffer = value.buffer.slice(value.byteOffset, value.byteOffset + value.byteLength);
 
-                if (done) {
-                    // Следим за окончанием генерации речи Филиппа
-                    const checkEndInterval = setInterval(() => {
-                        if (!audioCtx || audioCtx.currentTime >= nextStartTime) {
-                            clearInterval(checkEndInterval);
-                            showMic(); // Когда звук иссяк, возвращаем микрофон в исходное состояние
-                        }
-                    }, 200);
-                    break;
-                }
-            }
-        } catch (streamError) {
-            console.error("Критическая ошибка чтения аудиопотока:", streamError);
-            showMic();
-        }
-    }
-
-    /**
-     * Декодирование бинарного аудиофайла (WAV/MP3/OGG) и бесшовная склейка в аудиоочередь [INDEX_4]
-     */
-    function playAudioChunk(arrayBuffer) {
-        if (!audioCtx) return;
-
-        // Браузер аппаратно декодирует сжатый аудиофайл из оперативной памяти [INDEX_4]
-        audioCtx.decodeAudioData(arrayBuffer, (audioBuffer) => {
-            if (!audioCtx) return;
-
-            const source = audioCtx.createBufferSource();
-            source.buffer = audioBuffer;
-            source.connect(audioCtx.destination);
-
-            // Если очередь отстала от текущего таймлайна, сдвигаем её вперед
-            if (nextStartTime < audioCtx.currentTime) {
-                nextStartTime = audioCtx.currentTime;
+                await enqueueAudioChunk(chunkBuffer);
             }
 
-            // Планируем старт чанка строго встык за предыдущим [INDEX_4]
-            source.start(nextStartTime);
-            activeSources.push(source);
-
-            // Сдвигаем временную метку старта следующего куска на длительность текущего [INDEX_4]
-            nextStartTime += audioBuffer.duration;
-
-        }, (decodeError) => {
-            // Игнорируем возможные пустые байты завершения HTTP-сессии Nginx
-            console.warn("Пропущен пустой или неполный аудиопакет:", decodeError);
-        });
-    }
-
-    /**
-     * Экстренное прерывание речи ИИ и сброс контекста
-     */
-    function stopAudioPlayback() {
-        // Гасим все играющие на данный момент источники звука
-        activeSources.forEach(source => {
-            try { source.stop(); } catch(e) {}
-        });
-        activeSources = [];
-
-        if (audioCtx) {
-            audioCtx.close().catch(() => {});
-            audioCtx = null;
+        } catch (error) {
+            console.error("Критическая ошибка чата:", error);
+            // Если сервер упал, но приветствие играет — даем ему закончить. Иначе возвращаем микрофон.
+            if (!isAudioPlaying) showMic();
         }
-        showMic();
-    }
+    };
 </script>
