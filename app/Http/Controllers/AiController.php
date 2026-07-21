@@ -177,7 +177,7 @@ FAQ:".print_r(QASeeder::getData(), true);
                     $fullAiResponse .= $cleanToken;
 
                     // Проверяем строго знаки препинания (. ! ?). Никаких пробелов \s!
-                    if (preg_match('/[.!?]/', $textBuffer) && mb_strlen($textBuffer) > 90) {
+                    if (preg_match('/[.!?]/', $textBuffer) && mb_strlen($textBuffer) > 100) {
                         $audioChunk = $this->synthesizeSpeech(trim($textBuffer));
                         if (!empty($audioChunk)) {
                             echo $audioChunk;

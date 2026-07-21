@@ -226,6 +226,7 @@
 
     let isRecording = false;
     let isBusy = false;
+    let wasHelloAudio=false;
 
     // СОСТОЯНИЕ СЕССИИ — читается из Laravel-сессии при рендере страницы
     let isNewUserSession = true;
@@ -310,6 +311,7 @@
             let arrayBuffer;
             if (typeof source === 'string') {
                 // Если передан URL (для статичного mp3 приветствия)
+                wasHelloAudio=true;
                 const response = await fetch(source);
                 arrayBuffer = await response.arrayBuffer();
             } else {
@@ -335,7 +337,16 @@
     function playNextChunk() {
         if (mp3Queue.length === 0) {
             isAudioPlaying = false;
-            showMic(); // Возвращаем микрофон в исходное состояние, когда ИИ договорил
+
+            // ПРОВЕРКА ЗДЕСЬ: Если это была новая сессия и приветствие только что завершилось
+            if (wasHelloAudio) {
+                console.log("Приветствие завершено. Показ loading");
+                wasHelloAudio = false;
+                showLoading(); // Включаем статус загрузки (ожидания ответа)
+            } else {
+                // Если это обычное аудио или приветствие уже было, просто возвращаем микрофон
+                showMic();
+            }
             return;
         }
 
