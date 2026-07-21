@@ -5,13 +5,6 @@
         scroll-behavior: smooth;
     }
 
-    .intro-screen .voice-stage{
-        z-index: 100000;
-        left:50%;
-        margin-left: -26px;
-    }
-
-
     .iconScroll {
         position: absolute;
         border-radius: 30px;
@@ -115,7 +108,7 @@
   'Дарим технический аудит для точного поиска уязвимостей вашего сайта'
             ];
         @endphp
-        content: 'Спроси AI-бота или листай вниз';
+        content: 'Спроси AI-бота или листай вниз и ищи информацию самостоятельно на сайте';
         position: absolute;
         top: 50%;
         left: 50%;

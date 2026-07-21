@@ -31,8 +31,6 @@
         width: 52px;
         height: 52px;
         position: fixed;
-        right: 30px;
-        bottom: 100px;
         z-index: 9999;
         appearance: none;
         -webkit-appearance: none;
@@ -44,11 +42,22 @@
         cursor: pointer;
         color: #fff;
         background: #3f6ee9 !important;
-        transition: all .2s ease-in-out;
         padding: 0 !important;
-        margin: 0;
         overflow: visible;
+
+        right: 30px;
+        bottom: 100px;
+        margin: 0;
+        transition: all .5s ease-in-out;
     }
+
+    body.intro-screen button.voice-stage{
+        z-index: 100000;
+        right:50%;
+        margin-right: -24px;
+    }
+
+
     button.voice-stage:not(.is-recording):not(.is-loading)::before{
         content: 'AI';
         font-size: 18px;
