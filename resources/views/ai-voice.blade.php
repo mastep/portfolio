@@ -228,7 +228,7 @@
     let isBusy = false;
 
     // СОСТОЯНИЕ СЕССИИ — читается из Laravel-сессии при рендере страницы
-    let isNewUserSession = false;
+    let isNewUserSession = true;
 
     const csrfToken = '{{ csrf_token() }}';
     const aiFetchHeaders = {
@@ -244,7 +244,10 @@
     })
         .then(res => res.json())
         .then(data => {
-            isNewUserSession = !!data.is_new_session;
+            if(isNewUserSession){
+                isNewUserSession = !!data.is_new_session;
+            }
+
             console.log('Ollama прогрета. Новая сессия:', isNewUserSession);
             return data;
         })

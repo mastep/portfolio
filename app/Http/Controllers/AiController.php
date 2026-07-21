@@ -29,23 +29,18 @@ class AiController extends Controller
             'model' => 'R4C3R/qwen2.5-1.5b-heretic:latest',
             'keep_alive' => '3m',
             'options' => [
-                'num_predict' => 200,      // Ограничивает длину ответа (меньше токенов = быстрее ответ)
-                'temperature' => 0.0,      // Минимизирует случайность, ускоряет выбор токенов
-                'num_ctx' => 800,         // Уменьшает буфер контекста, экономит ресурсы процессора/видеокарты
-                'num_thread' => 3,
+                'num_predict' => 300,      // Ограничивает длину ответа (меньше токенов = быстрее ответ)
+                'temperature' => 0.4,      // Минимизирует случайность, ускоряет выбор токенов
             ]
         ];
 
-        $this->systemInstruction = "Ты чат-бот по имени Сэвэн, специалист техподдержки веб-студии www.7lab.pro. Твоя задача — отвечать на вопросы пользователей строго на основе предоставленного ниже списка. Если ответа на вопрос нет в списке, вежливо отправь пользователя на сайт сэвэнлабпро.
+        $this->systemInstruction = "Ты чат-бот по имени Сэвэн, специалист техподдержки веб-студии www.7lab.pro. Твоя задача — отвечать на вопросы пользователей строго на основе предоставленного ниже FAQ. Если ответа на вопрос нет в списке, вежливо отправь пользователя на сайт сэвэнлабпро.
 ПРАВИЛА ОТВЕТА:
 1. Пиши дружелюбно и просто.
 2. Длина ответа должна быть строго от 2 до 5 предложений.
 3. Категорически запрещено использовать Markdown разметку (никаких звездочек *, решеток #, жирного шрифта или курсива).
 4. Категорически запрещено использовать списки (маркированные или нумерованные) и блоки кода. Все перечисления пиши в строку через запятую.
-БАЗА ЗНАНИЙ (Вопросы и Ответы):\n";
-        foreach(QASeeder::getData() as $item){
-            $this->systemInstruction .="\n".$item['question'].":".$item['answer'];
-        }
+FAQ:".print_r(QASeeder::getData(), true);
     }
 
     /**
@@ -65,26 +60,29 @@ class AiController extends Controller
                 'role'    => 'system',
                 'content' => $this->systemInstruction
             ];
-        }
-        // Отправляем пустой запрос на прогрев контекста в Ollama
-        $ollamaData = json_encode([
-            'model'      => $this->ollamaConfig['model'],
-            'keep_alive' => $this->ollamaConfig['keep_alive'],
-            'messages'   => $chatHistory,
-            'stream'     => true,
-            'options'    => $this->ollamaConfig['options']
-        ]);
+            session()->put('chat_history', $chatHistory);
+            session()->save();
+            // Отправляем пустой запрос на прогрев контекста в Ollama
+            $ollamaData = json_encode([
+                'model'      => $this->ollamaConfig['model'],
+                'keep_alive' => $this->ollamaConfig['keep_alive'],
+                'messages'   => $chatHistory,
+                'stream'     => true,
+                'options'    => $this->ollamaConfig['options']
+            ]);
 
-        $ch = curl_init($url);
-        curl_setopt_array($ch, [
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => $ollamaData,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
-            CURLOPT_TIMEOUT        => 45
-        ]);
-        curl_exec($ch);
-        curl_close($ch);
+            $ch = curl_init($url);
+            curl_setopt_array($ch, [
+                CURLOPT_POST           => true,
+                CURLOPT_POSTFIELDS     => $ollamaData,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+                CURLOPT_TIMEOUT        => 60
+            ]);
+            curl_exec($ch);
+            curl_close($ch);
+        }
+
 
         // Возвращаем фронтенду флаг, нужно ли будет здороваться
         return response()->json([
@@ -121,8 +119,6 @@ class AiController extends Controller
             'role'    => 'user',
             'content' => $promptText
         ];
-
-        logger()->info('AI CHAT BEFORE STREAM: ' . print_r($chatHistory, true));
 
         // Важно: передаем $chatHistory по значению, чтобы использовать внутри замыкания
         return new StreamedResponse(function () use ($url, $chatHistory, $isFirstGreeting) {
@@ -181,7 +177,7 @@ class AiController extends Controller
                     $fullAiResponse .= $cleanToken;
 
                     // Проверяем строго знаки препинания (. ! ?). Никаких пробелов \s!
-                    if (preg_match('/[.!?]/', $textBuffer) && mb_strlen($textBuffer) > 40) {
+                    if (preg_match('/[.!?]/', $textBuffer) && mb_strlen($textBuffer) > 90) {
                         $audioChunk = $this->synthesizeSpeech(trim($textBuffer));
                         if (!empty($audioChunk)) {
                             echo $audioChunk;
