@@ -54,7 +54,7 @@
     body.intro-screen button.voice-stage{
         z-index: 100000;
         right:50%;
-        margin-right: -24px;
+        margin-right: -28px;
     }
 
 
@@ -349,9 +349,11 @@
 
             // ПРОВЕРКА ЗДЕСЬ: Если это была новая сессия и приветствие только что завершилось
             if (wasHelloAudio) {
-                console.log("Приветствие завершено. Показ loading");
                 wasHelloAudio = false;
-                showLoading(); // Включаем статус загрузки (ожидания ответа)
+                if(isBusy){
+                    showLoading(); // Включаем статус загрузки (ожидания ответа)
+                }
+
             } else {
                 // Если это обычное аудио или приветствие уже было, просто возвращаем микрофон
                 showMic();
@@ -431,19 +433,33 @@
     /**
      * 3.ОБРАБОТКА РЕЗУЛЬТАТА И ОТПРАВКА НА СЕРВЕР
      */
+        // Инициализируем время: берем из localStorage или ставим текущее, если пользователь зашел впервые
+    let lastActivityTime = parseInt(localStorage.getItem('ai_last_activity_time')) || Date.now();
+
     recognition.onresult = async (event) => {
+        // ВОЗВРАЩЕНО: Оригинальный и точный путь к тексту, который у вас работал
         const resultText = event.results[0][0].transcript;
         if (!resultText.trim()) return;
 
         isBusy = true;
         showLoading(); // Включаем спиннер загрузки
 
-
         try {
-            if(isNewUserSession){
+            const currentTime = Date.now();
+            const threeMinutes = 3 * 60 * 1000; // 3 минуты в миллисекундах
+
+            if (isNewUserSession) {
                 enqueueAudioChunk('/audio/defaultAIspeech.mp3');
-                isNewUserSession=false;
+                isNewUserSession = false;
+            } else if (currentTime - lastActivityTime > threeMinutes) {
+                enqueueAudioChunk('/audio/defaultAIspeech2.mp3');
             }
+
+            // Обновляем переменную и сохраняем актуальное время в localStorage
+            lastActivityTime = currentTime;
+            localStorage.setItem('ai_last_activity_time', currentTime);
+
+            // Запрос теперь гарантированно уйдет без ошибок в консоли
             const response = await fetch('/ai/chat', {
                 method: 'POST',
                 headers: aiFetchHeaders,
@@ -451,7 +467,9 @@
                 body: JSON.stringify({ prompt: resultText })
             });
 
-            if (!response.ok) throw new Error("Ошибка бэкенда");
+            if (!response.ok) {
+                throw new Error(`Ошибка бэкенда: ${response.status} ${response.statusText}`);
+            }
 
             const reader = response.body.getReader();
 
@@ -460,16 +478,28 @@
                 const { done, value } = await reader.read();
                 if (done) break; // Стрим ответа полностью завершен
 
-                // Отправляем в очередь — он дождётся, пока доиграет стартовое приветствие
-                const chunkBuffer = value.buffer.slice(value.byteOffset, value.byteOffset + value.byteLength);
+                // Как только Laravel прислал первый кусок аудио-ответа,
+                // гасим анимацию загрузки и возвращаем интерфейс микрофона
+                showMic();
 
+                const chunkBuffer = value.buffer.slice(value.byteOffset, value.byteOffset + value.byteLength);
                 await enqueueAudioChunk(chunkBuffer);
             }
 
         } catch (error) {
             console.error("Критическая ошибка чата:", error);
-            // Если сервер упал, но приветствие играет — даем ему закончить. Иначе возвращаем микрофон.
-            if (!isAudioPlaying) showMic();
+        } finally {
+            isBusy = false;
+            // Подстраховка: если аудио не играет, микрофон точно должен быть активен
+            if (!isAudioPlaying) {
+                showMic();
+            }
         }
     };
+
+
+
+
+
+
 </script>
