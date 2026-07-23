@@ -47,7 +47,7 @@
     <div class="cookies-info-container">
         <a class="cookies-info-container-close"></a>
         Для корректной работы сайта мы используем <a href="https://browser.yandex.ru/help/ru/personal-data-protection/cookies.html?ysclid=m1s620d1jl584340576" target="_blank">cookie</a>.
-        <br>Продолжая работу с сайтом Вы даете свое право на их использование.
+        <br>Продолжая работу с сайтом Вы даете свое право на их использование и принимаете условия <a href="/privacy">политики обработки персональных данных</a>.
 
     </div>
 </div>
