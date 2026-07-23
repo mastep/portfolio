@@ -38,6 +38,11 @@ services:
             AI_TIMEWEB_API_URL: "${AI_TIMEWEB_API_URL}"
             AI_TIMEWEB_API_TOKEN: "${AI_TIMEWEB_API_TOKEN}"
             AI_DOCKER_BASE_URL: "${AI_DOCKER_BASE_URL}"
+            # Увеличиваем таймаут обработки запросов (FastCGI / Proxy) до 10 минут
+            NGINX_TIMEOUT: '600'
+            # Отключаем буферизацию Nginx, чтобы стриминг токенов от Ollama работал сразу
+            NGINX_FASTCGI_BUFFERING: 'off'
+            NGINX_PROXY_BUFFERING: 'off'
         volumes:
             - .:/var/www/html
         ports:
